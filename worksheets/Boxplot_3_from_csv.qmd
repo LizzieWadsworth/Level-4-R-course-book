@@ -1,0 +1,53 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+#  Boxplot from CSV (from Excel)
+
+From the previous page, we have a dataset with three columns:
+
+| Column | Data |
+|------------------------------------|------------------------------------|
+| serotoninLevel | Measurement of serotonin in individual locusts |
+| treatmentTime | Amount of time being crowded (0, 1 or 2 hours) |
+| serotoninCategory | Rank of serotonin level in three categories (High, Medium, Low) |
+
+: Locust Serotonin data columns and descriptions {.striped .hover}
+
+Next, we're going to use boxplots to compare the serotonin level for different treatment groups.
+
+```{webr}
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("LocustSerotonin.csv") 
+head(locust_df)
+
+# Plot the data using ggplot package
+ggplot(locust_df, aes(x = treatmentTime, 
+                      y = serotoninLevel, 
+                      group = treatmentTime)) +
+  geom_boxplot() 
+```
+
+::: {.callout-note title="Question"}
+What happens if you remove `group = treatmentTime` from the above code? What is this doing?
+:::
+
+Let's break that down line by line:
+
+-   `locust_df <- read.csv("LocustSerotonin.csv")` - This is loading in our dataset. You should now see "locust_df" in your *environment* tab (top right corner)
+-   `ggplot(locust_df, aes(x = treatmentTime, y = serotoninLevel, group = treatmentTime))`:
+    -   `ggplot()` is the graphing function we are using
+    -   `locust_df` is the data we want to plot
+    -   `aes()` is our *aesthetics* - what is our x and y values?
+    -   **group**: Our treatmentTime column is a continuous data (as it is numerical). We want this to be discrete (three separate groups) so we explicity tell ggplot to organise this data into groups.
+-   `geom_boxplot()`: this is specifying we want to plot a box plot of our data

@@ -41,15 +41,21 @@ website:
             - href: worksheets/Boxplot.qmd
             - href: worksheets/GGstyle.qmd
             - href: worksheets/Boxplot_2.qmd
-        - section: "R from Excel"
+        - section: "R from Excel: Locust Serotonin levels"
           contents:
             - href: worksheets/importcsv.qmd
+            - href: worksheets/Boxplot_3_from_csv.qmd
+            - href: worksheets/Discrete_continuous_scale.qmd
+            - href: worksheets/Violin.qmd
+            - href: worksheets/Barplot_counts.qmd
+            - href: worksheets/Filtering_data_from_table.qmd
+
   favicon: LS4003_logo_no_text.png
 
 format:
-  html:
+  live-html:
     theme:
-      light: flatly
+      light: lightly
       dark: darkly
     respect-user-color-scheme: true
     css: styles.css

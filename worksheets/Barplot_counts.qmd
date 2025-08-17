@@ -1,0 +1,54 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Bar plot by counts
+
+Sometimes we don't want to use numerical values (such as the serotonin level) that we already have in our dataset. If we want to plot the numbers of our categories we can make a bar plot like in the below example:
+
+```{webr}
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("LocustSerotonin.csv") 
+head(locust_df)
+
+# Set factor levels with factor() function
+locust_df$serotoninCategory <- factor(locust_df$serotoninCategory, levels = c("High", "Medium", "Low"))
+
+# Use geom_bar(stat='count') to create bar chart
+ggplot(locust_df, aes(x = treatmentTime, fill = serotoninCategory)) +
+         geom_bar(stat = 'count')
+```
+
+Here we have:
+
+1.  Set `locust_df$serotoninCategory` as a factor with levels. *This was to order our graph. What happens if you comment this out?*
+
+2.  Used `geom_bar(stat = 'count')` - for each category on the x axis, this counts the number of entries. Without using fill, this would just make a bar of height 10 for all three groups, as there was equal numbers of each treatment group.
+
+3.  The fill is used to colour the sections by serotonin category.
+
+### Visualising distributions
+
+We can also draw histograms to visualise distributions.
+
+```{webr}
+ggplot(locust_df, aes(x = serotoninLevel, group = treatmentTime, 
+                      fill = treatmentTime)) +
+  geom_histogram(binwidth = 0.6)
+```
+
+::: callout-note
+What is `binwidth = 0.6` doing? What changes if you remove this? What if you make this value smaller or larger?
+:::
+
+Is this a normal distribution? It's a small dataset so it's hard to tell, but we'll go through more examples in the worksheet.

@@ -72,5 +72,20 @@
   },
   "worksheets/importcsv.qmd": {
     "importcsv.html": "2d0b014d"
+  },
+  "worksheets/Boxplot_3_from_csv.qmd": {
+    "Boxplot_3_from_csv.html": "2c2d1b4c"
+  },
+  "worksheets/Violin.qmd": {
+    "Violin.html": "29b8d222"
+  },
+  "worksheets/Barplot_counts.qmd": {
+    "Barplot_counts.html": "00924500"
+  },
+  "worksheets/Filtering_data_from_table.qmd": {
+    "Filtering_data_from_table.html": "5b55dab5"
+  },
+  "worksheets/Discrete_continuous_scale.qmd": {
+    "Discrete_continuous_scale.html": "e5a4a9d0"
   }
 }

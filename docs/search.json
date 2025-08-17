@@ -244,11 +244,71 @@
     "href": "worksheets/importcsv.html",
     "title": "Import CSV from Excel",
     "section": "",
-    "text": "Import CSV from Excel\nNext we’re going to use tabular data from excel and import that as our data.\nI’ve put a csv file on the Canvas page for you to download and copy into your folder. A csv file is like a plain excel table, but missing all the Microsoft formatting. This makes it easier for us to use.\nYou can turn any excel file into a csv file by going File -&gt; Save as -&gt; File format: csv.\n\n\n\n\n\n\nWarning\n\n\n\nA CSV file can only have one sheet. If you have an excel file with multiple sheets and save it as a csv, the rest of the sheets will be lost!\n\n\nThe dataset we are going to use is LocustSerotonin.csv which you can find on the Canvas page. This contains serotonin levels in the central nervous system of desert locusts that were experimentally crowded for 0 (the control group), 1, and 2 hours. This data is from Chapter 2 of The Analysis of Biological Data.\n\n\n\n\n\n\n\n\n\nWe are using the function read.csv() to import our data into R. This will appear in the environment (top right panel) with our variables.\nWe are using the function head() to view the first five rows of our table.\n\nAs you can see we have a dataset of three columns:\n\nLocust Serotonin data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nserotoninLevel\nMeasurement of serotonin in individual locusts\n\n\ntreatmentTime\nAmount of time being crowded (0, 1 or 2 hours)\n\n\nserotoninCategory\nRank of serotonin level in three categories (High, Medium, Low)\n\n\n\nNext, we’re going to use boxplots to compare the serotonin level for different treatment groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nWhat happens if you remove group = treatmentTime from the above code? What is this doing?\n\n\nLet’s break that down line by line:\n\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") - This is loading in our dataset. You should now see “locust_df” in your environment tab (top right corner)\nggplot(locust_df, aes(x = treatmentTime, y = serotoninLevel, group = treatmentTime)):\n\nggplot() is the graphing function we are using\nlocust_df is the data we want to plot\naes() is our aesthetics - what is our x and y values?\ngroup: Our treatmentTime column is a continuous data (as it is numerical). We want this to be discrete (three separate groups) so we explicity tell ggplot to organise this data into groups.\n\ngeom_boxplot(): this is specifying we want to plot a box plot of our data",
+    "text": "Import CSV from Excel\nNext we’re going to use tabular data from excel and import that as our data.\nI’ve put a csv file on the Canvas page for you to download and copy into your folder. A csv file is like a plain excel table, but missing all the Microsoft formatting. This makes it easier for us to use.\nYou can turn any excel file into a csv file by going File -&gt; Save as -&gt; File format: csv.\n\n\n\n\n\n\nWarning\n\n\n\nA CSV file can only have one sheet. If you have an excel file with multiple sheets and save it as a csv, the rest of the sheets will be lost!\n\n\nThe dataset we are going to use is LocustSerotonin.csv which you can find on the Canvas page. This contains serotonin levels in the central nervous system of desert locusts that were experimentally crowded for 0 (the control group), 1, and 2 hours. This data is from Chapter 2 of The Analysis of Biological Data.\n\n\n\n\n\n\n\n\n\nWe are using the function read.csv() to import our data into R. This will appear in the environment (top right panel) with our variables.\nWe are using the function head() to view the first five rows of our table.\n\nAs you can see we have a dataset of three columns:\n\nLocust Serotonin data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nserotoninLevel\nMeasurement of serotonin in individual locusts\n\n\ntreatmentTime\nAmount of time being crowded (0, 1 or 2 hours)\n\n\nserotoninCategory\nRank of serotonin level in three categories (High, Medium, Low)",
     "crumbs": [
       "Learn",
-      "R from Excel",
+      "R from Excel: Locust Serotonin levels",
       "Import CSV from Excel"
+    ]
+  },
+  {
+    "objectID": "worksheets/Boxplot_3_from_csv.html",
+    "href": "worksheets/Boxplot_3_from_csv.html",
+    "title": "Boxplot from CSV (from Excel)",
+    "section": "",
+    "text": "Boxplot from CSV (from Excel)\nFrom the previous page, we have a dataset with three columns:\n\nLocust Serotonin data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nserotoninLevel\nMeasurement of serotonin in individual locusts\n\n\ntreatmentTime\nAmount of time being crowded (0, 1 or 2 hours)\n\n\nserotoninCategory\nRank of serotonin level in three categories (High, Medium, Low)\n\n\n\nNext, we’re going to use boxplots to compare the serotonin level for different treatment groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nWhat happens if you remove group = treatmentTime from the above code? What is this doing?\n\n\nLet’s break that down line by line:\n\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") - This is loading in our dataset. You should now see “locust_df” in your environment tab (top right corner)\nggplot(locust_df, aes(x = treatmentTime, y = serotoninLevel, group = treatmentTime)):\n\nggplot() is the graphing function we are using\nlocust_df is the data we want to plot\naes() is our aesthetics - what is our x and y values?\ngroup: Our treatmentTime column is a continuous data (as it is numerical). We want this to be discrete (three separate groups) so we explicity tell ggplot to organise this data into groups.\n\ngeom_boxplot(): this is specifying we want to plot a box plot of our data",
+    "crumbs": [
+      "Learn",
+      "R from Excel: Locust Serotonin levels",
+      "Boxplot from CSV (from Excel)"
+    ]
+  },
+  {
+    "objectID": "worksheets/Violin.html",
+    "href": "worksheets/Violin.html",
+    "title": "Violin plots",
+    "section": "",
+    "text": "Violin plots\nViolin plots are similar to box plots, but they show more information on what the distribution is. A violin plot can sometimes give more useful information than a box plot.\nTo change from a box plot to a violin plot, you only need to change from geom_boxplot() to geom_violin().\n\n\n\n\n\n\n\n\nQuestion: If you add the line + geom_point(), what happens?",
+    "crumbs": [
+      "Learn",
+      "R from Excel: Locust Serotonin levels",
+      "Violin plots"
+    ]
+  },
+  {
+    "objectID": "worksheets/Barplot_counts.html",
+    "href": "worksheets/Barplot_counts.html",
+    "title": "Bar plot by counts",
+    "section": "",
+    "text": "Bar plot by counts\nSometimes we don’t want to use numerical values (such as the serotonin level) that we already have in our dataset. If we want to plot the numbers of our categories we can make a bar plot like in the below example:\n\n\n\n\n\n\n\n\nHere we have:\n\nSet locust_df$serotoninCategory as a factor with levels. This was to order our graph. What happens if you comment this out?\nUsed geom_bar(stat = 'count') - for each category on the x axis, this counts the number of entries. Without using fill, this would just make a bar of height 10 for all three groups, as there was equal numbers of each treatment group.\nThe fill is used to colour the sections by serotonin category.\n\n\nVisualising distributions\nWe can also draw histograms to visualise distributions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhat is binwidth = 0.6 doing? What changes if you remove this? What if you make this value smaller or larger?\n\n\nIs this a normal distribution? It’s a small dataset so it’s hard to tell, but we’ll go through more examples in the worksheet.",
+    "crumbs": [
+      "Learn",
+      "R from Excel: Locust Serotonin levels",
+      "Bar plot by counts"
+    ]
+  },
+  {
+    "objectID": "worksheets/Filtering_data_from_table.html",
+    "href": "worksheets/Filtering_data_from_table.html",
+    "title": "Filtering data from a table",
+    "section": "",
+    "text": "Filtering data from a table\nWhat do we do if we only want to use part of our dataset?\nIn R, there are many ways we can filter our datasets to extract just the values we need. Lets say we want to filter our LocustSerotonin data to have only the 0 hour treatmentTime group.\n\n\n\n\n\n\n\n\nLet’s break that down:\n\nWe’re using functions from the dplyr package. You need to install by typing install.packages('dplyr') if you haven’t already.\nWe’re using the filter() function to select all rows where treatmentTime is exactly 0. Be sure to notice the double ==!\n%&gt;% is a pipe - it’s telling R to pass the dataset on the left (locust_df) to the function on the right (filter())\nWe don’t want to overwrite our full dataset, so we’re saving in a new dataframe called treatment0_df using &lt;- .\n\n\n\n\n\n\n\nQuestion\n\n\n\nCan you create a dataset with only the treatmentTime values that are more than 0?\n\n\nWe can also select for string (words and letter) values. This is the same, except that we need to put any strings in quotes \" \" as in the below example.",
+    "crumbs": [
+      "Learn",
+      "R from Excel: Locust Serotonin levels",
+      "Filtering data from a table"
+    ]
+  },
+  {
+    "objectID": "worksheets/Discrete_continuous_scale.html",
+    "href": "worksheets/Discrete_continuous_scale.html",
+    "title": "Discrete verses continuous scale",
+    "section": "",
+    "text": "Discrete verses continuous scale\nHere we have three distinct treatment groups. This is a discrete scale - no locusts were crowded for 1.5 hours for instance.\nAs this is numerical, it’s automatically taken as a continuous scale. We can see this when we use fill = to colour the boxplots by treatmentTime.\n\n\n\n\n\n\n\n\nTo make the same dataset use a discrete scale for this value, we can use the as.factor() function.\nWe can use locust_df$treatmentTime to select the whole column. We can then use this as an argument by putting it inside the function: as.factor(locust_df$treatmentTime)\nFinally, if we just did the above it would convert our values to a factor but not save this. We can use &lt;- to overwrite our original column which had the numerical values.\nPutting that together we get:\nlocust_df$treatmentTime &lt;- as.factor(locust_df$treatmentTime)",
+    "crumbs": [
+      "Learn",
+      "R from Excel: Locust Serotonin levels",
+      "Discrete verses continuous scale"
     ]
   }
 ]

@@ -1,0 +1,57 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Filtering data from a table
+
+What do we do if we only want to use **part** of our dataset?
+
+In R, there are many ways we can filter our datasets to extract just the values we need. Lets say we want to filter our LocustSerotonin data to have only the 0 hour treatmentTime group.
+
+```{webr}
+library(dplyr)
+
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("LocustSerotonin.csv") 
+head(locust_df)
+
+treatment0_df <- locust_df %>% filter(treatmentTime == 0)
+
+ggplot(treatment0_df, aes(x = serotoninLevel, group = treatmentTime, 
+                      fill = treatmentTime)) +
+  geom_histogram(binwidth = 0.6)
+```
+
+Let's break that down:
+
+1.  We're using functions from the `dplyr` package. You need to install by typing `install.packages('dplyr')` if you haven't already.
+
+2.  We're using the `filter()` function to select all rows where treatmentTime **is exactly** 0. Be sure to notice the double `==`!
+
+3.  `%>%` is a **pipe** - it's telling R to pass the dataset on the left (`locust_df`) to the function on the right (`filter()`)
+
+4.  We don't want to overwrite our full dataset, so we're saving in a new dataframe called `treatment0_df` using `<-` .
+
+::: {.callout-note title="Question"}
+Can you create a dataset with only the treatmentTime values that are **more than** 0?
+:::
+
+We can also select for string (words and letter) values. This is the same, except that we need to put any strings in quotes `" "` as in the below example.
+
+```{webr}
+MediumSerotonin_df <- locust_df %>% filter(serotoninCategory == "Medium")
+
+ggplot(MediumSerotonin_df, aes(x = serotoninLevel, group = treatmentTime, 
+                      fill = treatmentTime)) +
+  geom_histogram(binwidth = 0.6)
+```
