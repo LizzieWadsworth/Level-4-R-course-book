@@ -66,5 +66,11 @@
   },
   "worksheets/GGstyle.qmd": {
     "GGstyle.html": "576f9da9"
+  },
+  "worksheets/Boxplot_2.qmd": {
+    "Boxplot_2.html": "c4c178fe"
+  },
+  "worksheets/importcsv.qmd": {
+    "importcsv.html": "2d0b014d"
   }
 }

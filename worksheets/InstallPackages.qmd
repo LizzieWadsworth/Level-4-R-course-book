@@ -1,1 +1,19 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
 # Install packages
+
+For the rest of the worksheet section, we need to install **packages**
+
+In R we use many **packages** - these are extensions that contain the code we need to do cool things like plot graphs. There are many packages available for different uses, which means you don't have to write everything from scratch!
+
+Install the packages we will be using. In the *console* (bottom left corner), copy and paste each of the following two lines and press enter:
+
+`install.packages('ggplot2')`
+
+`install.packages('dplyr')`

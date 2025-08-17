@@ -1,1 +1,35 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
 # Dataframes
+
+We've looked at single values, and multiple values in a list. The next step is to look at tables of data - we can do this with **dataframe**. You'll commonly see this named as `df` for `d`ata`f`rame.
+
+```{webr}
+# Create a data frame
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+# Print the data frame
+Data_Frame
+```
+
+If you look in your environment (top right panel) you'll now see your `Data_Frame` variable. If you click it, this will open it in a new tab next to your R script.
+
+We can use the built-in function `summary()` to create an overview of our data. For our numerical columns, this provides us with the **interquartile range**.
+
+### Summarise the data
+
+```{webr}
+summary(Data_Frame) # Create a summary of our data
+```
+
+This is already all the information we need to create a box plot!

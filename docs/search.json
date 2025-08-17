@@ -2,13 +2,13 @@
   {
     "objectID": "learn.html",
     "href": "learn.html",
-    "title": "Learn",
+    "title": "Hello World",
     "section": "",
-    "text": "Learn\nThis is a book created from markdown and executable code.\nSee @knuth84 for additional discussion of literate programming.",
+    "text": "The below R code takes the phrase “Hello World!” and prints it to the console. It’s a good way to check you are set up correctly!\n\n\n\n\n\n\n\n\nThe above code block is interactive so you can use it to test small bits of code. Anything you write will not be saved.\nOnce you’ve checked that’s working, copy and paste it into an R file in RStudio. To run it, you want to highlight the line and click the run button.\n\n\nRStudio is split into the following four panels:\n\nTop-left: Create and edit your R programming files\nTop-right: See your data (tables and values)\nBottom-left: Console to run one or two lines of code\nBottom-right: View your folders and plots (different tabs)\n\nTop panels\n\n\n\n\n\nCode Editor\n\n\n\n\n\n\n\n\nEnvironment\n\n\n\n\nBottom panels\n\n\n\n\n\nConsole\n\n\n\n\n\n\n\n\nFiles and Plots\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nRStudio by default only runs the line you’ve selected. To run, you’ll need to highlight both lines and click “Run”, or click the arrow next to “Run” and select “Run all” which will run all the code in your file.\n\n\nThe variable you create will appear in the top right panel. What value does it have? Is this what you expect?\nThe result of the code will also appear in the console bottom left panel.",
     "crumbs": [
       "Learn",
       "R basics",
-      "Learn"
+      "Hello World"
     ]
   },
   {
@@ -30,7 +30,7 @@
     "href": "worksheets/ErrorMsg.html",
     "title": "Error messages",
     "section": "",
-    "text": "Error messages",
+    "text": "Error messages\nProgramming code is it’s own language, but with really strict grammar. If I mistakes make in sentrances, like I do in this one, you can still understand the meaning.\nIf we make a mistake in code, even a typo, the computer will not understand.\nHowever, it does try to be helpful. We get an Error message in the console (bottom left panel) that gives us a clue as to what the problem is.\nTry with the below code. What does the error message say? Can you try and fix it?",
     "crumbs": [
       "Learn",
       "R basics",
@@ -42,7 +42,7 @@
     "href": "worksheets/RFunctions.html",
     "title": "R functions",
     "section": "",
-    "text": "R functions",
+    "text": "R functions\nWe won’t be writing our own R functions, but we’ll be using in-built functions and functions from libraries.\nA function is like a mini-program - it’s a set of code that somebody else has written that we can apply to our own variables.\nThese work using the following structure: function_name(arguments) where:\n\nfunction_name is the name of the function\narguments are the values we are putting in, or any options we want to change\n\nSee examples below using some in-built functions:\n\n\n\n\n\n\n\n\nWe can also give multiple arguments by separating them with commas.\nIn the example below, we’re using the seq() function to generate a sequence of numbers. We want the sequence to start at 0, end at 20, and go up by 2 every number.\n\n\n\n\n\n\n\n\n\nGive it a go:\nFrom what you’ve learnt so far, can you:\n\nGenerate every third number from 1 to 100 (1, 3, 6…)\nFind the mean of those numbers\nFind the standard deviation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nConsider using the seq() function\n\nseq(start value, stop value, by=increase)\n\n\n\n\n\n\n\n\n\n\n\n\nHint 2\n\n\n\n\n\nConsider using the functions seq(), mean() and sd()\n\nvariablename &lt;- seq(start value, stop value, by=increase)\nmean(variablename)\nsd(variablename)\n\n\n\n\n\n\n\n\n\n\n\nShow answer",
     "crumbs": [
       "Learn",
       "R basics",
@@ -54,7 +54,7 @@
     "href": "worksheets/InstallPackages.html",
     "title": "Install packages",
     "section": "",
-    "text": "Install packages",
+    "text": "Install packages\nFor the rest of the worksheet section, we need to install packages\nIn R we use many packages - these are extensions that contain the code we need to do cool things like plot graphs. There are many packages available for different uses, which means you don’t have to write everything from scratch!\nInstall the packages we will be using. In the console (bottom left corner), copy and paste each of the following two lines and press enter:\ninstall.packages('ggplot2')\ninstall.packages('dplyr')",
     "crumbs": [
       "Learn",
       "Make a box plot",
@@ -66,7 +66,7 @@
     "href": "worksheets/CreateDataframe.html",
     "title": "Dataframes",
     "section": "",
-    "text": "Dataframes",
+    "text": "Dataframes\nWe’ve looked at single values, and multiple values in a list. The next step is to look at tables of data - we can do this with dataframe. You’ll commonly see this named as df for dataframe.\n\n\n\n\n\n\n\n\nIf you look in your environment (top right panel) you’ll now see your Data_Frame variable. If you click it, this will open it in a new tab next to your R script.\nWe can use the built-in function summary() to create an overview of our data. For our numerical columns, this provides us with the interquartile range.\n\nSummarise the data\n\n\n\n\n\n\n\n\nThis is already all the information we need to create a box plot!",
     "crumbs": [
       "Learn",
       "Make a box plot",
@@ -78,7 +78,7 @@
     "href": "worksheets/Variables.html",
     "title": "Variables",
     "section": "",
-    "text": "Variables",
+    "text": "Variables\nA variable is a box where we can store a value. This is important - if we calculate something in R, we’re going to want to be able to access the answer, so we need to store it somewhere.\nSee the below example - you can click Run Code to see what this does.\n\n\n\n\n\n\n\n\nLet’s break that down:\n\na &lt;- 5 + 10\n\na : This is our variable name. A variable is a piece of data with a name so we can find it again.\n&lt;- : This is an assignment operator; equivalent to ” = “! It means the data on the right hand side is saved under the variable name on the left hand side\n5 + 10 : Mathematical operations in R have a set format. If you want to multiply two numbers, you would use an asterix (*).\n\na\n\na : This line will get the value from our variable a, and print it to the console. It’s really useful for checking if a value is what you expect, especially when you have many variables!",
     "crumbs": [
       "Learn",
       "R basics",
@@ -90,7 +90,7 @@
     "href": "worksheets/Comments.html",
     "title": "Comments",
     "section": "",
-    "text": "Comments",
+    "text": "Comments\nIf you put a hash # at the start of the line, this means it will be igorned and not run as code.\nWe use comments to add notes - to anyone else using our code, or to our future selves (you will forget what your code does!)",
     "crumbs": [
       "Learn",
       "R basics",
@@ -102,7 +102,7 @@
     "href": "worksheets/GGstyle.html",
     "title": "GGstyle",
     "section": "",
-    "text": "GGstyle",
+    "text": "GGstyle\nWe can use the + to add new lines to our graph. This allows us to add more styling information.\nYou want a + at the end of every line until the last one. This tells R where you want to stop and move on.\n\n\n\n\n\n\n\n\nCheck out this ggplot2 cheat sheet for more styling options",
     "crumbs": [
       "Learn",
       "Make a box plot",
@@ -114,7 +114,7 @@
     "href": "worksheets/Vectors.html",
     "title": "Vectors",
     "section": "",
-    "text": "Vectors",
+    "text": "Vectors\nAfter variables, the next thing we need to understand is vectors.\nVectors are a bit like lists but they can only hold one type of variable such as all integers (whole numbers) or all strings (words in “quotes”).\nTo make a vector, we need to use the c() function\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nWhat happens to the numbers in the my_numbers vector if you change 9 to 9.5?",
     "crumbs": [
       "Learn",
       "R basics",
@@ -126,7 +126,7 @@
     "href": "worksheets/Boxplot.html",
     "title": "Boxplot",
     "section": "",
-    "text": "Boxplot",
+    "text": "Boxplot\nWe’re going to use a library of functions called ggplot2 to make our box plot.\nBefore we can use the library, we need to install it. To do that, copy the following line into the console (bottom left section): install.packages('ggplot2')\n\n\n\n\n\n\n\n\nDo the values match what we got in the summary() function?\nLet’s break that down:\n\nggplot(Data_Frame, aes(y = Pulse)) +\n\nggplot() : This is our plotting function\nData_Frame: This is our argument of what data we want to use\naes(): aes is aesthetics, which allows us to choose our groups for x, y or categories\ny = Pulse: this is setting our y value to be the pulse column\n\ngeom_boxplot()\n\nThis tells R to use the data we chose to make a boxplot",
     "crumbs": [
       "Learn",
       "Make a box plot",
@@ -214,5 +214,41 @@
     "title": "Welcome to R Programming!",
     "section": "",
     "text": "First get yourself set up with R and RStudio - click the “Set Up” tab for instructions.\nNext start the classes under the “Learn” tab. This is all of the material for the five sessions - you can work through them at your own pace.\nEach page will cover a new concept, or have an activity on for you to try. As you work through, try to experiment - change parts of the code examples and see if it will still work. This is how you figure out how it works.\nIf you have any other questions, grab a member of teaching staff in the session or email Dr Lizzie Wadsworth at L.Wadsworth@kingston.ac.uk\n\n\n\nGIF of Homer Simpson at a Computer"
+  },
+  {
+    "objectID": "learn.html#rstudio-and-the-four-panels",
+    "href": "learn.html#rstudio-and-the-four-panels",
+    "title": "Hello World",
+    "section": "",
+    "text": "RStudio is split into the following four panels:\n\nTop-left: Create and edit your R programming files\nTop-right: See your data (tables and values)\nBottom-left: Console to run one or two lines of code\nBottom-right: View your folders and plots (different tabs)\n\nTop panels\n\n\n\n\n\nCode Editor\n\n\n\n\n\n\n\n\nEnvironment\n\n\n\n\nBottom panels\n\n\n\n\n\nConsole\n\n\n\n\n\n\n\n\nFiles and Plots\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nRStudio by default only runs the line you’ve selected. To run, you’ll need to highlight both lines and click “Run”, or click the arrow next to “Run” and select “Run all” which will run all the code in your file.\n\n\nThe variable you create will appear in the top right panel. What value does it have? Is this what you expect?\nThe result of the code will also appear in the console bottom left panel.",
+    "crumbs": [
+      "Learn",
+      "R basics",
+      "Hello World"
+    ]
+  },
+  {
+    "objectID": "worksheets/Boxplot_2.html",
+    "href": "worksheets/Boxplot_2.html",
+    "title": "Give it a go",
+    "section": "",
+    "text": "Give it a go\nCan you change the code to make a boxplot of the Duration values?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nThe only parts you need to change is the aes() aesthetics, and ggtitle()\n\n\n\n\n\n\n\n\n\n\nShow answer",
+    "crumbs": [
+      "Learn",
+      "Make a box plot",
+      "Give it a go"
+    ]
+  },
+  {
+    "objectID": "worksheets/importcsv.html",
+    "href": "worksheets/importcsv.html",
+    "title": "Import CSV from Excel",
+    "section": "",
+    "text": "Import CSV from Excel\nNext we’re going to use tabular data from excel and import that as our data.\nI’ve put a csv file on the Canvas page for you to download and copy into your folder. A csv file is like a plain excel table, but missing all the Microsoft formatting. This makes it easier for us to use.\nYou can turn any excel file into a csv file by going File -&gt; Save as -&gt; File format: csv.\n\n\n\n\n\n\nWarning\n\n\n\nA CSV file can only have one sheet. If you have an excel file with multiple sheets and save it as a csv, the rest of the sheets will be lost!\n\n\nThe dataset we are going to use is LocustSerotonin.csv which you can find on the Canvas page. This contains serotonin levels in the central nervous system of desert locusts that were experimentally crowded for 0 (the control group), 1, and 2 hours. This data is from Chapter 2 of The Analysis of Biological Data.\n\n\n\n\n\n\n\n\n\nWe are using the function read.csv() to import our data into R. This will appear in the environment (top right panel) with our variables.\nWe are using the function head() to view the first five rows of our table.\n\nAs you can see we have a dataset of three columns:\n\nLocust Serotonin data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nserotoninLevel\nMeasurement of serotonin in individual locusts\n\n\ntreatmentTime\nAmount of time being crowded (0, 1 or 2 hours)\n\n\nserotoninCategory\nRank of serotonin level in three categories (High, Medium, Low)\n\n\n\nNext, we’re going to use boxplots to compare the serotonin level for different treatment groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nWhat happens if you remove group = treatmentTime from the above code? What is this doing?\n\n\nLet’s break that down line by line:\n\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") - This is loading in our dataset. You should now see “locust_df” in your environment tab (top right corner)\nggplot(locust_df, aes(x = treatmentTime, y = serotoninLevel, group = treatmentTime)):\n\nggplot() is the graphing function we are using\nlocust_df is the data we want to plot\naes() is our aesthetics - what is our x and y values?\ngroup: Our treatmentTime column is a continuous data (as it is numerical). We want this to be discrete (three separate groups) so we explicity tell ggplot to organise this data into groups.\n\ngeom_boxplot(): this is specifying we want to plot a box plot of our data",
+    "crumbs": [
+      "Learn",
+      "R from Excel",
+      "Import CSV from Excel"
+    ]
   }
 ]

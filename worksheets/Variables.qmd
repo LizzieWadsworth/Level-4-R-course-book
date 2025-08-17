@@ -1,1 +1,27 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
 # Variables
+
+A variable is a box where we can store a value. This is important - if we calculate something in R, we're going to want to be able to access the answer, so we need to store it somewhere.
+
+See the below example - you can click Run Code to see what this does.
+
+```{webr}
+a <- 5 + 10 
+a
+```
+
+Let's break that down:
+
+-   `a <- 5 + 10`
+    -   `a` : This is our *variable* name. A variable is a piece of data with a name so we can find it again.
+    -   `<-` : This is an *assignment operator*; equivalent to " = "! It means the data on the right hand side is saved under the variable name on the left hand side
+    -   `5 + 10` : [Mathematical operations in R](https://www.w3schools.com/r/r_operators.asp) have a set format. If you want to multiply two numbers, you would use an asterix (\*).
+-   `a`
+    -   `a` : This line will get the value from our variable a, and print it to the console. It's really useful for checking if a value is what you expect, especially when you have many variables!

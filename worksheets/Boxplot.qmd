@@ -1,1 +1,34 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
 # Boxplot
+
+We're going to use a library of functions called `ggplot2` to make our box plot.
+
+Before we can use the library, we need to install it. To do that, copy the following line into the *console* (bottom left section): `install.packages('ggplot2')`
+
+```{webr}
+# Libraries
+library(ggplot2) # load ggplot2 libray 
+
+# Create a boxplot of pulse
+ggplot(Data_Frame, aes(y = Pulse)) +
+  geom_boxplot() 
+```
+
+Do the values match what we got in the `summary()` function?
+
+Let's break that down:
+
+-   `ggplot(Data_Frame, aes(y = Pulse)) +`
+    -   `ggplot()` : This is our plotting function
+    -   `Data_Frame`: This is our argument of what data we want to use
+    -   `aes()`: aes is aesthetics, which allows us to choose our groups for x, y or categories
+    -   `y = Pulse`: this is setting our y value to be the pulse column
+-   `geom_boxplot()`
+    -   This tells R to use the data we chose to make a boxplot

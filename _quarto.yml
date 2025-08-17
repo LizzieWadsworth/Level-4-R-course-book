@@ -30,7 +30,6 @@ website:
           contents:
             - href: learn.qmd
             - href: worksheets/Variables.qmd
-            - href: worksheets/RStudio.qmd
             - href: worksheets/Comments.qmd
             - href: worksheets/ErrorMsg.qmd
             - href: worksheets/Vectors.qmd
@@ -41,6 +40,10 @@ website:
             - href: worksheets/InstallPackages.qmd
             - href: worksheets/Boxplot.qmd
             - href: worksheets/GGstyle.qmd
+            - href: worksheets/Boxplot_2.qmd
+        - section: "R from Excel"
+          contents:
+            - href: worksheets/importcsv.qmd
   favicon: LS4003_logo_no_text.png
 
 format:

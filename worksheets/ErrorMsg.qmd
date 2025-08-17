@@ -1,1 +1,24 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
 # Error messages
+
+Programming code is it's own language, but with *really strict grammar*. If I mistakes make in sentrances, like I do in this one, you can still understand the meaning.
+
+If we make a mistake in code, even a typo, the computer **will not understand**.
+
+However, it does *try* to be helpful. We get an `Error message` in the console (bottom left panel) that gives us a clue as to what the problem is.
+
+Try with the below code. What does the error message say? Can you try and fix it?
+
+```{webr}
+# This is an example of an error message - what is the problem in the code?
+
+pinapple <- "Pineapple smoothie" 
+pineapple
+```

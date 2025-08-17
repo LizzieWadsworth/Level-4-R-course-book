@@ -1,0 +1,56 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Give it a go
+
+Can you change the code to make a boxplot of the `Duration` values?
+
+```{webr}
+#| exercise: ex_2
+# Libraries
+library(ggplot2) # load ggplot2 libray 
+
+# Create a boxplot
+ggplot(______, aes(______)) +
+  # add a colour argument
+  geom_boxplot(fill = ______) + 
+  #add a title 
+  ggtitle(______) + 
+  # Move title to the center
+  theme(plot.title = element_text(hjust = 0.5)) + 
+  # Remove the gray background panel 
+  theme(panel.background = element_blank()) # remove background
+```
+
+:::: {.hint exercise="ex_2"}
+::: {.callout-note collapse="false"}
+## Hint 1
+
+The only parts you need to change is the `aes()` aesthetics, and `ggtitle()`
+:::
+::::
+
+::: {.callout-tip title="Show answer" collapse="true"}
+```{webr}
+# Libraries
+library(ggplot2) # load ggplot2 libray 
+
+# Create a boxplot
+ggplot(Data_Frame, aes(y = Duration)) +
+  # add a colour argument
+  geom_boxplot(fill = "lightgreen") + 
+  #add a title 
+  ggtitle("Duration boxplot") + 
+  # Move title to the center
+  theme(plot.title = element_text(hjust = 0.5)) + 
+  # Remove the gray background panel 
+  theme(panel.background = element_blank()) # remove background
+```
+:::
+
+

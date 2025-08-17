@@ -1,1 +1,25 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
 # Comments
+
+If you put a hash `#` at the start of the line, this means it will be *igorned* and not run as code.
+
+We use comments to add **notes** - to anyone else using our code, or to our future selves (you will forget what your code does!)
+
+```{webr}
+# This is a comment and will not be run as R code 
+
+# Here is another example of variables, using a string (word or string of letters)
+b <- "Banana smoothie"
+b
+
+# But this one will not run - can you tell why? 
+# c <- "Pineapple smoothie" 
+# c
+```

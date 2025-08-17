@@ -1,0 +1,65 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - ../Datasets/LocustSerotonin.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Import CSV from Excel 
+
+Next we're going to use tabular data from excel and import that as our data.
+
+I've put a `csv` file on the Canvas page for you to download and copy into your folder. A csv file is like a plain excel table, but missing all the Microsoft formatting. This makes it easier for us to use.
+
+You can turn any excel file into a csv file by going `File -> Save as -> File format: csv`.
+
+::: callout-warning
+A CSV file can **only have one sheet**. If you have an excel file with multiple sheets and save it as a csv, the rest of the sheets will be lost!
+:::
+
+The dataset we are going to use is `LocustSerotonin.csv` which you can find on the Canvas page. This contains serotonin levels in the central nervous system of desert locusts that were experimentally crowded for 0 (the control group), 1, and 2 hours. This data is from Chapter 2 of [The Analysis of Biological Data](https://whitlockschluter3e.zoology.ubc.ca/RExamples/Rcode_Chapter_2.html).
+
+```{webr}
+locust_df <- read.csv("LocustSerotonin.csv") 
+head(locust_df)
+```
+
+1.  We are using the function `read.csv()` to import our data into R. This will appear in the environment (top right panel) with our variables.
+2.  We are using the function `head()` to view the first five rows of our table.
+
+As you can see we have a dataset of three columns:
+
+| Column | Data |
+|------------------------------------|------------------------------------|
+| serotoninLevel | Measurement of serotonin in individual locusts |
+| treatmentTime | Amount of time being crowded (0, 1 or 2 hours) |
+| serotoninCategory | Rank of serotonin level in three categories (High, Medium, Low) |
+
+: Locust Serotonin data columns and descriptions {.striped .hover}
+
+Next, we're going to use boxplots to compare the serotonin level for different treatment groups.
+
+```{webr}
+ggplot(locust_df, aes(x = treatmentTime, 
+                      y = serotoninLevel, 
+                      group = treatmentTime)) +
+  geom_boxplot() 
+```
+
+::: {.callout-note title="Question"}
+What happens if you remove `group = treatmentTime` from the above code? What is this doing?
+:::
+
+Let's break that down line by line:
+
+-   `locust_df <- read.csv("LocustSerotonin.csv")` - This is loading in our dataset. You should now see "locust_df" in your *environment* tab (top right corner)
+-   `ggplot(locust_df, aes(x = treatmentTime, y = serotoninLevel, group = treatmentTime))`:
+    -   `ggplot()` is the graphing function we are using
+    -   `locust_df` is the data we want to plot
+    -   `aes()` is our *aesthetics* - what is our x and y values?
+    -   **group**: Our treatmentTime column is a continuous data (as it is numerical). We want this to be discrete (three separate groups) so we explicity tell ggplot to organise this data into groups.
+-   `geom_boxplot()`: this is specifying we want to plot a box plot of our data

@@ -1,5 +1,68 @@
-# Learn
+---
+format: live-html
+engine: knitr
+lightbox: true
+---
 
-This is a book created from markdown and executable code.
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
 
-See @knuth84 for additional discussion of literate programming.
+# Hello World
+
+The below R code takes the phrase "Hello World!" and prints it to the console. It's a good way to check you are set up correctly! 
+
+```{webr}
+print("Hello World!")
+```
+
+The above code block is interactive so you can use it to test small bits of code. *Anything you write will __not__ be saved.*
+
+Once you've checked that's working, copy and paste it into an R file in RStudio. To run it, you want to highlight the line and click the run button. 
+
+## RStudio and the four panels
+
+RStudio is split into the following four panels:
+
+-   **Top-left**: Create and edit your R programming files
+-   **Top-right**: See your data (tables and values)
+-   **Bottom-left**: Console to run one or two lines of code
+-   **Bottom-right**: View your folders and plots (different tabs)
+
+**Top panels**
+
+:::::: columns
+::: {.column width="30%"}
+![Code Editor](images/code-editor.png){group="my-gallery"}
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="30%"}
+![Environment](images/environment.png){group="my-gallery"}
+:::
+::::::
+
+**Bottom panels**
+
+:::::: columns
+::: {.column width="30%"}
+![Console](images/console.png){group="my-gallery"}
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="30%"}
+![Files and Plots](images/files-and-plots.png){group="my-gallery"}
+:::
+::::::
+
+::: callout-note
+RStudio by default only runs the line you've selected. To run, you'll need to highlight both lines and click "Run", or click the arrow next to "Run" and select "Run all" which will run all the code in your file.
+:::
+
+The variable you create will appear in the **top right panel**. What value does it have? Is this what you expect?
+
+The result of the code will also appear in the console **bottom left panel**.
+
+

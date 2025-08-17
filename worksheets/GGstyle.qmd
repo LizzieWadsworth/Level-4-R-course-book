@@ -1,1 +1,28 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
 # GGstyle
+
+We can use the `+` to add new lines to our graph. This allows us to add more styling information.
+
+You want a `+` at the end of every line **until the last one**. This tells R where you want to stop and move on.
+
+```{webr}
+# Create a boxplot of pulse
+ggplot(Data_Frame, aes(y = Pulse)) +
+  # add a colour argument
+  geom_boxplot(fill = "lightblue") + 
+  #add a title 
+  ggtitle("Pulse boxplot") + 
+  # Move title to the center
+  theme(plot.title = element_text(hjust = 0.5)) + 
+  # Remove the gray background panel 
+  theme(panel.background = element_blank()) # remove background
+```
+
+[Check out this ggplot2 cheat sheet for more styling options](https://www.sthda.com/english/articles/32-r-graphics-essentials/125-ggplot-cheat-sheet-for-great-customization/)
