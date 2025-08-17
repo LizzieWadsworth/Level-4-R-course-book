@@ -63,4 +63,11 @@ body.quarto-dark .quarto-color-scheme-toggle > .bi::before {
   margin-bottom: 2px;
 }
 
+div.callout-note.callout .callout-header {
+    background-color: #e7f1ff;
+}
+
+div.callout-note.callout {
+    border-left-color: #0d6efd;
+}
 

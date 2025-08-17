@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -318,27 +353,496 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="set-up" class="level1">
 <h1>Set up</h1>
-<p>Helloooooo I’m changing</p>
-<section id="quick-start" class="level2">
-<h2 class="anchored" data-anchor-id="quick-start">Quick Start</h2>
-<p>Follow the Quick Start for your tool of choice to get a simple website up and running. After covering the basics, read on to learn about website navigation and other more advanced website features.</p>
+<p>We are going to use RStudio for this course. You can do this on campus from a University Computer, online using a free Posit Cloud account that you can access from any web browser, or by downloading R and RStudio onto your own device.</p>
+<p>Click below to see the set up instructions for each:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="tools-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><img src="./images/UniversityComputer.png" class="img-fluid">University Computer</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><img src="./images/positcloud.png" class="img-fluid">Online Cloud</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false"><img src="./images/owndevice.png" class="img-fluid">Own Device</a></li></ul>
 <div class="tab-content" data-group="tools-tabset">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Some text here</p>
+<p>To get set up, follow the below steps. <strong>Click each step</strong> for detailed instructions.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Step 1: Launch RStudio from AppsAnywhere">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 1: Launch RStudio from AppsAnywhere
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Type in AppsAnywhere to the windows bar. This will open in a web browser</li>
+<li>Type in RStudio in AppsAnywhere</li>
+<li>Click “Launch” and wait for it to install and open.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="GIFs/OpenRStudio.gif" class="img-fluid figure-img"></p>
+<figcaption>GIF of Opening RStudio</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Step 2: Navigate to your OneDrive folder">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 2: Navigate to your OneDrive folder
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Copy and paste the following into the <strong>Console</strong> on the left, and press enter.</li>
+</ol>
+<p><code>setwd("O:/")</code></p>
+<ol start="2" type="1">
+<li>Click the “More” cog and select “Go To Working Directory”</li>
+</ol>
+<p>You should now be in your OneDrive. You should be able to recognise the files and folders listed, from what you have saved here in your other classes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="GIFs/GoToOneDrive.gif" class="img-fluid figure-img"></p>
+<figcaption>GIF of Opening OneDrive</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="If you get the error message 'cannot change working directory'">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If you get the error message ‘cannot change working directory’
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Occasionally there is an issue with how OneDrive is loaded on the University computer.</p>
+<p>If you get the error message:</p>
+<p><code>Error in setwd("O:/") : cannot change working directory</code></p>
+<p>Then try the following. <strong>Replace the underscores with your K number.</strong></p>
+<p><code>setwd("C:/Users/K______/")</code></p>
+<p>Click the “More” cog and select “Go To Working Directory”</p>
+<p>Then find and click on the folder:</p>
+<p><code>OneDrive Kingston University</code></p>
+<p>Click the more cog and select <code>Set As Working Directory</code></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="GIFs/ErrorGIF.gif" class="img-fluid figure-img"></p>
+<figcaption>GIF of Opening OneDrive with common error</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Step 3: Create or move to a folder for LS4003">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 3: Create or move to a folder for LS4003
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If you don’t already have a folder for LS4003 Statistics, then you can create one by clicking “New Folder” and entering a name.</p>
+<p>If your new folder doesn’t appear, click the refresh button (to the right of the more cog).</p>
+<p>Then:</p>
+<ol type="1">
+<li><p>Click into your new folder</p></li>
+<li><p>Click the More Cog and select “Set As Working Directory”</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="GIFs/MakeAFolder.gif" class="img-fluid figure-img"></p>
+<figcaption>GIF of Making a Folder</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Step 4: Create an R file">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 4: Create an R file
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Once you’re in your folder you can create and save an R file. This is where you put your code.</p>
+<ol type="1">
+<li>Click on the Green Plus icon and select “R Script”</li>
+<li>In the top bar, click “File” and then “Save”</li>
+<li>Give your file a name (e.g.&nbsp;“R_tutorial_1” )</li>
+</ol>
+<p>When you make any changes, you can save the file by going File -&gt; Save.</p>
+<p>You can also save by holding down Control and S at the same time.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="GIFs/MakeRFile.gif" class="img-fluid figure-img"></p>
+<figcaption>GIF of Making an R File</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>This will automatically add the “.R” extension so we know it’s an R file - <code>R_tutorial_1.R</code></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Make sure you can find your file in file explorer. Always <strong>back up your work</strong> such as saving in OneDrive or emailing to yourself so that you don’t lose your progress.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Step 5: Write and run R code">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 5: Write and run R code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>You’re now ready to run some R code!</p>
+<ol type="1">
+<li>Copy and paste the following into your R file:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>value <span class="ot">&lt;-</span> <span class="st">"Hello World"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Highlight both lines and click the “Run” icon (green arrow)</li>
+</ol>
+<p>You should see a result in your console (bottom left panel) and your environment (top right panel)</p>
+<p>You’re now ready to start learning R!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="GIFs/RunRFile.gif" class="img-fluid figure-img"></p>
+<figcaption>GIF of Running an R File</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>More text</p>
+<p><a href="https://posit.cloud/plans/free">Posit Cloud</a> is a <strong>free</strong> online browser version, allowing you to work from any device.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Caution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>You shouldn’t need a paid account for this course. If you use up the compute hours then I suggest downloading RStudio and R onto your own device.</p>
+</div>
+</div>
+</div>
+<p>To get set up, follow the instructions below:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Step 1: Launch RStudio from AppsAnywhere">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 1: Launch RStudio from AppsAnywhere
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><a href="https://posit.cloud/plans/free">Create a free account</a> and login</li>
+<li>Create Project -&gt; RStudio</li>
+<li>Name your project (where it says “Untitled Project”)</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="GIFs/PositCloud_CreateProject.gif" class="img-fluid figure-img"></p>
+<figcaption>GIF of Creating a PositCloud Project</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Step 2: Create an R file">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 2: Create an R file
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Once you’re in your project you can create and save an R file. This is where you put your code.</p>
+<ol type="1">
+<li>Click on the Green Plus icon and select “R Script”</li>
+<li>Click the Save icon</li>
+<li>Give your file a name (e.g.&nbsp;“My_R_file” )</li>
+</ol>
+<p>Remember to keep saving your file using the save icon.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="GIFs/PositCloud_CreateRFile.gif" class="img-fluid figure-img"></p>
+<figcaption>GIF of Making an R File</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>This will automatically add the “.R” extension so we know it’s an R file - <code>My_R_file.R</code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Step 3: Write and run R code">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 3: Write and run R code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>You’re now ready to run some R code!</p>
+<ol type="1">
+<li>Copy and paste the following into your R file:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>value <span class="ot">&lt;-</span> <span class="st">"Hello World"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li><p>Save your R file by clicking the save icon</p></li>
+<li><p>Highlight both lines and click the “Run” icon (green arrow)</p></li>
+</ol>
+<p>You should see a result in your console (bottom left panel) and your environment (top right panel)</p>
+<p>You’re now ready to start learning R!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="GIFs/PositCloud_RunRFile.gif" class="img-fluid figure-img"></p>
+<figcaption>GIF of Running an R File</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Text numero trun</p>
+<p>If you’re working on your own laptop or computer it’s also possible to download and run R and RStudio. These are both free, open-source programs.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If you’re working on a tablet, chromebook or your device is typically slow, I recommend looking at the Posit Online Cloud option instead</p>
+</div>
+</div>
+</div>
+<p>Installing R and RStudio can be a bit fiddley - let the teaching team know if you’d like any support.</p>
+<p>Why two programs? R is the programming language, that takes our code and creates our graphs. RStudio is a program we use to edit and view our R files and plots; known as an <em>Integrated Development Environment (IDE)</em>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Step 1: Install R">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 1: Install R
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>You can <a href="https://www.stats.bris.ac.uk/R/">Install R from this website</a>. You want to select the version for your operating system (Windows or Mac).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Step 2: Install RStudio">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 2: Install RStudio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Once R is installed, you can <a href="https://posit.co/products/open-source/rstudio/?sid=1">install RStudio from this website</a>.</p>
+<p>The free version is more than sufficient <em>I don’t know anyone who has needed Desktop pro</em>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Step 3: Create or move to a folder for LS4003">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 3: Create or move to a folder for LS4003
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Once RStudio is open, you want to browse files until you can find your documents - wherever you keep your university files.</p>
+<p>Next, create a folder to keep all your R programming work in (e.g “LS4003 R Programming”).</p>
+<p>Click on the new folder to enter it. Click the cog, and “Set as Working Directory”</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Step 4: Create an R file">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 4: Create an R file
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Once you’re in your project you can create and save an R file. This is where you put your code.</p>
+<ol type="1">
+<li>Click on the Green Plus icon and select “R Script”</li>
+<li>Click the Save icon</li>
+<li>Give your file a name (e.g.&nbsp;“My_R_file” )</li>
+</ol>
+<p>Remember to keep saving your file using the save icon.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="GIFs/PositCloud_CreateRFile.gif" class="img-fluid figure-img"></p>
+<figcaption>GIF of Making an R File</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>This will automatically add the “.R” extension so we know it’s an R file - <code>My_R_file.R</code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Step 5: Write and run R code">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step 5: Write and run R code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>You’re now ready to run some R code!</p>
+<ol type="1">
+<li>Copy and paste the following into your R file:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>value <span class="ot">&lt;-</span> <span class="st">"Hello World"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li><p>Save your R file by clicking the save icon</p></li>
+<li><p>Highlight both lines and click the “Run” icon (green arrow)</p></li>
+</ol>
+<p>You should see a result in your console (bottom left panel) and your environment (top right panel)</p>
+<p>You’re now ready to start learning R!</p>
 </div>
 </div>
 </div>
 
 
-</section>
+</div>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
