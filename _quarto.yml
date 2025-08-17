@@ -42,12 +42,6 @@ website:
             - href: worksheets/Boxplot.qmd
             - href: worksheets/GGstyle.qmd
   favicon: LS4003_logo_no_text.png
-  announcement: 
-    icon: info-circle
-    dismissable: true
-    content: "**Alert** - this is some information that you should may pay attention to"
-    type: primary
-    position: below-navbar
 
 format:
   html:

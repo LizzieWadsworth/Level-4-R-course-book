@@ -148,23 +148,23 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "LS4003 R programming",
+    "title": "Welcome to R Programming!",
     "section": "",
-    "text": "#  Welcome to R programming\nIn this course you will…"
+    "text": "The next 5 computing sessions are going to introduce you to R programming. This is a computer language very commonly used in Life Sciences to do statistical analyses and interpret large data sets.\nDon’t worry if you’ve never done any programming before - we’re starting from the very beginning.\n\n\nAdvances in Life Sciences has let to the creation of terrabytes of Big Data. We can now sequence millions of bases of DNA, calculate expression levels of thousands of proteins and track the movements of whales around the world.\nIn order to be able to make sense of these large datasets, we use programming languages. It would be quite difficult to calculate a statistically significant result if your dataset has more than 1000 values!\n\n\n\nBelow is a table of a recent publication for each subject which used R in the analysis - quite varied!\n\nLife Science R Programming Examples. Images from Google and Adobe Stock\n\n\n\n\n\n\n\nDegree\nPaper title\nIcon\n\n\n\n\nBiomedical Science\nPediatric leukemia and maternal occupational exposure to anticancer drugs: the Japan Environment and Children’s Study\n\n\n\nBiochemistry\nThe ORP9-ORP11 dimer promotes sphingomyelin synthesis\n\n\n\nBiological Science\nHumpback whale song complexity and evolution on a northwestern Pacific breeding ground: Okinawa, Japan\n\n\n\nPharmacology\nExplaining Blood–Brain Barrier Permeability of Small Molecules by Integrated Analysis of Different Transport Mechanisms\n\n\n\nForensic Science\nAn Open-Source Implementation of the CMPS Algorithm for Assessing Similarity of Bullets\n\n\n\n\n\n\n\nThis course is your first introduction to R.\nNext year (Level 5), most of you will continue R programming in Research Methods and Skills. Forensic Science students will use other Statistical Analysis software.\nIn your final year (Level 6) you will all do a research project - this may be in the lab, a literature review or data project. R programming can be used for analysis of your research data in all of these projects.\nBiological Science (Molecular Biology) and Biochemistry students will also do a Python-programming module at Level 6. This builds on what you know from R.\n\n\n\nFirst get yourself set up with R and RStudio - click the “Set Up” tab for instructions.\nNext start the classes under the “Learn” tab. This is all of the material for the five sessions - you can work through them at your own pace.\nEach page will cover a new concept, or have an activity on for you to try. As you work through, try to experiment - change parts of the code examples and see if it will still work. This is how you figure out how it works.\nIf you have any other questions, grab a member of teaching staff in the session or email Dr Lizzie Wadsworth at L.Wadsworth@kingston.ac.uk\n\n\n\nGIF of Homer Simpson at a Computer"
   },
   {
     "objectID": "index.html#why-r",
     "href": "index.html#why-r",
-    "title": "LS4003 R programming",
-    "section": "Why R",
-    "text": "Why R\nHere we talk R"
+    "title": "Welcome to R Programming!",
+    "section": "",
+    "text": "Here we talk R"
   },
   {
     "objectID": "index.html#get-started",
     "href": "index.html#get-started",
-    "title": "LS4003 R programming",
-    "section": "Get started",
-    "text": "Get started\nLogin instructions\nLearn: Tutorials, Activities…"
+    "title": "Welcome to R Programming!",
+    "section": "",
+    "text": "Login instructions\nLearn: Tutorials, Activities…"
   },
   {
     "objectID": "help.html",
@@ -186,5 +186,33 @@
     "title": "Set up",
     "section": "",
     "text": "Follow the Quick Start for your tool of choice to get a simple website up and running. After covering the basics, read on to learn about website navigation and other more advanced website features.\n\nUniversity ComputerOnline CloudOwn Device\n\n\nSome text here\n\n\nMore text\n\n\nText numero trun"
+  },
+  {
+    "objectID": "index.html#why-are-we-learning-r",
+    "href": "index.html#why-are-we-learning-r",
+    "title": "Welcome to R Programming!",
+    "section": "",
+    "text": "Advances in Life Sciences has let to the creation of terrabytes of Big Data. We can now sequence millions of bases of DNA, calculate expression levels of thousands of proteins and track the movements of whales around the world.\nIn order to be able to make sense of these large datasets, we use programming languages. It would be quite difficult to calculate a statistically significant result if your dataset has more than 1000 values!"
+  },
+  {
+    "objectID": "index.html#what-about-my-subject",
+    "href": "index.html#what-about-my-subject",
+    "title": "Welcome to R Programming!",
+    "section": "",
+    "text": "Below is a table of a recent publication for each subject which used R in the analysis - quite varied!\n\nLife Science R Programming Examples. Images from Google and Adobe Stock\n\n\n\n\n\n\n\nDegree\nPaper title\nIcon\n\n\n\n\nBiomedical Science\nPediatric leukemia and maternal occupational exposure to anticancer drugs: the Japan Environment and Children’s Study\n\n\n\nBiochemistry\nThe ORP9-ORP11 dimer promotes sphingomyelin synthesis\n\n\n\nBiological Science\nHumpback whale song complexity and evolution on a northwestern Pacific breeding ground: Okinawa, Japan\n\n\n\nPharmacology\nExplaining Blood–Brain Barrier Permeability of Small Molecules by Integrated Analysis of Different Transport Mechanisms\n\n\n\nForensic Science\nAn Open-Source Implementation of the CMPS Algorithm for Assessing Similarity of Bullets"
+  },
+  {
+    "objectID": "index.html#when-will-i-do-this-in-my-degree",
+    "href": "index.html#when-will-i-do-this-in-my-degree",
+    "title": "Welcome to R Programming!",
+    "section": "",
+    "text": "This course is your first introduction to R.\nNext year (Level 5), most of you will continue R programming in Research Methods and Skills. Forensic Science students will use other Statistical Analysis software.\nIn your final year (Level 6) you will all do a research project - this may be in the lab, a literature review or data project. R programming can be used for analysis of your research data in all of these projects.\nBiological Science (Molecular Biology) and Biochemistry students will also do a Python-programming module at Level 6. This builds on what you know from R."
+  },
+  {
+    "objectID": "index.html#what-should-i-be-doing",
+    "href": "index.html#what-should-i-be-doing",
+    "title": "Welcome to R Programming!",
+    "section": "",
+    "text": "First get yourself set up with R and RStudio - click the “Set Up” tab for instructions.\nNext start the classes under the “Learn” tab. This is all of the material for the five sessions - you can work through them at your own pace.\nEach page will cover a new concept, or have an activity on for you to try. As you work through, try to experiment - change parts of the code examples and see if it will still work. This is how you figure out how it works.\nIf you have any other questions, grab a member of teaching staff in the session or email Dr Lizzie Wadsworth at L.Wadsworth@kingston.ac.uk\n\n\n\nGIF of Homer Simpson at a Computer"
   }
 ]

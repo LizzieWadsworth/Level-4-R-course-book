@@ -1,15 +1,48 @@
+# Welcome to R Programming! 
 
-#  Welcome to R programming
+The next 5 computing sessions are going to introduce you to R programming. This is a computer language very commonly used in Life Sciences to do statistical analyses and interpret large data sets. 
 
-In this course you will... 
+Don't worry if you've never done any programming before - we're starting from the very beginning. 
 
-## Why R 
+## Why are we learning R?
 
-Here we talk R 
+Advances in Life Sciences has let to the creation of terrabytes of Big Data. We can now sequence millions of bases of DNA, calculate expression levels of thousands of proteins and track the movements of whales around the world. 
 
-## Get started 
+In order to be able to make sense of these large datasets, we use programming languages. It would be quite difficult to calculate a statistically significant result if your dataset has more than 1000 values! 
 
-Login instructions 
+## What about my subject? 
 
-Learn: Tutorials, Activities... 
+Below is a table of a recent publication for each subject which used R in the analysis - quite varied! 
+
+| Degree | Paper title | Icon|
+|--|--|--:|
+| Biomedical Science | [Pediatric leukemia and maternal occupational exposure to anticancer drugs: the Japan Environment and Children’s Study](https://doi.org/10.1182/blood.2023021008){target="_blank"} | ![Pregnancy](images/pregnancy.png) |
+| Biochemistry | [The ORP9-ORP11 dimer promotes sphingomyelin synthesis](https://doi.org/10.7554/eLife.91345){target="_blank"} | ![Dimer](images/proteindimer.png) |
+| Biological Science | [Humpback whale song complexity and evolution on a northwestern Pacific breeding ground: Okinawa, Japan](https://doi.org/10.1098/rsos.241388){target="_blank"} | ![Whale](images/whale.png) |
+| Pharmacology | [Explaining Blood–Brain Barrier Permeability of Small Molecules by Integrated Analysis of Different Transport Mechanisms](https://doi.org/10.1021/acs.jmedchem.2c01824){target="_blank"} | ![Neuropharmacology](images/Braindrugs.png) |
+| Forensic Science | [An Open-Source Implementation of the CMPS Algorithm for Assessing Similarity of Bullets](https://doi.org/10.32614/RJ-2022-035){target="_blank"} | ![Bullet](images/bullet.png) |
+
+: Life Science R Programming Examples. Images from Google and Adobe Stock {tbl-colwidths="[10,80,10]"}
+
+## When will I do this in my degree?
+
+This course is your first introduction to R. 
+
+Next year (Level 5), most of you will continue R programming in Research Methods and Skills. Forensic Science students will use other Statistical Analysis software. 
+
+In your final year (Level 6) you will all do a research project - this may be in the lab, a literature review or data project. R programming can be used for analysis of your research data in all of these projects. 
+
+Biological Science (Molecular Biology) and Biochemistry students will also do a Python-programming module at Level 6. This builds on what you know from R. 
+
+## What should I be doing?
+
+First get yourself set up with R and RStudio - click the "Set Up" tab for instructions. 
+
+Next start the classes under the "Learn" tab. This is all of the material for the five sessions - you can work through them *at your own pace*. 
+
+Each page will cover a new concept, or have an activity on for you to try. As you work through, try to experiment - change parts of the code examples and see if it will still work. This is how you figure out how it works. 
+
+If you have any other questions, grab a member of teaching staff in the session or email Dr Lizzie Wadsworth at L.Wadsworth@kingston.ac.uk 
+
+![GIF of Homer Simpson at a Computer](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNms3ZzJuMHk5N2w3Mnp3MGhmZzdleWRwOGE2bzRxc3ljOWlwMnNyMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/citBl9yPwnUOs/giphy.gif)
 
