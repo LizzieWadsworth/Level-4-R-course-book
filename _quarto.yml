@@ -1,0 +1,63 @@
+project:
+  type: website
+
+website:
+  title: "LS4003 R programming"
+  page-navigation: true
+  bread-crumbs: false  
+  navbar:
+    left:
+      - text: "Why R"
+        href: index.qmd
+      - text: "Set Up"
+        href: setup.qmd
+      - text: "Learn"
+        href: learn.qmd
+      - text: "Careers"
+        href: careers.qmd
+      - text: "CheatSheet"
+        href: cheatsheet.qmd
+      - text: "Help"
+        href: help.qmd
+  sidebar:
+    - title: "Learn"
+      style: "docked"
+      background: light
+      collapse-level: 1
+      contents: 
+        - section: "R basics"
+          contents:
+            - href: learn.qmd
+            - href: worksheets/Variables.qmd
+            - href: worksheets/RStudio.qmd
+            - href: worksheets/Comments.qmd
+            - href: worksheets/ErrorMsg.qmd
+            - href: worksheets/Vectors.qmd
+            - href: worksheets/RFunctions.qmd
+        - section: "Make a box plot"
+          contents:
+            - href: worksheets/CreateDataframe.qmd
+            - href: worksheets/InstallPackages.qmd
+            - href: worksheets/Boxplot.qmd
+            - href: worksheets/GGstyle.qmd
+  favicon: LS4003_logo_no_text.png
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "**Alert** - this is some information that you should may pay attention to"
+    type: primary
+    position: below-navbar
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    respect-user-color-scheme: true
+    css: styles.css
+
+margin-header: |
+  ![](/Logo/LS4003_logo_with_text.png)
+
+filters:
+  - /Users/lizzie/Documents/Kingston/Year_2526/LS4003/Level 4 R course book/filters/tools_tabset.lua

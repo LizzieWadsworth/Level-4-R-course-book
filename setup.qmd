@@ -1,0 +1,24 @@
+# Set up
+
+Helloooooo I'm changing
+
+## Quick Start
+
+Follow the Quick Start for your tool of choice to get a simple website up and running. After covering the basics, read on to learn about website navigation and other more advanced website features.
+
+::: {.panel-tabset group="tools-tabset"}
+
+### University Computer 
+
+Some text here
+
+### Online Cloud
+
+More text
+
+
+### Own Device
+
+Text numero trun
+
+:::

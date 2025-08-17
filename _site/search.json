@@ -1,0 +1,218 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "LS4003 R programming",
+    "section": "",
+    "text": "#  Welcome to R programming\nIn this course you will…"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "References"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Introduction\nThis is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\n\nReferences\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "Summary",
+    "section": "",
+    "text": "Summary\nIn summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Set up",
+    "section": "",
+    "text": "Helloooooo I’m changing\n\n\nFollow the Quick Start for your tool of choice to get a simple website up and running. After covering the basics, read on to learn about website navigation and other more advanced website features.\n\nUniversity ComputerOnline CloudOwn Device\n\n\nSome text here\n\n\nMore text\n\n\nText numero trun"
+  },
+  {
+    "objectID": "learn.html",
+    "href": "learn.html",
+    "title": "Learn",
+    "section": "",
+    "text": "Learn\nThis is a book created from markdown and executable code.\nSee @knuth84 for additional discussion of literate programming.",
+    "crumbs": [
+      "Learn",
+      "R basics",
+      "Learn"
+    ]
+  },
+  {
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "Help",
+    "section": "",
+    "text": "Help"
+  },
+  {
+    "objectID": "careers.html",
+    "href": "careers.html",
+    "title": "Careers",
+    "section": "",
+    "text": "Careers\nIn summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "why_r.html",
+    "href": "why_r.html",
+    "title": "Why R",
+    "section": "",
+    "text": "Why R\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
+  },
+  {
+    "objectID": "cheatsheet.html",
+    "href": "cheatsheet.html",
+    "title": "Cheatsheet",
+    "section": "",
+    "text": "Cheatsheet"
+  },
+  {
+    "objectID": "setup.html#quick-start",
+    "href": "setup.html#quick-start",
+    "title": "Set up",
+    "section": "",
+    "text": "Follow the Quick Start for your tool of choice to get a simple website up and running. After covering the basics, read on to learn about website navigation and other more advanced website features.\n\nUniversity ComputerOnline CloudOwn Device\n\n\nSome text here\n\n\nMore text\n\n\nText numero trun"
+  },
+  {
+    "objectID": "index.html#why-r",
+    "href": "index.html#why-r",
+    "title": "LS4003 R programming",
+    "section": "Why R",
+    "text": "Why R\nHere we talk R"
+  },
+  {
+    "objectID": "index.html#get-started",
+    "href": "index.html#get-started",
+    "title": "LS4003 R programming",
+    "section": "Get started",
+    "text": "Get started\nLogin instructions\nLearn: Tutorials, Activities…"
+  },
+  {
+    "objectID": "worksheets/Variables.html",
+    "href": "worksheets/Variables.html",
+    "title": "Variables",
+    "section": "",
+    "text": "Variables",
+    "crumbs": [
+      "Learn",
+      "R basics",
+      "Variables"
+    ]
+  },
+  {
+    "objectID": "worksheets/RStudio.html",
+    "href": "worksheets/RStudio.html",
+    "title": "LS4003 R programming",
+    "section": "",
+    "text": "# R Studio",
+    "crumbs": [
+      "Learn",
+      "R basics",
+      "R Studio"
+    ]
+  },
+  {
+    "objectID": "worksheets/Comments.html",
+    "href": "worksheets/Comments.html",
+    "title": "Comments",
+    "section": "",
+    "text": "Comments",
+    "crumbs": [
+      "Learn",
+      "R basics",
+      "Comments"
+    ]
+  },
+  {
+    "objectID": "worksheets/ErrorMsg.html",
+    "href": "worksheets/ErrorMsg.html",
+    "title": "Error messages",
+    "section": "",
+    "text": "Error messages",
+    "crumbs": [
+      "Learn",
+      "R basics",
+      "Error messages"
+    ]
+  },
+  {
+    "objectID": "worksheets/Vectors.html",
+    "href": "worksheets/Vectors.html",
+    "title": "Vectors",
+    "section": "",
+    "text": "Vectors",
+    "crumbs": [
+      "Learn",
+      "R basics",
+      "Vectors"
+    ]
+  },
+  {
+    "objectID": "worksheets/RFunctions.html",
+    "href": "worksheets/RFunctions.html",
+    "title": "R functions",
+    "section": "",
+    "text": "R functions",
+    "crumbs": [
+      "Learn",
+      "R basics",
+      "R functions"
+    ]
+  },
+  {
+    "objectID": "worksheets/CreateDataframe.html",
+    "href": "worksheets/CreateDataframe.html",
+    "title": "Dataframes",
+    "section": "",
+    "text": "Dataframes",
+    "crumbs": [
+      "Learn",
+      "Make a box plot",
+      "Dataframes"
+    ]
+  },
+  {
+    "objectID": "worksheets/InstallPackages.html",
+    "href": "worksheets/InstallPackages.html",
+    "title": "Install packages",
+    "section": "",
+    "text": "Install packages",
+    "crumbs": [
+      "Learn",
+      "Make a box plot",
+      "Install packages"
+    ]
+  },
+  {
+    "objectID": "worksheets/Boxplot.html",
+    "href": "worksheets/Boxplot.html",
+    "title": "Boxplot",
+    "section": "",
+    "text": "Boxplot",
+    "crumbs": [
+      "Learn",
+      "Make a box plot",
+      "Boxplot"
+    ]
+  },
+  {
+    "objectID": "worksheets/GGstyle.html",
+    "href": "worksheets/GGstyle.html",
+    "title": "GGstyle",
+    "section": "",
+    "text": "GGstyle",
+    "crumbs": [
+      "Learn",
+      "Make a box plot",
+      "GGstyle"
+    ]
+  }
+]

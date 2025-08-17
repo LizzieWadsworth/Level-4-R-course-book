@@ -1,0 +1,15 @@
+
+#  Welcome to R programming
+
+In this course you will... 
+
+## Why R 
+
+Here we talk R 
+
+## Get started 
+
+Login instructions 
+
+Learn: Tutorials, Activities... 
+

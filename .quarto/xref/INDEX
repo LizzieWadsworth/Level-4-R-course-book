@@ -1,0 +1,70 @@
+{
+  "intro.qmd": {
+    "intro.html": "66d2f5a5",
+    "intro.tex": "9520e316"
+  },
+  "index.qmd": {
+    "index.html": "dc1507e9",
+    "index.tex": "2f1c2dd6"
+  },
+  "summary.qmd": {
+    "summary.html": "b4104291"
+  },
+  "references.qmd": {
+    "references.html": "9f9f1475"
+  },
+  "setup.qmd": {
+    "setup.html": "d4e74354",
+    "setup.tex": "8b4e7c9a"
+  },
+  "careers.qmd": {
+    "careers.html": "cfc067bf",
+    "careers.tex": "e3867564"
+  },
+  "why_r.qmd": {
+    "why_r.html": "b1ad2638",
+    "why_r.tex": "faa16d86"
+  },
+  "help.qmd": {
+    "help.html": "8c0c1de9",
+    "help.tex": "d5b57535"
+  },
+  "cheatsheet.qmd": {
+    "cheatsheet.html": "4430572d",
+    "cheatsheet.tex": "26b055f1"
+  },
+  "learn.qmd": {
+    "learn.html": "17a71843",
+    "learn.tex": "445d7d2e"
+  },
+  "worksheets/Variables.qmd": {
+    "Variables.html": "b5450649"
+  },
+  "worksheets/RStudio.qmd": {
+    "RStudio.html": "b5f42335"
+  },
+  "worksheets/Comments.qmd": {
+    "Comments.html": "209105b3"
+  },
+  "worksheets/ErrorMsg.qmd": {
+    "ErrorMsg.html": "473a4e02"
+  },
+  "worksheets/Vectors.qmd": {
+    "Vectors.html": "98101dc1"
+  },
+  "worksheets/RFunctions.qmd": {
+    "RFunctions.html": "dc7a4026"
+  },
+  "worksheets/CreateDataframe.qmd": {
+    "CreateDataframe.html": "e17b3057"
+  },
+  "worksheets/InstallPackages.qmd": {
+    "InstallPackages.html": "aa782232"
+  },
+  "worksheets/Boxplot.qmd": {
+    "Boxplot.html": "643ce4ca"
+  },
+  "worksheets/GGstyle.qmd": {
+    "GGstyle.html": "576f9da9"
+  }
+}
