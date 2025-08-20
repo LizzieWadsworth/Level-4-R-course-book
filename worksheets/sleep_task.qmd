@@ -1,0 +1,42 @@
+---
+format: html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Sleep task
+
+The task for this worksheet is to determine if there are any correlations in the dataset and what they are.
+
+You should plot any correlations you find on a graph, such as the one below:
+
+::: {.callout-tip collapse="false" title="Example of generated graph" collapse="false"}
+A graph showing the correlation between sleep duration and resting heart rate, separated by sex.
+
+```{r}
+#| echo: false
+#| warning: false
+library(ggplot2)
+library(ggpubr)
+sleep_df <- read.csv("../Datasets/Sleep_health_and_lifestyle_dataset.csv") 
+
+ggplot(sleep_df, aes(x = heartrate, y = sleepduration, colour = Sex)) +
+  geom_point() +
+  stat_cor(method = 'pearson', label.x = 75) +
+  geom_smooth(method='lm', formula= y~x) +
+  ggtitle("Heart rate verses sleep duration") +
+  theme(plot.title = element_text(hjust = 0.5)) + 
+  xlab("Heart rate") + 
+  ylab("Sleep Duration")
+```
+:::
+
+There are lots of different variables in this dataset so do explore - what can you find out?

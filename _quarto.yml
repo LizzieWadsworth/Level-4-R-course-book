@@ -67,6 +67,20 @@ website:
             - href: "worksheets/add_regression_line.qmd"
             - href: "worksheets/separate_by_sex.qmd"
             - href: "worksheets/correlelogram.qmd"
+        - section: "Sleep task"
+          contents: 
+            - href: "worksheets/sleep_introduction.qmd"
+            - href: "worksheets/sleep_task.qmd"
+            - href: "worksheets/sleep_extension.qmd"
+        - section: "T-tests"
+          contents:
+            - href: "worksheets/unpaired_t_test.qmd"
+            - href: "worksheets/paired_t_test.qmd"
+            - href: "worksheets/one_tailed_t_test.qmd"
+            - href: "worksheets/anova.qmd"
+            - href: "worksheets/pairwise_t_test.qmd"
+            - href: "worksheets/t-test_extension.qmd"
+
 
   favicon: LS4003_logo_no_text.png
 

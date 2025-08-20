@@ -1,0 +1,76 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Paired t-test
+
+Our paired t-test is very similar. First, let's get copy data from our Basketball players example.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Create a vector of values for each of our columns
+Before = c(22, 20, 19, 24, 25, 25, 28, 22, 30, 27, 24, 18, 16, 19, 19, 28, 24, 25, 25, 23) # Jump heights before training
+After = c(24, 22, 19, 22, 28, 26, 28, 24, 30, 29, 25, 20, 17, 18, 18, 28, 26, 27, 27, 24) # Jump heights after training
+```
+
+## Summarise the data
+
+We can use the `summary()` function to see our mean and interquartile range for each set of values.
+
+```{webr}
+#| exercise: ex_1
+summary(______) # print summary of Before jump heights
+summary(______) # print summary of After jump heights
+```
+
+## Calculate the paired t-test p-value
+
+Using the function `t.test()`, we can add our two sets of values as arguments and calculate the p-value. This should match the result from excel.
+
+We need to specify the option `paired = TRUE` for it to be a paired t-test.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+paired_t_test_result <- t.test(Before, After, paired = TRUE)
+paired_t_test_result
+```
+
+## Create a dataframe with the data
+
+We can use the following code to create a dataframe with the above vectors.
+
+Fill in the gaps, and if you're stuck have a look at how we did this for the glycemia dataset.
+
+```{webr}
+#| exercise: ex_2
+Players_DataFrame <- data.frame(
+  group = rep(c("Before", "After"), each = ______),
+  jumpheight = c(______, ______)
+)
+Players_DataFrame
+```
+
+## Visualise the results as a boxplot
+
+We can do a boxplot and add our p-value in the same way as for the unpaired test by adding the option `paired=TRUE`.
+
+```{webr}
+#| context: interactive
+library(ggplot2)
+library(ggpubr)
+ggplot(Players_DataFrame, aes(x=group, y=jumpheight, fill=group)) +
+  geom_boxplot() + 
+  stat_compare_means(method = "t.test", paired = TRUE)
+```

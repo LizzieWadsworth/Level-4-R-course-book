@@ -1,0 +1,37 @@
+---
+format: html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Sleep Quality Dataset Introduction
+
+For this worksheet, you will need the `Sleep_health_and_lifestyle_dataset.csv` file from the Canvas page.
+
+This dataset contains values for sleep quality and lifestyle factors. *This is artificial data generated for illustrative purposes*
+
+This dataset contains the following information:
+
+| Column | Data |
+|------------------|------------------------------------------------------|
+| Age | Age of the individual |
+| Sex | Sex of the individual (Male/Female) |
+| Occupation | Occupation of the individual |
+| sleepduration | Average length of sleep (hours) |
+| sleepquality | Average sleep quality score |
+| activitylevel | Value assigned based on average level of physical activities (minutes/day) |
+| stress | Self-rated score of how stressed the individual feels |
+| heartrate | Resting heartrate of individual (beats per minute) |
+| steps | Average number of steps taken per day |
+
+: Sleep data columns and descriptions {.striped .hover}
+
+![© \[Rudzhan\] / Adobe Stock](/images/sleep_image.jpeg)

@@ -1,0 +1,60 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# One-tailed t-test
+
+We can follow the same process for the one-tailed t-test. First, we need our list of grades from our example.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Create a vector of values for each of our columns
+Grades <- c(67,11,22,43,62,39,36,14,35,24,39,34,68,35,68,59,65,53,25,39) # grades for a module 
+```
+
+## Summarise the data
+
+We can use the `summary()` function to see our mean and interquartile range for each set of values.
+
+```{webr}
+#| exercise: ex_3
+______ # summarise the grades values
+```
+
+## Calculate the one tailed t-test p-value
+
+Using the function `t.test()`, we can add our one set of values and the number we want to compare it to. In this example, we're looking to see if our mean value is greater than 40.
+
+We need to specify the option `alternative = 'greater'` to do a one-tailed test for if the mean of our Grades are significantly above our value for mu, which we have set to 40 (a pass).
+
+```{webr}
+#| context: interactive
+#| autorun: true
+one_tailed_t_test_result <- t.test(Grades, mu = 40, alternative = 'greater')
+one_tailed_t_test_result
+```
+
+## Create a dataframe and boxplot
+
+Because we only have one group of data values, we can create our dataframe and draw our boxplot very simply.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+Grades_Data_Frame <- data.frame(Grades)
+ggplot(Grades_Data_Frame, aes(y=Grades)) +
+  geom_boxplot(fill = "pink")
+```
+
+We don't need to annotate our p-value on here - it wouldn't make much sense to do so as our p-value was specifically assessing if the mean was higher than 40 which is hard to represent visually.

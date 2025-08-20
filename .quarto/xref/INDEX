@@ -129,5 +129,32 @@
   },
   "worksheets/correlelogram.qmd": {
     "correlelogram.html": "336ac70c"
+  },
+  "worksheets/sleep_introduction.qmd": {
+    "sleep_introduction.html": "e5c7b960"
+  },
+  "worksheets/sleep_extension.qmd": {
+    "sleep_extension.html": "fa47b6ca"
+  },
+  "worksheets/sleep_task.qmd": {
+    "sleep_task.html": "b0e17453"
+  },
+  "worksheets/unpaired_t_test.qmd": {
+    "unpaired_t_test.html": "6acee7aa"
+  },
+  "worksheets/paired_t_test.qmd": {
+    "paired_t_test.html": "cf8cba7e"
+  },
+  "worksheets/one_tailed_t_test.qmd": {
+    "one_tailed_t_test.html": "d9f58278"
+  },
+  "worksheets/anova.qmd": {
+    "anova.html": "4615446a"
+  },
+  "worksheets/pairwise_t_test.qmd": {
+    "pairwise_t_test.html": "5bd33bd2"
+  },
+  "worksheets/t-test_extension.qmd": {
+    "t-test_extension.html": "fb41bdd5"
   }
 }

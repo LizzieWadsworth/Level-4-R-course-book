@@ -1,0 +1,29 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Extension
+
+If you finish the tutorial, go back to the Worksheet 1 with the Penguins dataset.
+
+Is there anything in this dataset that would suit a t-test? Which tests would you use?
+
+Go through and see if you can find any significant differences between the three penguin species.
+
+::: {layout-ncol="3"}
+![Adelie Penguin](/images/adeliepenguin.jpg){group="my-gallery"}
+
+![Chinstrap Penguin](/images/chinstrap_penguin.jpg){group="my-gallery"}
+
+![Gentoo Penguin](/images/gentoo_penguin.avif){group="my-gallery"}
+:::

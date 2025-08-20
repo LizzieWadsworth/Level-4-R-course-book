@@ -1,0 +1,46 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Pairwise t test results
+
+Our ANOVA was significant - but now we need to know which pairs are significantly different.
+
+We can use `pairwise.t.test()` to do a t-test for all pairs of groups in our dataset.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+pairwise_t_test_result <- pairwise.t.test(Degrees_DataFrame$salary, Degrees_DataFrame$group, pool.sd = FALSE, p.adjust.method = "none")
+pairwise_t_test_result
+```
+
+We use the options:
+
+-   `pool.sd = FALSE` so that variance is calculated independantly for each group
+-   `p.adjust.method = "none"` as this function by default uses a [Holm-Bonferroni correction](https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method) to minimize false positives which is beyond the scope of this course.
+
+## Visualise the results
+
+We can create a boxplot and plot all of our pairwise comparison p values.
+
+To do this, first we can create a list containing all the pairs we want to plot the p-value for. Remember you only need to do each pair once - if you have `c("Economics", "History")` you don't also need `c("History", "Economics")`.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+my_comparisons <- list( c("Economics", "History"), c("History", "Medicine"), c("Medicine", "Economics") )
+ggplot(Degrees_DataFrame, aes(x=group, y=salary, fill=group)) +
+  geom_boxplot() + 
+  stat_compare_means(method = "t.test", comparisons = my_comparisons)
+```

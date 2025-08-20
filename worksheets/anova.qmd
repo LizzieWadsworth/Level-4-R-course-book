@@ -1,0 +1,59 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Anova
+
+Our final example is using our one-way ANOVA. We're using the example of salaries and degrees - note that there's not the same number of values for each group.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+Economics <- c(42, 53, 49, 53, 43, 44, 45, 52, 54)
+Medicine <- c(69, 54, 58, 64, 64, 55, 56)
+History <- c(35, 40, 53, 42, 50, 39, 55, 39, 40)
+```
+
+### Create a dataframe
+
+To do an ANOVA, we need to organise our data into a dataframe.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+Degrees_DataFrame <- data.frame(
+  group = rep(c("Economics", "Medicine", "History"), c(9,7,9)),
+  salary = c(Economics, Medicine, History)
+)
+```
+
+::: {.callout-note collapse="false" title="Question"}
+Why have we used `c(9,7,9)` here? What if you change these numbers around?
+
+If you make a change, have a look at your Degrees_DataFrame values and see if they still match our original data.
+:::
+
+### Calculate the ANOVA p-value
+
+We can calculate the ANOVA p-value by using the `aov()` function.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+anova_one_way_result <- aov(salary ~ group, data = Degrees_DataFrame) # run the ANOVA test
+summary(anova_one_way_result) # summarise and print the result
+```
+
+We use `salary ~ group` to assess salary as a function of the degree group.
+
+We always put the response variable before the `~` and the explanation variable after. Another way of reading `salary ~ group` would be *"Salary **depends on** degree group"*

@@ -502,5 +502,281 @@
       "Correlations",
       "Import Heart Dataset"
     ]
+  },
+  {
+    "objectID": "worksheets/sleep_introduction.html",
+    "href": "worksheets/sleep_introduction.html",
+    "title": "Sleep Quality Dataset Introduction",
+    "section": "",
+    "text": "Sleep Quality Dataset Introduction\nFor this worksheet, you will need the Sleep_health_and_lifestyle_dataset.csv file from the Canvas page.\nThis dataset contains values for sleep quality and lifestyle factors. This is artificial data generated for illustrative purposes\nThis dataset contains the following information:\n\nSleep data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nAge\nAge of the individual\n\n\nSex\nSex of the individual (Male/Female)\n\n\nOccupation\nOccupation of the individual\n\n\nsleepduration\nAverage length of sleep (hours)\n\n\nsleepquality\nAverage sleep quality score\n\n\nactivitylevel\nValue assigned based on average level of physical activities (minutes/day)\n\n\nstress\nSelf-rated score of how stressed the individual feels\n\n\nheartrate\nResting heartrate of individual (beats per minute)\n\n\nsteps\nAverage number of steps taken per day\n\n\n\n\n\n\n© [Rudzhan] / Adobe Stock",
+    "crumbs": [
+      "Learn",
+      "Sleep task",
+      "Sleep Quality Dataset Introduction"
+    ]
+  },
+  {
+    "objectID": "worksheets/sleep_extension.html",
+    "href": "worksheets/sleep_extension.html",
+    "title": "Extension task",
+    "section": "",
+    "text": "Extension task\nCorrelation doesn’t always equal causation - and Spurious correlations has many examples to prove this.\nIf you go to the website and click on a correlation, you should get a table with the raw data.\nYou can then: 1. Copy and paste this table into excel 2. Save your excel spreadsheet as a CSV file 3. Read the CSV in R 4. Plot and test the correlations\n\n\n\n\n\n\nNote\n\n\n\n\n\nIt may not be as straightforward as you’d think to copy the data from the table and get this into R.\nYou might find that R doesn’t like spaces in column or row titles - or that your columns and rows are the wrong way around.\n\n\n\n\n\n\nSpurious correlatons",
+    "crumbs": [
+      "Learn",
+      "Sleep task",
+      "Extension task"
+    ]
+  },
+  {
+    "objectID": "worksheets/sleep_task.html",
+    "href": "worksheets/sleep_task.html",
+    "title": "Sleep task",
+    "section": "",
+    "text": "Sleep task\nThe task for this worksheet is to determine if there are any correlations in the dataset and what they are.\nYou should plot any correlations you find on a graph, such as the one below:\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA graph showing the correlation between sleep duration and resting heart rate, separated by sex.\n\n\n\n\n\n\n\n\n\n\n\n\nThere are lots of different variables in this dataset so do explore - what can you find out?",
+    "crumbs": [
+      "Learn",
+      "Sleep task",
+      "Sleep task"
+    ]
+  },
+  {
+    "objectID": "worksheets/unpaired_t_test.html",
+    "href": "worksheets/unpaired_t_test.html",
+    "title": "Unpaired t-test",
+    "section": "",
+    "text": "We’re going to be using the same examples as in Statistics lecture 3 for each of our tests.\n\n\nThe first thing we need to do is copy our data in R. As these are fairly small datasets, we can manually type in our data using the c() function to create a vector of values.\n\n\n\n\n\n\n\n\n\n\n\nWe can use the summary() function to see our mean and interquartile range for each set of values.\n\n\n\n\n\n\n\n\n\n\n\nUsing the function t.test(), we can add our two sets of values as arguments and calculate the p-value. This should match the result from excel.\n\n\n\n\n\n\n\n\nThat’s our t-test done already!\nWe didn’t have to use any options here as the default test is two tailed, unpaired, and assuming the variance is not equal. If you want to change any of the options, you can try:\n\nalternative for two tailed or one tailed\n\n“two.sided” for a two tailed test,\n“greater” for one tailed where the mean of the first variable is greater than the mean of the second variable\n“less” for one tailed where the mean of the first variable is greater than the mean of the second variable\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, alternative=\"greater\")\n\npaired for paired or unpaired\n\nTRUE for paired\nFALSE for unpaired\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, paired = TRUE)\n\nmu mean, for comparison for a one-tailed test\n\n\n\n\nWe can use the following code to create a dataframe with the above vectors.\nWe need a column that contains the correct group - “NonDiabetic” or “Diabetic” for each value. We can use the rep() function for this which replicates values.\n\nc(\"NonDiabetic\", \"Diabetic\") is a list of the items we want to repeat\neach = 16 gives us a list of 16 of each. We could also put c(16,16).\n\n\n\n\n\n\n\n\n\n\n\n\nWe can now create a boxplot in the same way we did in Tutorial 1. We can also add a t-test result using the function stat_compare_means() from the ggpubr package.\n\n\n\n\n\n\n\n\n\n\n\nWe’ve just turned our two lists into one long dataframe, but what if we want to do the opposite?\nIf you want to extract the values for a particular group, we can use the following structure:\n\n\n\n\n\n\n\n\nIf you look in your environment, DiabeticExtracted should be identical to your Diabetic values.\nUsing this, if you are importing data from excel you can extract the values into groups to prepare for your t-test.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Unpaired t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/unpaired_t_test.html#add-the-data-into-r",
+    "href": "worksheets/unpaired_t_test.html#add-the-data-into-r",
+    "title": "Unpaired t-test",
+    "section": "",
+    "text": "The first thing we need to do is copy our data in R. As these are fairly small datasets, we can manually type in our data using the c() function to create a vector of values.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Unpaired t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/unpaired_t_test.html#summarise-the-data",
+    "href": "worksheets/unpaired_t_test.html#summarise-the-data",
+    "title": "Unpaired t-test",
+    "section": "",
+    "text": "We can use the summary() function to see our mean and interquartile range for each set of values.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Unpaired t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/unpaired_t_test.html#calculate-the-unpaired-t-test-p-value",
+    "href": "worksheets/unpaired_t_test.html#calculate-the-unpaired-t-test-p-value",
+    "title": "Unpaired t-test",
+    "section": "",
+    "text": "Using the function t.test(), we can add our two sets of values as arguments and calculate the p-value. This should match the result from excel.\n\n\n\n\n\n\n\n\nThat’s our t-test done already!\nWe didn’t have to use any options here as the default test is two tailed, unpaired, and assuming the variance is not equal. If you want to change any of the options, you can try:\n\nalternative for two tailed or one tailed\n\n“two.sided” for a two tailed test,\n“greater” for one tailed where the mean of the first variable is greater than the mean of the second variable\n“less” for one tailed where the mean of the first variable is greater than the mean of the second variable\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, alternative=\"greater\")\n\npaired for paired or unpaired\n\nTRUE for paired\nFALSE for unpaired\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, paired = TRUE)\n\nmu mean, for comparison for a one-tailed test",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Unpaired t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/unpaired_t_test.html#create-a-dataframe-with-the-data",
+    "href": "worksheets/unpaired_t_test.html#create-a-dataframe-with-the-data",
+    "title": "Unpaired t-test",
+    "section": "",
+    "text": "We can use the following code to create a dataframe with the above vectors.\nWe need a column that contains the correct group - “NonDiabetic” or “Diabetic” for each value. We can use the rep() function for this which replicates values.\n\nc(\"NonDiabetic\", \"Diabetic\") is a list of the items we want to repeat\neach = 16 gives us a list of 16 of each. We could also put c(16,16).",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Unpaired t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/unpaired_t_test.html#visualise-the-results-as-a-boxplot",
+    "href": "worksheets/unpaired_t_test.html#visualise-the-results-as-a-boxplot",
+    "title": "Unpaired t-test",
+    "section": "",
+    "text": "We can now create a boxplot in the same way we did in Tutorial 1. We can also add a t-test result using the function stat_compare_means() from the ggpubr package.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Unpaired t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/unpaired_t_test.html#dataframe-to-a-list-of-values",
+    "href": "worksheets/unpaired_t_test.html#dataframe-to-a-list-of-values",
+    "title": "Unpaired t-test",
+    "section": "",
+    "text": "We’ve just turned our two lists into one long dataframe, but what if we want to do the opposite?\nIf you want to extract the values for a particular group, we can use the following structure:\n\n\n\n\n\n\n\n\nIf you look in your environment, DiabeticExtracted should be identical to your Diabetic values.\nUsing this, if you are importing data from excel you can extract the values into groups to prepare for your t-test.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Unpaired t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/paired_t_test.html",
+    "href": "worksheets/paired_t_test.html",
+    "title": "Paired t-test",
+    "section": "",
+    "text": "Our paired t-test is very similar. First, let’s get copy data from our Basketball players example.\n\n\n\n\n\n\n\n\n\n\nWe can use the summary() function to see our mean and interquartile range for each set of values.\n\n\n\n\n\n\n\n\n\n\n\nUsing the function t.test(), we can add our two sets of values as arguments and calculate the p-value. This should match the result from excel.\nWe need to specify the option paired = TRUE for it to be a paired t-test.\n\n\n\n\n\n\n\n\n\n\n\nWe can use the following code to create a dataframe with the above vectors.\nFill in the gaps, and if you’re stuck have a look at how we did this for the glycemia dataset.\n\n\n\n\n\n\n\n\n\n\n\nWe can do a boxplot and add our p-value in the same way as for the unpaired test by adding the option paired=TRUE.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Paired t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/paired_t_test.html#summarise-the-data",
+    "href": "worksheets/paired_t_test.html#summarise-the-data",
+    "title": "Paired t-test",
+    "section": "",
+    "text": "We can use the summary() function to see our mean and interquartile range for each set of values.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Paired t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/paired_t_test.html#calculate-the-paired-t-test-p-value",
+    "href": "worksheets/paired_t_test.html#calculate-the-paired-t-test-p-value",
+    "title": "Paired t-test",
+    "section": "",
+    "text": "Using the function t.test(), we can add our two sets of values as arguments and calculate the p-value. This should match the result from excel.\nWe need to specify the option paired = TRUE for it to be a paired t-test.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Paired t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/paired_t_test.html#create-a-dataframe-with-the-data",
+    "href": "worksheets/paired_t_test.html#create-a-dataframe-with-the-data",
+    "title": "Paired t-test",
+    "section": "",
+    "text": "We can use the following code to create a dataframe with the above vectors.\nFill in the gaps, and if you’re stuck have a look at how we did this for the glycemia dataset.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Paired t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/paired_t_test.html#visualise-the-results-as-a-boxplot",
+    "href": "worksheets/paired_t_test.html#visualise-the-results-as-a-boxplot",
+    "title": "Paired t-test",
+    "section": "",
+    "text": "We can do a boxplot and add our p-value in the same way as for the unpaired test by adding the option paired=TRUE.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Paired t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/one_tailed_t_test.html",
+    "href": "worksheets/one_tailed_t_test.html",
+    "title": "One-tailed t-test",
+    "section": "",
+    "text": "We can follow the same process for the one-tailed t-test. First, we need our list of grades from our example.\n\n\n\n\n\n\n\n\n\n\nWe can use the summary() function to see our mean and interquartile range for each set of values.\n\n\n\n\n\n\n\n\n\n\n\nUsing the function t.test(), we can add our one set of values and the number we want to compare it to. In this example, we’re looking to see if our mean value is greater than 40.\nWe need to specify the option alternative = 'greater' to do a one-tailed test for if the mean of our Grades are significantly above our value for mu, which we have set to 40 (a pass).\n\n\n\n\n\n\n\n\n\n\n\nBecause we only have one group of data values, we can create our dataframe and draw our boxplot very simply.\n\n\n\n\n\n\n\n\nWe don’t need to annotate our p-value on here - it wouldn’t make much sense to do so as our p-value was specifically assessing if the mean was higher than 40 which is hard to represent visually.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "One-tailed t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/one_tailed_t_test.html#summarise-the-data",
+    "href": "worksheets/one_tailed_t_test.html#summarise-the-data",
+    "title": "One-tailed t-test",
+    "section": "",
+    "text": "We can use the summary() function to see our mean and interquartile range for each set of values.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "One-tailed t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/one_tailed_t_test.html#calculate-the-one-tailed-t-test-p-value",
+    "href": "worksheets/one_tailed_t_test.html#calculate-the-one-tailed-t-test-p-value",
+    "title": "One-tailed t-test",
+    "section": "",
+    "text": "Using the function t.test(), we can add our one set of values and the number we want to compare it to. In this example, we’re looking to see if our mean value is greater than 40.\nWe need to specify the option alternative = 'greater' to do a one-tailed test for if the mean of our Grades are significantly above our value for mu, which we have set to 40 (a pass).",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "One-tailed t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/one_tailed_t_test.html#create-a-dataframe-and-boxplot",
+    "href": "worksheets/one_tailed_t_test.html#create-a-dataframe-and-boxplot",
+    "title": "One-tailed t-test",
+    "section": "",
+    "text": "Because we only have one group of data values, we can create our dataframe and draw our boxplot very simply.\n\n\n\n\n\n\n\n\nWe don’t need to annotate our p-value on here - it wouldn’t make much sense to do so as our p-value was specifically assessing if the mean was higher than 40 which is hard to represent visually.",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "One-tailed t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/anova.html",
+    "href": "worksheets/anova.html",
+    "title": "Anova",
+    "section": "",
+    "text": "Anova\nOur final example is using our one-way ANOVA. We’re using the example of salaries and degrees - note that there’s not the same number of values for each group.\n\n\n\n\n\n\n\n\n\nCreate a dataframe\nTo do an ANOVA, we need to organise our data into a dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\n\n\nWhy have we used c(9,7,9) here? What if you change these numbers around?\nIf you make a change, have a look at your Degrees_DataFrame values and see if they still match our original data.\n\n\n\n\n\nCalculate the ANOVA p-value\nWe can calculate the ANOVA p-value by using the aov() function.\n\n\n\n\n\n\n\n\nWe use salary ~ group to assess salary as a function of the degree group.\nWe always put the response variable before the ~ and the explanation variable after. Another way of reading salary ~ group would be “Salary depends on degree group”",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Anova"
+    ]
+  },
+  {
+    "objectID": "worksheets/pairwise_t_test.html",
+    "href": "worksheets/pairwise_t_test.html",
+    "title": "Pairwise t test results",
+    "section": "",
+    "text": "Our ANOVA was significant - but now we need to know which pairs are significantly different.\nWe can use pairwise.t.test() to do a t-test for all pairs of groups in our dataset.\n\n\n\n\n\n\n\n\nWe use the options:\n\npool.sd = FALSE so that variance is calculated independantly for each group\np.adjust.method = \"none\" as this function by default uses a Holm-Bonferroni correction to minimize false positives which is beyond the scope of this course.\n\n\n\nWe can create a boxplot and plot all of our pairwise comparison p values.\nTo do this, first we can create a list containing all the pairs we want to plot the p-value for. Remember you only need to do each pair once - if you have c(\"Economics\", \"History\") you don’t also need c(\"History\", \"Economics\").",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Pairwise t test results"
+    ]
+  },
+  {
+    "objectID": "worksheets/pairwise_t_test.html#visualise-the-results",
+    "href": "worksheets/pairwise_t_test.html#visualise-the-results",
+    "title": "Pairwise t test results",
+    "section": "",
+    "text": "We can create a boxplot and plot all of our pairwise comparison p values.\nTo do this, first we can create a list containing all the pairs we want to plot the p-value for. Remember you only need to do each pair once - if you have c(\"Economics\", \"History\") you don’t also need c(\"History\", \"Economics\").",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Pairwise t test results"
+    ]
+  },
+  {
+    "objectID": "worksheets/t-test_extension.html",
+    "href": "worksheets/t-test_extension.html",
+    "title": "Extension",
+    "section": "",
+    "text": "Extension\nIf you finish the tutorial, go back to the Worksheet 1 with the Penguins dataset.\nIs there anything in this dataset that would suit a t-test? Which tests would you use?\nGo through and see if you can find any significant differences between the three penguin species.\n\n\n\n\n\n\nAdelie Penguin\n\n\n\n\n\n\n\nChinstrap Penguin\n\n\n\n\n\n\n\nGentoo Penguin",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Extension"
+    ]
   }
 ]
