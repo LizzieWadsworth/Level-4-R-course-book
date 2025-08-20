@@ -1,0 +1,33 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Pearson's coefficient: using cor.test()
+
+Our second example uses `cor.test()`. This gives us the R value - how strong is the correlation?
+
+```{webr}
+#| context: interactive
+#| autorun: true
+correlation_stats <- cor.test(heart_df$age, heart_df$restbp, method = 'pearson')
+
+correlation_stats$p.value
+correlation_stats$estimate
+```
+
+As you can see that works very similarly to our first example, except for the last two lines.
+
+`cor.test()` gives us a list of 9 values, there are only two we are interested in:
+
+-   `p.value` is our probability p value
+-   `estimate` is our correlation coefficient (R value, same as above)

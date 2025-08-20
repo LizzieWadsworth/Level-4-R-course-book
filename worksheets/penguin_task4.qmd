@@ -1,0 +1,39 @@
+---
+format: html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Task 4: Visualise distributions of FlipperLength and BodyMass
+
+Next, use a histogram to visualise the distributions of sizes. You may want to use the `fill =` option to separate by one of the categories.
+
+Make histograms of:
+
+1.  FlipperLength, separated by species
+2.  BodyMass, separated by species
+
+::: {.callout-tip collapse="false" title="Example of generated graph"}
+A histogram of of FlipperLength separated by species and Sex should look like this:
+
+```{r}
+#| echo: false
+library(ggplot2)
+penguin_df <- read.csv("../Datasets/penguins.csv") 
+ggplot(penguin_df, aes(x = FlipperLength, fill = CommonName)) +
+  geom_histogram(binwidth=2.5)
+```
+:::
+
+This is the end of the penguin task. Well done for getting this far! Just like a baby penguin learning how to swim and hunt for itself, learning how to program is a skill that takes time, practice and a lot of trial and error. 
+
+![GIF of a baby penguin](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXZqZzVxb3J5YW5pNjNobDdwdnhzMXgycnh1N2djcXh3aG1pdjk0biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dg/SVZ7jzFPStbMsnjDWA/giphy.gif)
+

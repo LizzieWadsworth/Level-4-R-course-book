@@ -1,0 +1,40 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Import Heart Dataset
+
+The dataset we are going to use is `heart.csv` which you can find on the Canvas page.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+heart_df <- read.csv("heart.csv") # Upload the dataset into R
+head(heart_df) # Show the first 6 rows
+```
+
+This dataset uses various metrics relating to heart health.
+
+| column       | data                          |
+|--------------|-------------------------------|
+| age          | age of patient in years       |
+| sex          | Gender of the patient (F/M)   |
+| restbp       | Resting blood pressure (mmHg) |
+| chol         | Serum cholesterol (mg/dl)     |
+| maxheartrate | Maximum heart rate achieved   |
+
+: heart.csv dataset {.striped .hover}
+
+::: {.callout-note title="Question" collapse="false"}
+Which of these columns contain **categorical** data and which contain **continuous** data?
+:::

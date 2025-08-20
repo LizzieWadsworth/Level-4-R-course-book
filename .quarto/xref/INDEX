@@ -87,5 +87,47 @@
   },
   "worksheets/Discrete_continuous_scale.qmd": {
     "Discrete_continuous_scale.html": "e5a4a9d0"
+  },
+  "worksheets/penguin_task1.qmd": {
+    "penguin_task1.html": "113e92f9"
+  },
+  "worksheets/penguin_introduction.qmd": {
+    "penguin_introduction.html": "51e46971"
+  },
+  "worksheets/penguin_task2.qmd": {
+    "penguin_task2.html": "90f2e76a"
+  },
+  "worksheets/penguin_task3.qmd": {
+    "penguin_task3.html": "64d05d89"
+  },
+  "worksheets/penguin_task4.qmd": {
+    "penguin_task4.html": "c42f4922"
+  },
+  "worksheets/penguin_extension.qmd": {
+    "penguin_extension.html": "760adf7f"
+  },
+  "worksheets/heart_data.qmd": {
+    "heart_data.html": "264af146"
+  },
+  "worksheets/age_vs_blood_pressure.qmd": {
+    "age_vs_blood_pressure.html": "20042c58"
+  },
+  "worksheets/using_cor_function.qmd": {
+    "using_cor_function.html": "8ea53e27"
+  },
+  "worksheets/using_cor.test_function.qmd": {
+    "using_cor.test_function.html": "a79b8bb5"
+  },
+  "worksheets/add_pvalue_to_graph.qmd": {
+    "add_pvalue_to_graph.html": "41a8d9db"
+  },
+  "worksheets/add_regression_line.qmd": {
+    "add_regression_line.html": "46af3fe3"
+  },
+  "worksheets/separate_by_sex.qmd": {
+    "separate_by_sex.html": "90b2b6c2"
+  },
+  "worksheets/correlelogram.qmd": {
+    "correlelogram.html": "336ac70c"
   }
 }

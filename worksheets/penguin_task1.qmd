@@ -1,0 +1,22 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Task 1: Read the data
+
+To start off, you will want to:
+
+1.  Read the csv file into R as a dataframe
+2.  Use `summary` to get an overview of the data
+3.  Calculate the mean and standard deviation of the numerical columns
+

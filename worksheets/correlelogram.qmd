@@ -1,0 +1,58 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Correlelograms
+
+Our dataset contained more than just age and blood pressure - it would be useful to see if there are any correlations between e.g. blood pressure and maximum heart rate, or cholesterol and age.
+
+We can also use R to do an all-against-all correlation analysis, so without doing all of the above we can get an idea of if there are any correlations.
+
+This uses the corrplot library. You might need to run `install.packages('corrplot')` before you can run this code.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+library(corrplot)
+heart_df_only_numerical <- heart_df[,-2] # creates a new dataframe which doesn't include the "sex" column. 
+heart_corrplot_matrix <- cor(heart_df_only_numerical) # calculates all-against-all correlation matrix
+corrplot(heart_corrplot_matrix) # makes a correlelogram based on the calculations
+```
+
+Let's break that down:
+
+-   `library(corrplot)` is loading the corrplot package, which has the functions we need
+
+-   `heart_df_only_numerical <- heart_df[,-2]`
+
+    -   Our sex in this dataframe is categorical (M or F) so we need to remove it
+
+    -   `heart_df[,-2]` is selecting the whole of the `heart_df` dataframe *except column 2*
+
+-   `heart_corrplot_matrix <- cor(heart_df_only_numerical)`
+
+    -   This uses the `cor()` function to calculate all-against-all correlations
+
+-   `corrplot(heart_corrplot_matrix`
+
+    -   This takes our all-against-all correlations and plots a correlelogram
+
+::: {.callout-tip title="Try:" collapse="false"}
+`Corrplot` also has different settings you can use.
+
+To plot the strength of the correlation (R value) numerically, try: `corrplot(heart_corrplot_matrix, method = "number")`
+
+And if you only want to show the correlations that are statistically significant with a 5% chance of error:
+
+`corrplot(heart_corrplot_matrix, sig.level = 0.05)`
+:::

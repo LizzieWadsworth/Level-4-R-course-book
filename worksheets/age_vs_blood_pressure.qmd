@@ -1,0 +1,26 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Plotting age verses resting blood pressure
+
+We could speculate that resting blood pressure may increase with age. To plot this, we can use the `ggplot` function `geom_point`.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+library(ggplot2)
+
+ggplot(heart_df, aes(x = age, y = restbp)) +
+  geom_point()
+```

@@ -1,0 +1,36 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Pearson's coefficient: using cor()
+
+We can use two R functions to calculate our R and p values using a Pearson's coefficient.
+
+Our first example uses `cor()`. This gives us the R value - how strong is the correlation?
+
+```{webr}
+#| context: interactive
+#| autorun: true
+correlation_R_value <- cor(heart_df$age, heart_df$restbp, method = 'pearson')
+correlation_R_value
+```
+
+Let's break that down:
+
+-   `cor(heart_df$age, heart_df$restbp, method = 'pearson')`
+    -   `cor()` : This is our *function* name. This is a built in function.
+    -   `heart_df$age` : This is going to our dataframe called heart_df and extracting the column of values under the column name "age"
+    -   `heart_df$restbp` : This is going to our dataframe called heart_df and extracting the column of values under the column name "restbp"
+-   `method = 'pearson'`
+    -   This is a **parameter**, which is an option to choose how we want the function to work.
+    -   We can set this to either `'pearson'` or `'spearman'` depending on which test we want to use.

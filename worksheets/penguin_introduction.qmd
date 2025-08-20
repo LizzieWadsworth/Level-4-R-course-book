@@ -1,0 +1,45 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Penguins dataset introduction
+
+For this set of tasks, you will need the `penguins.csv` file from the Canvas page.
+
+This is data from a study which looked at penguin couples. Once a penguin pair had laid an egg, both parents were captured and measurements were taken. They were then tracked to see if they would go on to have a second egg or "Full Clutch".
+
+This dataset contains the following information:
+
+| Column        | Data                                            |
+|---------------|-------------------------------------------------|
+| SampleNumber  | Unique number for every penguin                 |
+| LatinName     | Species name, full Latin name                   |
+| CommonName    | Common name for the penguin species             |
+| FullClutch    | Whether or not the penguin couple laid two eggs |
+| FlipperLength | Length of the penguin's flipper in millimeters  |
+| BodyMass      | Mass of the penguin in grams                    |
+| Sex           | Whether the penguin is male or female           |
+
+: Penguins data columns and descriptions {.striped .hover}
+
+And is looking at penguins of the following three species:
+
+::: {layout-ncol="3"}
+![Adelie Penguin](/images/adeliepenguin.jpg){group="my-gallery"}
+
+![Chinstrap Penguin](/images/chinstrap_penguin.jpg){group="my-gallery"}
+
+![Gentoo Penguin](/images/gentoo_penguin.avif){group="my-gallery"}
+:::
+
+To process this data using R, using the techniques you've covered so far, this has been split into 5 small tasks. 

@@ -1,0 +1,36 @@
+---
+format: html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Task 3: Split boxplots by multiple categories
+
+In the last example we used the same column of data for the x axis and the fill colour. If we change one of these, we can visualise the data further.
+
+Make boxplots of:
+
+1.  FlipperLength, separated by species and Sex
+2.  FlipperLength, separated by species and FullClutch
+3.  BodyMass, separated by species and Sex
+4.  BodyMass, separated by species and FullClutch
+
+::: {.callout-tip collapse="false" title="Example of generated graph"}
+A boxplot of FlipperLength separated by species and Sex should look like this:
+
+```{r}
+#| echo: false
+library(ggplot2)
+penguin_df <- read.csv("../Datasets/penguins.csv") 
+ggplot(penguin_df, aes(x = CommonName, y = FlipperLength, fill = Sex)) +
+  geom_boxplot()
+```
+:::

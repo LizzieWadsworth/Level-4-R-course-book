@@ -1,0 +1,4 @@
+﻿HAGRID,Kingdom,Phylum,Class,Order,Family,Genus,Species,Common name,Female maturity (days),Male maturity (days),Gestation/Incubation (days),Weaning (days),Litter/Clutch size,Litters/Clutches per year,Inter-litter/Interbirth interval,Birth weight (g),Weaning weight (g),Adult weight (g),Growth rate (1/days),Maximum longevity (yrs),Source,Specimen origin,Sample size,Data quality,IMR (per yr),MRDT (yrs),Metabolic rate (W),Body mass (g),Temperature (K),References
+183,Animalia,Chordata,Amphibia,Caudata,Proteidae,Proteus,anguinus,Olm,4124,,133,,35,,4562,,,17,,102,934,wild,medium,acceptable,,999,,,,"485,749,934"
+3695,Animalia,Chordata,Reptilia,Testudines,Emydidae,Emydoidea,blandingii,Blanding's turtle,6500,4380,,,8,,,,,1162,,77,7,wild,medium,acceptable,,999,,,,"744,052,811,431,308"
+4502,Animalia,Chordata,Teleostei,Scorpaeniformes,Scorpaenidae,Sebastes,aleutianus,Rougheye rockfish,,,,,,,,,,495,,205,22,wild,medium,acceptable,0.05,999,,,,"2,22,454,472"

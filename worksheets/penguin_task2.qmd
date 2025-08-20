@@ -1,0 +1,42 @@
+---
+format: html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Task 2: Simple boxplots
+
+Now you have read the data into R, you should be able to use `ggplot2` to draw boxplots.
+
+Make boxplots of:
+
+1.  FlipperLength, separated by species
+2.  BodyMass, separated by species
+
+::: {.callout-note collapse="true" title="Hint 1"}
+Which value do you want on the x-axis? What about the y-axis?
+:::
+
+::: {.callout-note collapse="true" title="Hint 2"}
+To colour by species, try using the `fill =` option in `aes()`.
+:::
+
+::: {.callout-tip collapse="false" title="Example of generated graph"}
+A boxplot of FlipperLength separated by species should look like this:
+
+```{r}
+#| echo: false
+library(ggplot2)
+penguin_df <- read.csv("../Datasets/penguins.csv") 
+ggplot(penguin_df, aes(x = CommonName, y = FlipperLength, fill = CommonName)) +
+  geom_boxplot()
+```
+:::

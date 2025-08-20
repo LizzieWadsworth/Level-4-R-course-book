@@ -1,0 +1,28 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Separate by categorical group (sex)
+
+If we add a color based on a categorical variable, this will then calculate the regression separately for each group.
+
+See below, where we have assigned each point a colour based on sex:
+
+```{webr}
+#| context: interactive
+#| autorun: true
+ggplot(heart_df, aes(x = age, y = restbp, color = sex)) +
+  geom_point() +
+  stat_cor(method = 'pearson') +
+  geom_smooth(method='lm', formula= y~x)
+```

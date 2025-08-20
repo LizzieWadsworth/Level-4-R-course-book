@@ -310,5 +310,197 @@
       "R from Excel: Locust Serotonin levels",
       "Discrete verses continuous scale"
     ]
+  },
+  {
+    "objectID": "worksheets/penguin_task1.html",
+    "href": "worksheets/penguin_task1.html",
+    "title": "Task 1: Read the data",
+    "section": "",
+    "text": "Task 1: Read the data\nTo start off, you will want to:\n\nRead the csv file into R as a dataframe\nUse summary to get an overview of the data\nCalculate the mean and standard deviation of the numerical columns",
+    "crumbs": [
+      "Learn",
+      "Penguin task",
+      "Task 1: Read the data"
+    ]
+  },
+  {
+    "objectID": "worksheets/penguin_introduction.html",
+    "href": "worksheets/penguin_introduction.html",
+    "title": "Penguins dataset introduction",
+    "section": "",
+    "text": "Penguins dataset introduction\nFor this set of tasks, you will need the penguins.csv file from the Canvas page.\nThis is data from a study which looked at penguin couples. Once a penguin pair had laid an egg, both parents were captured and measurements were taken. They were then tracked to see if they would go on to have a second egg or “Full Clutch”.\nThis dataset contains the following information:\n\nPenguins data columns and descriptions\n\n\nColumn\nData\n\n\n\n\nSampleNumber\nUnique number for every penguin\n\n\nLatinName\nSpecies name, full Latin name\n\n\nCommonName\nCommon name for the penguin species\n\n\nFullClutch\nWhether or not the penguin couple laid two eggs\n\n\nFlipperLength\nLength of the penguin’s flipper in millimeters\n\n\nBodyMass\nMass of the penguin in grams\n\n\nSex\nWhether the penguin is male or female\n\n\n\nAnd is looking at penguins of the following three species:\n\n\n\n\n\n\nAdelie Penguin\n\n\n\n\n\n\n\nChinstrap Penguin\n\n\n\n\n\n\n\nGentoo Penguin\n\n\n\n\n\nTo process this data using R, using the techniques you’ve covered so far, this has been split into 5 small tasks.",
+    "crumbs": [
+      "Learn",
+      "Penguin task",
+      "Penguins dataset introduction"
+    ]
+  },
+  {
+    "objectID": "worksheets/penguin_task2.html",
+    "href": "worksheets/penguin_task2.html",
+    "title": "Task 2: Simple boxplots",
+    "section": "",
+    "text": "Task 2: Simple boxplots\nNow you have read the data into R, you should be able to use ggplot2 to draw boxplots.\nMake boxplots of:\n\nFlipperLength, separated by species\nBodyMass, separated by species\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nWhich value do you want on the x-axis? What about the y-axis?\n\n\n\n\n\n\n\n\n\nHint 2\n\n\n\n\n\nTo colour by species, try using the fill = option in aes().\n\n\n\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA boxplot of FlipperLength separated by species should look like this:",
+    "crumbs": [
+      "Learn",
+      "Penguin task",
+      "Task 2: Simple boxplots"
+    ]
+  },
+  {
+    "objectID": "worksheets/penguin_task3.html",
+    "href": "worksheets/penguin_task3.html",
+    "title": "Task 3: Split boxplots by multiple categories",
+    "section": "",
+    "text": "Task 3: Split boxplots by multiple categories\nIn the last example we used the same column of data for the x axis and the fill colour. If we change one of these, we can visualise the data further.\nMake boxplots of:\n\nFlipperLength, separated by species and Sex\nFlipperLength, separated by species and FullClutch\nBodyMass, separated by species and Sex\nBodyMass, separated by species and FullClutch\n\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA boxplot of FlipperLength separated by species and Sex should look like this:",
+    "crumbs": [
+      "Learn",
+      "Penguin task",
+      "Task 3: Split boxplots by multiple categories"
+    ]
+  },
+  {
+    "objectID": "worksheets/penguin_task4.html",
+    "href": "worksheets/penguin_task4.html",
+    "title": "Task 4: Visualise distributions of FlipperLength and BodyMass",
+    "section": "",
+    "text": "Task 4: Visualise distributions of FlipperLength and BodyMass\nNext, use a histogram to visualise the distributions of sizes. You may want to use the fill = option to separate by one of the categories.\nMake histograms of:\n\nFlipperLength, separated by species\nBodyMass, separated by species\n\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA histogram of of FlipperLength separated by species and Sex should look like this:\n\n\n\n\n\n\n\n\n\n\n\n\nThis is the end of the penguin task. Well done for getting this far! Just like a baby penguin learning how to swim and hunt for itself, learning how to program is a skill that takes time, practice and a lot of trial and error.\n\n\n\nGIF of a baby penguin",
+    "crumbs": [
+      "Learn",
+      "Penguin task",
+      "Task 4: Visualise distributions of FlipperLength and BodyMass"
+    ]
+  },
+  {
+    "objectID": "worksheets/penguin_extension.html",
+    "href": "worksheets/penguin_extension.html",
+    "title": "Extension 1: Use filter to plot results for individual species",
+    "section": "",
+    "text": "These next two activities are optional; they are slightly more advanced, so are there to challenge you if you’re comfortable with Tasks 1-4.\n\nExtension 1: Use filter to plot results for individual species\n\nUsing the filter() function, extract the values of just one species of penguin and save these in a new dataframe.\nRepeat as in Task 4, but separate the distributions by Sex or FullClutch\n\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA histogram of of FlipperLength separated by species and Sex should look like this:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtension 2: Larger penguin dataset\nIf you finish all of the above and would like to challenge your skills, download the Penguins_extension.csv from the Canvas page.\nThis is the same dataset but with more columns:\n\nPenguins extension data columns and descriptions\n\n\nColumn\nData\n\n\n\n\nSampleNumber\nUnique number for every penguin\n\n\nLatinName\nSpecies name, full Latin name\n\n\nCommonName\nCommon name for the penguin species\n\n\nRegion\nRegion of Antartica the penguin is in\n\n\nIsland\nIsland of Antartica the penguin’s nest is in\n\n\nFullClutch\nWhether or not the penguin couple laid two eggs\n\n\nEggDate\nDate at which the first egg was laid\n\n\nCulmenLength\nLength of the penguin’s culmen in millimeters\n\n\nCulmenDepth\nDepth of the penguin’s culmen in millimeters\n\n\nFlipperLength\nLength of the penguin’s flipper in millimeters\n\n\nBodyMass\nMass of the penguin in grams\n\n\nSex\nWhether the penguin is male or female\n\n\n\n\n\n\n\n\n\nDealing with dates\n\n\n\n\n\nOne column of this dataset is dates. By default these will be treated as strings - as words with no set order.\nThis means that dates won’t be plotted in order from oldest to newest, which is not very useful.\nTo convert our dates into a “Date” class - to tell R that these are dates - we can use the following code:\n\npenguin_df$EggDate &lt;- as.Date(penguin_df$EggDate, format = \"%d/%m/%y\")\n\n\n\n\nAt this point, it’s up to you what you want to do - explore the data! What can you find out? Are there any patterns emerging?",
+    "crumbs": [
+      "Learn",
+      "Penguin task",
+      "Extension 1: Use filter to plot results for individual species"
+    ]
+  },
+  {
+    "objectID": "worksheets/age_vs_blood_pressure.html",
+    "href": "worksheets/age_vs_blood_pressure.html",
+    "title": "Plotting age verses resting blood pressure",
+    "section": "",
+    "text": "Plotting age verses resting blood pressure\nWe could speculate that resting blood pressure may increase with age. To plot this, we can use the ggplot function geom_point.",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Plotting age verses resting blood pressure"
+    ]
+  },
+  {
+    "objectID": "worksheets/using_cor_function.html",
+    "href": "worksheets/using_cor_function.html",
+    "title": "Pearson’s coefficient: using cor()",
+    "section": "",
+    "text": "Pearson’s coefficient: using cor()\nWe can use two R functions to calculate our R and p values using a Pearson’s coefficient.\nOur first example uses cor(). This gives us the R value - how strong is the correlation?\n\n\n\n\n\n\n\n\nLet’s break that down:\n\ncor(heart_df$age, heart_df$restbp, method = 'pearson')\n\ncor() : This is our function name. This is a built in function.\nheart_df$age : This is going to our dataframe called heart_df and extracting the column of values under the column name “age”\nheart_df$restbp : This is going to our dataframe called heart_df and extracting the column of values under the column name “restbp”\n\nmethod = 'pearson'\n\nThis is a parameter, which is an option to choose how we want the function to work.\nWe can set this to either 'pearson' or 'spearman' depending on which test we want to use.",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Pearson's coefficient: using cor()"
+    ]
+  },
+  {
+    "objectID": "worksheets/using_cor.test_function.html",
+    "href": "worksheets/using_cor.test_function.html",
+    "title": "Pearson’s coefficient: using cor.test()",
+    "section": "",
+    "text": "Pearson’s coefficient: using cor.test()\nOur second example uses cor.test(). This gives us the R value - how strong is the correlation?\n\n\n\n\n\n\n\n\nAs you can see that works very similarly to our first example, except for the last two lines.\ncor.test() gives us a list of 9 values, there are only two we are interested in:\n\np.value is our probability p value\nestimate is our correlation coefficient (R value, same as above)",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Pearson's coefficient: using cor.test()"
+    ]
+  },
+  {
+    "objectID": "worksheets/add_pvalue_to_graph.html",
+    "href": "worksheets/add_pvalue_to_graph.html",
+    "title": "Annotate the R and p values onto the scatter graph",
+    "section": "",
+    "text": "To annotate our R and p values onto a scatter graph, we can use the stat_cor function from the ggpubr package.\nIf you’ve not already installed it, make sure that first you run:\ninstall.packages('ggpubr')\n\n\n\n\n\n\n\n\nThe only parameter we used here for stat_cor was method = 'pearson' so that it would plot a pearson’s correlation.\n\n\n\n\n\n\nQuestion\n\n\n\n\n\nDo the R and p values annotated on this graph match the results from cor.test()?\n\n\n\n\n\nWe can use parameters label.x and label.y to add co-ordinates for where we want the R and p value annotations to go.\nTry it below:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you’d like the R and p value to each be on their own line, we can add label.sep = '\\n' which adds a \\n newline character\nWhat happens if you add label.sep = 'HELLO'?",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Annotate the R and p values onto the scatter graph"
+    ]
+  },
+  {
+    "objectID": "worksheets/add_pvalue_to_graph.html#moving-the-r-and-p-values",
+    "href": "worksheets/add_pvalue_to_graph.html#moving-the-r-and-p-values",
+    "title": "Annotate the R and p values onto the scatter graph",
+    "section": "",
+    "text": "We can use parameters label.x and label.y to add co-ordinates for where we want the R and p value annotations to go.\nTry it below:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you’d like the R and p value to each be on their own line, we can add label.sep = '\\n' which adds a \\n newline character\nWhat happens if you add label.sep = 'HELLO'?",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Annotate the R and p values onto the scatter graph"
+    ]
+  },
+  {
+    "objectID": "worksheets/add_pvalue_to_graph.html#add-a-regression-line",
+    "href": "worksheets/add_pvalue_to_graph.html#add-a-regression-line",
+    "title": "Annotate the R and p values onto the scatter graph",
+    "section": "",
+    "text": "We can also use the funtion geom_smooth to fit and plot a linear regression model (lm) to our graph.\n\n\n\n\n\n\n\n\nWe use formula= y~x to define y as the outcome variable and x as the predictor: older age (x axis, predictor) leads to higher resting blood pressure (y axis, predicted outcome.)",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Annotate the R and p values onto the scatter graph"
+    ]
+  },
+  {
+    "objectID": "worksheets/add_regression_line.html",
+    "href": "worksheets/add_regression_line.html",
+    "title": "Add a regression line",
+    "section": "",
+    "text": "Add a regression line\nWe can also use the funtion geom_smooth to fit and plot a linear regression model (lm) to our graph.\n\n\n\n\n\n\n\n\nWe use formula= y~x to define y as the outcome variable and x as the predictor: older age (x axis, predictor) leads to higher resting blood pressure (y axis, predicted outcome.)\nRemember; two factors being correlated doesn’t automatically mean that one causes the other\n\n\n\nComic on correlation from xkcd",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Add a regression line"
+    ]
+  },
+  {
+    "objectID": "worksheets/separate_by_sex.html",
+    "href": "worksheets/separate_by_sex.html",
+    "title": "Separate by categorical group (sex)",
+    "section": "",
+    "text": "Separate by categorical group (sex)\nIf we add a color based on a categorical variable, this will then calculate the regression separately for each group.\nSee below, where we have assigned each point a colour based on sex:",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Separate by categorical group (sex)"
+    ]
+  },
+  {
+    "objectID": "worksheets/correlelogram.html",
+    "href": "worksheets/correlelogram.html",
+    "title": "Correlelograms",
+    "section": "",
+    "text": "Correlelograms\nOur dataset contained more than just age and blood pressure - it would be useful to see if there are any correlations between e.g. blood pressure and maximum heart rate, or cholesterol and age.\nWe can also use R to do an all-against-all correlation analysis, so without doing all of the above we can get an idea of if there are any correlations.\nThis uses the corrplot library. You might need to run install.packages('corrplot') before you can run this code.\n\n\n\n\n\n\n\n\nLet’s break that down:\n\nlibrary(corrplot) is loading the corrplot package, which has the functions we need\nheart_df_only_numerical &lt;- heart_df[,-2]\n\nOur sex in this dataframe is categorical (M or F) so we need to remove it\nheart_df[,-2] is selecting the whole of the heart_df dataframe except column 2\n\nheart_corrplot_matrix &lt;- cor(heart_df_only_numerical)\n\nThis uses the cor() function to calculate all-against-all correlations\n\ncorrplot(heart_corrplot_matrix\n\nThis takes our all-against-all correlations and plots a correlelogram\n\n\n\n\n\n\n\n\nTry:\n\n\n\n\n\nCorrplot also has different settings you can use.\nTo plot the strength of the correlation (R value) numerically, try: corrplot(heart_corrplot_matrix, method = \"number\")\nAnd if you only want to show the correlations that are statistically significant with a 5% chance of error:\ncorrplot(heart_corrplot_matrix, sig.level = 0.05)",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Correlelograms"
+    ]
+  },
+  {
+    "objectID": "worksheets/heart_data.html",
+    "href": "worksheets/heart_data.html",
+    "title": "Import Heart Dataset",
+    "section": "",
+    "text": "Import Heart Dataset\nThe dataset we are going to use is heart.csv which you can find on the Canvas page.\n\n\n\n\n\n\n\n\nThis dataset uses various metrics relating to heart health.\n\nheart.csv dataset\n\n\ncolumn\ndata\n\n\n\n\nage\nage of patient in years\n\n\nsex\nGender of the patient (F/M)\n\n\nrestbp\nResting blood pressure (mmHg)\n\n\nchol\nSerum cholesterol (mg/dl)\n\n\nmaxheartrate\nMaximum heart rate achieved\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\n\n\nWhich of these columns contain categorical data and which contain continuous data?",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Import Heart Dataset"
+    ]
   }
 ]

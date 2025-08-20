@@ -49,6 +49,24 @@ website:
             - href: worksheets/Violin.qmd
             - href: worksheets/Barplot_counts.qmd
             - href: worksheets/Filtering_data_from_table.qmd
+        - section: "Penguin task"
+          contents:
+            - href: "worksheets/penguin_introduction.qmd"
+            - href: "worksheets/penguin_task1.qmd"
+            - href: "worksheets/penguin_task2.qmd"
+            - href: "worksheets/penguin_task3.qmd"
+            - href: "worksheets/penguin_task4.qmd"
+            - href: "worksheets/penguin_extension.qmd"
+        - section: "Correlations"
+          contents: 
+            - href: "worksheets/heart_data.qmd"
+            - href: "worksheets/age_vs_blood_pressure.qmd"
+            - href: "worksheets/using_cor_function.qmd"
+            - href: "worksheets/using_cor.test_function.qmd"
+            - href: "worksheets/add_pvalue_to_graph.qmd"
+            - href: "worksheets/add_regression_line.qmd"
+            - href: "worksheets/separate_by_sex.qmd"
+            - href: "worksheets/correlelogram.qmd"
 
   favicon: LS4003_logo_no_text.png
 

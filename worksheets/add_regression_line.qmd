@@ -1,0 +1,32 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Add a regression line
+
+We can also use the funtion `geom_smooth` to fit and plot a linear regression model (lm) to our graph.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+ggplot(heart_df, aes(x = age, y = restbp)) +
+  geom_point() +
+  stat_cor(method = 'pearson') +
+  geom_smooth(method='lm', formula= y~x)
+```
+
+We use `formula= y~x` to define y as the outcome variable and x as the predictor: older age (x axis, predictor) leads to higher resting blood pressure (y axis, predicted outcome.)
+
+_Remember; two factors being correlated doesn't automatically mean that one causes the other_
+
+![Comic on correlation from xkcd](https://imgs.xkcd.com/comics/correlation.png)
