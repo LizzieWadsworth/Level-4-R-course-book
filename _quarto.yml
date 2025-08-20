@@ -24,54 +24,58 @@ website:
     - title: "Learn"
       style: "docked"
       background: light
-      collapse-level: 1
+      collapse-level: 2
       contents: 
-        - section: "R basics"
+        - section: "R introduction: basics to graphs"
           contents:
-            - href: learn.qmd
-            - href: worksheets/Variables.qmd
-            - href: worksheets/Comments.qmd
-            - href: worksheets/ErrorMsg.qmd
-            - href: worksheets/Vectors.qmd
-            - href: worksheets/RFunctions.qmd
-        - section: "Make a box plot"
-          contents:
-            - href: worksheets/CreateDataframe.qmd
-            - href: worksheets/InstallPackages.qmd
-            - href: worksheets/Boxplot.qmd
-            - href: worksheets/GGstyle.qmd
-            - href: worksheets/Boxplot_2.qmd
-        - section: "R from Excel: Locust Serotonin levels"
-          contents:
-            - href: worksheets/importcsv.qmd
-            - href: worksheets/Boxplot_3_from_csv.qmd
-            - href: worksheets/Discrete_continuous_scale.qmd
-            - href: worksheets/Violin.qmd
-            - href: worksheets/Barplot_counts.qmd
-            - href: worksheets/Filtering_data_from_table.qmd
-        - section: "Penguin task"
-          contents:
-            - href: "worksheets/penguin_introduction.qmd"
-            - href: "worksheets/penguin_task1.qmd"
-            - href: "worksheets/penguin_task2.qmd"
-            - href: "worksheets/penguin_task3.qmd"
-            - href: "worksheets/penguin_task4.qmd"
-            - href: "worksheets/penguin_extension.qmd"
+            - section: "R basics"
+              contents:
+                - href: learn.qmd
+                - href: worksheets/Variables.qmd
+                - href: worksheets/Comments.qmd
+                - href: worksheets/ErrorMsg.qmd
+                - href: worksheets/Vectors.qmd
+                - href: worksheets/RFunctions.qmd
+            - section: "Make a box plot"
+              contents:
+                - href: worksheets/CreateDataframe.qmd
+                - href: worksheets/InstallPackages.qmd
+                - href: worksheets/Boxplot.qmd
+                - href: worksheets/GGstyle.qmd
+                - href: worksheets/Boxplot_2.qmd
+            - section: "R from Excel: Locust Serotonin levels"
+              contents:
+                - href: worksheets/importcsv.qmd
+                - href: worksheets/Boxplot_3_from_csv.qmd
+                - href: worksheets/Discrete_continuous_scale.qmd
+                - href: worksheets/Violin.qmd
+                - href: worksheets/Barplot_counts.qmd
+                - href: worksheets/Filtering_data_from_table.qmd
+            - section: "Penguin task"
+              contents:
+                - href: "worksheets/penguin_introduction.qmd"
+                - href: "worksheets/penguin_task1.qmd"
+                - href: "worksheets/penguin_task2.qmd"
+                - href: "worksheets/penguin_task3.qmd"
+                - href: "worksheets/penguin_task4.qmd"
+                - href: "worksheets/penguin_extension.qmd"
         - section: "Correlations"
           contents: 
-            - href: "worksheets/heart_data.qmd"
-            - href: "worksheets/age_vs_blood_pressure.qmd"
-            - href: "worksheets/using_cor_function.qmd"
-            - href: "worksheets/using_cor.test_function.qmd"
-            - href: "worksheets/add_pvalue_to_graph.qmd"
-            - href: "worksheets/add_regression_line.qmd"
-            - href: "worksheets/separate_by_sex.qmd"
-            - href: "worksheets/correlelogram.qmd"
-        - section: "Sleep task"
-          contents: 
-            - href: "worksheets/sleep_introduction.qmd"
-            - href: "worksheets/sleep_task.qmd"
-            - href: "worksheets/sleep_extension.qmd"
+            - section: "Correlations using heart data"
+              contents:
+                - href: "worksheets/heart_data.qmd"
+                - href: "worksheets/age_vs_blood_pressure.qmd"
+                - href: "worksheets/using_cor_function.qmd"
+                - href: "worksheets/using_cor.test_function.qmd"
+                - href: "worksheets/add_pvalue_to_graph.qmd"
+                - href: "worksheets/add_regression_line.qmd"
+                - href: "worksheets/separate_by_sex.qmd"
+                - href: "worksheets/correlelogram.qmd"
+            - section: "Sleep task"
+              contents: 
+                - href: "worksheets/sleep_introduction.qmd"
+                - href: "worksheets/sleep_task.qmd"
+                - href: "worksheets/sleep_extension.qmd"
         - section: "T-tests"
           contents:
             - href: "worksheets/unpaired_t_test.qmd"
@@ -80,6 +84,16 @@ website:
             - href: "worksheets/anova.qmd"
             - href: "worksheets/pairwise_t_test.qmd"
             - href: "worksheets/t-test_extension.qmd"
+        - section: "Chi-squared and fisher"
+          contents: 
+            - href: "worksheets/portuguese_students.qmd"
+            - href: "worksheets/contingency_tables.qmd"
+            - href: "worksheets/odds_and_risk_ratios.qmd"
+            - href: "worksheets/chisquared.qmd"
+            - href: "worksheets/fisher.qmd"
+            - href: "worksheets/chisquared_multiple_values.qmd"
+            - href: "worksheets/subset_of_values.qmd"
+            - href: "worksheets/chisq_extension.qmd"
 
 
   favicon: LS4003_logo_no_text.png

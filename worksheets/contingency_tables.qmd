@@ -1,0 +1,37 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Contigency tables
+
+First we need to read this information and store it in an R dataframe.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Read the csv file and store in a dataframe 
+maths_students=read.csv("student-mat.csv", header=TRUE)
+head(maths_students)
+```
+
+For our Chi-Squared and Fisher test however, we need to generate a contingency table. Effectively, we need to choose two categorical variables, and count the occurences of each combination. Luckily R will do this for us, using the `table()` function.
+
+Let's first look to see if there's a difference between sex and whether the student does after-school activities.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Create a contingency table of sex verses activities 
+activities_by_sex <- table(maths_students$sex, maths_students$activities)
+activities_by_sex
+```

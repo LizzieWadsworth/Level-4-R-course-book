@@ -1,0 +1,25 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Extension
+
+This was a very large dataset and we only looked at a few columns.
+
+What else can you find out?
+
+Not all of the columns are categorical data - if you want to compare any other two variables (e.g. whether they went to nursery and their current grades); which test would you use?
+
+We've covered all the main statistical tests now, so try and apply what you've learnt from *every* tutorial to this database.
+
+![Meme of the Hulk being made for a Chi Squared test](images/Hulk.jpg)

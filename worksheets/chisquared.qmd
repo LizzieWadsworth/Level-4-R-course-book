@@ -1,0 +1,35 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Chi-squared test
+
+As our grand total of observed values is more than 50 and every observation exceeds 5, we can use the chi squared test.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Calculate the chi squared test 
+chisq <- chisq.test(activities_by_sex)
+
+# Print a table of observations
+chisq$observed
+
+# Print a table of expected values
+chisq$expected
+
+# Print the p-value
+chisq$p.value
+```
+
+As the p-value is 0.0597, it is **not** less than 0.05 and therefore not significant with less than a 5% chance of error.

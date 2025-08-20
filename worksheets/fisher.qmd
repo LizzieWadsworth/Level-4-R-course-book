@@ -1,0 +1,38 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Fisher test
+
+We can also do a fisher test if we're looking at categories with a smaller value.
+
+If we compare sex and whether or not the student wants to go to higher education, you'll see we have very low numbers of students that *don't* want to go to higher education in this class.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Calculate the chi squared test 
+# find categories with value less than 5 
+higher_by_sex <- table(maths_students$sex, maths_students$higher)
+higher_by_sex
+```
+
+We can then use the fisher test:
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Calculate the chi squared test 
+fish <- fisher.test(higher_by_sex)
+fish
+```

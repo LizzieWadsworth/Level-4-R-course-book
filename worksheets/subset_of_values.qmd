@@ -1,0 +1,49 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Testing a subset of the values
+
+The strongest contributions appear to be in the "reputation" and "other" categories.
+
+To see if these are statistically significant, we can create a new database with just these values so we can then compare them.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Filter the dataset to only include rows with selected "Reputation" or "Other" in the reason column
+maths_students_ReputationOrOther <- maths_students[maths_students$reason %in% c('other', 'reputation'),]
+
+# Create a contingency table
+school_by_reason_2 <- table(maths_students_ReputationOrOther$school, maths_students_ReputationOrOther$reason)
+school_by_reason_2
+```
+
+Once we have our contigency table, we can then run our chi-squared test:
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Run the Chi-Squared statistics
+# Calculate the chi squared test 
+chisq <- chisq.test(school_by_reason)
+
+# Print a table of observations
+chisq$observed
+
+# Print a table of expected values
+chisq$expected
+
+# Print the p-value
+chisq$p.value
+```

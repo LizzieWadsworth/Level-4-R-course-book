@@ -1,0 +1,62 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Odds and Risk ratios
+
+## Odds Ratio
+
+We can calculate the odds ratio for our comparison using the `oddsratio()` function from the `epitools` package.
+
+You'll first need to `install.packages('epitools')`.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+library(epitools)
+# Calculate the odds ratio 
+odds_activities_by_sex <- oddsratio(activities_by_sex)
+odds_activities_by_sex$measure
+```
+
+This result shows us the odds of male students doing an activity (compared to females) is 1.491 -\> they are around 1.5 times more likely to be doing an activity.
+
+Also in this table are the "lower" and "upper" values are the boundaries for the 95% confidence interval. As both values are above one, this indicates increased odds (of males doing an activity compared to females).
+
+We can do the same calculation the other way around, looking at the odds of females doing an activity compared to males.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Calculate the odds ratio 
+odds_activities_by_sex <- oddsratio(activities_by_sex, rev="rows")
+odds_activities_by_sex$measure
+```
+
+The options you can give for the rev (reverse) parameter are "neither", "rows", "columns" and "both".
+
+## Risk ratio
+
+Risk ratio is very similar to odds ratio (refer back to Statistics Lecture 4 for an explanation of the differences).
+
+We can also calculate risk ratio in R.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Calculate the odds ratio 
+risk_activities_by_sex <- riskratio(activities_by_sex)
+risk_activities_by_sex$measure
+```
+
+This shows the risk of males doing an activity (compared to females) is 1.217.
