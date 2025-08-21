@@ -7,6 +7,20 @@
     "text": "The below R code takes the phrase “Hello World!” and prints it to the console. It’s a good way to check you are set up correctly!\n\n\n\n\n\n\n\n\nThe above code block is interactive so you can use it to test small bits of code. Anything you write will not be saved.\nOnce you’ve checked that’s working, copy and paste it into an R file in RStudio. To run it, you want to highlight the line and click the run button.\n\n\nRStudio is split into the following four panels:\n\nTop-left: Create and edit your R programming files\nTop-right: See your data (tables and values)\nBottom-left: Console to run one or two lines of code\nBottom-right: View your folders and plots (different tabs)\n\nTop panels\n\n\n\n\n\nCode Editor\n\n\n\n\n\n\n\n\nEnvironment\n\n\n\n\nBottom panels\n\n\n\n\n\nConsole\n\n\n\n\n\n\n\n\nFiles and Plots\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nRStudio by default only runs the line you’ve selected. To run, you’ll need to highlight both lines and click “Run”, or click the arrow next to “Run” and select “Run all” which will run all the code in your file.\n\n\nThe variable you create will appear in the top right panel. What value does it have? Is this what you expect?\nThe result of the code will also appear in the console bottom left panel.",
     "crumbs": [
       "Learn",
+      "**R introduction: basics to graphs**",
+      "R basics",
+      "Hello World"
+    ]
+  },
+  {
+    "objectID": "learn.html#rstudio-and-the-four-panels",
+    "href": "learn.html#rstudio-and-the-four-panels",
+    "title": "Hello World",
+    "section": "",
+    "text": "RStudio is split into the following four panels:\n\nTop-left: Create and edit your R programming files\nTop-right: See your data (tables and values)\nBottom-left: Console to run one or two lines of code\nBottom-right: View your folders and plots (different tabs)\n\nTop panels\n\n\n\n\n\nCode Editor\n\n\n\n\n\n\n\n\nEnvironment\n\n\n\n\nBottom panels\n\n\n\n\n\nConsole\n\n\n\n\n\n\n\n\nFiles and Plots\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nRStudio by default only runs the line you’ve selected. To run, you’ll need to highlight both lines and click “Run”, or click the arrow next to “Run” and select “Run all” which will run all the code in your file.\n\n\nThe variable you create will appear in the top right panel. What value does it have? Is this what you expect?\nThe result of the code will also appear in the console bottom left panel.",
+    "crumbs": [
+      "Learn",
+      "**R introduction: basics to graphs**",
       "R basics",
       "Hello World"
     ]
@@ -33,426 +47,9 @@
     "text": "Error messages\nProgramming code is it’s own language, but with really strict grammar. If I mistakes make in sentrances, like I do in this one, you can still understand the meaning.\nIf we make a mistake in code, even a typo, the computer will not understand.\nHowever, it does try to be helpful. We get an Error message in the console (bottom left panel) that gives us a clue as to what the problem is.\nTry with the below code. What does the error message say? Can you try and fix it?",
     "crumbs": [
       "Learn",
+      "R introduction: basics to graphs",
       "R basics",
       "Error messages"
-    ]
-  },
-  {
-    "objectID": "worksheets/RFunctions.html",
-    "href": "worksheets/RFunctions.html",
-    "title": "R functions",
-    "section": "",
-    "text": "R functions\nWe won’t be writing our own R functions, but we’ll be using in-built functions and functions from libraries.\nA function is like a mini-program - it’s a set of code that somebody else has written that we can apply to our own variables.\nThese work using the following structure: function_name(arguments) where:\n\nfunction_name is the name of the function\narguments are the values we are putting in, or any options we want to change\n\nSee examples below using some in-built functions:\n\n\n\n\n\n\n\n\nWe can also give multiple arguments by separating them with commas.\nIn the example below, we’re using the seq() function to generate a sequence of numbers. We want the sequence to start at 0, end at 20, and go up by 2 every number.\n\n\n\n\n\n\n\n\n\nGive it a go:\nFrom what you’ve learnt so far, can you:\n\nGenerate every third number from 1 to 100 (1, 3, 6…)\nFind the mean of those numbers\nFind the standard deviation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nConsider using the seq() function\n\nseq(start value, stop value, by=increase)\n\n\n\n\n\n\n\n\n\n\n\n\nHint 2\n\n\n\n\n\nConsider using the functions seq(), mean() and sd()\n\nvariablename &lt;- seq(start value, stop value, by=increase)\nmean(variablename)\nsd(variablename)\n\n\n\n\n\n\n\n\n\n\n\nShow answer",
-    "crumbs": [
-      "Learn",
-      "R basics",
-      "R functions"
-    ]
-  },
-  {
-    "objectID": "worksheets/InstallPackages.html",
-    "href": "worksheets/InstallPackages.html",
-    "title": "Install packages",
-    "section": "",
-    "text": "Install packages\nFor the rest of the worksheet section, we need to install packages\nIn R we use many packages - these are extensions that contain the code we need to do cool things like plot graphs. There are many packages available for different uses, which means you don’t have to write everything from scratch!\nInstall the packages we will be using. In the console (bottom left corner), copy and paste each of the following two lines and press enter:\ninstall.packages('ggplot2')\ninstall.packages('dplyr')",
-    "crumbs": [
-      "Learn",
-      "Make a box plot",
-      "Install packages"
-    ]
-  },
-  {
-    "objectID": "worksheets/CreateDataframe.html",
-    "href": "worksheets/CreateDataframe.html",
-    "title": "Dataframes",
-    "section": "",
-    "text": "Dataframes\nWe’ve looked at single values, and multiple values in a list. The next step is to look at tables of data - we can do this with dataframe. You’ll commonly see this named as df for dataframe.\n\n\n\n\n\n\n\n\nIf you look in your environment (top right panel) you’ll now see your Data_Frame variable. If you click it, this will open it in a new tab next to your R script.\nWe can use the built-in function summary() to create an overview of our data. For our numerical columns, this provides us with the interquartile range.\n\nSummarise the data\n\n\n\n\n\n\n\n\nThis is already all the information we need to create a box plot!",
-    "crumbs": [
-      "Learn",
-      "Make a box plot",
-      "Dataframes"
-    ]
-  },
-  {
-    "objectID": "worksheets/Variables.html",
-    "href": "worksheets/Variables.html",
-    "title": "Variables",
-    "section": "",
-    "text": "Variables\nA variable is a box where we can store a value. This is important - if we calculate something in R, we’re going to want to be able to access the answer, so we need to store it somewhere.\nSee the below example - you can click Run Code to see what this does.\n\n\n\n\n\n\n\n\nLet’s break that down:\n\na &lt;- 5 + 10\n\na : This is our variable name. A variable is a piece of data with a name so we can find it again.\n&lt;- : This is an assignment operator; equivalent to ” = “! It means the data on the right hand side is saved under the variable name on the left hand side\n5 + 10 : Mathematical operations in R have a set format. If you want to multiply two numbers, you would use an asterix (*).\n\na\n\na : This line will get the value from our variable a, and print it to the console. It’s really useful for checking if a value is what you expect, especially when you have many variables!",
-    "crumbs": [
-      "Learn",
-      "R basics",
-      "Variables"
-    ]
-  },
-  {
-    "objectID": "worksheets/Comments.html",
-    "href": "worksheets/Comments.html",
-    "title": "Comments",
-    "section": "",
-    "text": "Comments\nIf you put a hash # at the start of the line, this means it will be igorned and not run as code.\nWe use comments to add notes - to anyone else using our code, or to our future selves (you will forget what your code does!)",
-    "crumbs": [
-      "Learn",
-      "R basics",
-      "Comments"
-    ]
-  },
-  {
-    "objectID": "worksheets/GGstyle.html",
-    "href": "worksheets/GGstyle.html",
-    "title": "GGstyle",
-    "section": "",
-    "text": "GGstyle\nWe can use the + to add new lines to our graph. This allows us to add more styling information.\nYou want a + at the end of every line until the last one. This tells R where you want to stop and move on.\n\n\n\n\n\n\n\n\nCheck out this ggplot2 cheat sheet for more styling options",
-    "crumbs": [
-      "Learn",
-      "Make a box plot",
-      "GGstyle"
-    ]
-  },
-  {
-    "objectID": "worksheets/Vectors.html",
-    "href": "worksheets/Vectors.html",
-    "title": "Vectors",
-    "section": "",
-    "text": "Vectors\nAfter variables, the next thing we need to understand is vectors.\nVectors are a bit like lists but they can only hold one type of variable such as all integers (whole numbers) or all strings (words in “quotes”).\nTo make a vector, we need to use the c() function\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nWhat happens to the numbers in the my_numbers vector if you change 9 to 9.5?",
-    "crumbs": [
-      "Learn",
-      "R basics",
-      "Vectors"
-    ]
-  },
-  {
-    "objectID": "worksheets/Boxplot.html",
-    "href": "worksheets/Boxplot.html",
-    "title": "Boxplot",
-    "section": "",
-    "text": "Boxplot\nWe’re going to use a library of functions called ggplot2 to make our box plot.\nBefore we can use the library, we need to install it. To do that, copy the following line into the console (bottom left section): install.packages('ggplot2')\n\n\n\n\n\n\n\n\nDo the values match what we got in the summary() function?\nLet’s break that down:\n\nggplot(Data_Frame, aes(y = Pulse)) +\n\nggplot() : This is our plotting function\nData_Frame: This is our argument of what data we want to use\naes(): aes is aesthetics, which allows us to choose our groups for x, y or categories\ny = Pulse: this is setting our y value to be the pulse column\n\ngeom_boxplot()\n\nThis tells R to use the data we chose to make a boxplot",
-    "crumbs": [
-      "Learn",
-      "Make a box plot",
-      "Boxplot"
-    ]
-  },
-  {
-    "objectID": "worksheets/RStudio.html",
-    "href": "worksheets/RStudio.html",
-    "title": "LS4003 R programming",
-    "section": "",
-    "text": "# R Studio",
-    "crumbs": [
-      "Learn",
-      "R basics",
-      "R Studio"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to R Programming!",
-    "section": "",
-    "text": "The next 5 computing sessions are going to introduce you to R programming. This is a computer language very commonly used in Life Sciences to do statistical analyses and interpret large data sets.\nDon’t worry if you’ve never done any programming before - we’re starting from the very beginning.\n\n\nAdvances in Life Sciences has let to the creation of terrabytes of Big Data. We can now sequence millions of bases of DNA, calculate expression levels of thousands of proteins and track the movements of whales around the world.\nIn order to be able to make sense of these large datasets, we use programming languages. It would be quite difficult to calculate a statistically significant result if your dataset has more than 1000 values!\n\n\n\nBelow is a table of a recent publication for each subject which used R in the analysis - quite varied!\n\nLife Science R Programming Examples. Images from Google and Adobe Stock\n\n\n\n\n\n\n\nDegree\nPaper title\nIcon\n\n\n\n\nBiomedical Science\nPediatric leukemia and maternal occupational exposure to anticancer drugs: the Japan Environment and Children’s Study\n\n\n\nBiochemistry\nThe ORP9-ORP11 dimer promotes sphingomyelin synthesis\n\n\n\nBiological Science\nHumpback whale song complexity and evolution on a northwestern Pacific breeding ground: Okinawa, Japan\n\n\n\nPharmacology\nExplaining Blood–Brain Barrier Permeability of Small Molecules by Integrated Analysis of Different Transport Mechanisms\n\n\n\nForensic Science\nAn Open-Source Implementation of the CMPS Algorithm for Assessing Similarity of Bullets\n\n\n\n\n\n\n\nThis course is your first introduction to R.\nNext year (Level 5), most of you will continue R programming in Research Methods and Skills. Forensic Science students will use other Statistical Analysis software.\nIn your final year (Level 6) you will all do a research project - this may be in the lab, a literature review or data project. R programming can be used for analysis of your research data in all of these projects.\nBiological Science (Molecular Biology) and Biochemistry students will also do a Python-programming module at Level 6. This builds on what you know from R.\n\n\n\nFirst get yourself set up with R and RStudio - click the “Set Up” tab for instructions.\nNext start the classes under the “Learn” tab. This is all of the material for the five sessions - you can work through them at your own pace.\nEach page will cover a new concept, or have an activity on for you to try. As you work through, try to experiment - change parts of the code examples and see if it will still work. This is how you figure out how it works.\nIf you have any other questions, grab a member of teaching staff in the session or email Dr Lizzie Wadsworth at L.Wadsworth@kingston.ac.uk\n\n\n\nGIF of Homer Simpson at a Computer"
-  },
-  {
-    "objectID": "index.html#why-r",
-    "href": "index.html#why-r",
-    "title": "Welcome to R Programming!",
-    "section": "",
-    "text": "Here we talk R"
-  },
-  {
-    "objectID": "index.html#get-started",
-    "href": "index.html#get-started",
-    "title": "Welcome to R Programming!",
-    "section": "",
-    "text": "Login instructions\nLearn: Tutorials, Activities…"
-  },
-  {
-    "objectID": "help.html",
-    "href": "help.html",
-    "title": "Help",
-    "section": "",
-    "text": "Help"
-  },
-  {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Set up",
-    "section": "",
-    "text": "Set up\nWe are going to use RStudio for this course. You can do this on campus from a University Computer, online using a free Posit Cloud account that you can access from any web browser, or by downloading R and RStudio onto your own device.\nClick below to see the set up instructions for each:\n\nUniversity ComputerOnline CloudOwn Device\n\n\nTo get set up, follow the below steps. Click each step for detailed instructions.\n\n\n\n\n\n\nStep 1: Launch RStudio from AppsAnywhere\n\n\n\n\n\n\nType in AppsAnywhere to the windows bar. This will open in a web browser\nType in RStudio in AppsAnywhere\nClick “Launch” and wait for it to install and open.\n\n\n\n\nGIF of Opening RStudio\n\n\n\n\n\n\n\n\n\n\n\nStep 2: Navigate to your OneDrive folder\n\n\n\n\n\n\nCopy and paste the following into the Console on the left, and press enter.\n\nsetwd(\"O:/\")\n\nClick the “More” cog and select “Go To Working Directory”\n\nYou should now be in your OneDrive. You should be able to recognise the files and folders listed, from what you have saved here in your other classes.\n\n\n\nGIF of Opening OneDrive\n\n\n\n\n\n\n\n\nIf you get the error message ‘cannot change working directory’\n\n\n\n\n\nOccasionally there is an issue with how OneDrive is loaded on the University computer.\nIf you get the error message:\nError in setwd(\"O:/\") : cannot change working directory\nThen try the following. Replace the underscores with your K number.\nsetwd(\"C:/Users/K______/\")\nClick the “More” cog and select “Go To Working Directory”\nThen find and click on the folder:\nOneDrive Kingston University\nClick the more cog and select Set As Working Directory\n\n\n\nGIF of Opening OneDrive with common error\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep 3: Create or move to a folder for LS4003\n\n\n\n\n\nIf you don’t already have a folder for LS4003 Statistics, then you can create one by clicking “New Folder” and entering a name.\nIf your new folder doesn’t appear, click the refresh button (to the right of the more cog).\nThen:\n\nClick into your new folder\nClick the More Cog and select “Set As Working Directory”\n\n\n\n\nGIF of Making a Folder\n\n\n\n\n\n\n\n\n\n\n\nStep 4: Create an R file\n\n\n\n\n\nOnce you’re in your folder you can create and save an R file. This is where you put your code.\n\nClick on the Green Plus icon and select “R Script”\nIn the top bar, click “File” and then “Save”\nGive your file a name (e.g. “R_tutorial_1” )\n\nWhen you make any changes, you can save the file by going File -&gt; Save.\nYou can also save by holding down Control and S at the same time.\n\n\n\nGIF of Making an R File\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThis will automatically add the “.R” extension so we know it’s an R file - R_tutorial_1.R\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\n\n\nMake sure you can find your file in file explorer. Always back up your work such as saving in OneDrive or emailing to yourself so that you don’t lose your progress.\n\n\n\n\n\n\n\n\n\n\n\n\nStep 5: Write and run R code\n\n\n\n\n\nYou’re now ready to run some R code!\n\nCopy and paste the following into your R file:\n\n\nvalue &lt;- \"Hello World\"\nvalue\n\n\nHighlight both lines and click the “Run” icon (green arrow)\n\nYou should see a result in your console (bottom left panel) and your environment (top right panel)\nYou’re now ready to start learning R!\n\n\n\nGIF of Running an R File\n\n\n\n\n\n\n\nPosit Cloud is a free online browser version, allowing you to work from any device.\n\n\n\n\n\n\nCaution\n\n\n\n\n\nYou shouldn’t need a paid account for this course. If you use up the compute hours then I suggest downloading RStudio and R onto your own device.\n\n\n\nTo get set up, follow the instructions below:\n\n\n\n\n\n\nStep 1: Launch RStudio from AppsAnywhere\n\n\n\n\n\n\nCreate a free account and login\nCreate Project -&gt; RStudio\nName your project (where it says “Untitled Project”)\n\n\n\n\nGIF of Creating a PositCloud Project\n\n\n\n\n\n\n\n\n\n\n\nStep 2: Create an R file\n\n\n\n\n\nOnce you’re in your project you can create and save an R file. This is where you put your code.\n\nClick on the Green Plus icon and select “R Script”\nClick the Save icon\nGive your file a name (e.g. “My_R_file” )\n\nRemember to keep saving your file using the save icon.\n\n\n\nGIF of Making an R File\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThis will automatically add the “.R” extension so we know it’s an R file - My_R_file.R\n\n\n\n\n\n\n\n\n\n\n\n\nStep 3: Write and run R code\n\n\n\n\n\nYou’re now ready to run some R code!\n\nCopy and paste the following into your R file:\n\n\nvalue &lt;- \"Hello World\"\nvalue\n\n\nSave your R file by clicking the save icon\nHighlight both lines and click the “Run” icon (green arrow)\n\nYou should see a result in your console (bottom left panel) and your environment (top right panel)\nYou’re now ready to start learning R!\n\n\n\nGIF of Running an R File\n\n\n\n\n\n\n\nIf you’re working on your own laptop or computer it’s also possible to download and run R and RStudio. These are both free, open-source programs.\n\n\n\n\n\n\nNote\n\n\n\n\n\nIf you’re working on a tablet, chromebook or your device is typically slow, I recommend looking at the Posit Online Cloud option instead\n\n\n\nInstalling R and RStudio can be a bit fiddley - let the teaching team know if you’d like any support.\nWhy two programs? R is the programming language, that takes our code and creates our graphs. RStudio is a program we use to edit and view our R files and plots; known as an Integrated Development Environment (IDE).\n\n\n\n\n\n\nStep 1: Install R\n\n\n\n\n\nYou can Install R from this website. You want to select the version for your operating system (Windows or Mac).\n\n\n\n\n\n\n\n\n\nStep 2: Install RStudio\n\n\n\n\n\nOnce R is installed, you can install RStudio from this website.\nThe free version is more than sufficient I don’t know anyone who has needed Desktop pro.\n\n\n\n\n\n\n\n\n\nStep 3: Create or move to a folder for LS4003\n\n\n\n\n\nOnce RStudio is open, you want to browse files until you can find your documents - wherever you keep your university files.\nNext, create a folder to keep all your R programming work in (e.g “LS4003 R Programming”).\nClick on the new folder to enter it. Click the cog, and “Set as Working Directory”\n\n\n\n\n\n\n\n\n\nStep 4: Create an R file\n\n\n\n\n\nOnce you’re in your project you can create and save an R file. This is where you put your code.\n\nClick on the Green Plus icon and select “R Script”\nClick the Save icon\nGive your file a name (e.g. “My_R_file” )\n\nRemember to keep saving your file using the save icon.\n\n\n\nGIF of Making an R File\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThis will automatically add the “.R” extension so we know it’s an R file - My_R_file.R\n\n\n\n\n\n\n\n\n\n\n\n\nStep 5: Write and run R code\n\n\n\n\n\nYou’re now ready to run some R code!\n\nCopy and paste the following into your R file:\n\n\nvalue &lt;- \"Hello World\"\nvalue\n\n\nSave your R file by clicking the save icon\nHighlight both lines and click the “Run” icon (green arrow)\n\nYou should see a result in your console (bottom left panel) and your environment (top right panel)\nYou’re now ready to start learning R!"
-  },
-  {
-    "objectID": "setup.html#quick-start",
-    "href": "setup.html#quick-start",
-    "title": "Set up",
-    "section": "",
-    "text": "Follow the Quick Start for your tool of choice to get a simple website up and running. After covering the basics, read on to learn about website navigation and other more advanced website features.\n\nUniversity ComputerOnline CloudOwn Device\n\n\nSome text here\n\n\nMore text\n\n\nText numero trun"
-  },
-  {
-    "objectID": "index.html#why-are-we-learning-r",
-    "href": "index.html#why-are-we-learning-r",
-    "title": "Welcome to R Programming!",
-    "section": "",
-    "text": "Advances in Life Sciences has let to the creation of terrabytes of Big Data. We can now sequence millions of bases of DNA, calculate expression levels of thousands of proteins and track the movements of whales around the world.\nIn order to be able to make sense of these large datasets, we use programming languages. It would be quite difficult to calculate a statistically significant result if your dataset has more than 1000 values!"
-  },
-  {
-    "objectID": "index.html#what-about-my-subject",
-    "href": "index.html#what-about-my-subject",
-    "title": "Welcome to R Programming!",
-    "section": "",
-    "text": "Below is a table of a recent publication for each subject which used R in the analysis - quite varied!\n\nLife Science R Programming Examples. Images from Google and Adobe Stock\n\n\n\n\n\n\n\nDegree\nPaper title\nIcon\n\n\n\n\nBiomedical Science\nPediatric leukemia and maternal occupational exposure to anticancer drugs: the Japan Environment and Children’s Study\n\n\n\nBiochemistry\nThe ORP9-ORP11 dimer promotes sphingomyelin synthesis\n\n\n\nBiological Science\nHumpback whale song complexity and evolution on a northwestern Pacific breeding ground: Okinawa, Japan\n\n\n\nPharmacology\nExplaining Blood–Brain Barrier Permeability of Small Molecules by Integrated Analysis of Different Transport Mechanisms\n\n\n\nForensic Science\nAn Open-Source Implementation of the CMPS Algorithm for Assessing Similarity of Bullets"
-  },
-  {
-    "objectID": "index.html#when-will-i-do-this-in-my-degree",
-    "href": "index.html#when-will-i-do-this-in-my-degree",
-    "title": "Welcome to R Programming!",
-    "section": "",
-    "text": "This course is your first introduction to R.\nNext year (Level 5), most of you will continue R programming in Research Methods and Skills. Forensic Science students will use other Statistical Analysis software.\nIn your final year (Level 6) you will all do a research project - this may be in the lab, a literature review or data project. R programming can be used for analysis of your research data in all of these projects.\nBiological Science (Molecular Biology) and Biochemistry students will also do a Python-programming module at Level 6. This builds on what you know from R."
-  },
-  {
-    "objectID": "index.html#what-should-i-be-doing",
-    "href": "index.html#what-should-i-be-doing",
-    "title": "Welcome to R Programming!",
-    "section": "",
-    "text": "First get yourself set up with R and RStudio - click the “Set Up” tab for instructions.\nNext start the classes under the “Learn” tab. This is all of the material for the five sessions - you can work through them at your own pace.\nEach page will cover a new concept, or have an activity on for you to try. As you work through, try to experiment - change parts of the code examples and see if it will still work. This is how you figure out how it works.\nIf you have any other questions, grab a member of teaching staff in the session or email Dr Lizzie Wadsworth at L.Wadsworth@kingston.ac.uk\n\n\n\nGIF of Homer Simpson at a Computer"
-  },
-  {
-    "objectID": "learn.html#rstudio-and-the-four-panels",
-    "href": "learn.html#rstudio-and-the-four-panels",
-    "title": "Hello World",
-    "section": "",
-    "text": "RStudio is split into the following four panels:\n\nTop-left: Create and edit your R programming files\nTop-right: See your data (tables and values)\nBottom-left: Console to run one or two lines of code\nBottom-right: View your folders and plots (different tabs)\n\nTop panels\n\n\n\n\n\nCode Editor\n\n\n\n\n\n\n\n\nEnvironment\n\n\n\n\nBottom panels\n\n\n\n\n\nConsole\n\n\n\n\n\n\n\n\nFiles and Plots\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nRStudio by default only runs the line you’ve selected. To run, you’ll need to highlight both lines and click “Run”, or click the arrow next to “Run” and select “Run all” which will run all the code in your file.\n\n\nThe variable you create will appear in the top right panel. What value does it have? Is this what you expect?\nThe result of the code will also appear in the console bottom left panel.",
-    "crumbs": [
-      "Learn",
-      "R basics",
-      "Hello World"
-    ]
-  },
-  {
-    "objectID": "worksheets/Boxplot_2.html",
-    "href": "worksheets/Boxplot_2.html",
-    "title": "Give it a go",
-    "section": "",
-    "text": "Give it a go\nCan you change the code to make a boxplot of the Duration values?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nThe only parts you need to change is the aes() aesthetics, and ggtitle()\n\n\n\n\n\n\n\n\n\n\nShow answer",
-    "crumbs": [
-      "Learn",
-      "Make a box plot",
-      "Give it a go"
-    ]
-  },
-  {
-    "objectID": "worksheets/importcsv.html",
-    "href": "worksheets/importcsv.html",
-    "title": "Import CSV from Excel",
-    "section": "",
-    "text": "Import CSV from Excel\nNext we’re going to use tabular data from excel and import that as our data.\nI’ve put a csv file on the Canvas page for you to download and copy into your folder. A csv file is like a plain excel table, but missing all the Microsoft formatting. This makes it easier for us to use.\nYou can turn any excel file into a csv file by going File -&gt; Save as -&gt; File format: csv.\n\n\n\n\n\n\nWarning\n\n\n\nA CSV file can only have one sheet. If you have an excel file with multiple sheets and save it as a csv, the rest of the sheets will be lost!\n\n\nThe dataset we are going to use is LocustSerotonin.csv which you can find on the Canvas page. This contains serotonin levels in the central nervous system of desert locusts that were experimentally crowded for 0 (the control group), 1, and 2 hours. This data is from Chapter 2 of The Analysis of Biological Data.\n\n\n\n\n\n\n\n\n\nWe are using the function read.csv() to import our data into R. This will appear in the environment (top right panel) with our variables.\nWe are using the function head() to view the first five rows of our table.\n\nAs you can see we have a dataset of three columns:\n\nLocust Serotonin data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nserotoninLevel\nMeasurement of serotonin in individual locusts\n\n\ntreatmentTime\nAmount of time being crowded (0, 1 or 2 hours)\n\n\nserotoninCategory\nRank of serotonin level in three categories (High, Medium, Low)",
-    "crumbs": [
-      "Learn",
-      "R from Excel: Locust Serotonin levels",
-      "Import CSV from Excel"
-    ]
-  },
-  {
-    "objectID": "worksheets/Boxplot_3_from_csv.html",
-    "href": "worksheets/Boxplot_3_from_csv.html",
-    "title": "Boxplot from CSV (from Excel)",
-    "section": "",
-    "text": "Boxplot from CSV (from Excel)\nFrom the previous page, we have a dataset with three columns:\n\nLocust Serotonin data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nserotoninLevel\nMeasurement of serotonin in individual locusts\n\n\ntreatmentTime\nAmount of time being crowded (0, 1 or 2 hours)\n\n\nserotoninCategory\nRank of serotonin level in three categories (High, Medium, Low)\n\n\n\nNext, we’re going to use boxplots to compare the serotonin level for different treatment groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nWhat happens if you remove group = treatmentTime from the above code? What is this doing?\n\n\nLet’s break that down line by line:\n\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") - This is loading in our dataset. You should now see “locust_df” in your environment tab (top right corner)\nggplot(locust_df, aes(x = treatmentTime, y = serotoninLevel, group = treatmentTime)):\n\nggplot() is the graphing function we are using\nlocust_df is the data we want to plot\naes() is our aesthetics - what is our x and y values?\ngroup: Our treatmentTime column is a continuous data (as it is numerical). We want this to be discrete (three separate groups) so we explicity tell ggplot to organise this data into groups.\n\ngeom_boxplot(): this is specifying we want to plot a box plot of our data",
-    "crumbs": [
-      "Learn",
-      "R from Excel: Locust Serotonin levels",
-      "Boxplot from CSV (from Excel)"
-    ]
-  },
-  {
-    "objectID": "worksheets/Violin.html",
-    "href": "worksheets/Violin.html",
-    "title": "Violin plots",
-    "section": "",
-    "text": "Violin plots\nViolin plots are similar to box plots, but they show more information on what the distribution is. A violin plot can sometimes give more useful information than a box plot.\nTo change from a box plot to a violin plot, you only need to change from geom_boxplot() to geom_violin().\n\n\n\n\n\n\n\n\nQuestion: If you add the line + geom_point(), what happens?",
-    "crumbs": [
-      "Learn",
-      "R from Excel: Locust Serotonin levels",
-      "Violin plots"
-    ]
-  },
-  {
-    "objectID": "worksheets/Barplot_counts.html",
-    "href": "worksheets/Barplot_counts.html",
-    "title": "Bar plot by counts",
-    "section": "",
-    "text": "Bar plot by counts\nSometimes we don’t want to use numerical values (such as the serotonin level) that we already have in our dataset. If we want to plot the numbers of our categories we can make a bar plot like in the below example:\n\n\n\n\n\n\n\n\nHere we have:\n\nSet locust_df$serotoninCategory as a factor with levels. This was to order our graph. What happens if you comment this out?\nUsed geom_bar(stat = 'count') - for each category on the x axis, this counts the number of entries. Without using fill, this would just make a bar of height 10 for all three groups, as there was equal numbers of each treatment group.\nThe fill is used to colour the sections by serotonin category.\n\n\nVisualising distributions\nWe can also draw histograms to visualise distributions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhat is binwidth = 0.6 doing? What changes if you remove this? What if you make this value smaller or larger?\n\n\nIs this a normal distribution? It’s a small dataset so it’s hard to tell, but we’ll go through more examples in the worksheet.",
-    "crumbs": [
-      "Learn",
-      "R from Excel: Locust Serotonin levels",
-      "Bar plot by counts"
-    ]
-  },
-  {
-    "objectID": "worksheets/Filtering_data_from_table.html",
-    "href": "worksheets/Filtering_data_from_table.html",
-    "title": "Filtering data from a table",
-    "section": "",
-    "text": "Filtering data from a table\nWhat do we do if we only want to use part of our dataset?\nIn R, there are many ways we can filter our datasets to extract just the values we need. Lets say we want to filter our LocustSerotonin data to have only the 0 hour treatmentTime group.\n\n\n\n\n\n\n\n\nLet’s break that down:\n\nWe’re using functions from the dplyr package. You need to install by typing install.packages('dplyr') if you haven’t already.\nWe’re using the filter() function to select all rows where treatmentTime is exactly 0. Be sure to notice the double ==!\n%&gt;% is a pipe - it’s telling R to pass the dataset on the left (locust_df) to the function on the right (filter())\nWe don’t want to overwrite our full dataset, so we’re saving in a new dataframe called treatment0_df using &lt;- .\n\n\n\n\n\n\n\nQuestion\n\n\n\nCan you create a dataset with only the treatmentTime values that are more than 0?\n\n\nWe can also select for string (words and letter) values. This is the same, except that we need to put any strings in quotes \" \" as in the below example.",
-    "crumbs": [
-      "Learn",
-      "R from Excel: Locust Serotonin levels",
-      "Filtering data from a table"
-    ]
-  },
-  {
-    "objectID": "worksheets/Discrete_continuous_scale.html",
-    "href": "worksheets/Discrete_continuous_scale.html",
-    "title": "Discrete verses continuous scale",
-    "section": "",
-    "text": "Discrete verses continuous scale\nHere we have three distinct treatment groups. This is a discrete scale - no locusts were crowded for 1.5 hours for instance.\nAs this is numerical, it’s automatically taken as a continuous scale. We can see this when we use fill = to colour the boxplots by treatmentTime.\n\n\n\n\n\n\n\n\nTo make the same dataset use a discrete scale for this value, we can use the as.factor() function.\nWe can use locust_df$treatmentTime to select the whole column. We can then use this as an argument by putting it inside the function: as.factor(locust_df$treatmentTime)\nFinally, if we just did the above it would convert our values to a factor but not save this. We can use &lt;- to overwrite our original column which had the numerical values.\nPutting that together we get:\nlocust_df$treatmentTime &lt;- as.factor(locust_df$treatmentTime)",
-    "crumbs": [
-      "Learn",
-      "R from Excel: Locust Serotonin levels",
-      "Discrete verses continuous scale"
-    ]
-  },
-  {
-    "objectID": "worksheets/penguin_task1.html",
-    "href": "worksheets/penguin_task1.html",
-    "title": "Task 1: Read the data",
-    "section": "",
-    "text": "Task 1: Read the data\nTo start off, you will want to:\n\nRead the csv file into R as a dataframe\nUse summary to get an overview of the data\nCalculate the mean and standard deviation of the numerical columns",
-    "crumbs": [
-      "Learn",
-      "Penguin task",
-      "Task 1: Read the data"
-    ]
-  },
-  {
-    "objectID": "worksheets/penguin_introduction.html",
-    "href": "worksheets/penguin_introduction.html",
-    "title": "Penguins dataset introduction",
-    "section": "",
-    "text": "Penguins dataset introduction\nFor this set of tasks, you will need the penguins.csv file from the Canvas page.\nThis is data from a study which looked at penguin couples. Once a penguin pair had laid an egg, both parents were captured and measurements were taken. They were then tracked to see if they would go on to have a second egg or “Full Clutch”.\nThis dataset contains the following information:\n\nPenguins data columns and descriptions\n\n\nColumn\nData\n\n\n\n\nSampleNumber\nUnique number for every penguin\n\n\nLatinName\nSpecies name, full Latin name\n\n\nCommonName\nCommon name for the penguin species\n\n\nFullClutch\nWhether or not the penguin couple laid two eggs\n\n\nFlipperLength\nLength of the penguin’s flipper in millimeters\n\n\nBodyMass\nMass of the penguin in grams\n\n\nSex\nWhether the penguin is male or female\n\n\n\nAnd is looking at penguins of the following three species:\n\n\n\n\n\n\nAdelie Penguin\n\n\n\n\n\n\n\nChinstrap Penguin\n\n\n\n\n\n\n\nGentoo Penguin\n\n\n\n\n\nTo process this data using R, using the techniques you’ve covered so far, this has been split into 5 small tasks.",
-    "crumbs": [
-      "Learn",
-      "Penguin task",
-      "Penguins dataset introduction"
-    ]
-  },
-  {
-    "objectID": "worksheets/penguin_task2.html",
-    "href": "worksheets/penguin_task2.html",
-    "title": "Task 2: Simple boxplots",
-    "section": "",
-    "text": "Task 2: Simple boxplots\nNow you have read the data into R, you should be able to use ggplot2 to draw boxplots.\nMake boxplots of:\n\nFlipperLength, separated by species\nBodyMass, separated by species\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nWhich value do you want on the x-axis? What about the y-axis?\n\n\n\n\n\n\n\n\n\nHint 2\n\n\n\n\n\nTo colour by species, try using the fill = option in aes().\n\n\n\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA boxplot of FlipperLength separated by species should look like this:",
-    "crumbs": [
-      "Learn",
-      "Penguin task",
-      "Task 2: Simple boxplots"
-    ]
-  },
-  {
-    "objectID": "worksheets/penguin_task3.html",
-    "href": "worksheets/penguin_task3.html",
-    "title": "Task 3: Split boxplots by multiple categories",
-    "section": "",
-    "text": "Task 3: Split boxplots by multiple categories\nIn the last example we used the same column of data for the x axis and the fill colour. If we change one of these, we can visualise the data further.\nMake boxplots of:\n\nFlipperLength, separated by species and Sex\nFlipperLength, separated by species and FullClutch\nBodyMass, separated by species and Sex\nBodyMass, separated by species and FullClutch\n\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA boxplot of FlipperLength separated by species and Sex should look like this:",
-    "crumbs": [
-      "Learn",
-      "Penguin task",
-      "Task 3: Split boxplots by multiple categories"
-    ]
-  },
-  {
-    "objectID": "worksheets/penguin_task4.html",
-    "href": "worksheets/penguin_task4.html",
-    "title": "Task 4: Visualise distributions of FlipperLength and BodyMass",
-    "section": "",
-    "text": "Task 4: Visualise distributions of FlipperLength and BodyMass\nNext, use a histogram to visualise the distributions of sizes. You may want to use the fill = option to separate by one of the categories.\nMake histograms of:\n\nFlipperLength, separated by species\nBodyMass, separated by species\n\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA histogram of of FlipperLength separated by species and Sex should look like this:\n\n\n\n\n\n\n\n\n\n\n\n\nThis is the end of the penguin task. Well done for getting this far! Just like a baby penguin learning how to swim and hunt for itself, learning how to program is a skill that takes time, practice and a lot of trial and error.\n\n\n\nGIF of a baby penguin",
-    "crumbs": [
-      "Learn",
-      "Penguin task",
-      "Task 4: Visualise distributions of FlipperLength and BodyMass"
-    ]
-  },
-  {
-    "objectID": "worksheets/penguin_extension.html",
-    "href": "worksheets/penguin_extension.html",
-    "title": "Extension 1: Use filter to plot results for individual species",
-    "section": "",
-    "text": "These next two activities are optional; they are slightly more advanced, so are there to challenge you if you’re comfortable with Tasks 1-4.\n\nExtension 1: Use filter to plot results for individual species\n\nUsing the filter() function, extract the values of just one species of penguin and save these in a new dataframe.\nRepeat as in Task 4, but separate the distributions by Sex or FullClutch\n\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA histogram of of FlipperLength separated by species and Sex should look like this:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtension 2: Larger penguin dataset\nIf you finish all of the above and would like to challenge your skills, download the Penguins_extension.csv from the Canvas page.\nThis is the same dataset but with more columns:\n\nPenguins extension data columns and descriptions\n\n\nColumn\nData\n\n\n\n\nSampleNumber\nUnique number for every penguin\n\n\nLatinName\nSpecies name, full Latin name\n\n\nCommonName\nCommon name for the penguin species\n\n\nRegion\nRegion of Antartica the penguin is in\n\n\nIsland\nIsland of Antartica the penguin’s nest is in\n\n\nFullClutch\nWhether or not the penguin couple laid two eggs\n\n\nEggDate\nDate at which the first egg was laid\n\n\nCulmenLength\nLength of the penguin’s culmen in millimeters\n\n\nCulmenDepth\nDepth of the penguin’s culmen in millimeters\n\n\nFlipperLength\nLength of the penguin’s flipper in millimeters\n\n\nBodyMass\nMass of the penguin in grams\n\n\nSex\nWhether the penguin is male or female\n\n\n\n\n\n\n\n\n\nDealing with dates\n\n\n\n\n\nOne column of this dataset is dates. By default these will be treated as strings - as words with no set order.\nThis means that dates won’t be plotted in order from oldest to newest, which is not very useful.\nTo convert our dates into a “Date” class - to tell R that these are dates - we can use the following code:\n\npenguin_df$EggDate &lt;- as.Date(penguin_df$EggDate, format = \"%d/%m/%y\")\n\n\n\n\nAt this point, it’s up to you what you want to do - explore the data! What can you find out? Are there any patterns emerging?",
-    "crumbs": [
-      "Learn",
-      "Penguin task",
-      "Extension 1: Use filter to plot results for individual species"
-    ]
-  },
-  {
-    "objectID": "worksheets/age_vs_blood_pressure.html",
-    "href": "worksheets/age_vs_blood_pressure.html",
-    "title": "Plotting age verses resting blood pressure",
-    "section": "",
-    "text": "Plotting age verses resting blood pressure\nWe could speculate that resting blood pressure may increase with age. To plot this, we can use the ggplot function geom_point.",
-    "crumbs": [
-      "Learn",
-      "Correlations",
-      "Plotting age verses resting blood pressure"
-    ]
-  },
-  {
-    "objectID": "worksheets/using_cor_function.html",
-    "href": "worksheets/using_cor_function.html",
-    "title": "Pearson’s coefficient: using cor()",
-    "section": "",
-    "text": "Pearson’s coefficient: using cor()\nWe can use two R functions to calculate our R and p values using a Pearson’s coefficient.\nOur first example uses cor(). This gives us the R value - how strong is the correlation?\n\n\n\n\n\n\n\n\nLet’s break that down:\n\ncor(heart_df$age, heart_df$restbp, method = 'pearson')\n\ncor() : This is our function name. This is a built in function.\nheart_df$age : This is going to our dataframe called heart_df and extracting the column of values under the column name “age”\nheart_df$restbp : This is going to our dataframe called heart_df and extracting the column of values under the column name “restbp”\n\nmethod = 'pearson'\n\nThis is a parameter, which is an option to choose how we want the function to work.\nWe can set this to either 'pearson' or 'spearman' depending on which test we want to use.",
-    "crumbs": [
-      "Learn",
-      "Correlations",
-      "Pearson's coefficient: using cor()"
-    ]
-  },
-  {
-    "objectID": "worksheets/using_cor.test_function.html",
-    "href": "worksheets/using_cor.test_function.html",
-    "title": "Pearson’s coefficient: using cor.test()",
-    "section": "",
-    "text": "Pearson’s coefficient: using cor.test()\nOur second example uses cor.test(). This gives us the R value - how strong is the correlation?\n\n\n\n\n\n\n\n\nAs you can see that works very similarly to our first example, except for the last two lines.\ncor.test() gives us a list of 9 values, there are only two we are interested in:\n\np.value is our probability p value\nestimate is our correlation coefficient (R value, same as above)",
-    "crumbs": [
-      "Learn",
-      "Correlations",
-      "Pearson's coefficient: using cor.test()"
-    ]
-  },
-  {
-    "objectID": "worksheets/add_pvalue_to_graph.html",
-    "href": "worksheets/add_pvalue_to_graph.html",
-    "title": "Annotate the R and p values onto the scatter graph",
-    "section": "",
-    "text": "To annotate our R and p values onto a scatter graph, we can use the stat_cor function from the ggpubr package.\nIf you’ve not already installed it, make sure that first you run:\ninstall.packages('ggpubr')\n\n\n\n\n\n\n\n\nThe only parameter we used here for stat_cor was method = 'pearson' so that it would plot a pearson’s correlation.\n\n\n\n\n\n\nQuestion\n\n\n\n\n\nDo the R and p values annotated on this graph match the results from cor.test()?\n\n\n\n\n\nWe can use parameters label.x and label.y to add co-ordinates for where we want the R and p value annotations to go.\nTry it below:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you’d like the R and p value to each be on their own line, we can add label.sep = '\\n' which adds a \\n newline character\nWhat happens if you add label.sep = 'HELLO'?",
-    "crumbs": [
-      "Learn",
-      "Correlations",
-      "Annotate the R and p values onto the scatter graph"
-    ]
-  },
-  {
-    "objectID": "worksheets/add_pvalue_to_graph.html#moving-the-r-and-p-values",
-    "href": "worksheets/add_pvalue_to_graph.html#moving-the-r-and-p-values",
-    "title": "Annotate the R and p values onto the scatter graph",
-    "section": "",
-    "text": "We can use parameters label.x and label.y to add co-ordinates for where we want the R and p value annotations to go.\nTry it below:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you’d like the R and p value to each be on their own line, we can add label.sep = '\\n' which adds a \\n newline character\nWhat happens if you add label.sep = 'HELLO'?",
-    "crumbs": [
-      "Learn",
-      "Correlations",
-      "Annotate the R and p values onto the scatter graph"
-    ]
-  },
-  {
-    "objectID": "worksheets/add_pvalue_to_graph.html#add-a-regression-line",
-    "href": "worksheets/add_pvalue_to_graph.html#add-a-regression-line",
-    "title": "Annotate the R and p values onto the scatter graph",
-    "section": "",
-    "text": "We can also use the funtion geom_smooth to fit and plot a linear regression model (lm) to our graph.\n\n\n\n\n\n\n\n\nWe use formula= y~x to define y as the outcome variable and x as the predictor: older age (x axis, predictor) leads to higher resting blood pressure (y axis, predicted outcome.)",
-    "crumbs": [
-      "Learn",
-      "Correlations",
-      "Annotate the R and p values onto the scatter graph"
     ]
   },
   {
@@ -464,79 +61,34 @@
     "crumbs": [
       "Learn",
       "Correlations",
+      "Correlations using heart data",
       "Add a regression line"
     ]
   },
   {
-    "objectID": "worksheets/separate_by_sex.html",
-    "href": "worksheets/separate_by_sex.html",
-    "title": "Separate by categorical group (sex)",
+    "objectID": "worksheets/penguin_task4.html",
+    "href": "worksheets/penguin_task4.html",
+    "title": "Task 4: Visualise distributions of FlipperLength and BodyMass",
     "section": "",
-    "text": "Separate by categorical group (sex)\nIf we add a color based on a categorical variable, this will then calculate the regression separately for each group.\nSee below, where we have assigned each point a colour based on sex:",
+    "text": "Task 4: Visualise distributions of FlipperLength and BodyMass\nNext, use a histogram to visualise the distributions of sizes. You may want to use the fill = option to separate by one of the categories.\nMake histograms of:\n\nFlipperLength, separated by species\nBodyMass, separated by species\n\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA histogram of of FlipperLength separated by species and Sex should look like this:\n\n\n\n\n\n\n\n\n\n\n\n\nThis is the end of the penguin task. Well done for getting this far! Just like a baby penguin learning how to swim and hunt for itself, learning how to program is a skill that takes time, practice and a lot of trial and error.\n\n\n\nGIF of a baby penguin",
     "crumbs": [
       "Learn",
-      "Correlations",
-      "Separate by categorical group (sex)"
+      "R introduction: basics to graphs",
+      "Penguin task",
+      "Task 4: Visualise distributions of FlipperLength and BodyMass"
     ]
   },
   {
-    "objectID": "worksheets/correlelogram.html",
-    "href": "worksheets/correlelogram.html",
-    "title": "Correlelograms",
+    "objectID": "worksheets/RFunctions.html",
+    "href": "worksheets/RFunctions.html",
+    "title": "R functions",
     "section": "",
-    "text": "Correlelograms\nOur dataset contained more than just age and blood pressure - it would be useful to see if there are any correlations between e.g. blood pressure and maximum heart rate, or cholesterol and age.\nWe can also use R to do an all-against-all correlation analysis, so without doing all of the above we can get an idea of if there are any correlations.\nThis uses the corrplot library. You might need to run install.packages('corrplot') before you can run this code.\n\n\n\n\n\n\n\n\nLet’s break that down:\n\nlibrary(corrplot) is loading the corrplot package, which has the functions we need\nheart_df_only_numerical &lt;- heart_df[,-2]\n\nOur sex in this dataframe is categorical (M or F) so we need to remove it\nheart_df[,-2] is selecting the whole of the heart_df dataframe except column 2\n\nheart_corrplot_matrix &lt;- cor(heart_df_only_numerical)\n\nThis uses the cor() function to calculate all-against-all correlations\n\ncorrplot(heart_corrplot_matrix\n\nThis takes our all-against-all correlations and plots a correlelogram\n\n\n\n\n\n\n\n\nTry:\n\n\n\n\n\nCorrplot also has different settings you can use.\nTo plot the strength of the correlation (R value) numerically, try: corrplot(heart_corrplot_matrix, method = \"number\")\nAnd if you only want to show the correlations that are statistically significant with a 5% chance of error:\ncorrplot(heart_corrplot_matrix, sig.level = 0.05)",
+    "text": "R functions\nWe won’t be writing our own R functions, but we’ll be using in-built functions and functions from libraries.\nA function is like a mini-program - it’s a set of code that somebody else has written that we can apply to our own variables.\nThese work using the following structure: function_name(arguments) where:\n\nfunction_name is the name of the function\narguments are the values we are putting in, or any options we want to change\n\nSee examples below using some in-built functions:\n\n\n\n\n\n\n\n\nWe can also give multiple arguments by separating them with commas.\nIn the example below, we’re using the seq() function to generate a sequence of numbers. We want the sequence to start at 0, end at 20, and go up by 2 every number.\n\n\n\n\n\n\n\n\n\nGive it a go:\nFrom what you’ve learnt so far, can you:\n\nGenerate every third number from 1 to 100 (1, 3, 6…)\nFind the mean of those numbers\nFind the standard deviation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nConsider using the seq() function\n\nseq(start value, stop value, by=increase)\n\n\n\n\n\n\n\n\n\n\n\n\nHint 2\n\n\n\n\n\nConsider using the functions seq(), mean() and sd()\n\nvariablename &lt;- seq(start value, stop value, by=increase)\nmean(variablename)\nsd(variablename)\n\n\n\n\n\n\n\n\n\n\n\nShow answer",
     "crumbs": [
       "Learn",
-      "Correlations",
-      "Correlelograms"
-    ]
-  },
-  {
-    "objectID": "worksheets/heart_data.html",
-    "href": "worksheets/heart_data.html",
-    "title": "Import Heart Dataset",
-    "section": "",
-    "text": "Import Heart Dataset\nThe dataset we are going to use is heart.csv which you can find on the Canvas page.\n\n\n\n\n\n\n\n\nThis dataset uses various metrics relating to heart health.\n\nheart.csv dataset\n\n\ncolumn\ndata\n\n\n\n\nage\nage of patient in years\n\n\nsex\nGender of the patient (F/M)\n\n\nrestbp\nResting blood pressure (mmHg)\n\n\nchol\nSerum cholesterol (mg/dl)\n\n\nmaxheartrate\nMaximum heart rate achieved\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\n\n\nWhich of these columns contain categorical data and which contain continuous data?",
-    "crumbs": [
-      "Learn",
-      "Correlations",
-      "Import Heart Dataset"
-    ]
-  },
-  {
-    "objectID": "worksheets/sleep_introduction.html",
-    "href": "worksheets/sleep_introduction.html",
-    "title": "Sleep Quality Dataset Introduction",
-    "section": "",
-    "text": "Sleep Quality Dataset Introduction\nFor this worksheet, you will need the Sleep_health_and_lifestyle_dataset.csv file from the Canvas page.\nThis dataset contains values for sleep quality and lifestyle factors. This is artificial data generated for illustrative purposes\nThis dataset contains the following information:\n\nSleep data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nAge\nAge of the individual\n\n\nSex\nSex of the individual (Male/Female)\n\n\nOccupation\nOccupation of the individual\n\n\nsleepduration\nAverage length of sleep (hours)\n\n\nsleepquality\nAverage sleep quality score\n\n\nactivitylevel\nValue assigned based on average level of physical activities (minutes/day)\n\n\nstress\nSelf-rated score of how stressed the individual feels\n\n\nheartrate\nResting heartrate of individual (beats per minute)\n\n\nsteps\nAverage number of steps taken per day\n\n\n\n\n\n\n© [Rudzhan] / Adobe Stock",
-    "crumbs": [
-      "Learn",
-      "Sleep task",
-      "Sleep Quality Dataset Introduction"
-    ]
-  },
-  {
-    "objectID": "worksheets/sleep_extension.html",
-    "href": "worksheets/sleep_extension.html",
-    "title": "Extension task",
-    "section": "",
-    "text": "Extension task\nCorrelation doesn’t always equal causation - and Spurious correlations has many examples to prove this.\nIf you go to the website and click on a correlation, you should get a table with the raw data.\nYou can then: 1. Copy and paste this table into excel 2. Save your excel spreadsheet as a CSV file 3. Read the CSV in R 4. Plot and test the correlations\n\n\n\n\n\n\nNote\n\n\n\n\n\nIt may not be as straightforward as you’d think to copy the data from the table and get this into R.\nYou might find that R doesn’t like spaces in column or row titles - or that your columns and rows are the wrong way around.\n\n\n\n\n\n\nSpurious correlatons",
-    "crumbs": [
-      "Learn",
-      "Sleep task",
-      "Extension task"
-    ]
-  },
-  {
-    "objectID": "worksheets/sleep_task.html",
-    "href": "worksheets/sleep_task.html",
-    "title": "Sleep task",
-    "section": "",
-    "text": "Sleep task\nThe task for this worksheet is to determine if there are any correlations in the dataset and what they are.\nYou should plot any correlations you find on a graph, such as the one below:\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA graph showing the correlation between sleep duration and resting heart rate, separated by sex.\n\n\n\n\n\n\n\n\n\n\n\n\nThere are lots of different variables in this dataset so do explore - what can you find out?",
-    "crumbs": [
-      "Learn",
-      "Sleep task",
-      "Sleep task"
+      "R introduction: basics to graphs",
+      "R basics",
+      "R functions"
     ]
   },
   {
@@ -624,6 +176,262 @@
     ]
   },
   {
+    "objectID": "worksheets/penguin_task1.html",
+    "href": "worksheets/penguin_task1.html",
+    "title": "Task 1: Read the data",
+    "section": "",
+    "text": "Task 1: Read the data\nTo start off, you will want to:\n\nRead the csv file into R as a dataframe\nUse summary to get an overview of the data\nCalculate the mean and standard deviation of the numerical columns",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "Penguin task",
+      "Task 1: Read the data"
+    ]
+  },
+  {
+    "objectID": "worksheets/penguin_task3.html",
+    "href": "worksheets/penguin_task3.html",
+    "title": "Task 3: Split boxplots by multiple categories",
+    "section": "",
+    "text": "Task 3: Split boxplots by multiple categories\nIn the last example we used the same column of data for the x axis and the fill colour. If we change one of these, we can visualise the data further.\nMake boxplots of:\n\nFlipperLength, separated by species and Sex\nFlipperLength, separated by species and FullClutch\nBodyMass, separated by species and Sex\nBodyMass, separated by species and FullClutch\n\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA boxplot of FlipperLength separated by species and Sex should look like this:",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "Penguin task",
+      "Task 3: Split boxplots by multiple categories"
+    ]
+  },
+  {
+    "objectID": "worksheets/penguin_task2.html",
+    "href": "worksheets/penguin_task2.html",
+    "title": "Task 2: Simple boxplots",
+    "section": "",
+    "text": "Task 2: Simple boxplots\nNow you have read the data into R, you should be able to use ggplot2 to draw boxplots.\nMake boxplots of:\n\nFlipperLength, separated by species\nBodyMass, separated by species\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nWhich value do you want on the x-axis? What about the y-axis?\n\n\n\n\n\n\n\n\n\nHint 2\n\n\n\n\n\nTo colour by species, try using the fill = option in aes().\n\n\n\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA boxplot of FlipperLength separated by species should look like this:",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "Penguin task",
+      "Task 2: Simple boxplots"
+    ]
+  },
+  {
+    "objectID": "worksheets/Vectors.html",
+    "href": "worksheets/Vectors.html",
+    "title": "Vectors",
+    "section": "",
+    "text": "Vectors\nAfter variables, the next thing we need to understand is vectors.\nVectors are a bit like lists but they can only hold one type of variable such as all integers (whole numbers) or all strings (words in “quotes”).\nTo make a vector, we need to use the c() function\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nWhat happens to the numbers in the my_numbers vector if you change 9 to 9.5?",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "R basics",
+      "Vectors"
+    ]
+  },
+  {
+    "objectID": "worksheets/CreateDataframe.html",
+    "href": "worksheets/CreateDataframe.html",
+    "title": "Dataframes",
+    "section": "",
+    "text": "Dataframes\nWe’ve looked at single values, and multiple values in a list. The next step is to look at tables of data - we can do this with dataframe. You’ll commonly see this named as df for dataframe.\n\n\n\n\n\n\n\n\nIf you look in your environment (top right panel) you’ll now see your Data_Frame variable. If you click it, this will open it in a new tab next to your R script.\nWe can use the built-in function summary() to create an overview of our data. For our numerical columns, this provides us with the interquartile range.\n\nSummarise the data\n\n\n\n\n\n\n\n\nThis is already all the information we need to create a box plot!",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "Make a box plot",
+      "Dataframes"
+    ]
+  },
+  {
+    "objectID": "worksheets/using_cor_function.html",
+    "href": "worksheets/using_cor_function.html",
+    "title": "Pearson’s coefficient: using cor()",
+    "section": "",
+    "text": "Pearson’s coefficient: using cor()\nWe can use two R functions to calculate our R and p values using a Pearson’s coefficient.\nOur first example uses cor(). This gives us the R value - how strong is the correlation?\n\n\n\n\n\n\n\n\nLet’s break that down:\n\ncor(heart_df$age, heart_df$restbp, method = 'pearson')\n\ncor() : This is our function name. This is a built in function.\nheart_df$age : This is going to our dataframe called heart_df and extracting the column of values under the column name “age”\nheart_df$restbp : This is going to our dataframe called heart_df and extracting the column of values under the column name “restbp”\n\nmethod = 'pearson'\n\nThis is a parameter, which is an option to choose how we want the function to work.\nWe can set this to either 'pearson' or 'spearman' depending on which test we want to use.",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Correlations using heart data",
+      "Pearson's coefficient: using cor()"
+    ]
+  },
+  {
+    "objectID": "worksheets/using_cor.test_function.html",
+    "href": "worksheets/using_cor.test_function.html",
+    "title": "Pearson’s coefficient: using cor.test()",
+    "section": "",
+    "text": "Pearson’s coefficient: using cor.test()\nOur second example uses cor.test(). This gives us the R value - how strong is the correlation?\n\n\n\n\n\n\n\n\nAs you can see that works very similarly to our first example, except for the last two lines.\ncor.test() gives us a list of 9 values, there are only two we are interested in:\n\np.value is our probability p value\nestimate is our correlation coefficient (R value, same as above)",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Correlations using heart data",
+      "Pearson's coefficient: using cor.test()"
+    ]
+  },
+  {
+    "objectID": "worksheets/correlelogram.html",
+    "href": "worksheets/correlelogram.html",
+    "title": "Correlelograms",
+    "section": "",
+    "text": "Correlelograms\nOur dataset contained more than just age and blood pressure - it would be useful to see if there are any correlations between e.g. blood pressure and maximum heart rate, or cholesterol and age.\nWe can also use R to do an all-against-all correlation analysis, so without doing all of the above we can get an idea of if there are any correlations.\nThis uses the corrplot library. You might need to run install.packages('corrplot') before you can run this code.\n\n\n\n\n\n\n\n\nLet’s break that down:\n\nlibrary(corrplot) is loading the corrplot package, which has the functions we need\nheart_df_only_numerical &lt;- heart_df[,-2]\n\nOur sex in this dataframe is categorical (M or F) so we need to remove it\nheart_df[,-2] is selecting the whole of the heart_df dataframe except column 2\n\nheart_corrplot_matrix &lt;- cor(heart_df_only_numerical)\n\nThis uses the cor() function to calculate all-against-all correlations\n\ncorrplot(heart_corrplot_matrix\n\nThis takes our all-against-all correlations and plots a correlelogram\n\n\n\n\n\n\n\n\nTry:\n\n\n\n\n\nCorrplot also has different settings you can use.\nTo plot the strength of the correlation (R value) numerically, try: corrplot(heart_corrplot_matrix, method = \"number\")\nAnd if you only want to show the correlations that are statistically significant with a 5% chance of error:\ncorrplot(heart_corrplot_matrix, sig.level = 0.05)",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Correlations using heart data",
+      "Correlelograms"
+    ]
+  },
+  {
+    "objectID": "worksheets/importcsv.html",
+    "href": "worksheets/importcsv.html",
+    "title": "Import CSV from Excel",
+    "section": "",
+    "text": "Import CSV from Excel\nNext we’re going to use tabular data from excel and import that as our data.\nI’ve put a csv file on the Canvas page for you to download and copy into your folder. A csv file is like a plain excel table, but missing all the Microsoft formatting. This makes it easier for us to use.\nYou can turn any excel file into a csv file by going File -&gt; Save as -&gt; File format: csv.\n\n\n\n\n\n\nWarning\n\n\n\nA CSV file can only have one sheet. If you have an excel file with multiple sheets and save it as a csv, the rest of the sheets will be lost!\n\n\nThe dataset we are going to use is LocustSerotonin.csv which you can find on the Canvas page. This contains serotonin levels in the central nervous system of desert locusts that were experimentally crowded for 0 (the control group), 1, and 2 hours. This data is from Chapter 2 of The Analysis of Biological Data.\n\n\n\n\n\n\n\n\n\nWe are using the function read.csv() to import our data into R. This will appear in the environment (top right panel) with our variables.\nWe are using the function head() to view the first five rows of our table.\n\nAs you can see we have a dataset of three columns:\n\nLocust Serotonin data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nserotoninLevel\nMeasurement of serotonin in individual locusts\n\n\ntreatmentTime\nAmount of time being crowded (0, 1 or 2 hours)\n\n\nserotoninCategory\nRank of serotonin level in three categories (High, Medium, Low)",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "R from Excel: Locust Serotonin levels",
+      "Import CSV from Excel"
+    ]
+  },
+  {
+    "objectID": "worksheets/anova.html",
+    "href": "worksheets/anova.html",
+    "title": "Anova",
+    "section": "",
+    "text": "Anova\nOur final example is using our one-way ANOVA. We’re using the example of salaries and degrees - note that there’s not the same number of values for each group.\n\n\n\n\n\n\n\n\n\nCreate a dataframe\nTo do an ANOVA, we need to organise our data into a dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\n\n\nWhy have we used c(9,7,9) here? What if you change these numbers around?\nIf you make a change, have a look at your Degrees_DataFrame values and see if they still match our original data.\n\n\n\n\n\nCalculate the ANOVA p-value\nWe can calculate the ANOVA p-value by using the aov() function.\n\n\n\n\n\n\n\n\nWe use salary ~ group to assess salary as a function of the degree group.\nWe always put the response variable before the ~ and the explanation variable after. Another way of reading salary ~ group would be “Salary depends on degree group”",
+    "crumbs": [
+      "Learn",
+      "T-tests",
+      "Anova"
+    ]
+  },
+  {
+    "objectID": "worksheets/chisq_extension.html",
+    "href": "worksheets/chisq_extension.html",
+    "title": "Extension",
+    "section": "",
+    "text": "Extension\nThis was a very large dataset and we only looked at a few columns.\nWhat else can you find out?\nNot all of the columns are categorical data - if you want to compare any other two variables (e.g. whether they went to nursery and their current grades); which test would you use?\nWe’ve covered all the main statistical tests now, so try and apply what you’ve learnt from every tutorial to this database.\n\n\n\nMeme of the Hulk being made for a Chi Squared test",
+    "crumbs": [
+      "Learn",
+      "Chi-squared and fisher",
+      "Extension"
+    ]
+  },
+  {
+    "objectID": "worksheets/Boxplot_3_from_csv.html",
+    "href": "worksheets/Boxplot_3_from_csv.html",
+    "title": "Boxplot from CSV (from Excel)",
+    "section": "",
+    "text": "Boxplot from CSV (from Excel)\nFrom the previous page, we have a dataset with three columns:\n\nLocust Serotonin data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nserotoninLevel\nMeasurement of serotonin in individual locusts\n\n\ntreatmentTime\nAmount of time being crowded (0, 1 or 2 hours)\n\n\nserotoninCategory\nRank of serotonin level in three categories (High, Medium, Low)\n\n\n\nNext, we’re going to use boxplots to compare the serotonin level for different treatment groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nWhat happens if you remove group = treatmentTime from the above code? What is this doing?\n\n\nLet’s break that down line by line:\n\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") - This is loading in our dataset. You should now see “locust_df” in your environment tab (top right corner)\nggplot(locust_df, aes(x = treatmentTime, y = serotoninLevel, group = treatmentTime)):\n\nggplot() is the graphing function we are using\nlocust_df is the data we want to plot\naes() is our aesthetics - what is our x and y values?\ngroup: Our treatmentTime column is a continuous data (as it is numerical). We want this to be discrete (three separate groups) so we explicity tell ggplot to organise this data into groups.\n\ngeom_boxplot(): this is specifying we want to plot a box plot of our data",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "R from Excel: Locust Serotonin levels",
+      "Boxplot from CSV (from Excel)"
+    ]
+  },
+  {
+    "objectID": "worksheets/fisher.html",
+    "href": "worksheets/fisher.html",
+    "title": "Fisher test",
+    "section": "",
+    "text": "Fisher test\nWe can also do a fisher test if we’re looking at categories with a smaller value.\nIf we compare sex and whether or not the student wants to go to higher education, you’ll see we have very low numbers of students that don’t want to go to higher education in this class.\n\n\n\n\n\n\n\n\nWe can then use the fisher test:",
+    "crumbs": [
+      "Learn",
+      "Chi-squared and fisher",
+      "Fisher test"
+    ]
+  },
+  {
+    "objectID": "worksheets/Boxplot_2.html",
+    "href": "worksheets/Boxplot_2.html",
+    "title": "Give it a go",
+    "section": "",
+    "text": "Give it a go\nCan you change the code to make a boxplot of the Duration values?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nThe only parts you need to change is the aes() aesthetics, and ggtitle()\n\n\n\n\n\n\n\n\n\n\nShow answer",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "Make a box plot",
+      "Give it a go"
+    ]
+  },
+  {
+    "objectID": "worksheets/separate_by_sex.html",
+    "href": "worksheets/separate_by_sex.html",
+    "title": "Separate by categorical group (sex)",
+    "section": "",
+    "text": "Separate by categorical group (sex)\nIf we add a color based on a categorical variable, this will then calculate the regression separately for each group.\nSee below, where we have assigned each point a colour based on sex:",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Correlations using heart data",
+      "Separate by categorical group (sex)"
+    ]
+  },
+  {
+    "objectID": "worksheets/sleep_extension.html",
+    "href": "worksheets/sleep_extension.html",
+    "title": "Extension task",
+    "section": "",
+    "text": "Extension task\nCorrelation doesn’t always equal causation - and Spurious correlations has many examples to prove this.\nIf you go to the website and click on a correlation, you should get a table with the raw data.\nYou can then: 1. Copy and paste this table into excel 2. Save your excel spreadsheet as a CSV file 3. Read the CSV in R 4. Plot and test the correlations\n\n\n\n\n\n\nNote\n\n\n\n\n\nIt may not be as straightforward as you’d think to copy the data from the table and get this into R.\nYou might find that R doesn’t like spaces in column or row titles - or that your columns and rows are the wrong way around.\n\n\n\n\n\n\nSpurious correlatons",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Sleep task",
+      "Extension task"
+    ]
+  },
+  {
+    "objectID": "worksheets/contingency_tables.html",
+    "href": "worksheets/contingency_tables.html",
+    "title": "Contigency tables",
+    "section": "",
+    "text": "Contigency tables\nFirst we need to read this information and store it in an R dataframe.\n\n\n\n\n\n\n\n\nFor our Chi-Squared and Fisher test however, we need to generate a contingency table. Effectively, we need to choose two categorical variables, and count the occurences of each combination. Luckily R will do this for us, using the table() function.\nLet’s first look to see if there’s a difference between sex and whether the student does after-school activities.",
+    "crumbs": [
+      "Learn",
+      "Chi-squared and fisher",
+      "Contigency tables"
+    ]
+  },
+  {
+    "objectID": "worksheets/Discrete_continuous_scale.html",
+    "href": "worksheets/Discrete_continuous_scale.html",
+    "title": "Discrete verses continuous scale",
+    "section": "",
+    "text": "Discrete verses continuous scale\nHere we have three distinct treatment groups. This is a discrete scale - no locusts were crowded for 1.5 hours for instance.\nAs this is numerical, it’s automatically taken as a continuous scale. We can see this when we use fill = to colour the boxplots by treatmentTime.\n\n\n\n\n\n\n\n\nTo make the same dataset use a discrete scale for this value, we can use the as.factor() function.\nWe can use locust_df$treatmentTime to select the whole column. We can then use this as an argument by putting it inside the function: as.factor(locust_df$treatmentTime)\nFinally, if we just did the above it would convert our values to a factor but not save this. We can use &lt;- to overwrite our original column which had the numerical values.\nPutting that together we get:\nlocust_df$treatmentTime &lt;- as.factor(locust_df$treatmentTime)",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "R from Excel: Locust Serotonin levels",
+      "Discrete verses continuous scale"
+    ]
+  },
+  {
+    "objectID": "worksheets/heart_data.html",
+    "href": "worksheets/heart_data.html",
+    "title": "Import Heart Dataset",
+    "section": "",
+    "text": "Import Heart Dataset\nThe dataset we are going to use is heart.csv which you can find on the Canvas page.\n\n\n\n\n\n\n\n\nThis dataset uses various metrics relating to heart health.\n\nheart.csv dataset\n\n\ncolumn\ndata\n\n\n\n\nage\nage of patient in years\n\n\nsex\nGender of the patient (F/M)\n\n\nrestbp\nResting blood pressure (mmHg)\n\n\nchol\nSerum cholesterol (mg/dl)\n\n\nmaxheartrate\nMaximum heart rate achieved\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\n\n\nWhich of these columns contain categorical data and which contain continuous data?",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Correlations using heart data",
+      "Import Heart Dataset"
+    ]
+  },
+  {
+    "objectID": "worksheets/Comments.html",
+    "href": "worksheets/Comments.html",
+    "title": "Comments",
+    "section": "",
+    "text": "Comments\nIf you put a hash # at the start of the line, this means it will be igorned and not run as code.\nWe use comments to add notes - to anyone else using our code, or to our future selves (you will forget what your code does!)",
+    "crumbs": [
+      "Learn",
+      "**R introduction: basics to graphs**",
+      "R basics",
+      "Comments"
+    ]
+  },
+  {
     "objectID": "worksheets/paired_t_test.html",
     "href": "worksheets/paired_t_test.html",
     "title": "Paired t-test",
@@ -684,63 +492,93 @@
     ]
   },
   {
-    "objectID": "worksheets/one_tailed_t_test.html",
-    "href": "worksheets/one_tailed_t_test.html",
-    "title": "One-tailed t-test",
+    "objectID": "worksheets/Violin.html",
+    "href": "worksheets/Violin.html",
+    "title": "Violin plots",
     "section": "",
-    "text": "We can follow the same process for the one-tailed t-test. First, we need our list of grades from our example.\n\n\n\n\n\n\n\n\n\n\nWe can use the summary() function to see our mean and interquartile range for each set of values.\n\n\n\n\n\n\n\n\n\n\n\nUsing the function t.test(), we can add our one set of values and the number we want to compare it to. In this example, we’re looking to see if our mean value is greater than 40.\nWe need to specify the option alternative = 'greater' to do a one-tailed test for if the mean of our Grades are significantly above our value for mu, which we have set to 40 (a pass).\n\n\n\n\n\n\n\n\n\n\n\nBecause we only have one group of data values, we can create our dataframe and draw our boxplot very simply.\n\n\n\n\n\n\n\n\nWe don’t need to annotate our p-value on here - it wouldn’t make much sense to do so as our p-value was specifically assessing if the mean was higher than 40 which is hard to represent visually.",
+    "text": "Violin plots\nViolin plots are similar to box plots, but they show more information on what the distribution is. A violin plot can sometimes give more useful information than a box plot.\nTo change from a box plot to a violin plot, you only need to change from geom_boxplot() to geom_violin().\n\n\n\n\n\n\n\n\nQuestion: If you add the line + geom_point(), what happens?",
     "crumbs": [
       "Learn",
-      "T-tests",
-      "One-tailed t-test"
+      "R introduction: basics to graphs",
+      "R from Excel: Locust Serotonin levels",
+      "Violin plots"
     ]
   },
   {
-    "objectID": "worksheets/one_tailed_t_test.html#summarise-the-data",
-    "href": "worksheets/one_tailed_t_test.html#summarise-the-data",
-    "title": "One-tailed t-test",
+    "objectID": "worksheets/add_pvalue_to_graph.html",
+    "href": "worksheets/add_pvalue_to_graph.html",
+    "title": "Annotate the R and p values onto the scatter graph",
     "section": "",
-    "text": "We can use the summary() function to see our mean and interquartile range for each set of values.",
+    "text": "To annotate our R and p values onto a scatter graph, we can use the stat_cor function from the ggpubr package.\nIf you’ve not already installed it, make sure that first you run:\ninstall.packages('ggpubr')\n\n\n\n\n\n\n\n\nThe only parameter we used here for stat_cor was method = 'pearson' so that it would plot a pearson’s correlation.\n\n\n\n\n\n\nQuestion\n\n\n\n\n\nDo the R and p values annotated on this graph match the results from cor.test()?\n\n\n\n\n\nWe can use parameters label.x and label.y to add co-ordinates for where we want the R and p value annotations to go.\nTry it below:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you’d like the R and p value to each be on their own line, we can add label.sep = '\\n' which adds a \\n newline character\nWhat happens if you add label.sep = 'HELLO'?",
     "crumbs": [
       "Learn",
-      "T-tests",
-      "One-tailed t-test"
+      "Correlations",
+      "Correlations using heart data",
+      "Annotate the R and p values onto the scatter graph"
     ]
   },
   {
-    "objectID": "worksheets/one_tailed_t_test.html#calculate-the-one-tailed-t-test-p-value",
-    "href": "worksheets/one_tailed_t_test.html#calculate-the-one-tailed-t-test-p-value",
-    "title": "One-tailed t-test",
+    "objectID": "worksheets/add_pvalue_to_graph.html#moving-the-r-and-p-values",
+    "href": "worksheets/add_pvalue_to_graph.html#moving-the-r-and-p-values",
+    "title": "Annotate the R and p values onto the scatter graph",
     "section": "",
-    "text": "Using the function t.test(), we can add our one set of values and the number we want to compare it to. In this example, we’re looking to see if our mean value is greater than 40.\nWe need to specify the option alternative = 'greater' to do a one-tailed test for if the mean of our Grades are significantly above our value for mu, which we have set to 40 (a pass).",
+    "text": "We can use parameters label.x and label.y to add co-ordinates for where we want the R and p value annotations to go.\nTry it below:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you’d like the R and p value to each be on their own line, we can add label.sep = '\\n' which adds a \\n newline character\nWhat happens if you add label.sep = 'HELLO'?",
     "crumbs": [
       "Learn",
-      "T-tests",
-      "One-tailed t-test"
+      "Correlations",
+      "Correlations using heart data",
+      "Annotate the R and p values onto the scatter graph"
     ]
   },
   {
-    "objectID": "worksheets/one_tailed_t_test.html#create-a-dataframe-and-boxplot",
-    "href": "worksheets/one_tailed_t_test.html#create-a-dataframe-and-boxplot",
-    "title": "One-tailed t-test",
+    "objectID": "worksheets/Variables.html",
+    "href": "worksheets/Variables.html",
+    "title": "Variables",
     "section": "",
-    "text": "Because we only have one group of data values, we can create our dataframe and draw our boxplot very simply.\n\n\n\n\n\n\n\n\nWe don’t need to annotate our p-value on here - it wouldn’t make much sense to do so as our p-value was specifically assessing if the mean was higher than 40 which is hard to represent visually.",
+    "text": "Variables\nA variable is a box where we can store a value. This is important - if we calculate something in R, we’re going to want to be able to access the answer, so we need to store it somewhere.\nSee the below example - you can click Run Code to see what this does.\n\n\n\n\n\n\n\n\nLet’s break that down:\n\na &lt;- 5 + 10\n\na : This is our variable name. A variable is a piece of data with a name so we can find it again.\n&lt;- : This is an assignment operator; equivalent to ” = “! It means the data on the right hand side is saved under the variable name on the left hand side\n5 + 10 : Mathematical operations in R have a set format. If you want to multiply two numbers, you would use an asterix (*).\n\na\n\na : This line will get the value from our variable a, and print it to the console. It’s really useful for checking if a value is what you expect, especially when you have many variables!",
     "crumbs": [
       "Learn",
-      "T-tests",
-      "One-tailed t-test"
+      "**R introduction: basics to graphs**",
+      "R basics",
+      "Variables"
     ]
   },
   {
-    "objectID": "worksheets/anova.html",
-    "href": "worksheets/anova.html",
-    "title": "Anova",
+    "objectID": "worksheets/penguin_extension.html",
+    "href": "worksheets/penguin_extension.html",
+    "title": "Extension 1: Use filter to plot results for individual species",
     "section": "",
-    "text": "Anova\nOur final example is using our one-way ANOVA. We’re using the example of salaries and degrees - note that there’s not the same number of values for each group.\n\n\n\n\n\n\n\n\n\nCreate a dataframe\nTo do an ANOVA, we need to organise our data into a dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\n\n\nWhy have we used c(9,7,9) here? What if you change these numbers around?\nIf you make a change, have a look at your Degrees_DataFrame values and see if they still match our original data.\n\n\n\n\n\nCalculate the ANOVA p-value\nWe can calculate the ANOVA p-value by using the aov() function.\n\n\n\n\n\n\n\n\nWe use salary ~ group to assess salary as a function of the degree group.\nWe always put the response variable before the ~ and the explanation variable after. Another way of reading salary ~ group would be “Salary depends on degree group”",
+    "text": "These next two activities are optional; they are slightly more advanced, so are there to challenge you if you’re comfortable with Tasks 1-4.\n\nExtension 1: Use filter to plot results for individual species\n\nUsing the filter() function, extract the values of just one species of penguin and save these in a new dataframe.\nRepeat as in Task 4, but separate the distributions by Sex or FullClutch\n\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA histogram of of FlipperLength separated by species and Sex should look like this:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtension 2: Larger penguin dataset\nIf you finish all of the above and would like to challenge your skills, download the Penguins_extension.csv from the Canvas page.\nThis is the same dataset but with more columns:\n\nPenguins extension data columns and descriptions\n\n\nColumn\nData\n\n\n\n\nSampleNumber\nUnique number for every penguin\n\n\nLatinName\nSpecies name, full Latin name\n\n\nCommonName\nCommon name for the penguin species\n\n\nRegion\nRegion of Antartica the penguin is in\n\n\nIsland\nIsland of Antartica the penguin’s nest is in\n\n\nFullClutch\nWhether or not the penguin couple laid two eggs\n\n\nEggDate\nDate at which the first egg was laid\n\n\nCulmenLength\nLength of the penguin’s culmen in millimeters\n\n\nCulmenDepth\nDepth of the penguin’s culmen in millimeters\n\n\nFlipperLength\nLength of the penguin’s flipper in millimeters\n\n\nBodyMass\nMass of the penguin in grams\n\n\nSex\nWhether the penguin is male or female\n\n\n\n\n\n\n\n\n\nDealing with dates\n\n\n\n\n\nOne column of this dataset is dates. By default these will be treated as strings - as words with no set order.\nThis means that dates won’t be plotted in order from oldest to newest, which is not very useful.\nTo convert our dates into a “Date” class - to tell R that these are dates - we can use the following code:\n\npenguin_df$EggDate &lt;- as.Date(penguin_df$EggDate, format = \"%d/%m/%y\")\n\n\n\n\nAt this point, it’s up to you what you want to do - explore the data! What can you find out? Are there any patterns emerging?",
     "crumbs": [
       "Learn",
-      "T-tests",
-      "Anova"
+      "**R introduction: basics to graphs**",
+      "Extension: Filtering data",
+      "Extension 1: Use filter to plot results for individual species"
+    ]
+  },
+  {
+    "objectID": "worksheets/chisquared.html",
+    "href": "worksheets/chisquared.html",
+    "title": "Chi-squared test",
+    "section": "",
+    "text": "Chi-squared test\nAs our grand total of observed values is more than 50 and every observation exceeds 5, we can use the chi squared test.\n\n\n\n\n\n\n\n\nAs the p-value is 0.0597, it is not less than 0.05 and therefore not significant with less than a 5% chance of error.",
+    "crumbs": [
+      "Learn",
+      "Chi-squared and fisher",
+      "Chi-squared test"
+    ]
+  },
+  {
+    "objectID": "worksheets/Filtering_data_from_table.html",
+    "href": "worksheets/Filtering_data_from_table.html",
+    "title": "Filtering data from a table",
+    "section": "",
+    "text": "Filtering data from a table\nWhat do we do if we only want to use part of our dataset?\nIn R, there are many ways we can filter our datasets to extract just the values we need. Lets say we want to filter our LocustSerotonin data to have only the 0 hour treatmentTime group.\n\n\n\n\n\n\n\n\nLet’s break that down:\n\nWe’re using functions from the dplyr package. You need to install by typing install.packages('dplyr') if you haven’t already.\nWe’re using the filter() function to select all rows where treatmentTime is exactly 0. Be sure to notice the double ==!\n%&gt;% is a pipe - it’s telling R to pass the dataset on the left (locust_df) to the function on the right (filter())\nWe don’t want to overwrite our full dataset, so we’re saving in a new dataframe called treatment0_df using &lt;- .\n\n\n\n\n\n\n\nQuestion\n\n\n\nCan you create a dataset with only the treatmentTime values that are more than 0?\n\n\nWe can also select for string (words and letter) values. This is the same, except that we need to put any strings in quotes \" \" as in the below example.",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "R from Excel: Locust Serotonin levels",
+      "Filtering data from a table"
     ]
   },
   {
@@ -768,6 +606,92 @@
     ]
   },
   {
+    "objectID": "worksheets/one_tailed_t_test.html",
+    "href": "worksheets/one_tailed_t_test.html",
+    "title": "One-tailed t-test",
+    "section": "",
+    "text": "We can follow the same process for the one-tailed t-test. First, we need our list of grades from our example.\n\n\n\n\n\n\n\n\n\n\nWe can use the summary() function to see our mean and interquartile range for each set of values.\n\n\n\n\n\n\n\n\n\n\n\nUsing the function t.test(), we can add our one set of values and the number we want to compare it to. In this example, we’re looking to see if our mean value is greater than 40.\nWe need to specify the option alternative = 'greater' to do a one-tailed test for if the mean of our Grades are significantly above our value for mu, which we have set to 40 (a pass).\n\n\n\n\n\n\n\n\n\n\n\nBecause we only have one group of data values, we can create our dataframe and draw our boxplot very simply.\n\n\n\n\n\n\n\n\nWe don’t need to annotate our p-value on here - it wouldn’t make much sense to do so as our p-value was specifically assessing if the mean was higher than 40 which is hard to represent visually.",
+    "crumbs": [
+      "Learn",
+      "**T-tests**",
+      "One-tailed t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/one_tailed_t_test.html#summarise-the-data",
+    "href": "worksheets/one_tailed_t_test.html#summarise-the-data",
+    "title": "One-tailed t-test",
+    "section": "",
+    "text": "We can use the summary() function to see our mean and interquartile range for each set of values.",
+    "crumbs": [
+      "Learn",
+      "**T-tests**",
+      "One-tailed t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/one_tailed_t_test.html#calculate-the-one-tailed-t-test-p-value",
+    "href": "worksheets/one_tailed_t_test.html#calculate-the-one-tailed-t-test-p-value",
+    "title": "One-tailed t-test",
+    "section": "",
+    "text": "Using the function t.test(), we can add our one set of values and the number we want to compare it to. In this example, we’re looking to see if our mean value is greater than 40.\nWe need to specify the option alternative = 'greater' to do a one-tailed test for if the mean of our Grades are significantly above our value for mu, which we have set to 40 (a pass).",
+    "crumbs": [
+      "Learn",
+      "**T-tests**",
+      "One-tailed t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/one_tailed_t_test.html#create-a-dataframe-and-boxplot",
+    "href": "worksheets/one_tailed_t_test.html#create-a-dataframe-and-boxplot",
+    "title": "One-tailed t-test",
+    "section": "",
+    "text": "Because we only have one group of data values, we can create our dataframe and draw our boxplot very simply.\n\n\n\n\n\n\n\n\nWe don’t need to annotate our p-value on here - it wouldn’t make much sense to do so as our p-value was specifically assessing if the mean was higher than 40 which is hard to represent visually.",
+    "crumbs": [
+      "Learn",
+      "**T-tests**",
+      "One-tailed t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/age_vs_blood_pressure.html",
+    "href": "worksheets/age_vs_blood_pressure.html",
+    "title": "Plotting age verses resting blood pressure",
+    "section": "",
+    "text": "Plotting age verses resting blood pressure\nWe could speculate that resting blood pressure may increase with age. To plot this, we can use the ggplot function geom_point.",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Correlations using heart data",
+      "Plotting age verses resting blood pressure"
+    ]
+  },
+  {
+    "objectID": "worksheets/GGstyle.html",
+    "href": "worksheets/GGstyle.html",
+    "title": "GGstyle",
+    "section": "",
+    "text": "GGstyle\nWe can use the + to add new lines to our graph. This allows us to add more styling information.\nYou want a + at the end of every line until the last one. This tells R where you want to stop and move on.\n\n\n\n\n\n\n\n\nCheck out this ggplot2 cheat sheet for more styling options",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "Make a box plot",
+      "GGstyle"
+    ]
+  },
+  {
+    "objectID": "worksheets/portuguese_students.html",
+    "href": "worksheets/portuguese_students.html",
+    "title": "Portugese students data",
+    "section": "",
+    "text": "Portugese students data\nFor this tutorial we need the “student-mat.csv” file from the canvas page. This is from a study looking factors that may affect maths students at a school in Portugal, which includes lots of categorical data.\nThis dataset contains the following information about each student:\n\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nschool\nstudent’s school (‘GP’ - Gabriel Pereira or ‘MS’ - Mousinho da Silveira)\n\n\nsex\nstudent’s sex (‘binary: ’F’ - female or ‘M’ - male)\n\n\nage\nstudent’s age (numeric: from 15 to 22)\n\n\naddress\nstudent’s home address type (‘U’ - urban or ‘R’ - rural)\n\n\nfamsize\nfamily size ( ‘LE3’ - less or equal to 3 or ‘GT3’ - greater than 3)\n\n\nPstatus\nparent’s cohabitation status (‘T’ - living together or ‘A’ - apart)\n\n\nMedu\nmother’s education (numeric: 0 - none, 1 - primary education (4th grade), 2 – 5th to 9th grade, 3 – secondary education or 4 – higher education)\n\n\nFedu\nfather’s education (numeric: 0 - none, 1 - primary education (4th grade), 2 – 5th to 9th grade, 3 – secondary education or 4 – higher education)\n\n\nMjob\nmother’s job (nominal: ‘teacher’, ‘health’ care related, civil ‘services’ (e.g. administrative or police), ‘at_home’ or ‘other’)\n\n\nFjob\nfather’s job (nominal: ‘teacher’, ‘health’ care related, civil ‘services’ (e.g. administrative or police), ‘at_home’ or ‘other’)\n\n\nreason\nreason to choose this school (nominal: close to ‘home’, school ‘reputation’, ‘course’ preference or ‘other’)\n\n\nguardian\nstudent’s guardian (nominal: ‘mother’, ‘father’ or ‘other’)\n\n\ntraveltime\nhome to school travel time (numeric: 1 - &lt;15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - &gt;1 hour)\n\n\nstudytime\nweekly study time (numeric: 1 - &lt;2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - &gt;10 hours)\n\n\nfailures\nnumber of past class failures (numeric: n if 1&lt;=n&lt;3, else 4)\n\n\nschoolsup\nextra educational support (binary: yes or no)\n\n\nfamsup\nfamily educational support (binary: yes or no)\n\n\npaid\nextra paid classes within the course subject (binary: yes or no)\n\n\nactivities\nextra-curricular activities (binary: yes or no)\n\n\nnursery\nattended nursery school (binary: yes or no)\n\n\nhigher\nwants to take higher education (binary: yes or no)\n\n\ninternet\nInternet access at home (binary: yes or no)\n\n\nromantic\nwith a romantic relationship (binary: yes or no)\n\n\nfamrel\nquality of family relationships (numeric: from 1 - very bad to 5 - excellent)\n\n\nfreetime\nfree time after school (numeric: from 1 - very low to 5 - very high)\n\n\ngoout\ngoing out with friends (numeric: from 1 - very low to 5 - very high)\n\n\nDalc\nworkday alcohol consumption (numeric: from 1 - very low to 5 - very high)\n\n\nWalc\nweekend alcohol consumption (numeric: from 1 - very low to 5 - very high)\n\n\nhealth\ncurrent health status (numeric: from 1 - very bad to 5 - very good)\n\n\nabsences\nnumber of school absences (numeric: from 0 to 93)\n\n\nG1\nfirst period grade (numeric: from 0 to 20)\n\n\nG2\nsecond period grade (numeric: from 0 to 20)\n\n\nG3\nfinal grade (numeric: from 0 to 20, output target)",
+    "crumbs": [
+      "Learn",
+      "**Chi-squared and fisher**",
+      "Portugese students data"
+    ]
+  },
+  {
     "objectID": "worksheets/t-test_extension.html",
     "href": "worksheets/t-test_extension.html",
     "title": "Extension",
@@ -778,5 +702,192 @@
       "T-tests",
       "Extension"
     ]
+  },
+  {
+    "objectID": "worksheets/chisquared_multiple_values.html",
+    "href": "worksheets/chisquared_multiple_values.html",
+    "title": "Chi-squared with multiple categories",
+    "section": "",
+    "text": "Chi-squared with multiple categories\nFinally, let’s look at an example with multiple categories in one of the variables.\nPerhaps there is a difference between the reasons students chose the school and which school they attend.\n\n# Create a contigency table for school verses reason \nmaths_students=read.csv(\"student-mat.csv\", header=TRUE)\n\nschool_by_reason &lt;- table(maths_students$school, maths_students$reason)\nschool_by_reason\n\n\n\n    \n     course home other reputation\n  GP    124   98    27        100\n  MS     21   11     9          5\n\n\nWe can then run the chi-squared test exactly the same as before:\n\n# Calculate the chi squared test \nchisq &lt;- chisq.test(school_by_reason)\n\n# Print a table of observations\nchisq$observed\n\n    \n     course home other reputation\n  GP    124   98    27        100\n  MS     21   11     9          5\n\n# Print a table of expected values\nchisq$expected\n\n    \n        course     home     other reputation\n  GP 128.11392 96.30633 31.807595   92.77215\n  MS  16.88608 12.69367  4.192405   12.22785\n\n# Print the p-value\nchisq$p.value\n\n[1] 0.005947834\n\n\nThe p-value is 0.00595 (is this less than 0.05?)\nWe can visualise which factors had the biggest contribution to the result by doing the following calculation:\n\\(100 \\times \\frac{residuals^2}{statistic}\\)\nWe can then visualise this with corrplot.\n\nlibrary(corrplot)\n\n# Run calculation of contributions\ncontrib &lt;- 100*chisq$residuals^2/chisq$statistic\n\n# Visualise with corrplot\ncorrplot(contrib, is.cor = FALSE)",
+    "crumbs": [
+      "Learn",
+      "Chi-squared and fisher",
+      "Chi-squared with multiple categories"
+    ]
+  },
+  {
+    "objectID": "worksheets/InstallPackages.html",
+    "href": "worksheets/InstallPackages.html",
+    "title": "Install packages",
+    "section": "",
+    "text": "Install packages\nFor the rest of the worksheet section, we need to install packages\nIn R we use many packages - these are extensions that contain the code we need to do cool things like plot graphs. There are many packages available for different uses, which means you don’t have to write everything from scratch!\nInstall the packages we will be using. In the console (bottom left corner), copy and paste each of the following two lines and press enter:\ninstall.packages('ggplot2')\ninstall.packages('dplyr')",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "Make a box plot",
+      "Install packages"
+    ]
+  },
+  {
+    "objectID": "worksheets/sleep_introduction.html",
+    "href": "worksheets/sleep_introduction.html",
+    "title": "Sleep Quality Dataset Introduction",
+    "section": "",
+    "text": "Sleep Quality Dataset Introduction\nFor this worksheet, you will need the Sleep_health_and_lifestyle_dataset.csv file from the Canvas page.\nThis dataset contains values for sleep quality and lifestyle factors. This is artificial data generated for illustrative purposes\nThis dataset contains the following information:\n\nSleep data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nAge\nAge of the individual\n\n\nSex\nSex of the individual (Male/Female)\n\n\nOccupation\nOccupation of the individual\n\n\nsleepduration\nAverage length of sleep (hours)\n\n\nsleepquality\nAverage sleep quality score\n\n\nactivitylevel\nValue assigned based on average level of physical activities (minutes/day)\n\n\nstress\nSelf-rated score of how stressed the individual feels\n\n\nheartrate\nResting heartrate of individual (beats per minute)\n\n\nsteps\nAverage number of steps taken per day\n\n\n\n\n\n\n© [Rudzhan] / Adobe Stock",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Sleep task",
+      "Sleep Quality Dataset Introduction"
+    ]
+  },
+  {
+    "objectID": "worksheets/Barplot_counts.html",
+    "href": "worksheets/Barplot_counts.html",
+    "title": "Bar plot by counts",
+    "section": "",
+    "text": "Bar plot by counts\nSometimes we don’t want to use numerical values (such as the serotonin level) that we already have in our dataset. If we want to plot the numbers of our categories we can make a bar plot like in the below example:\n\n\n\n\n\n\n\n\nHere we have:\n\nSet locust_df$serotoninCategory as a factor with levels. This was to order our graph. What happens if you comment this out?\nUsed geom_bar(stat = 'count') - for each category on the x axis, this counts the number of entries. Without using fill, this would just make a bar of height 10 for all three groups, as there was equal numbers of each treatment group.\nThe fill is used to colour the sections by serotonin category.\n\n\nVisualising distributions\nWe can also draw histograms to visualise distributions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhat is binwidth = 0.6 doing? What changes if you remove this? What if you make this value smaller or larger?\n\n\nIs this a normal distribution? It’s a small dataset so it’s hard to tell, but we’ll go through more examples in the worksheet.",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "R from Excel: Locust Serotonin levels",
+      "Bar plot by counts"
+    ]
+  },
+  {
+    "objectID": "worksheets/sleep_task.html",
+    "href": "worksheets/sleep_task.html",
+    "title": "Sleep task",
+    "section": "",
+    "text": "Sleep task\nThe task for this worksheet is to determine if there are any correlations in the dataset and what they are.\nYou should plot any correlations you find on a graph, such as the one below:\n\n\n\n\n\n\nExample of generated graph\n\n\n\n\n\nA graph showing the correlation between sleep duration and resting heart rate, separated by sex.\n\n\n\n\n\n\n\n\n\n\n\n\nThere are lots of different variables in this dataset so do explore - what can you find out?",
+    "crumbs": [
+      "Learn",
+      "Correlations",
+      "Sleep task",
+      "Sleep task"
+    ]
+  },
+  {
+    "objectID": "worksheets/Boxplot.html",
+    "href": "worksheets/Boxplot.html",
+    "title": "Boxplot",
+    "section": "",
+    "text": "Boxplot\nWe’re going to use a library of functions called ggplot2 to make our box plot.\nBefore we can use the library, we need to install it. To do that, copy the following line into the console (bottom left section): install.packages('ggplot2')\n\n\n\n\n\n\n\n\nDo the values match what we got in the summary() function?\nLet’s break that down:\n\nggplot(Data_Frame, aes(y = Pulse)) +\n\nggplot() : This is our plotting function\nData_Frame: This is our argument of what data we want to use\naes(): aes is aesthetics, which allows us to choose our groups for x, y or categories\ny = Pulse: this is setting our y value to be the pulse column\n\ngeom_boxplot()\n\nThis tells R to use the data we chose to make a boxplot",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "Make a box plot",
+      "Boxplot"
+    ]
+  },
+  {
+    "objectID": "worksheets/subset_of_values.html",
+    "href": "worksheets/subset_of_values.html",
+    "title": "Testing a subset of the values",
+    "section": "",
+    "text": "Testing a subset of the values\nThe strongest contributions appear to be in the “reputation” and “other” categories.\nTo see if these are statistically significant, we can create a new database with just these values so we can then compare them.\n\n\n\n\n\n\n\n\nOnce we have our contigency table, we can then run our chi-squared test:",
+    "crumbs": [
+      "Learn",
+      "Chi-squared and fisher",
+      "Testing a subset of the values"
+    ]
+  },
+  {
+    "objectID": "worksheets/odds_and_risk_ratios.html",
+    "href": "worksheets/odds_and_risk_ratios.html",
+    "title": "Odds and Risk ratios",
+    "section": "",
+    "text": "We can calculate the odds ratio for our comparison using the oddsratio() function from the epitools package.\nYou’ll first need to install.packages('epitools').\n\n\n\n\n\n\n\n\nThis result shows us the odds of male students doing an activity (compared to females) is 1.491 -&gt; they are around 1.5 times more likely to be doing an activity.\nAlso in this table are the “lower” and “upper” values are the boundaries for the 95% confidence interval. As both values are above one, this indicates increased odds (of males doing an activity compared to females).\nWe can do the same calculation the other way around, looking at the odds of females doing an activity compared to males.\n\n\n\n\n\n\n\n\nThe options you can give for the rev (reverse) parameter are “neither”, “rows”, “columns” and “both”.\n\n\n\nRisk ratio is very similar to odds ratio (refer back to Statistics Lecture 4 for an explanation of the differences).\nWe can also calculate risk ratio in R.\n\n\n\n\n\n\n\n\nThis shows the risk of males doing an activity (compared to females) is 1.217.",
+    "crumbs": [
+      "Learn",
+      "Chi-squared and fisher",
+      "Odds and Risk ratios"
+    ]
+  },
+  {
+    "objectID": "worksheets/odds_and_risk_ratios.html#odds-ratio",
+    "href": "worksheets/odds_and_risk_ratios.html#odds-ratio",
+    "title": "Odds and Risk ratios",
+    "section": "",
+    "text": "We can calculate the odds ratio for our comparison using the oddsratio() function from the epitools package.\nYou’ll first need to install.packages('epitools').\n\n\n\n\n\n\n\n\nThis result shows us the odds of male students doing an activity (compared to females) is 1.491 -&gt; they are around 1.5 times more likely to be doing an activity.\nAlso in this table are the “lower” and “upper” values are the boundaries for the 95% confidence interval. As both values are above one, this indicates increased odds (of males doing an activity compared to females).\nWe can do the same calculation the other way around, looking at the odds of females doing an activity compared to males.\n\n\n\n\n\n\n\n\nThe options you can give for the rev (reverse) parameter are “neither”, “rows”, “columns” and “both”.",
+    "crumbs": [
+      "Learn",
+      "Chi-squared and fisher",
+      "Odds and Risk ratios"
+    ]
+  },
+  {
+    "objectID": "worksheets/odds_and_risk_ratios.html#risk-ratio",
+    "href": "worksheets/odds_and_risk_ratios.html#risk-ratio",
+    "title": "Odds and Risk ratios",
+    "section": "",
+    "text": "Risk ratio is very similar to odds ratio (refer back to Statistics Lecture 4 for an explanation of the differences).\nWe can also calculate risk ratio in R.\n\n\n\n\n\n\n\n\nThis shows the risk of males doing an activity (compared to females) is 1.217.",
+    "crumbs": [
+      "Learn",
+      "Chi-squared and fisher",
+      "Odds and Risk ratios"
+    ]
+  },
+  {
+    "objectID": "worksheets/penguin_introduction.html",
+    "href": "worksheets/penguin_introduction.html",
+    "title": "Penguins dataset introduction",
+    "section": "",
+    "text": "Penguins dataset introduction\nFor this set of tasks, you will need the penguins.csv file from the Canvas page.\nThis is data from a study which looked at penguin couples. Once a penguin pair had laid an egg, both parents were captured and measurements were taken. They were then tracked to see if they would go on to have a second egg or “Full Clutch”.\nThis dataset contains the following information:\n\nPenguins data columns and descriptions\n\n\nColumn\nData\n\n\n\n\nSampleNumber\nUnique number for every penguin\n\n\nLatinName\nSpecies name, full Latin name\n\n\nCommonName\nCommon name for the penguin species\n\n\nFullClutch\nWhether or not the penguin couple laid two eggs\n\n\nFlipperLength\nLength of the penguin’s flipper in millimeters\n\n\nBodyMass\nMass of the penguin in grams\n\n\nSex\nWhether the penguin is male or female\n\n\n\nAnd is looking at penguins of the following three species:\n\n\n\n\n\n\nAdelie Penguin\n\n\n\n\n\n\n\nChinstrap Penguin\n\n\n\n\n\n\n\nGentoo Penguin\n\n\n\n\n\nTo process this data using R, using the techniques you’ve covered so far, this has been split into 5 small tasks.",
+    "crumbs": [
+      "Learn",
+      "R introduction: basics to graphs",
+      "Penguin task",
+      "Penguins dataset introduction"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to R Programming!",
+    "section": "",
+    "text": "The next 5 computing sessions are going to introduce you to R programming. This is a computer language very commonly used in Life Sciences to do statistical analyses and interpret large data sets.\nDon’t worry if you’ve never done any programming before - we’re starting from the very beginning.\n\n\nAdvances in Life Sciences has let to the creation of terrabytes of Big Data. We can now sequence millions of bases of DNA, calculate expression levels of thousands of proteins and track the movements of whales around the world.\nIn order to be able to make sense of these large datasets, we use programming languages. It would be quite difficult to calculate a statistically significant result if your dataset has more than 1000 values!\n\n\n\nBelow is a table of a recent publication for each subject which used R in the analysis - quite varied!\n\nLife Science R Programming Examples. Images from Google and Adobe Stock\n\n\n\n\n\n\n\nDegree\nPaper title\nIcon\n\n\n\n\nBiomedical Science\nPediatric leukemia and maternal occupational exposure to anticancer drugs: the Japan Environment and Children’s Study\n\n\n\nBiochemistry\nThe ORP9-ORP11 dimer promotes sphingomyelin synthesis\n\n\n\nBiological Science\nHumpback whale song complexity and evolution on a northwestern Pacific breeding ground: Okinawa, Japan\n\n\n\nPharmacology\nExplaining Blood–Brain Barrier Permeability of Small Molecules by Integrated Analysis of Different Transport Mechanisms\n\n\n\nForensic Science\nAn Open-Source Implementation of the CMPS Algorithm for Assessing Similarity of Bullets\n\n\n\n\n\n\n\nThis course is your first introduction to R.\nNext year (Level 5), most of you will continue R programming in Research Methods and Skills. Forensic Science students will use other Statistical Analysis software.\nIn your final year (Level 6) you will all do a research project - this may be in the lab, a literature review or data project. R programming can be used for analysis of your research data in all of these projects.\nBiological Science (Molecular Biology) and Biochemistry students will also do a Python-programming module at Level 6. This builds on what you know from R.\n\n\n\nFirst get yourself set up with R and RStudio - click the “Set Up” tab for instructions.\nNext start the classes under the “Learn” tab. This is all of the material for the five sessions - you can work through them at your own pace.\nEach page will cover a new concept, or have an activity on for you to try. As you work through, try to experiment - change parts of the code examples and see if it will still work. This is how you figure out how it works.\nIf you have any other questions, grab a member of teaching staff in the session or email Dr Lizzie Wadsworth at L.Wadsworth@kingston.ac.uk\n\n\n\nGIF of Homer Simpson at a Computer"
+  },
+  {
+    "objectID": "index.html#why-are-we-learning-r",
+    "href": "index.html#why-are-we-learning-r",
+    "title": "Welcome to R Programming!",
+    "section": "",
+    "text": "Advances in Life Sciences has let to the creation of terrabytes of Big Data. We can now sequence millions of bases of DNA, calculate expression levels of thousands of proteins and track the movements of whales around the world.\nIn order to be able to make sense of these large datasets, we use programming languages. It would be quite difficult to calculate a statistically significant result if your dataset has more than 1000 values!"
+  },
+  {
+    "objectID": "index.html#what-about-my-subject",
+    "href": "index.html#what-about-my-subject",
+    "title": "Welcome to R Programming!",
+    "section": "",
+    "text": "Below is a table of a recent publication for each subject which used R in the analysis - quite varied!\n\nLife Science R Programming Examples. Images from Google and Adobe Stock\n\n\n\n\n\n\n\nDegree\nPaper title\nIcon\n\n\n\n\nBiomedical Science\nPediatric leukemia and maternal occupational exposure to anticancer drugs: the Japan Environment and Children’s Study\n\n\n\nBiochemistry\nThe ORP9-ORP11 dimer promotes sphingomyelin synthesis\n\n\n\nBiological Science\nHumpback whale song complexity and evolution on a northwestern Pacific breeding ground: Okinawa, Japan\n\n\n\nPharmacology\nExplaining Blood–Brain Barrier Permeability of Small Molecules by Integrated Analysis of Different Transport Mechanisms\n\n\n\nForensic Science\nAn Open-Source Implementation of the CMPS Algorithm for Assessing Similarity of Bullets"
+  },
+  {
+    "objectID": "index.html#when-will-i-do-this-in-my-degree",
+    "href": "index.html#when-will-i-do-this-in-my-degree",
+    "title": "Welcome to R Programming!",
+    "section": "",
+    "text": "This course is your first introduction to R.\nNext year (Level 5), most of you will continue R programming in Research Methods and Skills. Forensic Science students will use other Statistical Analysis software.\nIn your final year (Level 6) you will all do a research project - this may be in the lab, a literature review or data project. R programming can be used for analysis of your research data in all of these projects.\nBiological Science (Molecular Biology) and Biochemistry students will also do a Python-programming module at Level 6. This builds on what you know from R."
+  },
+  {
+    "objectID": "index.html#what-should-i-be-doing",
+    "href": "index.html#what-should-i-be-doing",
+    "title": "Welcome to R Programming!",
+    "section": "",
+    "text": "First get yourself set up with R and RStudio - click the “Set Up” tab for instructions.\nNext start the classes under the “Learn” tab. This is all of the material for the five sessions - you can work through them at your own pace.\nEach page will cover a new concept, or have an activity on for you to try. As you work through, try to experiment - change parts of the code examples and see if it will still work. This is how you figure out how it works.\nIf you have any other questions, grab a member of teaching staff in the session or email Dr Lizzie Wadsworth at L.Wadsworth@kingston.ac.uk\n\n\n\nGIF of Homer Simpson at a Computer"
+  },
+  {
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "Help",
+    "section": "",
+    "text": "Help"
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Set up",
+    "section": "",
+    "text": "Set up\nWe are going to use RStudio for this course. You can do this on campus from a University Computer, online using a free Posit Cloud account that you can access from any web browser, or by downloading R and RStudio onto your own device.\nClick below to see the set up instructions for each:\n\nUniversity ComputerOnline CloudOwn Device\n\n\nTo get set up, follow the below steps. Click each step for detailed instructions.\n\n\n\n\n\n\nStep 1: Launch RStudio from AppsAnywhere\n\n\n\n\n\n\nType in AppsAnywhere to the windows bar. This will open in a web browser\nType in RStudio in AppsAnywhere\nClick “Launch” and wait for it to install and open.\n\n\n\n\nGIF of Opening RStudio\n\n\n\n\n\n\n\n\n\n\n\nStep 2: Navigate to your OneDrive folder\n\n\n\n\n\n\nCopy and paste the following into the Console on the left, and press enter.\n\nsetwd(\"O:/\")\n\nClick the “More” cog and select “Go To Working Directory”\n\nYou should now be in your OneDrive. You should be able to recognise the files and folders listed, from what you have saved here in your other classes.\n\n\n\nGIF of Opening OneDrive\n\n\n\n\n\n\n\n\nIf you get the error message ‘cannot change working directory’\n\n\n\n\n\nOccasionally there is an issue with how OneDrive is loaded on the University computer.\nIf you get the error message:\nError in setwd(\"O:/\") : cannot change working directory\nThen try the following. Replace the underscores with your K number.\nsetwd(\"C:/Users/K______/\")\nClick the “More” cog and select “Go To Working Directory”\nThen find and click on the folder:\nOneDrive Kingston University\nClick the more cog and select Set As Working Directory\n\n\n\nGIF of Opening OneDrive with common error\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep 3: Create or move to a folder for LS4003\n\n\n\n\n\nIf you don’t already have a folder for LS4003 Statistics, then you can create one by clicking “New Folder” and entering a name.\nIf your new folder doesn’t appear, click the refresh button (to the right of the more cog).\nThen:\n\nClick into your new folder\nClick the More Cog and select “Set As Working Directory”\n\n\n\n\nGIF of Making a Folder\n\n\n\n\n\n\n\n\n\n\n\nStep 4: Create an R file\n\n\n\n\n\nOnce you’re in your folder you can create and save an R file. This is where you put your code.\n\nClick on the Green Plus icon and select “R Script”\nIn the top bar, click “File” and then “Save”\nGive your file a name (e.g. “R_tutorial_1” )\n\nWhen you make any changes, you can save the file by going File -&gt; Save.\nYou can also save by holding down Control and S at the same time.\n\n\n\nGIF of Making an R File\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThis will automatically add the “.R” extension so we know it’s an R file - R_tutorial_1.R\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\n\n\nMake sure you can find your file in file explorer. Always back up your work such as saving in OneDrive or emailing to yourself so that you don’t lose your progress.\n\n\n\n\n\n\n\n\n\n\n\n\nStep 5: Write and run R code\n\n\n\n\n\nYou’re now ready to run some R code!\n\nCopy and paste the following into your R file:\n\n\nvalue &lt;- \"Hello World\"\nvalue\n\n\nHighlight both lines and click the “Run” icon (green arrow)\n\nYou should see a result in your console (bottom left panel) and your environment (top right panel)\nYou’re now ready to start learning R!\n\n\n\nGIF of Running an R File\n\n\n\n\n\n\n\nPosit Cloud is a free online browser version, allowing you to work from any device.\n\n\n\n\n\n\nCaution\n\n\n\n\n\nYou shouldn’t need a paid account for this course. If you use up the compute hours then I suggest downloading RStudio and R onto your own device.\n\n\n\nTo get set up, follow the instructions below:\n\n\n\n\n\n\nStep 1: Launch RStudio from AppsAnywhere\n\n\n\n\n\n\nCreate a free account and login\nCreate Project -&gt; RStudio\nName your project (where it says “Untitled Project”)\n\n\n\n\nGIF of Creating a PositCloud Project\n\n\n\n\n\n\n\n\n\n\n\nStep 2: Create an R file\n\n\n\n\n\nOnce you’re in your project you can create and save an R file. This is where you put your code.\n\nClick on the Green Plus icon and select “R Script”\nClick the Save icon\nGive your file a name (e.g. “My_R_file” )\n\nRemember to keep saving your file using the save icon.\n\n\n\nGIF of Making an R File\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThis will automatically add the “.R” extension so we know it’s an R file - My_R_file.R\n\n\n\n\n\n\n\n\n\n\n\n\nStep 3: Write and run R code\n\n\n\n\n\nYou’re now ready to run some R code!\n\nCopy and paste the following into your R file:\n\n\nvalue &lt;- \"Hello World\"\nvalue\n\n\nSave your R file by clicking the save icon\nHighlight both lines and click the “Run” icon (green arrow)\n\nYou should see a result in your console (bottom left panel) and your environment (top right panel)\nYou’re now ready to start learning R!\n\n\n\nGIF of Running an R File\n\n\n\n\n\n\n\nIf you’re working on your own laptop or computer it’s also possible to download and run R and RStudio. These are both free, open-source programs.\n\n\n\n\n\n\nNote\n\n\n\n\n\nIf you’re working on a tablet, chromebook or your device is typically slow, I recommend looking at the Posit Online Cloud option instead\n\n\n\nInstalling R and RStudio can be a bit fiddley - let the teaching team know if you’d like any support.\nWhy two programs? R is the programming language, that takes our code and creates our graphs. RStudio is a program we use to edit and view our R files and plots; known as an Integrated Development Environment (IDE).\n\n\n\n\n\n\nStep 1: Install R\n\n\n\n\n\nYou can Install R from this website. You want to select the version for your operating system (Windows or Mac).\n\n\n\n\n\n\n\n\n\nStep 2: Install RStudio\n\n\n\n\n\nOnce R is installed, you can install RStudio from this website.\nThe free version is more than sufficient I don’t know anyone who has needed Desktop pro.\n\n\n\n\n\n\n\n\n\nStep 3: Create or move to a folder for LS4003\n\n\n\n\n\nOnce RStudio is open, you want to browse files until you can find your documents - wherever you keep your university files.\nNext, create a folder to keep all your R programming work in (e.g “LS4003 R Programming”).\nClick on the new folder to enter it. Click the cog, and “Set as Working Directory”\n\n\n\n\n\n\n\n\n\nStep 4: Create an R file\n\n\n\n\n\nOnce you’re in your project you can create and save an R file. This is where you put your code.\n\nClick on the Green Plus icon and select “R Script”\nClick the Save icon\nGive your file a name (e.g. “My_R_file” )\n\nRemember to keep saving your file using the save icon.\n\n\n\nGIF of Making an R File\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nThis will automatically add the “.R” extension so we know it’s an R file - My_R_file.R\n\n\n\n\n\n\n\n\n\n\n\n\nStep 5: Write and run R code\n\n\n\n\n\nYou’re now ready to run some R code!\n\nCopy and paste the following into your R file:\n\n\nvalue &lt;- \"Hello World\"\nvalue\n\n\nSave your R file by clicking the save icon\nHighlight both lines and click the “Run” icon (green arrow)\n\nYou should see a result in your console (bottom left panel) and your environment (top right panel)\nYou’re now ready to start learning R!"
   }
 ]

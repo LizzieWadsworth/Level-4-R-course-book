@@ -26,7 +26,7 @@ website:
       background: light
       collapse-level: 2
       contents: 
-        - section: "R introduction: basics to graphs"
+        - section: "**R introduction: basics to graphs**"
           contents:
             - section: "R basics"
               contents:
@@ -50,7 +50,6 @@ website:
                 - href: worksheets/Discrete_continuous_scale.qmd
                 - href: worksheets/Violin.qmd
                 - href: worksheets/Barplot_counts.qmd
-                - href: worksheets/Filtering_data_from_table.qmd
             - section: "Penguin task"
               contents:
                 - href: "worksheets/penguin_introduction.qmd"
@@ -58,8 +57,11 @@ website:
                 - href: "worksheets/penguin_task2.qmd"
                 - href: "worksheets/penguin_task3.qmd"
                 - href: "worksheets/penguin_task4.qmd"
+            - section: "Extension: Filtering data"
+              contents:
+                - href: worksheets/Filtering_data_from_table.qmd
                 - href: "worksheets/penguin_extension.qmd"
-        - section: "Correlations"
+        - section: "**Correlations**"
           contents: 
             - section: "Correlations using heart data"
               contents:
@@ -76,7 +78,7 @@ website:
                 - href: "worksheets/sleep_introduction.qmd"
                 - href: "worksheets/sleep_task.qmd"
                 - href: "worksheets/sleep_extension.qmd"
-        - section: "T-tests"
+        - section: "**T-tests**"
           contents:
             - href: "worksheets/unpaired_t_test.qmd"
             - href: "worksheets/paired_t_test.qmd"
@@ -84,7 +86,7 @@ website:
             - href: "worksheets/anova.qmd"
             - href: "worksheets/pairwise_t_test.qmd"
             - href: "worksheets/t-test_extension.qmd"
-        - section: "Chi-squared and fisher"
+        - section: "**Chi-squared and fisher**"
           contents: 
             - href: "worksheets/portuguese_students.qmd"
             - href: "worksheets/contingency_tables.qmd"
@@ -94,7 +96,6 @@ website:
             - href: "worksheets/chisquared_multiple_values.qmd"
             - href: "worksheets/subset_of_values.qmd"
             - href: "worksheets/chisq_extension.qmd"
-
 
   favicon: LS4003_logo_no_text.png
 

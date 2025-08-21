@@ -4,7 +4,7 @@ engine: knitr
 lightbox: true
 webr:
   resources:
-    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/student-mat.csv
   packages:
     - ggplot2
     - dplyr

@@ -1,10 +1,10 @@
 ---
-format: live-html
+format: html
 engine: knitr
 lightbox: true
 webr:
   resources:
-    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/student-mat.csv
   packages:
     - ggplot2
     - dplyr
@@ -18,19 +18,31 @@ Finally, let's look at an example with multiple categories in one of the variabl
 
 Perhaps there is a difference between the reasons students chose the school and which school they attend.
 
-```{webr}
-#| context: interactive
-#| autorun: true
+```{r}
+#| eval: false
+#| warning: false
 # Create a contigency table for school verses reason 
+maths_students=read.csv("student-mat.csv", header=TRUE)
+
+school_by_reason <- table(maths_students$school, maths_students$reason)
+school_by_reason
+```
+
+```{r}
+#| echo: false
+#| output: true
+#| warning: false
+# Create a contigency table for school verses reason 
+maths_students=read.csv("../Datasets/student-mat.csv", header=TRUE)
+
 school_by_reason <- table(maths_students$school, maths_students$reason)
 school_by_reason
 ```
 
 We can then run the chi-squared test exactly the same as before:
 
-```{webr}
-#| context: interactive
-#| autorun: true
+```{r}
+#| warning: false
 # Calculate the chi squared test 
 chisq <- chisq.test(school_by_reason)
 
@@ -52,17 +64,8 @@ $100 \times \frac{residuals^2}{statistic}$
 
 We can then visualise this with corrplot.
 
-*There is an issue with web r so this plot isn't interactive*
-
 ```{r}
-#| echo: false
-#| output: false
-maths_students=read.csv("student-mat.csv", header=TRUE)
-school_by_reason <- table(maths_students$school, maths_students$reason)
-chisq <- chisq.test(school_by_reason)
-```
-
-```{r}
+#| warning: false
 library(corrplot)
 
 # Run calculation of contributions

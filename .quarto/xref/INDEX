@@ -156,5 +156,29 @@
   },
   "worksheets/t-test_extension.qmd": {
     "t-test_extension.html": "fb41bdd5"
+  },
+  "worksheets/portuguese_students.qmd": {
+    "portuguese_students.html": "5ea5f9f6"
+  },
+  "worksheets/contingency_tables.qmd": {
+    "contingency_tables.html": "6e39770c"
+  },
+  "worksheets/fisher.qmd": {
+    "fisher.html": "dda960ca"
+  },
+  "worksheets/chisquared.qmd": {
+    "chisquared.html": "5c0c596d"
+  },
+  "worksheets/chisq_extension.qmd": {
+    "chisq_extension.html": "44679c1e"
+  },
+  "worksheets/chisquared_multiple_values.qmd": {
+    "chisquared_multiple_values.html": "ef729865"
+  },
+  "worksheets/subset_of_values.qmd": {
+    "subset_of_values.html": "6ff635e5"
+  },
+  "worksheets/odds_and_risk_ratios.qmd": {
+    "odds_and_risk_ratios.html": "957df048"
   }
 }
