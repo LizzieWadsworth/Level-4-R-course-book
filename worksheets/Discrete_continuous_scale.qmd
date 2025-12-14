@@ -16,12 +16,30 @@ webr:
 
 Here we have three distinct treatment groups. This is a discrete scale - no locusts were crowded for 1.5 hours for instance.
 
+::: {.panel-tabset}
+
+## Continuous scale
+
 As this is numerical, it's automatically taken as a continuous scale. We can see this when we use `fill =` to colour the boxplots by treatmentTime.
 
-```{webr}
+```{r}
+#| eval: false
+library(ggplot2)
 # Import the CSV file into an R Dataframe
 locust_df <- read.csv("LocustSerotonin.csv") 
-head(locust_df)
+
+# Plot the data using ggplot package
+ggplot(locust_df, aes(x = treatmentTime, 
+                      y = serotoninLevel, 
+                      group = treatmentTime, 
+                      fill = treatmentTime)) +
+  geom_boxplot() 
+```
+```{r}
+#| echo: false
+library(ggplot2)
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("../Datasets/LocustSerotonin.csv") 
 
 # Plot the data using ggplot package
 ggplot(locust_df, aes(x = treatmentTime, 
@@ -31,9 +49,15 @@ ggplot(locust_df, aes(x = treatmentTime,
   geom_boxplot() 
 ```
 
-To make the same dataset use a discrete scale for this value, we can use the `as.factor()` function.
+## Discrete scale
 
-We can use `locust_df$treatmentTime` to select the whole column. We can then use this as an argument by putting it inside the function: `as.factor(locust_df$treatmentTime)`
+We can convert our dataframe column to a factor, which are variables that have a fixed and known set of possible values (categorical data). 
+
+To select a column from a dataframe, we can use `$`. So our treatmentTime column is `locust_df$treatmentTime`. 
+
+To turn a column of data from being continuous values to being discrete values, we can use the `as.factor()` function. 
+
+We can apply this to our treatmentTime values by using: `as.factor(locust_df$treatmentTime)`
 
 Finally, if we just did the above it would convert our values to a factor **but not save this**. We can use `<-` to **overwrite** our original column which had the numerical values.
 
@@ -41,10 +65,11 @@ Putting that together we get:
 
 `locust_df$treatmentTime <- as.factor(locust_df$treatmentTime)`
 
-```{webr}
+```{r}
+#| eval: false
+library(ggplot2)
 # Import the CSV file into an R Dataframe
 locust_df <- read.csv("LocustSerotonin.csv") 
-head(locust_df)
 
 # Convert treatment time column to discrete values
 locust_df$treatmentTime <- as.factor(locust_df$treatmentTime)
@@ -56,3 +81,21 @@ ggplot(locust_df, aes(x = treatmentTime,
                       fill = treatmentTime)) +
   geom_boxplot() 
 ```
+```{r}
+#| echo: false
+library(ggplot2)
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("../Datasets/LocustSerotonin.csv") 
+
+# Convert treatment time column to discrete values
+locust_df$treatmentTime <- as.factor(locust_df$treatmentTime)
+
+# Plot the data using ggplot package
+ggplot(locust_df, aes(x = treatmentTime, 
+                      y = serotoninLevel, 
+                      group = treatmentTime, 
+                      fill = treatmentTime)) +
+  geom_boxplot() 
+```
+
+:::

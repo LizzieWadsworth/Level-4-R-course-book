@@ -1,3 +1,25 @@
 # Careers
 
-In summary, this book has no content whatsoever.
+R programming is a skill that comes in useful in many careers. These careers may include: 
+
+-  Bioinformatician 
+-  Data analyst 
+-  Data scientist 
+-  Forensic statistician 
+-  Clinical trail R programming lead
+
+Here is a snapshot of some (shortened) job adverts from 2025 - check out the person requirements: 
+
+
+
+
+
+
+If you find you particulary enjoy this course, you can also check out the following internships, graduate schemes and masters degrees. 
+
+
+
+
+
+
+Not sure what you want to do? No problem - you're still at an early stage in your degree. You might change your mind quite a few times between now and then! But it's always worth thinking about what you _might_ like to do and anything you need to do to get there. 

@@ -12,7 +12,17 @@ We can use the `+` to add new lines to our graph. This allows us to add more sty
 
 You want a `+` at the end of every line **until the last one**. This tells R where you want to stop and move on.
 
-```{webr}
+```{r}
+# Load ggplot2 library
+library(ggplot2) 
+
+# Create a data frame
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
 # Create a boxplot of pulse
 ggplot(Data_Frame, aes(y = Pulse)) +
   # add a colour argument

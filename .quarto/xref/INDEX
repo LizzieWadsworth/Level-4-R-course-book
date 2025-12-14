@@ -180,5 +180,11 @@
   },
   "worksheets/odds_and_risk_ratios.qmd": {
     "odds_and_risk_ratios.html": "957df048"
+  },
+  "worksheets/open_csv_in_R.qmd": {
+    "open_csv_in_R.html": "5fce1a65"
+  },
+  "worksheets/penguin_extension_2.qmd": {
+    "penguin_extension_2.html": "efe77d0c"
   }
 }

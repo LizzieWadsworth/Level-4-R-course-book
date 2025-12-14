@@ -18,10 +18,31 @@ Violin plots are similar to box plots, but they show more information on what th
 
 To change from a box plot to a violin plot, you only need to change from `geom_boxplot()` to `geom_violin()`.
 
-```{webr}
+```{r}
+#| eval: false
+library(ggplot2)
 # Import the CSV file into an R Dataframe
 locust_df <- read.csv("LocustSerotonin.csv") 
-head(locust_df)
+
+# Convert treatment time column to discrete values
+locust_df$treatmentTime <- as.factor(locust_df$treatmentTime)
+
+# Plot the data using ggplot package
+ggplot(locust_df, aes(x = treatmentTime, 
+                      y = serotoninLevel, 
+                      group = treatmentTime, 
+                      fill = treatmentTime)) +
+
+  geom_violin() 
+```
+```{r}
+#| echo: false
+library(ggplot2)
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("../Datasets/LocustSerotonin.csv") 
+
+# Convert treatment time column to discrete values
+locust_df$treatmentTime <- as.factor(locust_df$treatmentTime)
 
 # Plot the data using ggplot package
 ggplot(locust_df, aes(x = treatmentTime, 

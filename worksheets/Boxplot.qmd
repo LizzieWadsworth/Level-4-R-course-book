@@ -8,15 +8,20 @@ lightbox: true
 
 # Boxplot
 
-We're going to use a library of functions called `ggplot2` to make our box plot.
+Now we've installed ggplot2, we can use it to make a box plot from our data frame. 
 
-Before we can use the library, we need to install it. To do that, copy the following line into the *console* (bottom left section): `install.packages('ggplot2')`
+```{r}
+# Load ggplot2 library
+library(ggplot2) 
 
-```{webr}
-# Libraries
-library(ggplot2) # load ggplot2 libray 
+# Create a data frame
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
 
-# Create a boxplot of pulse
+# Create a boxplot of Pulse values
 ggplot(Data_Frame, aes(y = Pulse)) +
   geom_boxplot() 
 ```

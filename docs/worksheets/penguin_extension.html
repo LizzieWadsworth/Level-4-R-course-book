@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,19 +30,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../worksheets/heart_data.html" rel="next">
+<link href="../worksheets/penguin_extension_2.html" rel="next">
 <link href="../worksheets/Filtering_data_from_table.html" rel="prev">
 <link href="../LS4003_logo_no_text.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8e522160f6cd9e55291864200cb4d651.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-169705d3eabda05963f3986ba613488e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -119,6 +85,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">LS4003 R programming</span>
     </a>
@@ -130,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Why R</span></a>
   </li>  
   <li class="nav-item">
@@ -138,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Set Up</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../learn.html" aria-current="page"> 
+    <a class="nav-link" href="../learn.html"> 
 <span class="menu-text">Learn</span></a>
   </li>  
   <li class="nav-item">
@@ -174,6 +142,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -285,13 +257,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../worksheets/importcsv.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Import CSV from Excel</span></a>
+ <span class="menu-text">Download CSV file</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../worksheets/open_csv_in_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open CSV file in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../worksheets/Boxplot_3_from_csv.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Boxplot from CSV (from Excel)</span></a>
+ <span class="menu-text">Boxplot from file</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -309,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../worksheets/Barplot_counts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bar plot by counts</span></a>
+ <span class="menu-text">Bar charts and histograms</span></a>
   </div>
 </li>
       </ul>
@@ -374,6 +352,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../worksheets/penguin_extension.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Extension 1: Use filter to plot results for individual species</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../worksheets/penguin_extension_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extension 2: Larger penguin dataset</span></a>
   </div>
 </li>
       </ul>
@@ -601,7 +585,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>These next two activities are <em>optional</em>; they are slightly more advanced, so are there to challenge you if you’re comfortable with Tasks 1-4.</p>
+<p>These next two activities are <em>optional</em>; they are slightly more advanced, so are there to challenge you if you’re comfortable with <a href="../worksheets/penguin_introduction.html">Penguin Tasks 1-4</a>.</p>
 <section id="extension-1-use-filter-to-plot-results-for-individual-species" class="level1">
 <h1>Extension 1: Use filter to plot results for individual species</h1>
 <ol type="1">
@@ -614,13 +598,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example of generated graph
+<span class="screen-reader-only">Tip</span>Example of generated graph
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>A histogram of of FlipperLength separated by species and Sex should look like this:</p>
+<p>A histogram of of FlipperLength for Adelie Penguins should look like this:</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -633,92 +617,6 @@ Example of generated graph
 </div>
 </div>
 </div>
-</section>
-<section id="extension-2-larger-penguin-dataset" class="level1">
-<h1>Extension 2: Larger penguin dataset</h1>
-<p>If you finish all of the above and would like to challenge your skills, download the <code>Penguins_extension.csv</code> from the Canvas page.</p>
-<p>This is the same dataset but with more columns:</p>
-<table class="table-striped table-hover caption-top table">
-<caption>Penguins extension data columns and descriptions</caption>
-<thead>
-<tr class="header">
-<th>Column</th>
-<th>Data</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>SampleNumber</td>
-<td>Unique number for every penguin</td>
-</tr>
-<tr class="even">
-<td>LatinName</td>
-<td>Species name, full Latin name</td>
-</tr>
-<tr class="odd">
-<td>CommonName</td>
-<td>Common name for the penguin species</td>
-</tr>
-<tr class="even">
-<td>Region</td>
-<td>Region of Antartica the penguin is in</td>
-</tr>
-<tr class="odd">
-<td>Island</td>
-<td>Island of Antartica the penguin’s nest is in</td>
-</tr>
-<tr class="even">
-<td>FullClutch</td>
-<td>Whether or not the penguin couple laid two eggs</td>
-</tr>
-<tr class="odd">
-<td>EggDate</td>
-<td>Date at which the first egg was laid</td>
-</tr>
-<tr class="even">
-<td>CulmenLength</td>
-<td>Length of the penguin’s culmen in millimeters</td>
-</tr>
-<tr class="odd">
-<td>CulmenDepth</td>
-<td>Depth of the penguin’s culmen in millimeters</td>
-</tr>
-<tr class="even">
-<td>FlipperLength</td>
-<td>Length of the penguin’s flipper in millimeters</td>
-</tr>
-<tr class="odd">
-<td>BodyMass</td>
-<td>Mass of the penguin in grams</td>
-</tr>
-<tr class="even">
-<td>Sex</td>
-<td>Whether the penguin is male or female</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-note callout-titled" title="Dealing with dates">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Dealing with dates
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<p>One column of this dataset is dates. By default these will be treated as strings - as words with no set order.</p>
-<p>This means that dates won’t be plotted in order from oldest to newest, which is not very useful.</p>
-<p>To convert our dates into a “Date” class - to tell R that these are dates - we can use the following code:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>penguin_df<span class="sc">$</span>EggDate <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(penguin_df<span class="sc">$</span>EggDate, <span class="at">format =</span> <span class="st">"%d/%m/%y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<p>At this point, it’s up to you what you want to do - explore the data! What can you find out? Are there any patterns emerging?</p>
 
 
 </section>
@@ -775,13 +673,14 @@ Dealing with dates
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1130,8 +1029,8 @@ Dealing with dates
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../worksheets/heart_data.html" class="pagination-link" aria-label="Import Heart Dataset">
-        <span class="nav-page-text">Import Heart Dataset</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../worksheets/penguin_extension_2.html" class="pagination-link" aria-label="Extension 2: Larger penguin dataset">
+        <span class="nav-page-text">Extension 2: Larger penguin dataset</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -12,14 +12,34 @@ webr:
 
 {{< include /_extensions/r-wasm/live/_knitr.qmd >}}
 
-# Bar plot by counts
+# Bar charts and histograms
 
-Sometimes we don't want to use numerical values (such as the serotonin level) that we already have in our dataset. If we want to plot the numbers of our categories we can make a bar plot like in the below example:
+::: {.panel-tabset}
 
-```{webr}
+## Bar charts by counts
+
+Sometimes we don't want to use numerical values (such as the serotonin level) that we already have in our dataset. If we want to plot the numbers of our categories we can make a bar chart like in the below example:
+
+```{r}
+#| eval: false
+library(ggplot2)
+
 # Import the CSV file into an R Dataframe
 locust_df <- read.csv("LocustSerotonin.csv") 
-head(locust_df)
+
+# Set factor levels with factor() function
+locust_df$serotoninCategory <- factor(locust_df$serotoninCategory, levels = c("High", "Medium", "Low"))
+
+# Use geom_bar(stat='count') to create bar chart
+ggplot(locust_df, aes(x = treatmentTime, fill = serotoninCategory)) +
+         geom_bar(stat = 'count')
+```
+```{r}
+#| echo: false
+library(ggplot2)
+
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("../Datasets/LocustSerotonin.csv") 
 
 # Set factor levels with factor() function
 locust_df$serotoninCategory <- factor(locust_df$serotoninCategory, levels = c("High", "Medium", "Low"))
@@ -37,11 +57,31 @@ Here we have:
 
 3.  The fill is used to colour the sections by serotonin category.
 
-### Visualising distributions
+## Histograms
 
-We can also draw histograms to visualise distributions.
+We can also draw histograms using `geom_histogram` to visualise distributions.
 
-```{webr}
+```{r}
+#| eval: false
+library(ggplot2)
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("LocustSerotonin.csv") 
+
+# Plot a histogram grouped by treatmentTime
+ggplot(locust_df, aes(x = serotoninLevel, group = treatmentTime, 
+                      fill = treatmentTime)) +
+  geom_histogram(binwidth = 0.6)
+```
+```{r}
+#| echo: false
+library(ggplot2)
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("../Datasets/LocustSerotonin.csv") 
+
+# Convert treatment time column to discrete values
+locust_df$treatmentTime <- as.factor(locust_df$treatmentTime)
+
+# Plot a histogram grouped by treatmentTime
 ggplot(locust_df, aes(x = serotoninLevel, group = treatmentTime, 
                       fill = treatmentTime)) +
   geom_histogram(binwidth = 0.6)
@@ -51,4 +91,6 @@ ggplot(locust_df, aes(x = serotoninLevel, group = treatmentTime,
 What is `binwidth = 0.6` doing? What changes if you remove this? What if you make this value smaller or larger?
 :::
 
-Is this a normal distribution? It's a small dataset so it's hard to tell, but we'll go through more examples in the worksheet.
+Is this a normal distribution? 
+
+:::

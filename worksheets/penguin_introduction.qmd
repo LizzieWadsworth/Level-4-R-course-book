@@ -14,7 +14,18 @@ webr:
 
 # Penguins dataset introduction
 
-For this set of tasks, you will need the `penguins.csv` file from the Canvas page.
+For this set of tasks, you will need the `penguins.csv` file. 
+
+```{=html}
+<a href="../Datasets/penguins.csv" 
+   class="btn btn-lg text-white rounded-pill px-4 py-2" 
+   style="background: linear-gradient(90deg, #13a4b4ff, #143c53ff); box-shadow: 0 4px 6px rgba(0,0,0,0.1);" 
+   download>
+  📥 Download penguins.csv
+</a>
+```
+
+  \
 
 This is data from a study which looked at penguin couples. Once a penguin pair had laid an egg, both parents were captured and measurements were taken. They were then tracked to see if they would go on to have a second egg or "Full Clutch".
 

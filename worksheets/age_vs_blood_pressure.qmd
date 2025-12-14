@@ -16,11 +16,27 @@ webr:
 
 We could speculate that resting blood pressure may increase with age. To plot this, we can use the `ggplot` function `geom_point`.
 
-```{webr}
-#| context: interactive
-#| autorun: true
+Using `aes()` we can choose to plot age on the x axis, and resting blood pressure on the y axis. Make sure your `x = ______` matches the column title in the dataframe. 
+
+```{r}
+#| eval: false
 library(ggplot2)
 
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("heart.csv") 
+
+# Plot age against restbp as a scatter graph
+ggplot(heart_df, aes(x = age, y = restbp)) +
+  geom_point()
+```
+```{r}
+#| echo: false
+library(ggplot2)
+
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("../Datasets/heart.csv") 
+
+# Plot age against restbp as a scatter graph
 ggplot(heart_df, aes(x = age, y = restbp)) +
   geom_point()
 ```

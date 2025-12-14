@@ -2,39 +2,30 @@
 format: live-html
 engine: knitr
 lightbox: true
-webr:
-  resources:
-    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
-  packages:
-    - ggplot2
-    - dplyr
 ---
 
 {{< include /_extensions/r-wasm/live/_knitr.qmd >}}
 
-# Import CSV from Excel 
+# Download CSV file 
 
-Next we're going to use tabular data from excel and import that as our data.
+We have a file of data from an experiment on locusts. Download the file below, and move this to the same folder you have your R code. A csv file is like a plain excel table, but missing all the Microsoft formatting. This makes it easier for us to use.
 
-I've put a `csv` file on the Canvas page for you to download and copy into your folder. A csv file is like a plain excel table, but missing all the Microsoft formatting. This makes it easier for us to use.
-
-You can turn any excel file into a csv file by going `File -> Save as -> File format: csv`.
-
-::: callout-warning
-A CSV file can **only have one sheet**. If you have an excel file with multiple sheets and save it as a csv, the rest of the sheets will be lost!
-:::
-
-The dataset we are going to use is `LocustSerotonin.csv` which you can find on the Canvas page. This contains serotonin levels in the central nervous system of desert locusts that were experimentally crowded for 0 (the control group), 1, and 2 hours. This data is from Chapter 2 of [The Analysis of Biological Data](https://whitlockschluter3e.zoology.ubc.ca/RExamples/Rcode_Chapter_2.html).
-
-```{webr}
-locust_df <- read.csv("LocustSerotonin.csv") 
-head(locust_df)
+```{=html}
+<a href="../Datasets/LocustSerotonin.csv" 
+   class="btn btn-lg text-white rounded-pill px-4 py-2" 
+   style="background: linear-gradient(90deg, #13a4b4ff, #143c53ff); box-shadow: 0 4px 6px rgba(0,0,0,0.1);" 
+   download>
+  📥 Download LocustSerotonin.csv
+</a>
 ```
 
-1.  We are using the function `read.csv()` to import our data into R. This will appear in the environment (top right panel) with our variables.
-2.  We are using the function `head()` to view the first five rows of our table.
+  \
 
-As you can see we have a dataset of three columns:
+The dataset we are going to use is `LocustSerotonin.csv`. This contains serotonin levels in the central nervous system of desert locusts that were experimentally crowded for 0 (the control group), 1, and 2 hours. 
+
+This data is from Chapter 2 of [The Analysis of Biological Data](https://whitlockschluter3e.zoology.ubc.ca/RExamples/Rcode_Chapter_2.html).
+
+This is a Dataset with 3 columns of data: 
 
 | Column | Data |
 |------------------------------------|------------------------------------|
@@ -43,3 +34,5 @@ As you can see we have a dataset of three columns:
 | serotoninCategory | Rank of serotonin level in three categories (High, Medium, Low) |
 
 : Locust Serotonin data columns and descriptions {.striped .hover}
+
+![African migratory locust. Image from Wikipedia](../images/locust.jpg)

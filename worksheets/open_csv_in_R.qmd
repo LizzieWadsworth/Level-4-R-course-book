@@ -1,0 +1,23 @@
+# Open CSV file in R
+
+Once you've moved the `LocustSerotonin.csv` to your R programming folder, you can then open this in your R file. We can do this using functions: 
+
+1.  Use the function `read.csv()` to import our data into R as a `d`ata`f`rame. This will appear in the environment (top right panel) with our variables.
+
+2.  Use the function `head()` to view the first five rows of our table.
+
+```{r}
+#| eval: false
+locust_df <- read.csv("LocustSerotonin.csv") 
+head(locust_df)
+```
+
+```{r}
+#| echo: false
+locust_df <- read.csv("../Datasets/LocustSerotonin.csv") 
+head(locust_df)
+```
+
+We can also view our `d`ata`f`rame by clicking the variable `locust_df` in the environment tab (top right panel). 
+
+![Move CSV to folder and open and run file in R](../GIFs/OpenCSVFile.gif)

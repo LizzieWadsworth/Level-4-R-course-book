@@ -23,6 +23,8 @@ Make boxplots of:
 3.  BodyMass, separated by species and Sex
 4.  BodyMass, separated by species and FullClutch
 
+_Which columns do you want to be your x, y and fill values?_
+
 ::: {.callout-tip collapse="false" title="Example of generated graph"}
 A boxplot of FlipperLength separated by species and Sex should look like this:
 

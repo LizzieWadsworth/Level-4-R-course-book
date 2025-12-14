@@ -8,90 +8,56 @@ Click below to see the set up instructions for each:
 
 ### University Computer 
 
-To get set up, follow the below steps. **Click each step** for detailed instructions.
+To get set up, follow the below steps. Each step has a screen recording to assist you. 
 
 ::: {.callout-note collapse="false" title="Step 1: Launch RStudio from AppsAnywhere" icon="false"}
-1.  Type in AppsAnywhere to the windows bar. This will open in a web browser
-2.  Type in RStudio in AppsAnywhere
-3.  Click "Launch" and wait for it to install and open.
+1.  Type in `AppsAnywhere` to the windows bar. This will open in a web browser
+2.  Type in `RStudio` in AppsAnywhere
+3.  Click `Launch` and wait for it to install and open.
 
 ![GIF of Opening RStudio](GIFs/OpenRStudio.gif)
 :::
 
 :::: {.callout-caution collapse="false" title="Step 2: Navigate to your OneDrive folder" icon="false"}
-1.  Copy and paste the following into the **Console** on the left, and press enter.
+1.  In the top right corner of the bottom right panel (where it says "Files"), click the three dots `...` to open the file explorer
 
-`setwd("O:/")`
+2.  Find your OneDrive, and create a new folder for this course (e.g. LS4003_R)
 
-2.  Click the "More" cog and select "Go To Working Directory"
+3.  Select this new folder and click "Open" 
 
-You should now be in your OneDrive. You should be able to recognise the files and folders listed, from what you have saved here in your other classes.
+![GIF of opening Onedrive](/GIFs/GoToOneDrive.gif)
 
-![GIF of Opening OneDrive](GIFs/GoToOneDrive.gif)
-
-::: {.callout-important collapse="false" title="If you get the error message 'cannot change working directory'"}
-Occasionally there is an issue with how OneDrive is loaded on the University computer.
-
-If you get the error message:
-
-`Error in setwd("O:/") : cannot change working directory`
-
-Then try the following. **Replace the underscores with your K number.**
-
-`setwd("C:/Users/K______/")`
-
-Click the "More" cog and select "Go To Working Directory"
-
-Then find and click on the folder:
-
-`OneDrive Kingston University`
-
-Click the more cog and select `Set As Working Directory`
-
-![GIF of Opening OneDrive with common error](GIFs/ErrorGIF.gif)
-:::
 ::::
 
-::: {.callout-tip collapse="false" title="Step 3: Create or move to a folder for LS4003" icon="false"}
-If you don't already have a folder for LS4003 Statistics, then you can create one by clicking "New Folder" and entering a name.
+::: {.callout-tip collapse="false" title="Step 3: Set your folder as the Working Directory" icon="false"}
+Once you've opened your folder, you need to set this as the folder we're going to be working from. 
 
-If your new folder doesn't appear, click the refresh button (to the right of the more cog).
+Click the Cog and select `Set As Working Directory`
 
-Then:
-
-1.  Click into your new folder
-
-2.  Click the More Cog and select "Set As Working Directory"
-
-![GIF of Making a Folder](GIFs/MakeAFolder.gif)
+![GIF of Making a Folder](GIFs/SetWorkingDirectory.gif)
 :::
 
 ::::: {.callout-caution collapse="false" title="Step 4: Create an R file" icon="false"}
 Once you're in your folder you can create and save an R file. This is where you put your code.
 
 1.  Click on the Green Plus icon and select "R Script"
-2.  In the top bar, click "File" and then "Save"
-3.  Give your file a name (e.g. "R_tutorial_1" )
+2.  Click the Save icon
+3.  Give your file a name (e.g. "R_class_1" )
 
-When you make any changes, you can save the file by going File -\> Save.
-
-You can also save by holding down Control and S at the same time.
+_This will automatically add the ".R" extension so we know it's an R file - `R_class_1.R`_
 
 ![GIF of Making an R File](GIFs/MakeRFile.gif)
 
-::: {.callout-note icon="false" collapse="false"}
-This will automatically add the ".R" extension so we know it's an R file - `R_tutorial_1.R`
-:::
-
 ::: {.callout-warning icon="false" collapse="false"}
-Make sure you can find your file in file explorer. Always **back up your work** such as saving in OneDrive or emailing to yourself so that you don't lose your progress.
+Make sure you can find your file in file explorer. 
+Always **back up your work** such as saving in OneDrive or emailing to yourself so that you don't lose your progress.
 :::
 :::::
 
 ::: {.callout-note collapse="false" title="Step 5: Write and run R code" icon="false"}
 You're now ready to run some R code!
 
-1.  Copy and paste the following into your R file:
+1.  Copy and paste the following into your R file and click save:
 
 ```{r}
 #| eval: false
@@ -118,7 +84,7 @@ You shouldn't need a paid account for this course. If you use up the compute hou
 
 To get set up, follow the instructions below: 
 
-::: {.callout-note collapse="false" title="Step 1: Launch RStudio from AppsAnywhere" icon="false"}
+::: {.callout-note collapse="false" title="Step 1: Create a Posit Project" icon="false"}
 1.  [Create a free account](https://posit.cloud/plans/free) and login
 2.  Create Project -> RStudio
 3.  Name your project (where it says "Untitled Project")
@@ -188,32 +154,41 @@ You can [Install R from this website](https://www.stats.bris.ac.uk/R/). You want
 
 Once R is installed, you can [install RStudio from this website](https://posit.co/products/open-source/rstudio/?sid=1). 
 
-The free version is more than sufficient _I don't know anyone who has needed Desktop pro_. 
+The **free version** is more than sufficient 
+_I don't know anyone who has ever needed Desktop pro_. 
 :::
 
 ::: {.callout-tip collapse="false" title="Step 3: Create or move to a folder for LS4003" icon="false"}
 
-Once RStudio is open, you want to browse files until you can find your documents - wherever you keep your university files. 
+Once you've downloaded and installed R and RStudio, you can open RStudio and then browse files until you can find your documents - wherever you keep your university files. 
 
-Next, create a folder to keep all your R programming work in (e.g "LS4003 R Programming"). 
+1.  Browse your files by clicking the `...` in the top right corner of the bottom right panel. 
 
-Click on the new folder to enter it. Click the cog, and "Set as Working Directory"
+2.  Create a folder to keep all your R programming work in (e.g "LS4003_R"). 
+
+3.  Click on the new folder and click "Open"
+
+4.  Click the cog, and "Set as Working Directory"
+
+![Navigate to your file](/GIFs/Find_Documents_Own_Computer.gif)
+
 :::
 
 ::::: {.callout-caution collapse="false" title="Step 4: Create an R file" icon="false"}
 
-Once you're in your project you can create and save an R file. This is where you put your code.
+Once you're in your folder you can create and save an R file. This is where you put your code.
 
 1.  Click on the Green Plus icon and select "R Script"
 2.  Click the Save icon
-3.  Give your file a name (e.g. "My_R_file" )
+3.  Give your file a name (e.g. "R_class_1" )
 
-Remember to keep saving your file using the save icon. 
+_This will automatically add the ".R" extension so we know it's an R file - `R_class_1.R`_
 
-![GIF of Making an R File](GIFs/PositCloud_CreateRFile.gif)
+![GIF of Making an R File](GIFs/NewFile_Own_Computer.gif)
 
-::: {.callout-note icon="false" collapse="false"}
-This will automatically add the ".R" extension so we know it's an R file - `My_R_file.R`
+::: {.callout-warning icon="false" collapse="false"}
+Make sure you can find your file in file explorer. 
+Always **back up your work** such as saving in OneDrive or emailing to yourself so that you don't lose your progress.
 :::
 
 :::::
@@ -237,4 +212,6 @@ value
 You should see a result in your console (bottom left panel) and your environment (top right panel)
 
 You're now ready to start learning R!
+
+![Run an R file](GIFs/RunFile_Own_Computer.gif)
 :::

@@ -1,0 +1,49 @@
+# Extension 2: Larger penguin dataset
+
+If you finish all of the above and would like to challenge your skills, download the `Penguins_extension.csv`.
+
+```{=html}
+<a href="../Datasets/Penguins_extension.csv" 
+   class="btn btn-lg text-white rounded-pill px-4 py-2" 
+   style="background: linear-gradient(90deg, #13a4b4ff, #143c53ff); box-shadow: 0 4px 6px rgba(0,0,0,0.1);" 
+   download>
+  📥 Download penguins_extension.csv
+</a>
+```
+
+  \
+
+This is the same dataset but with more columns:
+
+| Column        | Data                                            |
+|---------------|-------------------------------------------------|
+| SampleNumber  | Unique number for every penguin                 |
+| LatinName     | Species name, full Latin name                   |
+| CommonName    | Common name for the penguin species             |
+| Region        | Region of Antartica the penguin is in           |
+| Island        | Island of Antartica the penguin's nest is in    |
+| FullClutch    | Whether or not the penguin couple laid two eggs |
+| EggDate       | Date at which the first egg was laid            |
+| CulmenLength  | Length of the penguin's culmen in millimeters   |
+| CulmenDepth   | Depth of the penguin's culmen in millimeters    |
+| FlipperLength | Length of the penguin's flipper in millimeters  |
+| BodyMass      | Mass of the penguin in grams                    |
+| Sex           | Whether the penguin is male or female           |
+
+: Penguins extension data columns and descriptions {.striped .hover}
+
+::: {.callout-note collapse="false" title="Dealing with dates"}
+One column of this dataset is dates. By default these will be treated as strings - as words with no set order.
+
+This means that dates won't be plotted in order from oldest to newest, which is not very useful.
+
+To convert our dates into a "Date" class - to tell R that these are dates - we can use the following code:
+
+```{r}
+#| eval: false
+
+penguin_df$EggDate <- as.Date(penguin_df$EggDate, format = "%d/%m/%y")
+```
+:::
+
+At this point, it's up to you what you want to do - explore the data! What can you find out? Are there any patterns emerging?

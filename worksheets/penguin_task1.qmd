@@ -20,3 +20,18 @@ To start off, you will want to:
 2.  Use `summary` to get an overview of the data
 3.  Calculate the mean and standard deviation of the numerical columns
 
+::: {.callout-note collapse="true" title="Hint 1"}
+For reading a csv file as a dataframe, check the [Open CSV file in R](open_csv_in_R.qmd) page. 
+
+For using `summary` to summarise the data, check the [Dataframes](CreateDataframe.qmd) page.
+:::
+
+::: {.callout-note collapse="true" title="Hint 2"}
+For calculating the mean and standard deviation, check the [R functions](RFunctions.qmd) page.
+
+To get the numerical column from your dataframe, use `$`: 
+
+`dataframe_name$column_name`
+
+Which you can use as an input to the mean and standard deviation functions
+:::

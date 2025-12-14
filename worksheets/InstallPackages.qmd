@@ -8,12 +8,16 @@ lightbox: true
 
 # Install packages
 
-For the rest of the worksheet section, we need to install **packages**
+For the rest of the worksheet section, we need to install a **package**
 
 In R we use many **packages** - these are extensions that contain the code we need to do cool things like plot graphs. There are many packages available for different uses, which means you don't have to write everything from scratch!
 
-Install the packages we will be using. In the *console* (bottom left corner), copy and paste each of the following two lines and press enter:
+Install the packages `ggplot2` which we will be using. In the *console* (bottom left corner), copy and paste the following line and press enter:
 
 `install.packages('ggplot2')`
 
-`install.packages('dplyr')`
+Once it is installed, we can load the package into our R file using the line: 
+
+`library(ggplot2)`
+
+![Install packages](../GIFs/Install_packages.gif)

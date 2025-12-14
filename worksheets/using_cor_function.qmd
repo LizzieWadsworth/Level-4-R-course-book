@@ -18,10 +18,24 @@ We can use two R functions to calculate our R and p values using a Pearson's coe
 
 Our first example uses `cor()`. This gives us the R value - how strong is the correlation?
 
-```{webr}
-#| context: interactive
-#| autorun: true
+```{r}
+#| eval: false
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("heart.csv") 
+
+# Calculate R value from Pearson's coefficient
 correlation_R_value <- cor(heart_df$age, heart_df$restbp, method = 'pearson')
+# Print the R value calculated to the console (output)
+correlation_R_value
+```
+```{r}
+#| echo: false
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("../Datasets/heart.csv") 
+
+# Calculate R value from Pearson's coefficient
+correlation_R_value <- cor(heart_df$age, heart_df$restbp, method = 'pearson')
+# Print the R value calculated to the console (output)
 correlation_R_value
 ```
 

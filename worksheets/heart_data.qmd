@@ -14,14 +14,18 @@ webr:
 
 # Import Heart Dataset
 
-The dataset we are going to use is `heart.csv` which you can find on the Canvas page.
+The dataset we are going to use is `heart.csv`. 
 
-```{webr}
-#| context: interactive
-#| autorun: true
-heart_df <- read.csv("heart.csv") # Upload the dataset into R
-head(heart_df) # Show the first 6 rows
+```{=html}
+<a href="../Datasets/heart.csv" 
+   class="btn btn-lg text-white rounded-pill px-4 py-2" 
+   style="background: linear-gradient(90deg, #13a4b4ff, #143c53ff); box-shadow: 0 4px 6px rgba(0,0,0,0.1);" 
+   download>
+  📥 Download heart.csv
+</a>
 ```
+
+  \
 
 This dataset uses various metrics relating to heart health.
 

@@ -21,6 +21,8 @@ Make boxplots of:
 1.  FlipperLength, separated by species
 2.  BodyMass, separated by species
 
+Check the [Boxplot from file](Boxplot_3_from_csv.qmd) page for how to make a boxplot from a csv file. 
+
 ::: {.callout-note collapse="true" title="Hint 1"}
 Which value do you want on the x-axis? What about the y-axis?
 :::

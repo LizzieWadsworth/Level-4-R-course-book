@@ -2,19 +2,10 @@
 format: live-html
 engine: knitr
 lightbox: true
-webr:
-  resources:
-    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
-  packages:
-    - ggplot2
-    - dplyr
 ---
+#  Boxplot from file
 
-{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
-
-#  Boxplot from CSV (from Excel)
-
-From the previous page, we have a dataset with three columns:
+From the previous pages, we have a dataset with three columns:
 
 | Column | Data |
 |------------------------------------|------------------------------------|
@@ -26,10 +17,25 @@ From the previous page, we have a dataset with three columns:
 
 Next, we're going to use boxplots to compare the serotonin level for different treatment groups.
 
-```{webr}
+```{r}
+#| eval: false
+# Load library
+library(ggplot2)
 # Import the CSV file into an R Dataframe
 locust_df <- read.csv("LocustSerotonin.csv") 
-head(locust_df)
+
+# Plot the data using ggplot package
+ggplot(locust_df, aes(x = treatmentTime, 
+                      y = serotoninLevel, 
+                      group = treatmentTime)) +
+  geom_boxplot() 
+```
+```{r}
+#| echo: false
+# Load library
+library(ggplot2)
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("../Datasets/LocustSerotonin.csv") 
 
 # Plot the data using ggplot package
 ggplot(locust_df, aes(x = treatmentTime, 
@@ -42,9 +48,8 @@ ggplot(locust_df, aes(x = treatmentTime,
 What happens if you remove `group = treatmentTime` from the above code? What is this doing?
 :::
 
-Let's break that down line by line:
+Let's break that down:
 
--   `locust_df <- read.csv("LocustSerotonin.csv")` - This is loading in our dataset. You should now see "locust_df" in your *environment* tab (top right corner)
 -   `ggplot(locust_df, aes(x = treatmentTime, y = serotoninLevel, group = treatmentTime))`:
     -   `ggplot()` is the graphing function we are using
     -   `locust_df` is the data we want to plot

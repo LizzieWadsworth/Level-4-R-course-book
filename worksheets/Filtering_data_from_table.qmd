@@ -14,19 +14,49 @@ webr:
 
 # Filtering data from a table
 
+::: {.panel-tabset}
+
+
 What do we do if we only want to use **part** of our dataset?
 
-In R, there are many ways we can filter our datasets to extract just the values we need. Lets say we want to filter our LocustSerotonin data to have only the 0 hour treatmentTime group.
+In R, there are many ways we can filter our datasets to extract just the values we need. 
 
-```{webr}
+## Filtering numerical data
+
+Lets say we want to filter our LocustSerotonin data to have only the 0 hour treatmentTime group.
+
+```{r}
+#| eval: false
 library(dplyr)
+library(ggplot2)
 
 # Import the CSV file into an R Dataframe
 locust_df <- read.csv("LocustSerotonin.csv") 
-head(locust_df)
 
+# Filter for only values where treatmentTime is 0 
 treatment0_df <- locust_df %>% filter(treatmentTime == 0)
 
+# Make a histogram on this new dataframe
+ggplot(treatment0_df, aes(x = serotoninLevel, group = treatmentTime, 
+                      fill = treatmentTime)) +
+  geom_histogram(binwidth = 0.6)
+```
+```{r}
+#| echo: false
+#| output: false
+library(dplyr)
+library(ggplot2)
+```
+```{r}
+#| echo: false
+
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("../Datasets/LocustSerotonin.csv") 
+
+# Filter for only values where treatmentTime is 0 
+treatment0_df <- locust_df %>% filter(treatmentTime == 0)
+
+# Make a histogram on this new dataframe
 ggplot(treatment0_df, aes(x = serotoninLevel, group = treatmentTime, 
                       fill = treatmentTime)) +
   geom_histogram(binwidth = 0.6)
@@ -46,12 +76,47 @@ Let's break that down:
 Can you create a dataset with only the treatmentTime values that are **more than** 0?
 :::
 
+## Filtering categorical data
+
 We can also select for string (words and letter) values. This is the same, except that we need to put any strings in quotes `" "` as in the below example.
 
-```{webr}
+```{r}
+#| eval: false
+library(dplyr)
+library(ggplot2)
+
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("LocustSerotonin.csv") 
+
+# Filter for only values where serotoninCategory is "Medium"
 MediumSerotonin_df <- locust_df %>% filter(serotoninCategory == "Medium")
 
+# Plot a histogram for this dataset
 ggplot(MediumSerotonin_df, aes(x = serotoninLevel, group = treatmentTime, 
                       fill = treatmentTime)) +
   geom_histogram(binwidth = 0.6)
 ```
+
+```{r}
+#| echo: false
+#| output: false
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+#| echo: false
+
+# Import the CSV file into an R Dataframe
+locust_df <- read.csv("../Datasets/LocustSerotonin.csv") 
+
+# Filter for only values where serotoninCategory is "Medium"
+MediumSerotonin_df <- locust_df %>% filter(serotoninCategory == "Medium")
+
+# Plot a histogram for this dataset
+ggplot(MediumSerotonin_df, aes(x = serotoninLevel, group = treatmentTime, 
+                      fill = treatmentTime)) +
+  geom_histogram(binwidth = 0.6)
+```
+
+:::

@@ -8,12 +8,20 @@ lightbox: true
 
 # Give it a go
 
-Can you change the code to make a boxplot of the `Duration` values?
+Can you change the code to make a boxplot of the `Duration` values? 
+Fill in the values left as `______`
 
 ```{webr}
 #| exercise: ex_2
 # Libraries
 library(ggplot2) # load ggplot2 libray 
+
+# Create a Data Frame
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
 
 # Create a boxplot
 ggplot(______, aes(______)) +
@@ -36,9 +44,16 @@ The only parts you need to change is the `aes()` aesthetics, and `ggtitle()`
 ::::
 
 ::: {.callout-tip title="Show answer" collapse="true"}
-```{webr}
+```{r}
 # Libraries
 library(ggplot2) # load ggplot2 libray 
+
+# Create a Data Frame
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
 
 # Create a boxplot
 ggplot(Data_Frame, aes(y = Duration)) +

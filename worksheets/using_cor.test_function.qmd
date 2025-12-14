@@ -15,14 +15,29 @@ webr:
 # Pearson's coefficient: using cor.test()
 
 Our second example uses `cor.test()`. This gives us the R value - how strong is the correlation?
+```{r}
+#| eval: false
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("heart.csv") 
 
-```{webr}
-#| context: interactive
-#| autorun: true
+# Calculate correlation statistics using cor.test()
 correlation_stats <- cor.test(heart_df$age, heart_df$restbp, method = 'pearson')
 
-correlation_stats$p.value
-correlation_stats$estimate
+# Print the results to the console (output)
+correlation_stats$p.value #print the p value 
+correlation_stats$estimate #print the R value
+```
+```{r}
+#| echo: false
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("../Datasets/heart.csv") 
+
+# Calculate correlation statistics using cor.test()
+correlation_stats <- cor.test(heart_df$age, heart_df$restbp, method = 'pearson')
+
+# Print the results to the console (output)
+correlation_stats$p.value #print the p value 
+correlation_stats$estimate #print the R value
 ```
 
 As you can see that works very similarly to our first example, except for the last two lines.
@@ -30,4 +45,4 @@ As you can see that works very similarly to our first example, except for the la
 `cor.test()` gives us a list of 9 values, there are only two we are interested in:
 
 -   `p.value` is our probability p value
--   `estimate` is our correlation coefficient (R value, same as above)
+-   `estimate` is our correlation coefficient (R value, same as [from the cor function](using_cor_function.qmd))

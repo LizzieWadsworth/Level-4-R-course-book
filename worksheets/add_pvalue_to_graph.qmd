@@ -4,7 +4,7 @@ engine: knitr
 lightbox: true
 webr:
   resources:
-    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/heart.csv
   packages:
     - ggplot2
     - dplyr
@@ -16,21 +16,40 @@ webr:
 
 To annotate our R and p values onto a scatter graph, we can use the `stat_cor` function from the `ggpubr` package.
 
-If you've not already installed it, make sure that first you run:
+If you've not already installed it, make sure that first you install it in the console using:
 
-```         
-install.packages('ggpubr')
-```
+`install.packages('ggpubr')`
 
-```{webr}
-#| context: interactive
-#| autorun: true
+```{r}
+#| eval: false
+# Load ggplot2 AND ggpubr packages
 library(ggplot2)
 library(ggpubr)
 
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("heart.csv") 
+
+# Plot the heart data as before
 ggplot(heart_df, aes(x = age, y = restbp)) +
   geom_point() +
-  stat_cor(method = 'pearson')
+  # add a pearson correlation from the stat_cor function
+  stat_cor(method = 'pearson') 
+```
+
+```{r}
+#| echo: false
+# Load ggplot2 AND ggpubr packages
+library(ggplot2)
+library(ggpubr)
+
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("../Datasets/heart.csv") 
+
+# Plot the heart data as before
+ggplot(heart_df, aes(x = age, y = restbp)) +
+  geom_point() +
+  # add a pearson correlation from the stat_cor function
+  stat_cor(method = 'pearson') 
 ```
 
 The only parameter we used here for `stat_cor` was `method = 'pearson'` so that it would plot a pearson's correlation.
@@ -47,11 +66,14 @@ Try it below:
 
 ```{webr}
 #| exercise: ex_1
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("heart.csv") 
 
+# Plot the heart data as before
 ggplot(heart_df, aes(x = age, y = restbp)) +
   geom_point() +
+  # add a pearson correlation from the stat_cor function
   stat_cor(method = 'pearson', label.x = ______, label.y = ______)
-
 ```
 
 ::: {.callout-tip collapse="false"}

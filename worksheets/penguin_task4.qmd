@@ -21,6 +21,8 @@ Make histograms of:
 1.  FlipperLength, separated by species
 2.  BodyMass, separated by species
 
+Check how to make a histogram on the [Bar charts and Histograms](Barplot_counts.qmd) page. 
+
 ::: {.callout-tip collapse="false" title="Example of generated graph"}
 A histogram of of FlipperLength separated by species and Sex should look like this:
 

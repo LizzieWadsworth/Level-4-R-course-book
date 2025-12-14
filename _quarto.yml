@@ -46,6 +46,7 @@ website:
             - section: "R from Excel: Locust Serotonin levels"
               contents:
                 - href: worksheets/importcsv.qmd
+                - href: worksheets/open_csv_in_R.qmd
                 - href: worksheets/Boxplot_3_from_csv.qmd
                 - href: worksheets/Discrete_continuous_scale.qmd
                 - href: worksheets/Violin.qmd
@@ -61,6 +62,7 @@ website:
               contents:
                 - href: worksheets/Filtering_data_from_table.qmd
                 - href: "worksheets/penguin_extension.qmd"
+                - href: "worksheets/penguin_extension_2.qmd"
         - section: "**Correlations**"
           contents: 
             - section: "Correlations using heart data"
