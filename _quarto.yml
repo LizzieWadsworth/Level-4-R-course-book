@@ -16,8 +16,8 @@ website:
         href: learn.qmd
       - text: "Careers"
         href: careers.qmd
-      - text: "CheatSheet"
-        href: cheatsheet.qmd
+      # - text: "CheatSheet"
+      #   href: cheatsheet.qmd
       - text: "Help"
         href: help.qmd
   sidebar:
@@ -83,6 +83,7 @@ website:
         - section: "**T-tests**"
           contents:
             - href: "worksheets/unpaired_t_test.qmd"
+            - href: "worksheets/unpaired_t_test2.qmd"
             - href: "worksheets/paired_t_test.qmd"
             - href: "worksheets/one_tailed_t_test.qmd"
             - href: "worksheets/anova.qmd"

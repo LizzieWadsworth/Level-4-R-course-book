@@ -1,0 +1,65 @@
+---
+format: live-html
+engine: knitr
+lightbox: true
+webr:
+  resources:
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+  packages:
+    - ggplot2
+    - dplyr
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Boxplot with T test
+
+## Create a dataframe with the data
+
+We can use the following code to create a dataframe with the above vectors.
+
+We need a column that contains the correct group - "NonDiabetic" or "Diabetic" for each value. We can use the `rep()` function for this which replicates values.
+
+-   `c("NonDiabetic", "Diabetic")` is a list of the items we want to repeat
+-   `each = 16` gives us a list of 16 of each. We could also put `c(16,16)`.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+Glycemia_Data_Frame <- data.frame (
+  group = rep(c("NonDiabetic", "Diabetic"), each = 16),
+  glycemia = c(NonDiabetic,  Diabetic)
+)
+print(Glycemia_Data_Frame)
+```
+
+## Visualise the results as a boxplot
+
+We can now create a boxplot in the same way we did in Tutorial 1. We can also add a t-test result using the function `stat_compare_means()` from the `ggpubr` package.
+
+```{webr}
+#| context: interactive
+#| autorun: true
+library(ggplot2)
+library(ggpubr)
+ggplot(Glycemia_Data_Frame, aes(x=group, y=glycemia, fill=group)) +
+  geom_boxplot() + 
+  stat_compare_means(method = "t.test")
+```
+
+## Dataframe to a list of values
+
+We've just turned our two lists into one long dataframe, but what if we want to do the opposite?
+
+If you want to extract the values for a particular group, we can use the following structure:
+
+```{webr}
+#| context: interactive
+#| autorun: true
+DiabeticExtracted <- Glycemia_Data_Frame$glycemia[Glycemia_Data_Frame$group=="Diabetic"]
+DiabeticExtracted
+```
+
+If you look in your environment, DiabeticExtracted should be identical to your Diabetic values.
+
+Using this, if you are importing data from excel you can extract the values into groups to prepare for your t-test.

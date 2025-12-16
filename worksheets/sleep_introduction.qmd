@@ -14,7 +14,18 @@ webr:
 
 # Sleep Quality Dataset Introduction
 
-For this worksheet, you will need the `Sleep_health_and_lifestyle_dataset.csv` file from the Canvas page.
+For this worksheet, you will need the `Sleep_health_and_lifestyle_dataset.csv` file
+
+```{=html}
+<a href="../Datasets/Sleep_health_and_lifestyle_dataset.csv" 
+   class="btn btn-lg text-white rounded-pill px-4 py-2" 
+   style="background: linear-gradient(90deg, #13a4b4ff, #143c53ff); box-shadow: 0 4px 6px rgba(0,0,0,0.1);" 
+   download>
+  📥 Download Sleep_health_and_lifestyle_dataset.csv
+</a>
+```
+
+  \
 
 This dataset contains values for sleep quality and lifestyle factors. *This is artificial data generated for illustrative purposes*
 

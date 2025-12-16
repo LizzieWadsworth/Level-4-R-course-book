@@ -22,4 +22,4 @@ Not all of the columns are categorical data - if you want to compare any other t
 
 We've covered all the main statistical tests now, so try and apply what you've learnt from *every* tutorial to this database.
 
-![Meme of the Hulk being made for a Chi Squared test](images/Hulk.jpg)
+![Meme of the Hulk being made for a Chi Squared test](../images/Hulk.jpg)

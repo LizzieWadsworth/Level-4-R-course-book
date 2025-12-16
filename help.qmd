@@ -2,6 +2,19 @@
 
 Stuck? That's normal! Learning programming is like learning a language, it takes a lot of time and you don't start fluent. 
 
-Email Lizzie for support L.Wadsworth@kingston.ac.uk; it can help to send a screenshot or your .R file - every error is unique so the more information you can provide the quicker we can figure out the issue. 
+Email Lizzie for support: 
+  \
 
-Find below a list of common error messages. This will be updated throughout the teaching block as you send me the error messages you are getting. 
+-  L.Wadsworth@kingston.ac.uk
+-  It can help to send a screenshot or your .R file as every error is unique 
+
+## Maths Café
+
+[Maths Café](https://kingstonuniversity.sharepoint.com/sites/mykingston/mysupport/myskills/Pages/MathsAid.aspx) is run by the School of Computer Science and Mathematics (CSM) for any Kingston University student looking for support with Maths related work (including R and Statistics) and are happy to assist with any issues from the basic use of calculators upwards.
+
+It runs as a drop-in session every Wednesday in Teaching weeks, 14:00-16:00 in room PRJG1001. 
+Online sessions via Microsoft Teams are also available.
+
+Students can also contact the team via Microsoft Teams using the following link:
+[General | Maths Cafe 2024-5.mst | Microsoft Teams](https://teams.microsoft.com/l/team/19:A9Qbg1i9SYaPliHZnK-yrq_byznv2-_cr63JzpDtKZY1%40thread.tacv2/conversations?groupId=a4c82ad6-b018-4e18-882c-a86a3fe54c35&tenantId=c9ef029c-18cf-4016-86d3-93cf8e94ff94)
+

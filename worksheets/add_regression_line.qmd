@@ -16,16 +16,42 @@ webr:
 
 We can also use the funtion `geom_smooth` to fit and plot a linear regression model (lm) to our graph.
 
-```{webr}
-#| context: interactive
-#| autorun: true
+We use `formula= y~x` to define y as the outcome variable and x as the predictor: older age (x axis, predictor) leads to higher resting blood pressure (y axis, predicted outcome.)
+
+```{r}
+#| eval: false
+# Load ggplot2 AND ggpubr packages
+library(ggplot2)
+library(ggpubr)
+
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("heart.csv") 
+
+# Plot the heart data as before
 ggplot(heart_df, aes(x = age, y = restbp)) +
   geom_point() +
+  # add a pearson correlation from the stat_cor function
   stat_cor(method = 'pearson') +
+  # add linear regression line using geom_smooth
   geom_smooth(method='lm', formula= y~x)
 ```
+```{r}
+#| echo: false
+# Load ggplot2 AND ggpubr packages
+library(ggplot2)
+library(ggpubr)
 
-We use `formula= y~x` to define y as the outcome variable and x as the predictor: older age (x axis, predictor) leads to higher resting blood pressure (y axis, predicted outcome.)
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("../Datasets/heart.csv") 
+
+# Plot the heart data as before
+ggplot(heart_df, aes(x = age, y = restbp)) +
+  geom_point() +
+  # add a pearson correlation from the stat_cor function
+  stat_cor(method = 'pearson') +
+  # add linear regression line using geom_smooth
+  geom_smooth(method='lm', formula= y~x)
+```
 
 _Remember; two factors being correlated doesn't automatically mean that one causes the other_
 

@@ -20,10 +20,25 @@ We can also use R to do an all-against-all correlation analysis, so without doin
 
 This uses the corrplot library. You might need to run `install.packages('corrplot')` before you can run this code.
 
-```{webr}
-#| context: interactive
-#| autorun: true
+```{r}
+#| eval: false
 library(corrplot)
+
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("heart.csv") 
+
+heart_df_only_numerical <- heart_df[,-2] # creates a new dataframe which doesn't include the "sex" column. 
+heart_corrplot_matrix <- cor(heart_df_only_numerical) # calculates all-against-all correlation matrix
+corrplot(heart_corrplot_matrix) # makes a correlelogram based on the calculations
+```
+
+```{r}
+#| echo: false
+library(corrplot)
+
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("../Datasets/heart.csv") 
+
 heart_df_only_numerical <- heart_df[,-2] # creates a new dataframe which doesn't include the "sex" column. 
 heart_corrplot_matrix <- cor(heart_df_only_numerical) # calculates all-against-all correlation matrix
 corrplot(heart_corrplot_matrix) # makes a correlelogram based on the calculations

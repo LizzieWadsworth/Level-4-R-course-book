@@ -18,7 +18,12 @@ Correlation doesn't always equal causation - and [Spurious correlations](https:/
 
 If you go to the website and click on a correlation, you should get a table with the raw data.
 
-You can then: 1. Copy and paste this table into excel 2. Save your excel spreadsheet as a CSV file 3. Read the CSV in R 4. Plot and test the correlations
+You can then: 
+  
+1. Copy and paste this table into excel 
+2. Save your excel spreadsheet as a CSV file 
+3. Read the CSV in R 
+4. Plot and test the correlations
 
 ::: {.callout-note collapse="false"}
 It may not be as straightforward as you'd think to copy the data from the table and get this into R.

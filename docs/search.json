@@ -57,7 +57,7 @@
     "href": "worksheets/add_regression_line.html",
     "title": "Add a regression line",
     "section": "",
-    "text": "Add a regression line\nWe can also use the funtion geom_smooth to fit and plot a linear regression model (lm) to our graph.\n\n\n\n\n\n\n\n\nWe use formula= y~x to define y as the outcome variable and x as the predictor: older age (x axis, predictor) leads to higher resting blood pressure (y axis, predicted outcome.)\nRemember; two factors being correlated doesn’t automatically mean that one causes the other\n\n\n\nComic on correlation from xkcd",
+    "text": "Add a regression line\nWe can also use the funtion geom_smooth to fit and plot a linear regression model (lm) to our graph.\nWe use formula= y~x to define y as the outcome variable and x as the predictor: older age (x axis, predictor) leads to higher resting blood pressure (y axis, predicted outcome.)\n\n# Load ggplot2 AND ggpubr packages\nlibrary(ggplot2)\nlibrary(ggpubr)\n\n# Open heart.csv and save as a dataframe\nheart_df &lt;- read.csv(\"heart.csv\") \n\n# Plot the heart data as before\nggplot(heart_df, aes(x = age, y = restbp)) +\n  geom_point() +\n  # add a pearson correlation from the stat_cor function\n  stat_cor(method = 'pearson') +\n  # add linear regression line using geom_smooth\n  geom_smooth(method='lm', formula= y~x)\n\n\n\n\n\n\n\n\n\n\nRemember; two factors being correlated doesn’t automatically mean that one causes the other\n\n\n\nComic on correlation from xkcd",
     "crumbs": [
       "Learn",
       "**Correlations**",
@@ -96,7 +96,7 @@
     "href": "worksheets/unpaired_t_test.html",
     "title": "Unpaired t-test",
     "section": "",
-    "text": "We’re going to be using the same examples as in Statistics lecture 3 for each of our tests.\n\n\nThe first thing we need to do is copy our data in R. As these are fairly small datasets, we can manually type in our data using the c() function to create a vector of values.\n\n\n\n\n\n\n\n\n\n\n\nWe can use the summary() function to see our mean and interquartile range for each set of values.\n\n\n\n\n\n\n\n\n\n\n\nUsing the function t.test(), we can add our two sets of values as arguments and calculate the p-value. This should match the result from excel.\n\n\n\n\n\n\n\n\nThat’s our t-test done already!\nWe didn’t have to use any options here as the default test is two tailed, unpaired, and assuming the variance is not equal. If you want to change any of the options, you can try:\n\nalternative for two tailed or one tailed\n\n“two.sided” for a two tailed test,\n“greater” for one tailed where the mean of the first variable is greater than the mean of the second variable\n“less” for one tailed where the mean of the first variable is greater than the mean of the second variable\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, alternative=\"greater\")\n\npaired for paired or unpaired\n\nTRUE for paired\nFALSE for unpaired\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, paired = TRUE)\n\nmu mean, for comparison for a one-tailed test\n\n\n\n\nWe can use the following code to create a dataframe with the above vectors.\nWe need a column that contains the correct group - “NonDiabetic” or “Diabetic” for each value. We can use the rep() function for this which replicates values.\n\nc(\"NonDiabetic\", \"Diabetic\") is a list of the items we want to repeat\neach = 16 gives us a list of 16 of each. We could also put c(16,16).\n\n\n\n\n\n\n\n\n\n\n\n\nWe can now create a boxplot in the same way we did in Tutorial 1. We can also add a t-test result using the function stat_compare_means() from the ggpubr package.\n\n\n\n\n\n\n\n\n\n\n\nWe’ve just turned our two lists into one long dataframe, but what if we want to do the opposite?\nIf you want to extract the values for a particular group, we can use the following structure:\n\n\n\n\n\n\n\n\nIf you look in your environment, DiabeticExtracted should be identical to your Diabetic values.\nUsing this, if you are importing data from excel you can extract the values into groups to prepare for your t-test.",
+    "text": "We’re going to be using the same examples as in Statistics lecture 3 (by Dr Trigiante) for each of our tests. For this example, we’ll use the Diabetic and Non-Diabetic glycemia values.\nThe first thing we need to do is copy our data in R. As these are fairly small datasets, we can manually type in our data using the c() function to create a vector of values.\n\n# Create a vector of values for each of our columns\nNonDiabetic = c(82,87,79,79,86,70,98,92,75,90,73,70,87,88,96,93) # NonDiabetic glycemia values\nDiabetic = c(112,110,94,121,85,125,80,122,117,116,99,90,99,95,84,84) # Diabetic glycemia values\n\nWe can use the summary() function to view our mean and interquartile range.\n\n# Use summary() function to see the Interquartile Range\nsummary(NonDiabetic) # print summary of NonDiabetic glycemia values to the console\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  70.00   78.00   86.50   84.06   90.50   98.00 \n\nsummary(Diabetic) # print summary of Diabetic glycemia values to the console\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  80.00   88.75   99.00  102.06  116.25  125.00 \n\n\nUsing the function t.test(), we can add our two sets of values as arguments and calculate the p-value. This should match the result from excel of an unpaired t-test.\n\n# Run an unpaired t test using t.test()\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic)\n# Print the result to the console\nunpaired_t_test_result\n\n\n    Welch Two Sample t-test\n\ndata:  NonDiabetic and Diabetic\nt = -4.0342, df = 24.1, p-value = 0.0004801\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -27.206714  -8.793286\nsample estimates:\nmean of x mean of y \n  84.0625  102.0625 \n\n\nThat’s our t-test done already!\n\n\nWe didn’t have to use any options here as the default test is two tailed, unpaired, and assuming the variance is not equal. If you want to change any of the options, you can try:\n\nalternative for two tailed or one tailed\n\n“two.sided” for a two tailed test,\n“greater” for one tailed where the mean of the first variable is greater than the mean of the second variable\n“less” for one tailed where the mean of the first variable is greater than the mean of the second variable\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, alternative=\"greater\")\n\npaired for paired or unpaired\n\nTRUE for paired\nFALSE for unpaired\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, paired = TRUE)\n\nmu mean, for comparison for a one-tailed test",
     "crumbs": [
       "Learn",
       "**T-tests**",
@@ -104,71 +104,11 @@
     ]
   },
   {
-    "objectID": "worksheets/unpaired_t_test.html#add-the-data-into-r",
-    "href": "worksheets/unpaired_t_test.html#add-the-data-into-r",
+    "objectID": "worksheets/unpaired_t_test.html#t-test-options",
+    "href": "worksheets/unpaired_t_test.html#t-test-options",
     "title": "Unpaired t-test",
     "section": "",
-    "text": "The first thing we need to do is copy our data in R. As these are fairly small datasets, we can manually type in our data using the c() function to create a vector of values.",
-    "crumbs": [
-      "Learn",
-      "**T-tests**",
-      "Unpaired t-test"
-    ]
-  },
-  {
-    "objectID": "worksheets/unpaired_t_test.html#summarise-the-data",
-    "href": "worksheets/unpaired_t_test.html#summarise-the-data",
-    "title": "Unpaired t-test",
-    "section": "",
-    "text": "We can use the summary() function to see our mean and interquartile range for each set of values.",
-    "crumbs": [
-      "Learn",
-      "**T-tests**",
-      "Unpaired t-test"
-    ]
-  },
-  {
-    "objectID": "worksheets/unpaired_t_test.html#calculate-the-unpaired-t-test-p-value",
-    "href": "worksheets/unpaired_t_test.html#calculate-the-unpaired-t-test-p-value",
-    "title": "Unpaired t-test",
-    "section": "",
-    "text": "Using the function t.test(), we can add our two sets of values as arguments and calculate the p-value. This should match the result from excel.\n\n\n\n\n\n\n\n\nThat’s our t-test done already!\nWe didn’t have to use any options here as the default test is two tailed, unpaired, and assuming the variance is not equal. If you want to change any of the options, you can try:\n\nalternative for two tailed or one tailed\n\n“two.sided” for a two tailed test,\n“greater” for one tailed where the mean of the first variable is greater than the mean of the second variable\n“less” for one tailed where the mean of the first variable is greater than the mean of the second variable\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, alternative=\"greater\")\n\npaired for paired or unpaired\n\nTRUE for paired\nFALSE for unpaired\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, paired = TRUE)\n\nmu mean, for comparison for a one-tailed test",
-    "crumbs": [
-      "Learn",
-      "**T-tests**",
-      "Unpaired t-test"
-    ]
-  },
-  {
-    "objectID": "worksheets/unpaired_t_test.html#create-a-dataframe-with-the-data",
-    "href": "worksheets/unpaired_t_test.html#create-a-dataframe-with-the-data",
-    "title": "Unpaired t-test",
-    "section": "",
-    "text": "We can use the following code to create a dataframe with the above vectors.\nWe need a column that contains the correct group - “NonDiabetic” or “Diabetic” for each value. We can use the rep() function for this which replicates values.\n\nc(\"NonDiabetic\", \"Diabetic\") is a list of the items we want to repeat\neach = 16 gives us a list of 16 of each. We could also put c(16,16).",
-    "crumbs": [
-      "Learn",
-      "**T-tests**",
-      "Unpaired t-test"
-    ]
-  },
-  {
-    "objectID": "worksheets/unpaired_t_test.html#visualise-the-results-as-a-boxplot",
-    "href": "worksheets/unpaired_t_test.html#visualise-the-results-as-a-boxplot",
-    "title": "Unpaired t-test",
-    "section": "",
-    "text": "We can now create a boxplot in the same way we did in Tutorial 1. We can also add a t-test result using the function stat_compare_means() from the ggpubr package.",
-    "crumbs": [
-      "Learn",
-      "**T-tests**",
-      "Unpaired t-test"
-    ]
-  },
-  {
-    "objectID": "worksheets/unpaired_t_test.html#dataframe-to-a-list-of-values",
-    "href": "worksheets/unpaired_t_test.html#dataframe-to-a-list-of-values",
-    "title": "Unpaired t-test",
-    "section": "",
-    "text": "We’ve just turned our two lists into one long dataframe, but what if we want to do the opposite?\nIf you want to extract the values for a particular group, we can use the following structure:\n\n\n\n\n\n\n\n\nIf you look in your environment, DiabeticExtracted should be identical to your Diabetic values.\nUsing this, if you are importing data from excel you can extract the values into groups to prepare for your t-test.",
+    "text": "We didn’t have to use any options here as the default test is two tailed, unpaired, and assuming the variance is not equal. If you want to change any of the options, you can try:\n\nalternative for two tailed or one tailed\n\n“two.sided” for a two tailed test,\n“greater” for one tailed where the mean of the first variable is greater than the mean of the second variable\n“less” for one tailed where the mean of the first variable is greater than the mean of the second variable\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, alternative=\"greater\")\n\npaired for paired or unpaired\n\nTRUE for paired\nFALSE for unpaired\nunpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, paired = TRUE)\n\nmu mean, for comparison for a one-tailed test",
     "crumbs": [
       "Learn",
       "**T-tests**",
@@ -290,203 +230,165 @@
     ]
   },
   {
-    "objectID": "worksheets/one_tailed_t_test.html",
-    "href": "worksheets/one_tailed_t_test.html",
-    "title": "One-tailed t-test",
+    "objectID": "worksheets/unpaired_t_test2.html",
+    "href": "worksheets/unpaired_t_test2.html",
+    "title": "Boxplot with T test",
     "section": "",
-    "text": "We can follow the same process for the one-tailed t-test. First, we need our list of grades from our example.\n\n\n\n\n\n\n\n\n\n\nWe can use the summary() function to see our mean and interquartile range for each set of values.\n\n\n\n\n\n\n\n\n\n\n\nUsing the function t.test(), we can add our one set of values and the number we want to compare it to. In this example, we’re looking to see if our mean value is greater than 40.\nWe need to specify the option alternative = 'greater' to do a one-tailed test for if the mean of our Grades are significantly above our value for mu, which we have set to 40 (a pass).\n\n\n\n\n\n\n\n\n\n\n\nBecause we only have one group of data values, we can create our dataframe and draw our boxplot very simply.\n\n\n\n\n\n\n\n\nWe don’t need to annotate our p-value on here - it wouldn’t make much sense to do so as our p-value was specifically assessing if the mean was higher than 40 which is hard to represent visually.",
+    "text": "We can use the following code to create a dataframe with the above vectors.\nWe need a column that contains the correct group - “NonDiabetic” or “Diabetic” for each value. We can use the rep() function for this which replicates values.\n\nc(\"NonDiabetic\", \"Diabetic\") is a list of the items we want to repeat\neach = 16 gives us a list of 16 of each. We could also put c(16,16).\n\n\n\n\n\n\n\n\n\n\n\n\nWe can now create a boxplot in the same way we did in Tutorial 1. We can also add a t-test result using the function stat_compare_means() from the ggpubr package.\n\n\n\n\n\n\n\n\n\n\n\nWe’ve just turned our two lists into one long dataframe, but what if we want to do the opposite?\nIf you want to extract the values for a particular group, we can use the following structure:\n\n\n\n\n\n\n\n\nIf you look in your environment, DiabeticExtracted should be identical to your Diabetic values.\nUsing this, if you are importing data from excel you can extract the values into groups to prepare for your t-test.",
     "crumbs": [
       "Learn",
       "**T-tests**",
-      "One-tailed t-test"
+      "Boxplot with T test"
     ]
   },
   {
-    "objectID": "worksheets/one_tailed_t_test.html#summarise-the-data",
-    "href": "worksheets/one_tailed_t_test.html#summarise-the-data",
-    "title": "One-tailed t-test",
+    "objectID": "worksheets/unpaired_t_test2.html#create-a-dataframe-with-the-data",
+    "href": "worksheets/unpaired_t_test2.html#create-a-dataframe-with-the-data",
+    "title": "Boxplot with T test",
     "section": "",
-    "text": "We can use the summary() function to see our mean and interquartile range for each set of values.",
+    "text": "We can use the following code to create a dataframe with the above vectors.\nWe need a column that contains the correct group - “NonDiabetic” or “Diabetic” for each value. We can use the rep() function for this which replicates values.\n\nc(\"NonDiabetic\", \"Diabetic\") is a list of the items we want to repeat\neach = 16 gives us a list of 16 of each. We could also put c(16,16).",
     "crumbs": [
       "Learn",
       "**T-tests**",
-      "One-tailed t-test"
+      "Boxplot with T test"
     ]
   },
   {
-    "objectID": "worksheets/one_tailed_t_test.html#calculate-the-one-tailed-t-test-p-value",
-    "href": "worksheets/one_tailed_t_test.html#calculate-the-one-tailed-t-test-p-value",
-    "title": "One-tailed t-test",
+    "objectID": "worksheets/unpaired_t_test2.html#visualise-the-results-as-a-boxplot",
+    "href": "worksheets/unpaired_t_test2.html#visualise-the-results-as-a-boxplot",
+    "title": "Boxplot with T test",
     "section": "",
-    "text": "Using the function t.test(), we can add our one set of values and the number we want to compare it to. In this example, we’re looking to see if our mean value is greater than 40.\nWe need to specify the option alternative = 'greater' to do a one-tailed test for if the mean of our Grades are significantly above our value for mu, which we have set to 40 (a pass).",
+    "text": "We can now create a boxplot in the same way we did in Tutorial 1. We can also add a t-test result using the function stat_compare_means() from the ggpubr package.",
     "crumbs": [
       "Learn",
       "**T-tests**",
-      "One-tailed t-test"
+      "Boxplot with T test"
     ]
   },
   {
-    "objectID": "worksheets/one_tailed_t_test.html#create-a-dataframe-and-boxplot",
-    "href": "worksheets/one_tailed_t_test.html#create-a-dataframe-and-boxplot",
-    "title": "One-tailed t-test",
+    "objectID": "worksheets/unpaired_t_test2.html#dataframe-to-a-list-of-values",
+    "href": "worksheets/unpaired_t_test2.html#dataframe-to-a-list-of-values",
+    "title": "Boxplot with T test",
     "section": "",
-    "text": "Because we only have one group of data values, we can create our dataframe and draw our boxplot very simply.\n\n\n\n\n\n\n\n\nWe don’t need to annotate our p-value on here - it wouldn’t make much sense to do so as our p-value was specifically assessing if the mean was higher than 40 which is hard to represent visually.",
+    "text": "We’ve just turned our two lists into one long dataframe, but what if we want to do the opposite?\nIf you want to extract the values for a particular group, we can use the following structure:\n\n\n\n\n\n\n\n\nIf you look in your environment, DiabeticExtracted should be identical to your Diabetic values.\nUsing this, if you are importing data from excel you can extract the values into groups to prepare for your t-test.",
     "crumbs": [
       "Learn",
       "**T-tests**",
-      "One-tailed t-test"
+      "Boxplot with T test"
     ]
   },
   {
-    "objectID": "worksheets/pairwise_t_test.html",
-    "href": "worksheets/pairwise_t_test.html",
-    "title": "Pairwise t test results",
+    "objectID": "worksheets/anova.html",
+    "href": "worksheets/anova.html",
+    "title": "Anova",
     "section": "",
-    "text": "Our ANOVA was significant - but now we need to know which pairs are significantly different.\nWe can use pairwise.t.test() to do a t-test for all pairs of groups in our dataset.\n\n\n\n\n\n\n\n\nWe use the options:\n\npool.sd = FALSE so that variance is calculated independantly for each group\np.adjust.method = \"none\" as this function by default uses a Holm-Bonferroni correction to minimize false positives which is beyond the scope of this course.\n\n\n\nWe can create a boxplot and plot all of our pairwise comparison p values.\nTo do this, first we can create a list containing all the pairs we want to plot the p-value for. Remember you only need to do each pair once - if you have c(\"Economics\", \"History\") you don’t also need c(\"History\", \"Economics\").",
+    "text": "Anova\nOur final example is using our one-way ANOVA. We’re using the example of salaries and degrees - note that there’s not the same number of values for each group.\n\n\n\n\n\n\n\n\n\nCreate a dataframe\nTo do an ANOVA, we need to organise our data into a dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\n\n\nWhy have we used c(9,7,9) here? What if you change these numbers around?\nIf you make a change, have a look at your Degrees_DataFrame values and see if they still match our original data.\n\n\n\n\n\nCalculate the ANOVA p-value\nWe can calculate the ANOVA p-value by using the aov() function.\n\n\n\n\n\n\n\n\nWe use salary ~ group to assess salary as a function of the degree group.\nWe always put the response variable before the ~ and the explanation variable after. Another way of reading salary ~ group would be “Salary depends on degree group”",
     "crumbs": [
       "Learn",
       "**T-tests**",
-      "Pairwise t test results"
+      "Anova"
     ]
   },
   {
-    "objectID": "worksheets/pairwise_t_test.html#visualise-the-results",
-    "href": "worksheets/pairwise_t_test.html#visualise-the-results",
-    "title": "Pairwise t test results",
+    "objectID": "worksheets/chisq_extension.html",
+    "href": "worksheets/chisq_extension.html",
+    "title": "Extension",
     "section": "",
-    "text": "We can create a boxplot and plot all of our pairwise comparison p values.\nTo do this, first we can create a list containing all the pairs we want to plot the p-value for. Remember you only need to do each pair once - if you have c(\"Economics\", \"History\") you don’t also need c(\"History\", \"Economics\").",
+    "text": "Extension\nThis was a very large dataset and we only looked at a few columns.\nWhat else can you find out?\nNot all of the columns are categorical data - if you want to compare any other two variables (e.g. whether they went to nursery and their current grades); which test would you use?\nWe’ve covered all the main statistical tests now, so try and apply what you’ve learnt from every tutorial to this database.\n\n\n\nMeme of the Hulk being made for a Chi Squared test",
     "crumbs": [
       "Learn",
-      "**T-tests**",
-      "Pairwise t test results"
+      "**Chi-squared and fisher**",
+      "Extension"
     ]
   },
   {
-    "objectID": "worksheets/Filtering_data_from_table.html",
-    "href": "worksheets/Filtering_data_from_table.html",
-    "title": "Filtering data from a table",
+    "objectID": "worksheets/open_csv_in_R.html",
+    "href": "worksheets/open_csv_in_R.html",
+    "title": "Open CSV file in R",
     "section": "",
-    "text": "Filtering data from a table\n\nFiltering numerical dataFiltering categorical data\n\n\nLets say we want to filter our LocustSerotonin data to have only the 0 hour treatmentTime group.\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Import the CSV file into an R Dataframe\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \n\n# Filter for only values where treatmentTime is 0 \ntreatment0_df &lt;- locust_df %&gt;% filter(treatmentTime == 0)\n\n# Make a histogram on this new dataframe\nggplot(treatment0_df, aes(x = serotoninLevel, group = treatmentTime, \n                      fill = treatmentTime)) +\n  geom_histogram(binwidth = 0.6)\n\n\n\n\n\n\n\n\n\n\nLet’s break that down:\n\nWe’re using functions from the dplyr package. You need to install by typing install.packages('dplyr') if you haven’t already.\nWe’re using the filter() function to select all rows where treatmentTime is exactly 0. Be sure to notice the double ==!\n%&gt;% is a pipe - it’s telling R to pass the dataset on the left (locust_df) to the function on the right (filter())\nWe don’t want to overwrite our full dataset, so we’re saving in a new dataframe called treatment0_df using &lt;- .\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nCan you create a dataset with only the treatmentTime values that are more than 0?\n\n\n\n\nWe can also select for string (words and letter) values. This is the same, except that we need to put any strings in quotes \" \" as in the below example.\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Import the CSV file into an R Dataframe\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \n\n# Filter for only values where serotoninCategory is \"Medium\"\nMediumSerotonin_df &lt;- locust_df %&gt;% filter(serotoninCategory == \"Medium\")\n\n# Plot a histogram for this dataset\nggplot(MediumSerotonin_df, aes(x = serotoninLevel, group = treatmentTime, \n                      fill = treatmentTime)) +\n  geom_histogram(binwidth = 0.6)",
+    "text": "Open CSV file in R\nOnce you’ve moved the LocustSerotonin.csv to your R programming folder, you can then open this in your R file. We can do this using functions:\n\nUse the function read.csv() to import our data into R as a dataframe. This will appear in the environment (top right panel) with our variables.\nUse the function head() to view the first five rows of our table.\n\n\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \nhead(locust_df)\n\n\n\n  serotoninLevel treatmentTime serotoninCategory\n1            5.3             0            Medium\n2            4.6             0               Low\n3            4.5             0               Low\n4            4.3             0               Low\n5            4.2             0               Low\n6            3.6             0               Low\n\n\nWe can also view our dataframe by clicking the variable locust_df in the environment tab (top right panel).\n\n\n\nMove CSV to folder and open and run file in R",
+    "crumbs": [
+      "Learn",
+      "**R introduction: basics to graphs**",
+      "R from Excel: Locust Serotonin levels",
+      "Open CSV file in R"
+    ]
+  },
+  {
+    "objectID": "worksheets/chisquared.html",
+    "href": "worksheets/chisquared.html",
+    "title": "Chi-squared test",
+    "section": "",
+    "text": "Chi-squared test\nAs our grand total of observed values is more than 50 and every observation exceeds 5, we can use the chi squared test.\n\n\n\n\n\n\n\n\nAs the p-value is 0.0597, it is not less than 0.05 and therefore not significant with less than a 5% chance of error.",
+    "crumbs": [
+      "Learn",
+      "**Chi-squared and fisher**",
+      "Chi-squared test"
+    ]
+  },
+  {
+    "objectID": "worksheets/penguin_extension.html",
+    "href": "worksheets/penguin_extension.html",
+    "title": "Extension 1: Use filter to plot results for individual species",
+    "section": "",
+    "text": "These next two activities are optional; they are slightly more advanced, so are there to challenge you if you’re comfortable with Penguin Tasks 1-4.\n\nExtension 1: Use filter to plot results for individual species\n\nUsing the filter() function, extract the values of just one species of penguin and save these in a new dataframe.\nRepeat as in Task 4, but separate the distributions by Sex or FullClutch\n\n\n\n\n\n\n\nTipExample of generated graph\n\n\n\n\n\nA histogram of of FlipperLength for Adelie Penguins should look like this:",
     "crumbs": [
       "Learn",
       "**R introduction: basics to graphs**",
       "Extension: Filtering data",
-      "Filtering data from a table"
+      "Extension 1: Use filter to plot results for individual species"
     ]
   },
   {
-    "objectID": "worksheets/Boxplot_3_from_csv.html",
-    "href": "worksheets/Boxplot_3_from_csv.html",
-    "title": "Boxplot from file",
+    "objectID": "worksheets/Variables.html",
+    "href": "worksheets/Variables.html",
+    "title": "Variables",
     "section": "",
-    "text": "Boxplot from file\nFrom the previous pages, we have a dataset with three columns:\n\nLocust Serotonin data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nserotoninLevel\nMeasurement of serotonin in individual locusts\n\n\ntreatmentTime\nAmount of time being crowded (0, 1 or 2 hours)\n\n\nserotoninCategory\nRank of serotonin level in three categories (High, Medium, Low)\n\n\n\nNext, we’re going to use boxplots to compare the serotonin level for different treatment groups.\n\n# Load library\nlibrary(ggplot2)\n# Import the CSV file into an R Dataframe\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \n\n# Plot the data using ggplot package\nggplot(locust_df, aes(x = treatmentTime, \n                      y = serotoninLevel, \n                      group = treatmentTime)) +\n  geom_boxplot() \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhat happens if you remove group = treatmentTime from the above code? What is this doing?\n\n\nLet’s break that down:\n\nggplot(locust_df, aes(x = treatmentTime, y = serotoninLevel, group = treatmentTime)):\n\nggplot() is the graphing function we are using\nlocust_df is the data we want to plot\naes() is our aesthetics - what is our x and y values?\ngroup: Our treatmentTime column is a continuous data (as it is numerical). We want this to be discrete (three separate groups) so we explicity tell ggplot to organise this data into groups.\n\ngeom_boxplot(): this is specifying we want to plot a box plot of our data",
-    "crumbs": [
-      "Learn",
-      "**R introduction: basics to graphs**",
-      "R from Excel: Locust Serotonin levels",
-      "Boxplot from file"
-    ]
-  },
-  {
-    "objectID": "worksheets/fisher.html",
-    "href": "worksheets/fisher.html",
-    "title": "Fisher test",
-    "section": "",
-    "text": "Fisher test\nWe can also do a fisher test if we’re looking at categories with a smaller value.\nIf we compare sex and whether or not the student wants to go to higher education, you’ll see we have very low numbers of students that don’t want to go to higher education in this class.\n\n\n\n\n\n\n\n\nWe can then use the fisher test:",
-    "crumbs": [
-      "Learn",
-      "**Chi-squared and fisher**",
-      "Fisher test"
-    ]
-  },
-  {
-    "objectID": "worksheets/Boxplot_2.html",
-    "href": "worksheets/Boxplot_2.html",
-    "title": "Give it a go",
-    "section": "",
-    "text": "Give it a go\nCan you change the code to make a boxplot of the Duration values? Fill in the values left as ______\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteHint 1\n\n\n\n\n\nThe only parts you need to change is the aes() aesthetics, and ggtitle()\n\n\n\n\n\n\n\n\n\n\nTipShow answer\n\n\n\n\n\n\n# Libraries\nlibrary(ggplot2) # load ggplot2 libray \n\n# Create a Data Frame\nData_Frame &lt;- data.frame (\n  Training = c(\"Strength\", \"Stamina\", \"Other\"),\n  Pulse = c(100, 150, 120),\n  Duration = c(60, 30, 45)\n)\n\n# Create a boxplot\nggplot(Data_Frame, aes(y = Duration)) +\n  # add a colour argument\n  geom_boxplot(fill = \"lightgreen\") + \n  #add a title \n  ggtitle(\"Duration boxplot\") + \n  # Move title to the center\n  theme(plot.title = element_text(hjust = 0.5)) + \n  # Remove the gray background panel \n  theme(panel.background = element_blank()) # remove background",
-    "crumbs": [
-      "Learn",
-      "**R introduction: basics to graphs**",
-      "Make a box plot",
-      "Give it a go"
-    ]
-  },
-  {
-    "objectID": "worksheets/separate_by_sex.html",
-    "href": "worksheets/separate_by_sex.html",
-    "title": "Separate by categorical group (sex)",
-    "section": "",
-    "text": "Separate by categorical group (sex)\nIf we add a color based on a categorical variable, this will then calculate the regression separately for each group.\nSee below, where we have assigned each point a colour based on sex:",
-    "crumbs": [
-      "Learn",
-      "**Correlations**",
-      "Correlations using heart data",
-      "Separate by categorical group (sex)"
-    ]
-  },
-  {
-    "objectID": "worksheets/sleep_extension.html",
-    "href": "worksheets/sleep_extension.html",
-    "title": "Extension task",
-    "section": "",
-    "text": "Extension task\nCorrelation doesn’t always equal causation - and Spurious correlations has many examples to prove this.\nIf you go to the website and click on a correlation, you should get a table with the raw data.\nYou can then: 1. Copy and paste this table into excel 2. Save your excel spreadsheet as a CSV file 3. Read the CSV in R 4. Plot and test the correlations\n\n\n\n\n\n\nNote\n\n\n\n\n\nIt may not be as straightforward as you’d think to copy the data from the table and get this into R.\nYou might find that R doesn’t like spaces in column or row titles - or that your columns and rows are the wrong way around.\n\n\n\n\n\n\nSpurious correlatons",
-    "crumbs": [
-      "Learn",
-      "**Correlations**",
-      "Sleep task",
-      "Extension task"
-    ]
-  },
-  {
-    "objectID": "worksheets/contingency_tables.html",
-    "href": "worksheets/contingency_tables.html",
-    "title": "Contigency tables",
-    "section": "",
-    "text": "Contigency tables\nFirst we need to read this information and store it in an R dataframe.\n\n\n\n\n\n\n\n\nFor our Chi-Squared and Fisher test however, we need to generate a contingency table. Effectively, we need to choose two categorical variables, and count the occurences of each combination. Luckily R will do this for us, using the table() function.\nLet’s first look to see if there’s a difference between sex and whether the student does after-school activities.",
-    "crumbs": [
-      "Learn",
-      "**Chi-squared and fisher**",
-      "Contigency tables"
-    ]
-  },
-  {
-    "objectID": "worksheets/Discrete_continuous_scale.html",
-    "href": "worksheets/Discrete_continuous_scale.html",
-    "title": "Discrete verses continuous scale",
-    "section": "",
-    "text": "Discrete verses continuous scale\nHere we have three distinct treatment groups. This is a discrete scale - no locusts were crowded for 1.5 hours for instance.\n\nContinuous scaleDiscrete scale\n\n\nAs this is numerical, it’s automatically taken as a continuous scale. We can see this when we use fill = to colour the boxplots by treatmentTime.\n\nlibrary(ggplot2)\n# Import the CSV file into an R Dataframe\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \n\n# Plot the data using ggplot package\nggplot(locust_df, aes(x = treatmentTime, \n                      y = serotoninLevel, \n                      group = treatmentTime, \n                      fill = treatmentTime)) +\n  geom_boxplot() \n\n\n\n\n\n\n\n\n\n\n\n\nWe can convert our dataframe column to a factor, which are variables that have a fixed and known set of possible values (categorical data).\nTo select a column from a dataframe, we can use $. So our treatmentTime column is locust_df$treatmentTime.\nTo turn a column of data from being continuous values to being discrete values, we can use the as.factor() function.\nWe can apply this to our treatmentTime values by using: as.factor(locust_df$treatmentTime)\nFinally, if we just did the above it would convert our values to a factor but not save this. We can use &lt;- to overwrite our original column which had the numerical values.\nPutting that together we get:\nlocust_df$treatmentTime &lt;- as.factor(locust_df$treatmentTime)\n\nlibrary(ggplot2)\n# Import the CSV file into an R Dataframe\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \n\n# Convert treatment time column to discrete values\nlocust_df$treatmentTime &lt;- as.factor(locust_df$treatmentTime)\n\n# Plot the data using ggplot package\nggplot(locust_df, aes(x = treatmentTime, \n                      y = serotoninLevel, \n                      group = treatmentTime, \n                      fill = treatmentTime)) +\n  geom_boxplot()",
-    "crumbs": [
-      "Learn",
-      "**R introduction: basics to graphs**",
-      "R from Excel: Locust Serotonin levels",
-      "Discrete verses continuous scale"
-    ]
-  },
-  {
-    "objectID": "worksheets/heart_data.html",
-    "href": "worksheets/heart_data.html",
-    "title": "Import Heart Dataset",
-    "section": "",
-    "text": "Import Heart Dataset\nThe dataset we are going to use is heart.csv.\n\n  📥 Download heart.csv\n\n\n\nThis dataset uses various metrics relating to heart health.\n\nheart.csv dataset\n\n\ncolumn\ndata\n\n\n\n\nage\nage of patient in years\n\n\nsex\nGender of the patient (F/M)\n\n\nrestbp\nResting blood pressure (mmHg)\n\n\nchol\nSerum cholesterol (mg/dl)\n\n\nmaxheartrate\nMaximum heart rate achieved\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\n\n\nWhich of these columns contain categorical data and which contain continuous data?",
-    "crumbs": [
-      "Learn",
-      "**Correlations**",
-      "Correlations using heart data",
-      "Import Heart Dataset"
-    ]
-  },
-  {
-    "objectID": "worksheets/Comments.html",
-    "href": "worksheets/Comments.html",
-    "title": "Comments",
-    "section": "",
-    "text": "Comments\nIf you put a hash # at the start of the line, this means it will be igorned and not run as code.\nWe use comments to add notes - to anyone else using our code, or to our future selves (you will forget what your code does!)",
+    "text": "Variables\nA variable is a box where we can store a value. This is important - if we calculate something in R, we’re going to want to be able to access the answer, so we need to store it somewhere.\nSee the below example - you can click Run Code to see what this does.\n\n\n\n\n\n\n\n\nLet’s break that down:\n\na &lt;- 5 + 10\n\na : This is our variable name. A variable is a piece of data with a name so we can find it again.\n&lt;- : This is an assignment operator; equivalent to ” = “! It means the data on the right hand side is saved under the variable name on the left hand side\n5 + 10 : Mathematical operations in R have a set format. If you want to multiply two numbers, you would use an asterix (*).\n\na\n\na : This line will get the value from our variable a, and print it to the console. It’s really useful for checking if a value is what you expect, especially when you have many variables!",
     "crumbs": [
       "Learn",
       "**R introduction: basics to graphs**",
       "R basics",
-      "Comments"
+      "Variables"
+    ]
+  },
+  {
+    "objectID": "worksheets/add_pvalue_to_graph.html",
+    "href": "worksheets/add_pvalue_to_graph.html",
+    "title": "Annotate the R and p values onto the scatter graph",
+    "section": "",
+    "text": "To annotate our R and p values onto a scatter graph, we can use the stat_cor function from the ggpubr package.\nIf you’ve not already installed it, make sure that first you install it in the console using:\ninstall.packages('ggpubr')\n\n# Load ggplot2 AND ggpubr packages\nlibrary(ggplot2)\nlibrary(ggpubr)\n\n# Open heart.csv and save as a dataframe\nheart_df &lt;- read.csv(\"heart.csv\") \n\n# Plot the heart data as before\nggplot(heart_df, aes(x = age, y = restbp)) +\n  geom_point() +\n  # add a pearson correlation from the stat_cor function\n  stat_cor(method = 'pearson') \n\n\n\n\n\n\n\n\n\n\nThe only parameter we used here for stat_cor was method = 'pearson' so that it would plot a pearson’s correlation.\n\n\n\n\n\n\nNoteQuestion\n\n\n\n\n\nDo the R and p values annotated on this graph match the results from cor.test()?\n\n\n\n\n\nWe can use parameters label.x and label.y to add co-ordinates for where we want the R and p value annotations to go.\nTry it below:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you’d like the R and p value to each be on their own line, we can add label.sep = '\\n' which adds a \\n newline character\nWhat happens if you add label.sep = 'HELLO'?",
+    "crumbs": [
+      "Learn",
+      "**Correlations**",
+      "Correlations using heart data",
+      "Annotate the R and p values onto the scatter graph"
+    ]
+  },
+  {
+    "objectID": "worksheets/add_pvalue_to_graph.html#moving-the-r-and-p-values",
+    "href": "worksheets/add_pvalue_to_graph.html#moving-the-r-and-p-values",
+    "title": "Annotate the R and p values onto the scatter graph",
+    "section": "",
+    "text": "We can use parameters label.x and label.y to add co-ordinates for where we want the R and p value annotations to go.\nTry it below:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you’d like the R and p value to each be on their own line, we can add label.sep = '\\n' which adds a \\n newline character\nWhat happens if you add label.sep = 'HELLO'?",
+    "crumbs": [
+      "Learn",
+      "**Correlations**",
+      "Correlations using heart data",
+      "Annotate the R and p values onto the scatter graph"
+    ]
+  },
+  {
+    "objectID": "worksheets/Violin.html",
+    "href": "worksheets/Violin.html",
+    "title": "Violin plots",
+    "section": "",
+    "text": "Violin plots\nViolin plots are similar to box plots, but they show more information on what the distribution is. A violin plot can sometimes give more useful information than a box plot.\nTo change from a box plot to a violin plot, you only need to change from geom_boxplot() to geom_violin().\n\nlibrary(ggplot2)\n# Import the CSV file into an R Dataframe\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \n\n# Convert treatment time column to discrete values\nlocust_df$treatmentTime &lt;- as.factor(locust_df$treatmentTime)\n\n# Plot the data using ggplot package\nggplot(locust_df, aes(x = treatmentTime, \n                      y = serotoninLevel, \n                      group = treatmentTime, \n                      fill = treatmentTime)) +\n\n  geom_violin() \n\n\n\n\n\n\n\n\n\n\nQuestion: If you add the line + geom_point(), what happens?",
+    "crumbs": [
+      "Learn",
+      "**R introduction: basics to graphs**",
+      "R from Excel: Locust Serotonin levels",
+      "Violin plots"
     ]
   },
   {
@@ -550,117 +452,203 @@
     ]
   },
   {
-    "objectID": "worksheets/Violin.html",
-    "href": "worksheets/Violin.html",
-    "title": "Violin plots",
+    "objectID": "worksheets/Comments.html",
+    "href": "worksheets/Comments.html",
+    "title": "Comments",
     "section": "",
-    "text": "Violin plots\nViolin plots are similar to box plots, but they show more information on what the distribution is. A violin plot can sometimes give more useful information than a box plot.\nTo change from a box plot to a violin plot, you only need to change from geom_boxplot() to geom_violin().\n\nlibrary(ggplot2)\n# Import the CSV file into an R Dataframe\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \n\n# Convert treatment time column to discrete values\nlocust_df$treatmentTime &lt;- as.factor(locust_df$treatmentTime)\n\n# Plot the data using ggplot package\nggplot(locust_df, aes(x = treatmentTime, \n                      y = serotoninLevel, \n                      group = treatmentTime, \n                      fill = treatmentTime)) +\n\n  geom_violin() \n\n\n\n\n\n\n\n\n\n\nQuestion: If you add the line + geom_point(), what happens?",
-    "crumbs": [
-      "Learn",
-      "**R introduction: basics to graphs**",
-      "R from Excel: Locust Serotonin levels",
-      "Violin plots"
-    ]
-  },
-  {
-    "objectID": "worksheets/add_pvalue_to_graph.html",
-    "href": "worksheets/add_pvalue_to_graph.html",
-    "title": "Annotate the R and p values onto the scatter graph",
-    "section": "",
-    "text": "To annotate our R and p values onto a scatter graph, we can use the stat_cor function from the ggpubr package.\nIf you’ve not already installed it, make sure that first you install it in the console using:\ninstall.packages('ggpubr')\n\n# Load ggplot2 AND ggpubr packages\nlibrary(ggplot2)\nlibrary(ggpubr)\n\n# Open heart.csv and save as a dataframe\nheart_df &lt;- read.csv(\"heart.csv\") \n\n# Plot the heart data as before\nggplot(heart_df, aes(x = age, y = restbp)) +\n  geom_point() +\n  # add a pearson correlation from the stat_cor function\n  stat_cor(method = 'pearson') \n\n\n\n\n\n\n\n\n\n\nThe only parameter we used here for stat_cor was method = 'pearson' so that it would plot a pearson’s correlation.\n\n\n\n\n\n\nNoteQuestion\n\n\n\n\n\nDo the R and p values annotated on this graph match the results from cor.test()?\n\n\n\n\n\nWe can use parameters label.x and label.y to add co-ordinates for where we want the R and p value annotations to go.\nTry it below:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you’d like the R and p value to each be on their own line, we can add label.sep = '\\n' which adds a \\n newline character\nWhat happens if you add label.sep = 'HELLO'?",
-    "crumbs": [
-      "Learn",
-      "**Correlations**",
-      "Correlations using heart data",
-      "Annotate the R and p values onto the scatter graph"
-    ]
-  },
-  {
-    "objectID": "worksheets/add_pvalue_to_graph.html#moving-the-r-and-p-values",
-    "href": "worksheets/add_pvalue_to_graph.html#moving-the-r-and-p-values",
-    "title": "Annotate the R and p values onto the scatter graph",
-    "section": "",
-    "text": "We can use parameters label.x and label.y to add co-ordinates for where we want the R and p value annotations to go.\nTry it below:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nIf you’d like the R and p value to each be on their own line, we can add label.sep = '\\n' which adds a \\n newline character\nWhat happens if you add label.sep = 'HELLO'?",
-    "crumbs": [
-      "Learn",
-      "**Correlations**",
-      "Correlations using heart data",
-      "Annotate the R and p values onto the scatter graph"
-    ]
-  },
-  {
-    "objectID": "worksheets/Variables.html",
-    "href": "worksheets/Variables.html",
-    "title": "Variables",
-    "section": "",
-    "text": "Variables\nA variable is a box where we can store a value. This is important - if we calculate something in R, we’re going to want to be able to access the answer, so we need to store it somewhere.\nSee the below example - you can click Run Code to see what this does.\n\n\n\n\n\n\n\n\nLet’s break that down:\n\na &lt;- 5 + 10\n\na : This is our variable name. A variable is a piece of data with a name so we can find it again.\n&lt;- : This is an assignment operator; equivalent to ” = “! It means the data on the right hand side is saved under the variable name on the left hand side\n5 + 10 : Mathematical operations in R have a set format. If you want to multiply two numbers, you would use an asterix (*).\n\na\n\na : This line will get the value from our variable a, and print it to the console. It’s really useful for checking if a value is what you expect, especially when you have many variables!",
+    "text": "Comments\nIf you put a hash # at the start of the line, this means it will be igorned and not run as code.\nWe use comments to add notes - to anyone else using our code, or to our future selves (you will forget what your code does!)",
     "crumbs": [
       "Learn",
       "**R introduction: basics to graphs**",
       "R basics",
-      "Variables"
+      "Comments"
     ]
   },
   {
-    "objectID": "worksheets/penguin_extension.html",
-    "href": "worksheets/penguin_extension.html",
-    "title": "Extension 1: Use filter to plot results for individual species",
+    "objectID": "worksheets/heart_data.html",
+    "href": "worksheets/heart_data.html",
+    "title": "Import Heart Dataset",
     "section": "",
-    "text": "These next two activities are optional; they are slightly more advanced, so are there to challenge you if you’re comfortable with Penguin Tasks 1-4.\n\nExtension 1: Use filter to plot results for individual species\n\nUsing the filter() function, extract the values of just one species of penguin and save these in a new dataframe.\nRepeat as in Task 4, but separate the distributions by Sex or FullClutch\n\n\n\n\n\n\n\nTipExample of generated graph\n\n\n\n\n\nA histogram of of FlipperLength for Adelie Penguins should look like this:",
+    "text": "Import Heart Dataset\nThe dataset we are going to use is heart.csv.\n\n  📥 Download heart.csv\n\n\n\nThis dataset uses various metrics relating to heart health.\n\nheart.csv dataset\n\n\ncolumn\ndata\n\n\n\n\nage\nage of patient in years\n\n\nsex\nGender of the patient (F/M)\n\n\nrestbp\nResting blood pressure (mmHg)\n\n\nchol\nSerum cholesterol (mg/dl)\n\n\nmaxheartrate\nMaximum heart rate achieved\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\n\n\nWhich of these columns contain categorical data and which contain continuous data?",
     "crumbs": [
       "Learn",
-      "**R introduction: basics to graphs**",
-      "Extension: Filtering data",
-      "Extension 1: Use filter to plot results for individual species"
+      "**Correlations**",
+      "Correlations using heart data",
+      "Import Heart Dataset"
     ]
   },
   {
-    "objectID": "worksheets/chisquared.html",
-    "href": "worksheets/chisquared.html",
-    "title": "Chi-squared test",
+    "objectID": "worksheets/Discrete_continuous_scale.html",
+    "href": "worksheets/Discrete_continuous_scale.html",
+    "title": "Discrete verses continuous scale",
     "section": "",
-    "text": "Chi-squared test\nAs our grand total of observed values is more than 50 and every observation exceeds 5, we can use the chi squared test.\n\n\n\n\n\n\n\n\nAs the p-value is 0.0597, it is not less than 0.05 and therefore not significant with less than a 5% chance of error.",
-    "crumbs": [
-      "Learn",
-      "**Chi-squared and fisher**",
-      "Chi-squared test"
-    ]
-  },
-  {
-    "objectID": "worksheets/open_csv_in_R.html",
-    "href": "worksheets/open_csv_in_R.html",
-    "title": "Open CSV file in R",
-    "section": "",
-    "text": "Open CSV file in R\nOnce you’ve moved the LocustSerotonin.csv to your R programming folder, you can then open this in your R file. We can do this using functions:\n\nUse the function read.csv() to import our data into R as a dataframe. This will appear in the environment (top right panel) with our variables.\nUse the function head() to view the first five rows of our table.\n\n\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \nhead(locust_df)\n\n\n\n  serotoninLevel treatmentTime serotoninCategory\n1            5.3             0            Medium\n2            4.6             0               Low\n3            4.5             0               Low\n4            4.3             0               Low\n5            4.2             0               Low\n6            3.6             0               Low\n\n\nWe can also view our dataframe by clicking the variable locust_df in the environment tab (top right panel).\n\n\n\nMove CSV to folder and open and run file in R",
+    "text": "Discrete verses continuous scale\nHere we have three distinct treatment groups. This is a discrete scale - no locusts were crowded for 1.5 hours for instance.\n\nContinuous scaleDiscrete scale\n\n\nAs this is numerical, it’s automatically taken as a continuous scale. We can see this when we use fill = to colour the boxplots by treatmentTime.\n\nlibrary(ggplot2)\n# Import the CSV file into an R Dataframe\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \n\n# Plot the data using ggplot package\nggplot(locust_df, aes(x = treatmentTime, \n                      y = serotoninLevel, \n                      group = treatmentTime, \n                      fill = treatmentTime)) +\n  geom_boxplot() \n\n\n\n\n\n\n\n\n\n\n\n\nWe can convert our dataframe column to a factor, which are variables that have a fixed and known set of possible values (categorical data).\nTo select a column from a dataframe, we can use $. So our treatmentTime column is locust_df$treatmentTime.\nTo turn a column of data from being continuous values to being discrete values, we can use the as.factor() function.\nWe can apply this to our treatmentTime values by using: as.factor(locust_df$treatmentTime)\nFinally, if we just did the above it would convert our values to a factor but not save this. We can use &lt;- to overwrite our original column which had the numerical values.\nPutting that together we get:\nlocust_df$treatmentTime &lt;- as.factor(locust_df$treatmentTime)\n\nlibrary(ggplot2)\n# Import the CSV file into an R Dataframe\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \n\n# Convert treatment time column to discrete values\nlocust_df$treatmentTime &lt;- as.factor(locust_df$treatmentTime)\n\n# Plot the data using ggplot package\nggplot(locust_df, aes(x = treatmentTime, \n                      y = serotoninLevel, \n                      group = treatmentTime, \n                      fill = treatmentTime)) +\n  geom_boxplot()",
     "crumbs": [
       "Learn",
       "**R introduction: basics to graphs**",
       "R from Excel: Locust Serotonin levels",
-      "Open CSV file in R"
+      "Discrete verses continuous scale"
     ]
   },
   {
-    "objectID": "worksheets/chisq_extension.html",
-    "href": "worksheets/chisq_extension.html",
-    "title": "Extension",
+    "objectID": "worksheets/contingency_tables.html",
+    "href": "worksheets/contingency_tables.html",
+    "title": "Contigency tables",
     "section": "",
-    "text": "Extension\nThis was a very large dataset and we only looked at a few columns.\nWhat else can you find out?\nNot all of the columns are categorical data - if you want to compare any other two variables (e.g. whether they went to nursery and their current grades); which test would you use?\nWe’ve covered all the main statistical tests now, so try and apply what you’ve learnt from every tutorial to this database.\n\n\n\nMeme of the Hulk being made for a Chi Squared test",
+    "text": "Contigency tables\nFirst we need to read this information and store it in an R dataframe.\n\n\n\n\n\n\n\n\nFor our Chi-Squared and Fisher test however, we need to generate a contingency table. Effectively, we need to choose two categorical variables, and count the occurences of each combination. Luckily R will do this for us, using the table() function.\nLet’s first look to see if there’s a difference between sex and whether the student does after-school activities.",
     "crumbs": [
       "Learn",
       "**Chi-squared and fisher**",
-      "Extension"
+      "Contigency tables"
     ]
   },
   {
-    "objectID": "worksheets/anova.html",
-    "href": "worksheets/anova.html",
-    "title": "Anova",
+    "objectID": "worksheets/sleep_extension.html",
+    "href": "worksheets/sleep_extension.html",
+    "title": "Extension task",
     "section": "",
-    "text": "Anova\nOur final example is using our one-way ANOVA. We’re using the example of salaries and degrees - note that there’s not the same number of values for each group.\n\n\n\n\n\n\n\n\n\nCreate a dataframe\nTo do an ANOVA, we need to organise our data into a dataframe.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\n\n\nWhy have we used c(9,7,9) here? What if you change these numbers around?\nIf you make a change, have a look at your Degrees_DataFrame values and see if they still match our original data.\n\n\n\n\n\nCalculate the ANOVA p-value\nWe can calculate the ANOVA p-value by using the aov() function.\n\n\n\n\n\n\n\n\nWe use salary ~ group to assess salary as a function of the degree group.\nWe always put the response variable before the ~ and the explanation variable after. Another way of reading salary ~ group would be “Salary depends on degree group”",
+    "text": "Extension task\nCorrelation doesn’t always equal causation - and Spurious correlations has many examples to prove this.\nIf you go to the website and click on a correlation, you should get a table with the raw data.\nYou can then:\n\nCopy and paste this table into excel\nSave your excel spreadsheet as a CSV file\nRead the CSV in R\nPlot and test the correlations\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nIt may not be as straightforward as you’d think to copy the data from the table and get this into R.\nYou might find that R doesn’t like spaces in column or row titles - or that your columns and rows are the wrong way around.\n\n\n\n\n\n\nSpurious correlatons",
+    "crumbs": [
+      "Learn",
+      "**Correlations**",
+      "Sleep task",
+      "Extension task"
+    ]
+  },
+  {
+    "objectID": "worksheets/separate_by_sex.html",
+    "href": "worksheets/separate_by_sex.html",
+    "title": "Separate by categorical group (sex)",
+    "section": "",
+    "text": "Separate by categorical group (sex)\nIf we add a color based on a categorical variable, this will then calculate the regression separately for each group.\nSee below, where we have assigned each point a colour based on sex:\n\n# Load ggplot2 AND ggpubr packages\nlibrary(ggplot2)\nlibrary(ggpubr)\n\n# Open heart.csv and save as a dataframe\nheart_df &lt;- read.csv(\"heart.csv\") \n\n# Plot the heart data as before but setting color to the sex column\nggplot(heart_df, aes(x = age, y = restbp, color = sex)) +\n  geom_point() +\n  # add a pearson correlation from the stat_cor function\n  stat_cor(method = 'pearson') +\n  # add linear regression line using geom_smooth\n  geom_smooth(method='lm', formula= y~x)",
+    "crumbs": [
+      "Learn",
+      "**Correlations**",
+      "Correlations using heart data",
+      "Separate by categorical group (sex)"
+    ]
+  },
+  {
+    "objectID": "worksheets/Boxplot_2.html",
+    "href": "worksheets/Boxplot_2.html",
+    "title": "Give it a go",
+    "section": "",
+    "text": "Give it a go\nCan you change the code to make a boxplot of the Duration values? Fill in the values left as ______\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteHint 1\n\n\n\n\n\nThe only parts you need to change is the aes() aesthetics, and ggtitle()\n\n\n\n\n\n\n\n\n\n\nTipShow answer\n\n\n\n\n\n\n# Libraries\nlibrary(ggplot2) # load ggplot2 libray \n\n# Create a Data Frame\nData_Frame &lt;- data.frame (\n  Training = c(\"Strength\", \"Stamina\", \"Other\"),\n  Pulse = c(100, 150, 120),\n  Duration = c(60, 30, 45)\n)\n\n# Create a boxplot\nggplot(Data_Frame, aes(y = Duration)) +\n  # add a colour argument\n  geom_boxplot(fill = \"lightgreen\") + \n  #add a title \n  ggtitle(\"Duration boxplot\") + \n  # Move title to the center\n  theme(plot.title = element_text(hjust = 0.5)) + \n  # Remove the gray background panel \n  theme(panel.background = element_blank()) # remove background",
+    "crumbs": [
+      "Learn",
+      "**R introduction: basics to graphs**",
+      "Make a box plot",
+      "Give it a go"
+    ]
+  },
+  {
+    "objectID": "worksheets/fisher.html",
+    "href": "worksheets/fisher.html",
+    "title": "Fisher test",
+    "section": "",
+    "text": "Fisher test\nWe can also do a fisher test if we’re looking at categories with a smaller value.\nIf we compare sex and whether or not the student wants to go to higher education, you’ll see we have very low numbers of students that don’t want to go to higher education in this class.\n\n\n\n\n\n\n\n\nWe can then use the fisher test:",
+    "crumbs": [
+      "Learn",
+      "**Chi-squared and fisher**",
+      "Fisher test"
+    ]
+  },
+  {
+    "objectID": "worksheets/Boxplot_3_from_csv.html",
+    "href": "worksheets/Boxplot_3_from_csv.html",
+    "title": "Boxplot from file",
+    "section": "",
+    "text": "Boxplot from file\nFrom the previous pages, we have a dataset with three columns:\n\nLocust Serotonin data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nserotoninLevel\nMeasurement of serotonin in individual locusts\n\n\ntreatmentTime\nAmount of time being crowded (0, 1 or 2 hours)\n\n\nserotoninCategory\nRank of serotonin level in three categories (High, Medium, Low)\n\n\n\nNext, we’re going to use boxplots to compare the serotonin level for different treatment groups.\n\n# Load library\nlibrary(ggplot2)\n# Import the CSV file into an R Dataframe\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \n\n# Plot the data using ggplot package\nggplot(locust_df, aes(x = treatmentTime, \n                      y = serotoninLevel, \n                      group = treatmentTime)) +\n  geom_boxplot() \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nWhat happens if you remove group = treatmentTime from the above code? What is this doing?\n\n\nLet’s break that down:\n\nggplot(locust_df, aes(x = treatmentTime, y = serotoninLevel, group = treatmentTime)):\n\nggplot() is the graphing function we are using\nlocust_df is the data we want to plot\naes() is our aesthetics - what is our x and y values?\ngroup: Our treatmentTime column is a continuous data (as it is numerical). We want this to be discrete (three separate groups) so we explicity tell ggplot to organise this data into groups.\n\ngeom_boxplot(): this is specifying we want to plot a box plot of our data",
+    "crumbs": [
+      "Learn",
+      "**R introduction: basics to graphs**",
+      "R from Excel: Locust Serotonin levels",
+      "Boxplot from file"
+    ]
+  },
+  {
+    "objectID": "worksheets/Filtering_data_from_table.html",
+    "href": "worksheets/Filtering_data_from_table.html",
+    "title": "Filtering data from a table",
+    "section": "",
+    "text": "Filtering data from a table\n\nFiltering numerical dataFiltering categorical data\n\n\nLets say we want to filter our LocustSerotonin data to have only the 0 hour treatmentTime group.\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Import the CSV file into an R Dataframe\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \n\n# Filter for only values where treatmentTime is 0 \ntreatment0_df &lt;- locust_df %&gt;% filter(treatmentTime == 0)\n\n# Make a histogram on this new dataframe\nggplot(treatment0_df, aes(x = serotoninLevel, group = treatmentTime, \n                      fill = treatmentTime)) +\n  geom_histogram(binwidth = 0.6)\n\n\n\n\n\n\n\n\n\n\nLet’s break that down:\n\nWe’re using functions from the dplyr package. You need to install by typing install.packages('dplyr') if you haven’t already.\nWe’re using the filter() function to select all rows where treatmentTime is exactly 0. Be sure to notice the double ==!\n%&gt;% is a pipe - it’s telling R to pass the dataset on the left (locust_df) to the function on the right (filter())\nWe don’t want to overwrite our full dataset, so we’re saving in a new dataframe called treatment0_df using &lt;- .\n\n\n\n\n\n\n\nNoteQuestion\n\n\n\nCan you create a dataset with only the treatmentTime values that are more than 0?\n\n\n\n\nWe can also select for string (words and letter) values. This is the same, except that we need to put any strings in quotes \" \" as in the below example.\n\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Import the CSV file into an R Dataframe\nlocust_df &lt;- read.csv(\"LocustSerotonin.csv\") \n\n# Filter for only values where serotoninCategory is \"Medium\"\nMediumSerotonin_df &lt;- locust_df %&gt;% filter(serotoninCategory == \"Medium\")\n\n# Plot a histogram for this dataset\nggplot(MediumSerotonin_df, aes(x = serotoninLevel, group = treatmentTime, \n                      fill = treatmentTime)) +\n  geom_histogram(binwidth = 0.6)",
+    "crumbs": [
+      "Learn",
+      "**R introduction: basics to graphs**",
+      "Extension: Filtering data",
+      "Filtering data from a table"
+    ]
+  },
+  {
+    "objectID": "worksheets/pairwise_t_test.html",
+    "href": "worksheets/pairwise_t_test.html",
+    "title": "Pairwise t test results",
+    "section": "",
+    "text": "Our ANOVA was significant - but now we need to know which pairs are significantly different.\nWe can use pairwise.t.test() to do a t-test for all pairs of groups in our dataset.\n\n\n\n\n\n\n\n\nWe use the options:\n\npool.sd = FALSE so that variance is calculated independantly for each group\np.adjust.method = \"none\" as this function by default uses a Holm-Bonferroni correction to minimize false positives which is beyond the scope of this course.\n\n\n\nWe can create a boxplot and plot all of our pairwise comparison p values.\nTo do this, first we can create a list containing all the pairs we want to plot the p-value for. Remember you only need to do each pair once - if you have c(\"Economics\", \"History\") you don’t also need c(\"History\", \"Economics\").",
     "crumbs": [
       "Learn",
       "**T-tests**",
-      "Anova"
+      "Pairwise t test results"
+    ]
+  },
+  {
+    "objectID": "worksheets/pairwise_t_test.html#visualise-the-results",
+    "href": "worksheets/pairwise_t_test.html#visualise-the-results",
+    "title": "Pairwise t test results",
+    "section": "",
+    "text": "We can create a boxplot and plot all of our pairwise comparison p values.\nTo do this, first we can create a list containing all the pairs we want to plot the p-value for. Remember you only need to do each pair once - if you have c(\"Economics\", \"History\") you don’t also need c(\"History\", \"Economics\").",
+    "crumbs": [
+      "Learn",
+      "**T-tests**",
+      "Pairwise t test results"
+    ]
+  },
+  {
+    "objectID": "worksheets/one_tailed_t_test.html",
+    "href": "worksheets/one_tailed_t_test.html",
+    "title": "One-tailed t-test",
+    "section": "",
+    "text": "We can follow the same process for the one-tailed t-test. First, we need our list of grades from our example.\n\n\n\n\n\n\n\n\n\n\nWe can use the summary() function to see our mean and interquartile range for each set of values.\n\n\n\n\n\n\n\n\n\n\n\nUsing the function t.test(), we can add our one set of values and the number we want to compare it to. In this example, we’re looking to see if our mean value is greater than 40.\nWe need to specify the option alternative = 'greater' to do a one-tailed test for if the mean of our Grades are significantly above our value for mu, which we have set to 40 (a pass).\n\n\n\n\n\n\n\n\n\n\n\nBecause we only have one group of data values, we can create our dataframe and draw our boxplot very simply.\n\n\n\n\n\n\n\n\nWe don’t need to annotate our p-value on here - it wouldn’t make much sense to do so as our p-value was specifically assessing if the mean was higher than 40 which is hard to represent visually.",
+    "crumbs": [
+      "Learn",
+      "**T-tests**",
+      "One-tailed t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/one_tailed_t_test.html#summarise-the-data",
+    "href": "worksheets/one_tailed_t_test.html#summarise-the-data",
+    "title": "One-tailed t-test",
+    "section": "",
+    "text": "We can use the summary() function to see our mean and interquartile range for each set of values.",
+    "crumbs": [
+      "Learn",
+      "**T-tests**",
+      "One-tailed t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/one_tailed_t_test.html#calculate-the-one-tailed-t-test-p-value",
+    "href": "worksheets/one_tailed_t_test.html#calculate-the-one-tailed-t-test-p-value",
+    "title": "One-tailed t-test",
+    "section": "",
+    "text": "Using the function t.test(), we can add our one set of values and the number we want to compare it to. In this example, we’re looking to see if our mean value is greater than 40.\nWe need to specify the option alternative = 'greater' to do a one-tailed test for if the mean of our Grades are significantly above our value for mu, which we have set to 40 (a pass).",
+    "crumbs": [
+      "Learn",
+      "**T-tests**",
+      "One-tailed t-test"
+    ]
+  },
+  {
+    "objectID": "worksheets/one_tailed_t_test.html#create-a-dataframe-and-boxplot",
+    "href": "worksheets/one_tailed_t_test.html#create-a-dataframe-and-boxplot",
+    "title": "One-tailed t-test",
+    "section": "",
+    "text": "Because we only have one group of data values, we can create our dataframe and draw our boxplot very simply.\n\n\n\n\n\n\n\n\nWe don’t need to annotate our p-value on here - it wouldn’t make much sense to do so as our p-value was specifically assessing if the mean was higher than 40 which is hard to represent visually.",
+    "crumbs": [
+      "Learn",
+      "**T-tests**",
+      "One-tailed t-test"
     ]
   },
   {
@@ -681,7 +669,7 @@
     "href": "worksheets/correlelogram.html",
     "title": "Correlelograms",
     "section": "",
-    "text": "Correlelograms\nOur dataset contained more than just age and blood pressure - it would be useful to see if there are any correlations between e.g. blood pressure and maximum heart rate, or cholesterol and age.\nWe can also use R to do an all-against-all correlation analysis, so without doing all of the above we can get an idea of if there are any correlations.\nThis uses the corrplot library. You might need to run install.packages('corrplot') before you can run this code.\n\n\n\n\n\n\n\n\nLet’s break that down:\n\nlibrary(corrplot) is loading the corrplot package, which has the functions we need\nheart_df_only_numerical &lt;- heart_df[,-2]\n\nOur sex in this dataframe is categorical (M or F) so we need to remove it\nheart_df[,-2] is selecting the whole of the heart_df dataframe except column 2\n\nheart_corrplot_matrix &lt;- cor(heart_df_only_numerical)\n\nThis uses the cor() function to calculate all-against-all correlations\n\ncorrplot(heart_corrplot_matrix\n\nThis takes our all-against-all correlations and plots a correlelogram\n\n\n\n\n\n\n\n\nTipTry:\n\n\n\n\n\nCorrplot also has different settings you can use.\nTo plot the strength of the correlation (R value) numerically, try: corrplot(heart_corrplot_matrix, method = \"number\")\nAnd if you only want to show the correlations that are statistically significant with a 5% chance of error:\ncorrplot(heart_corrplot_matrix, sig.level = 0.05)",
+    "text": "Correlelograms\nOur dataset contained more than just age and blood pressure - it would be useful to see if there are any correlations between e.g. blood pressure and maximum heart rate, or cholesterol and age.\nWe can also use R to do an all-against-all correlation analysis, so without doing all of the above we can get an idea of if there are any correlations.\nThis uses the corrplot library. You might need to run install.packages('corrplot') before you can run this code.\n\nlibrary(corrplot)\n\n# Open heart.csv and save as a dataframe\nheart_df &lt;- read.csv(\"heart.csv\") \n\nheart_df_only_numerical &lt;- heart_df[,-2] # creates a new dataframe which doesn't include the \"sex\" column. \nheart_corrplot_matrix &lt;- cor(heart_df_only_numerical) # calculates all-against-all correlation matrix\ncorrplot(heart_corrplot_matrix) # makes a correlelogram based on the calculations\n\n\n\ncorrplot 0.95 loaded\n\n\n\n\n\n\n\n\n\nLet’s break that down:\n\nlibrary(corrplot) is loading the corrplot package, which has the functions we need\nheart_df_only_numerical &lt;- heart_df[,-2]\n\nOur sex in this dataframe is categorical (M or F) so we need to remove it\nheart_df[,-2] is selecting the whole of the heart_df dataframe except column 2\n\nheart_corrplot_matrix &lt;- cor(heart_df_only_numerical)\n\nThis uses the cor() function to calculate all-against-all correlations\n\ncorrplot(heart_corrplot_matrix\n\nThis takes our all-against-all correlations and plots a correlelogram\n\n\n\n\n\n\n\n\nTipTry:\n\n\n\n\n\nCorrplot also has different settings you can use.\nTo plot the strength of the correlation (R value) numerically, try: corrplot(heart_corrplot_matrix, method = \"number\")\nAnd if you only want to show the correlations that are statistically significant with a 5% chance of error:\ncorrplot(heart_corrplot_matrix, sig.level = 0.05)",
     "crumbs": [
       "Learn",
       "**Correlations**",
@@ -759,7 +747,7 @@
     "href": "worksheets/sleep_introduction.html",
     "title": "Sleep Quality Dataset Introduction",
     "section": "",
-    "text": "Sleep Quality Dataset Introduction\nFor this worksheet, you will need the Sleep_health_and_lifestyle_dataset.csv file from the Canvas page.\nThis dataset contains values for sleep quality and lifestyle factors. This is artificial data generated for illustrative purposes\nThis dataset contains the following information:\n\nSleep data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nAge\nAge of the individual\n\n\nSex\nSex of the individual (Male/Female)\n\n\nOccupation\nOccupation of the individual\n\n\nsleepduration\nAverage length of sleep (hours)\n\n\nsleepquality\nAverage sleep quality score\n\n\nactivitylevel\nValue assigned based on average level of physical activities (minutes/day)\n\n\nstress\nSelf-rated score of how stressed the individual feels\n\n\nheartrate\nResting heartrate of individual (beats per minute)\n\n\nsteps\nAverage number of steps taken per day\n\n\n\n\n\n\n© [Rudzhan] / Adobe Stock",
+    "text": "Sleep Quality Dataset Introduction\nFor this worksheet, you will need the Sleep_health_and_lifestyle_dataset.csv file\n\n  📥 Download Sleep_health_and_lifestyle_dataset.csv\n\n\n\nThis dataset contains values for sleep quality and lifestyle factors. This is artificial data generated for illustrative purposes\nThis dataset contains the following information:\n\nSleep data columns and descriptions\n\n\n\n\n\n\nColumn\nData\n\n\n\n\nAge\nAge of the individual\n\n\nSex\nSex of the individual (Male/Female)\n\n\nOccupation\nOccupation of the individual\n\n\nsleepduration\nAverage length of sleep (hours)\n\n\nsleepquality\nAverage sleep quality score\n\n\nactivitylevel\nValue assigned based on average level of physical activities (minutes/day)\n\n\nstress\nSelf-rated score of how stressed the individual feels\n\n\nheartrate\nResting heartrate of individual (beats per minute)\n\n\nsteps\nAverage number of steps taken per day\n\n\n\n\n\n\n© [Rudzhan] / Adobe Stock",
     "crumbs": [
       "Learn",
       "**Correlations**",
@@ -907,7 +895,14 @@
     "href": "help.html",
     "title": "Help",
     "section": "",
-    "text": "Help\nStuck? That’s normal! Learning programming is like learning a language, it takes a lot of time and you don’t start fluent.\nEmail Lizzie for support L.Wadsworth@kingston.ac.uk; it can help to send a screenshot or your .R file - every error is unique so the more information you can provide the quicker we can figure out the issue.\nFind below a list of common error messages. This will be updated throughout the teaching block as you send me the error messages you are getting."
+    "text": "Stuck? That’s normal! Learning programming is like learning a language, it takes a lot of time and you don’t start fluent.\nEmail Lizzie for support:\n\n\nL.Wadsworth@kingston.ac.uk\nIt can help to send a screenshot or your .R file as every error is unique\n\n\n\nMaths Café is run by the School of Computer Science and Mathematics (CSM) for any Kingston University student looking for support with Maths related work (including R and Statistics) and are happy to assist with any issues from the basic use of calculators upwards.\nIt runs as a drop-in session every Wednesday in Teaching weeks, 14:00-16:00 in room PRJG1001. Online sessions via Microsoft Teams are also available.\nStudents can also contact the team via Microsoft Teams using the following link: General | Maths Cafe 2024-5.mst | Microsoft Teams"
+  },
+  {
+    "objectID": "help.html#maths-café",
+    "href": "help.html#maths-café",
+    "title": "Help",
+    "section": "",
+    "text": "Maths Café is run by the School of Computer Science and Mathematics (CSM) for any Kingston University student looking for support with Maths related work (including R and Statistics) and are happy to assist with any issues from the basic use of calculators upwards.\nIt runs as a drop-in session every Wednesday in Teaching weeks, 14:00-16:00 in room PRJG1001. Online sessions via Microsoft Teams are also available.\nStudents can also contact the team via Microsoft Teams using the following link: General | Maths Cafe 2024-5.mst | Microsoft Teams"
   },
   {
     "objectID": "setup.html",

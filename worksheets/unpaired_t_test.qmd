@@ -14,43 +14,36 @@ webr:
 
 # Unpaired t-test
 
-We're going to be using the same examples as in [Statistics lecture 3](https://canvas.kingston.ac.uk/courses/30406/pages/data-analysis-and-visualisation) for each of our tests.
-
-## Add the data into R
+We're going to be using the same examples as in Statistics lecture 3 (by Dr Trigiante) for each of our tests. For this example, we'll use the Diabetic and Non-Diabetic glycemia values. 
 
 The first thing we need to do is copy our data in R. As these are fairly small datasets, we can manually type in our data using the `c()` function to create a vector of values.
 
-```{webr}
-#| context: interactive
-#| autorun: true
+```{r}
 # Create a vector of values for each of our columns
 NonDiabetic = c(82,87,79,79,86,70,98,92,75,90,73,70,87,88,96,93) # NonDiabetic glycemia values
 Diabetic = c(112,110,94,121,85,125,80,122,117,116,99,90,99,95,84,84) # Diabetic glycemia values
 ```
 
-## Summarise the data
+We can use the `summary()` function to view our mean and interquartile range.
 
-We can use the `summary()` function to see our mean and interquartile range for each set of values.
-
-```{webr}
-#| context: interactive
-#| autorun: true
+```{r}
+# Use summary() function to see the Interquartile Range
 summary(NonDiabetic) # print summary of NonDiabetic glycemia values to the console
 summary(Diabetic) # print summary of Diabetic glycemia values to the console
 ```
 
-## Calculate the unpaired t-test p-value
+Using the function `t.test()`, we can add our two sets of values as arguments and calculate the p-value. This should match the result from excel of an **unpaired** t-test. 
 
-Using the function `t.test()`, we can add our two sets of values as arguments and calculate the p-value. This should match the result from excel.
-
-```{webr}
-#| context: interactive
-#| autorun: true
+```{r}
+# Run an unpaired t test using t.test()
 unpaired_t_test_result <- t.test(NonDiabetic, Diabetic)
+# Print the result to the console
 unpaired_t_test_result
 ```
 
 That's our t-test done already!
+
+## T-test options
 
 We didn't have to use any **options** here as the default test is two tailed, unpaired, and assuming the variance is not equal. If you want to change any of the options, you can try:
 
@@ -64,53 +57,3 @@ We didn't have to use any **options** here as the default test is two tailed, un
     -   FALSE for unpaired
     -   `unpaired_t_test_result <- t.test(NonDiabetic, Diabetic, paired = TRUE)`
 -   **mu** mean, for comparison for a one-tailed test
-
-## Create a dataframe with the data
-
-We can use the following code to create a dataframe with the above vectors.
-
-We need a column that contains the correct group - "NonDiabetic" or "Diabetic" for each value. We can use the `rep()` function for this which replicates values.
-
--   `c("NonDiabetic", "Diabetic")` is a list of the items we want to repeat
--   `each = 16` gives us a list of 16 of each. We could also put `c(16,16)`.
-
-```{webr}
-#| context: interactive
-#| autorun: true
-Glycemia_Data_Frame <- data.frame (
-  group = rep(c("NonDiabetic", "Diabetic"), each = 16),
-  glycemia = c(NonDiabetic,  Diabetic)
-)
-print(Glycemia_Data_Frame)
-```
-
-## Visualise the results as a boxplot
-
-We can now create a boxplot in the same way we did in Tutorial 1. We can also add a t-test result using the function `stat_compare_means()` from the `ggpubr` package.
-
-```{webr}
-#| context: interactive
-#| autorun: true
-library(ggplot2)
-library(ggpubr)
-ggplot(Glycemia_Data_Frame, aes(x=group, y=glycemia, fill=group)) +
-  geom_boxplot() + 
-  stat_compare_means(method = "t.test")
-```
-
-## Dataframe to a list of values
-
-We've just turned our two lists into one long dataframe, but what if we want to do the opposite?
-
-If you want to extract the values for a particular group, we can use the following structure:
-
-```{webr}
-#| context: interactive
-#| autorun: true
-DiabeticExtracted <- Glycemia_Data_Frame$glycemia[Glycemia_Data_Frame$group=="Diabetic"]
-DiabeticExtracted
-```
-
-If you look in your environment, DiabeticExtracted should be identical to your Diabetic values.
-
-Using this, if you are importing data from excel you can extract the values into groups to prepare for your t-test.

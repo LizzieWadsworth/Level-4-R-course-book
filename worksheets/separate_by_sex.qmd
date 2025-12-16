@@ -18,11 +18,37 @@ If we add a color based on a categorical variable, this will then calculate the 
 
 See below, where we have assigned each point a colour based on sex:
 
-```{webr}
-#| context: interactive
-#| autorun: true
+```{r}
+#| eval: false
+# Load ggplot2 AND ggpubr packages
+library(ggplot2)
+library(ggpubr)
+
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("heart.csv") 
+
+# Plot the heart data as before but setting color to the sex column
 ggplot(heart_df, aes(x = age, y = restbp, color = sex)) +
   geom_point() +
+  # add a pearson correlation from the stat_cor function
   stat_cor(method = 'pearson') +
+  # add linear regression line using geom_smooth
+  geom_smooth(method='lm', formula= y~x)
+```
+```{r}
+#| echo: false
+# Load ggplot2 AND ggpubr packages
+library(ggplot2)
+library(ggpubr)
+
+# Open heart.csv and save as a dataframe
+heart_df <- read.csv("../Datasets/heart.csv") 
+
+# Plot the heart data as before but setting color to the sex column
+ggplot(heart_df, aes(x = age, y = restbp, color = sex)) +
+  geom_point() +
+  # add a pearson correlation from the stat_cor function
+  stat_cor(method = 'pearson') +
+  # add linear regression line using geom_smooth
   geom_smooth(method='lm', formula= y~x)
 ```
