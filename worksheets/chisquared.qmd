@@ -14,6 +14,17 @@ webr:
 
 # Chi-squared test
 
+This is our data from the previous page: 
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Read the csv file and store in a dataframe 
+maths_students=read.csv("student-mat.csv", header=TRUE)
+# Create a contingency table of sex verses activities 
+activities_by_sex <- table(maths_students$sex, maths_students$activities)
+```
+
 As our grand total of observed values is more than 50 and every observation exceeds 5, we can use the chi squared test.
 
 ```{webr}
@@ -36,3 +47,5 @@ chisq$p.value
 ```
 
 As the p-value is 0.0597, it is **not** less than 0.05 and therefore not significant with less than a 5% chance of error.
+
+![Meme of the Hulk being made for a Chi Squared test](../images/Hulk.jpg)

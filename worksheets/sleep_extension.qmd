@@ -14,7 +14,7 @@ webr:
 
 # Extension task
 
-Correlation doesn't always equal causation - and [Spurious correlations](https://www.tylervigen.com/spurious-correlations) has many examples to prove this.
+Correlation doesn't always equal causation even with a very low p-value - and [Spurious correlations](https://www.tylervigen.com/spurious-correlations) has many examples to prove this.
 
 If you go to the website and click on a correlation, you should get a table with the raw data.
 
@@ -22,13 +22,21 @@ You can then:
   
 1. Copy and paste this table into excel 
 2. Save your excel spreadsheet as a CSV file 
-3. Read the CSV in R 
-4. Plot and test the correlations
+  \
+(File -> Save As -> File format "Comma Separated File (.csv)") 
+3. Move this file into your R programming folder
+4. Read the CSV in R 
+5. Plot and test the correlations
 
 ::: {.callout-note collapse="false"}
 It may not be as straightforward as you'd think to copy the data from the table and get this into R.
 
 You might find that R doesn't like spaces in column or row titles - or that your columns and rows are the wrong way around.
 :::
+
+::: {.callout-warning collapse="false"}
+A CSV file can't save any Excel formatting such as font colour. It also can't have more than one sheet - anything on a second sheet will disappear! 
+:::
+
 
 ![Spurious correlatons](https://www.tylervigen.com/spurious/correlation/image/3022_popularity-of-the-first-name-violet_correlates-with_fossil-fuel-use-in-equatorial-guinea.svg)

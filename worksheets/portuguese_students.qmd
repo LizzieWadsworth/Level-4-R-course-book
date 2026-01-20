@@ -14,7 +14,21 @@ webr:
 
 # Portugese students data
 
-For this tutorial we need the "student-mat.csv" file from the canvas page. This is from a study looking factors that [may affect maths students at a school in Portugal](https://hdl.handle.net/1822/8024), which includes lots of categorical data.
+For our chi-squared tests, we're going to use some data of students attending two schools in Portugal. 
+
+```{=html}
+<a href="../Datasets/student-mat.csv" 
+   class="btn btn-lg text-white rounded-pill px-4 py-2" 
+   style="background: linear-gradient(90deg, #13a4b4ff, #143c53ff); box-shadow: 0 4px 6px rgba(0,0,0,0.1);" 
+   download>
+  📥 Download student-mat.csv
+</a>
+```
+
+  \
+
+
+This is from a study looking factors that [may affect maths students at a school in Portugal](https://hdl.handle.net/1822/8024), which includes lots of categorical data.
 
 This dataset contains the following information about each student:
 
@@ -53,4 +67,6 @@ This dataset contains the following information about each student:
 | G1 | first period grade (numeric: from 0 to 20) |
 | G2 | second period grade (numeric: from 0 to 20) |
 | G3 | final grade (numeric: from 0 to 20, output target) |
+: Portuguese students {.striped .hover}
+
 

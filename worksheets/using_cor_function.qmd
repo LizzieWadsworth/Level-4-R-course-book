@@ -16,6 +16,82 @@ webr:
 
 We can use two R functions to calculate our R and p values using a Pearson's coefficient.
 
+<style>
+  table.stats-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+  }
+
+  table.stats-table th,
+  table.stats-table td {
+    border: 1px solid #333;
+    padding: 8px 10px;
+    vertical-align: top;
+  }
+
+  table.stats-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+
+  table.stats-table tbody tr:hover {
+    background-color: #fff3cd;
+    transition: background-color 0.2s ease-in-out;
+  }
+</style>
+
+<table class="stats-table">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Range</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- R row split into 3 -->
+    <tr>
+      <td rowspan="3">R</td>
+      <td rowspan="3">-1 to +1</td>
+      <td>
+        A value close to +1 is a strong positive correlation
+        (e.g. as temperature increases, ice cream sales also increases)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        A value close to -1 is a strong negative correlation
+        (e.g. as cost of ice cream <em>increases</em>, ice cream sales <em>decreases</em>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        A value close to 0 has a weak or no correlation
+        (e.g. as the number of Kingston University students increases,
+        ice cream sales don't increase or decrease)
+      </td>
+    </tr>
+    <!-- p row split into 3 -->
+    <tr>
+      <td rowspan="3">p</td>
+      <td rowspan="3">0 to 1</td>
+      <td>Probability that the result would be observed if no real effect exists.</td>
+    </tr>
+    <tr>
+      <td>
+        We often choose a p-value less than 0.05 or 0.01 as <strong>significant</strong>.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        This means that there is less than a 5% or 1% chance of that effect being observed.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 Our first example uses `cor()`. This gives us the R value - how strong is the correlation?
 
 ```{r}
@@ -39,12 +115,14 @@ correlation_R_value <- cor(heart_df$age, heart_df$restbp, method = 'pearson')
 correlation_R_value
 ```
 
+Result: 0.2793509 is a weak to moderate positive correlation. 
+
 Let's break that down:
 
 -   `cor(heart_df$age, heart_df$restbp, method = 'pearson')`
-    -   `cor()` : This is our *function* name. This is a built in function.
-    -   `heart_df$age` : This is going to our dataframe called heart_df and extracting the column of values under the column name "age"
-    -   `heart_df$restbp` : This is going to our dataframe called heart_df and extracting the column of values under the column name "restbp"
+    -   `cor()` : This is our *function* name. This is a built in function for calculating a correlation. 
+    -   `heart_df$age` : This is going to our dataframe called `heart_df` and extracting the column of values `$` under the column name `age`
+    -   `heart_df$restbp` : This is going to our dataframe called `heart_df` and extracting the column of values `$` under the column name `restbp`
 -   `method = 'pearson'`
     -   This is a **parameter**, which is an option to choose how we want the function to work.
     -   We can set this to either `'pearson'` or `'spearman'` depending on which test we want to use.

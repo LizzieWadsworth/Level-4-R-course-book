@@ -12,7 +12,7 @@ webr:
 
 {{< include /_extensions/r-wasm/live/_knitr.qmd >}}
 
-# Extension
+# Chi-Squared Extension
 
 This was a very large dataset and we only looked at a few columns.
 
@@ -22,4 +22,6 @@ Not all of the columns are categorical data - if you want to compare any other t
 
 We've covered all the main statistical tests now, so try and apply what you've learnt from *every* tutorial to this database.
 
-![Meme of the Hulk being made for a Chi Squared test](../images/Hulk.jpg)
+But remember - you're statistical test results are only ever as good as the data you've collected!
+
+![Meme of a survey suggesting everyone enjoys submitting survey - based on those that were submitted](../images/sampling_bias_meme.webp){width=50%}

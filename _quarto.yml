@@ -83,6 +83,7 @@ website:
         - section: "**T-tests**"
           contents:
             - href: "worksheets/unpaired_t_test.qmd"
+            - href: "worksheets/t_test_options.qmd"
             - href: "worksheets/unpaired_t_test2.qmd"
             - href: "worksheets/paired_t_test.qmd"
             - href: "worksheets/one_tailed_t_test.qmd"

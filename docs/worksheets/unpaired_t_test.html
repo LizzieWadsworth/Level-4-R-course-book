@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../worksheets/unpaired_t_test2.html" rel="next">
+<link href="../worksheets/t_test_options.html" rel="next">
 <link href="../worksheets/sleep_extension.html" rel="prev">
 <link href="../LS4003_logo_no_text.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -692,6 +692,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../worksheets/t_test_options.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">T-test options</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../worksheets/unpaired_t_test2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Boxplot with T test</span></a>
   </div>
@@ -723,7 +729,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../worksheets/t-test_extension.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Extension</span></a>
+ <span class="menu-text">Penguins Extension</span></a>
   </div>
 </li>
       </ul>
@@ -782,7 +788,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../worksheets/chisq_extension.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Extension</span></a>
+ <span class="menu-text">Chi-Squared Extension</span></a>
   </div>
 </li>
       </ul>
@@ -807,12 +813,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="unpaired-t-test" class="level1">
 <h1>Unpaired t-test</h1>
 <p>We’re going to be using the same examples as in Statistics lecture 3 (by Dr Trigiante) for each of our tests. For this example, we’ll use the Diabetic and Non-Diabetic glycemia values.</p>
+<section id="add-data-to-r" class="level2">
+<h2 class="anchored" data-anchor-id="add-data-to-r">Add data to R</h2>
 <p>The first thing we need to do is copy our data in R. As these are fairly small datasets, we can manually type in our data using the <code>c()</code> function to create a vector of values.</p>
+<p><code>c()</code> is short for combine, and is used for combining sets of values (in this case, numbers) into an array (data structure)</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a vector of values for each of our columns</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>NonDiabetic <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">82</span>,<span class="dv">87</span>,<span class="dv">79</span>,<span class="dv">79</span>,<span class="dv">86</span>,<span class="dv">70</span>,<span class="dv">98</span>,<span class="dv">92</span>,<span class="dv">75</span>,<span class="dv">90</span>,<span class="dv">73</span>,<span class="dv">70</span>,<span class="dv">87</span>,<span class="dv">88</span>,<span class="dv">96</span>,<span class="dv">93</span>) <span class="co"># NonDiabetic glycemia values</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Diabetic <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">112</span>,<span class="dv">110</span>,<span class="dv">94</span>,<span class="dv">121</span>,<span class="dv">85</span>,<span class="dv">125</span>,<span class="dv">80</span>,<span class="dv">122</span>,<span class="dv">117</span>,<span class="dv">116</span>,<span class="dv">99</span>,<span class="dv">90</span>,<span class="dv">99</span>,<span class="dv">95</span>,<span class="dv">84</span>,<span class="dv">84</span>) <span class="co"># Diabetic glycemia values</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="calculate-mean-and-interquartile-range" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-mean-and-interquartile-range">Calculate mean and interquartile range</h2>
 <p>We can use the <code>summary()</code> function to view our mean and interquartile range.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use summary() function to see the Interquartile Range</span></span>
@@ -827,6 +839,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   80.00   88.75   99.00  102.06  116.25  125.00 </code></pre>
 </div>
 </div>
+</section>
+<section id="calculate-unpaired-t-test" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-unpaired-t-test">Calculate unpaired T test</h2>
 <p>Using the function <code>t.test()</code>, we can add our two sets of values as arguments and calculate the p-value. This should match the result from excel of an <strong>unpaired</strong> t-test.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run an unpaired t test using t.test()</span></span>
@@ -848,25 +863,6 @@ mean of x mean of y
 </div>
 </div>
 <p>That’s our t-test done already!</p>
-<section id="t-test-options" class="level2">
-<h2 class="anchored" data-anchor-id="t-test-options">T-test options</h2>
-<p>We didn’t have to use any <strong>options</strong> here as the default test is two tailed, unpaired, and assuming the variance is not equal. If you want to change any of the options, you can try:</p>
-<ul>
-<li><strong>alternative</strong> for two tailed or one tailed
-<ul>
-<li>“two.sided” for a two tailed test,</li>
-<li>“greater” for one tailed where the mean of the first variable is greater than the mean of the second variable</li>
-<li>“less” for one tailed where the mean of the first variable is greater than the mean of the second variable</li>
-<li><code>unpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, alternative="greater")</code></li>
-</ul></li>
-<li><strong>paired</strong> for paired or unpaired
-<ul>
-<li>TRUE for paired</li>
-<li>FALSE for unpaired</li>
-<li><code>unpaired_t_test_result &lt;- t.test(NonDiabetic, Diabetic, paired = TRUE)</code></li>
-</ul></li>
-<li><strong>mu</strong> mean, for comparison for a one-tailed test</li>
-</ul>
 
 
 <script type="ojs-module-contents">
@@ -1318,8 +1314,8 @@ window._ojs.runtime.interpretFromScriptTags();
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../worksheets/unpaired_t_test2.html" class="pagination-link" aria-label="Boxplot with T test">
-        <span class="nav-page-text">Boxplot with T test</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../worksheets/t_test_options.html" class="pagination-link" aria-label="T-test options">
+        <span class="nav-page-text">T-test options</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

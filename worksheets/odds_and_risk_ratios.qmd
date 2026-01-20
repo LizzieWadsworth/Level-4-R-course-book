@@ -4,15 +4,27 @@ engine: knitr
 lightbox: true
 webr:
   resources:
-    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/student-mat.csv
   packages:
     - ggplot2
     - dplyr
 ---
 
+
 {{< include /_extensions/r-wasm/live/_knitr.qmd >}}
 
 # Odds and Risk ratios
+
+This is our data from the previous page: 
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Read the csv file and store in a dataframe 
+maths_students=read.csv("student-mat.csv", header=TRUE)
+# Create a contingency table of sex verses activities 
+activities_by_sex <- table(maths_students$sex, maths_students$activities)
+```
 
 ## Odds Ratio
 
@@ -23,13 +35,14 @@ You'll first need to `install.packages('epitools')`.
 ```{webr}
 #| context: interactive
 #| autorun: true
+#| warning: false
 library(epitools)
 # Calculate the odds ratio 
 odds_activities_by_sex <- oddsratio(activities_by_sex)
 odds_activities_by_sex$measure
 ```
 
-This result shows us the odds of male students doing an activity (compared to females) is 1.491 -\> they are around 1.5 times more likely to be doing an activity.
+This result shows us the odds of male students doing an activity (compared to females) is 1.491 -\> they are around **1.5 times more likely** to be doing an activity.
 
 Also in this table are the "lower" and "upper" values are the boundaries for the 95% confidence interval. As both values are above one, this indicates increased odds (of males doing an activity compared to females).
 

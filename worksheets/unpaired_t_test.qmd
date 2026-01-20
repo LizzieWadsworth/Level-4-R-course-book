@@ -16,13 +16,19 @@ webr:
 
 We're going to be using the same examples as in Statistics lecture 3 (by Dr Trigiante) for each of our tests. For this example, we'll use the Diabetic and Non-Diabetic glycemia values. 
 
+## Add data to R 
+
 The first thing we need to do is copy our data in R. As these are fairly small datasets, we can manually type in our data using the `c()` function to create a vector of values.
+
+`c()` is short for combine, and is used for combining sets of values (in this case, numbers) into an array (data structure)
 
 ```{r}
 # Create a vector of values for each of our columns
 NonDiabetic = c(82,87,79,79,86,70,98,92,75,90,73,70,87,88,96,93) # NonDiabetic glycemia values
 Diabetic = c(112,110,94,121,85,125,80,122,117,116,99,90,99,95,84,84) # Diabetic glycemia values
 ```
+
+## Calculate mean and interquartile range
 
 We can use the `summary()` function to view our mean and interquartile range.
 
@@ -31,6 +37,8 @@ We can use the `summary()` function to view our mean and interquartile range.
 summary(NonDiabetic) # print summary of NonDiabetic glycemia values to the console
 summary(Diabetic) # print summary of Diabetic glycemia values to the console
 ```
+
+## Calculate unpaired T test
 
 Using the function `t.test()`, we can add our two sets of values as arguments and calculate the p-value. This should match the result from excel of an **unpaired** t-test. 
 
@@ -42,18 +50,3 @@ unpaired_t_test_result
 ```
 
 That's our t-test done already!
-
-## T-test options
-
-We didn't have to use any **options** here as the default test is two tailed, unpaired, and assuming the variance is not equal. If you want to change any of the options, you can try:
-
--   **alternative** for two tailed or one tailed
-    -   "two.sided" for a two tailed test,
-    -   "greater" for one tailed where the mean of the first variable is greater than the mean of the second variable
-    -   "less" for one tailed where the mean of the first variable is greater than the mean of the second variable
-    -   `unpaired_t_test_result <- t.test(NonDiabetic, Diabetic, alternative="greater")`
--   **paired** for paired or unpaired
-    -   TRUE for paired
-    -   FALSE for unpaired
-    -   `unpaired_t_test_result <- t.test(NonDiabetic, Diabetic, paired = TRUE)`
--   **mu** mean, for comparison for a one-tailed test

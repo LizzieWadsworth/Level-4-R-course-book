@@ -68,9 +68,10 @@ We can do a boxplot and add our p-value in the same way as for the unpaired test
 
 ```{webr}
 #| context: interactive
+#| exercise: ex_3
 library(ggplot2)
 library(ggpubr)
-ggplot(Players_DataFrame, aes(x=group, y=jumpheight, fill=group)) +
+ggplot(Players_DataFrame, aes(x=______, y=______, fill=______)) +
   geom_boxplot() + 
   stat_compare_means(method = "t.test", paired = TRUE)
 ```

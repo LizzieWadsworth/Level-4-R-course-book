@@ -189,5 +189,8 @@
   },
   "worksheets/unpaired_t_test2.qmd": {
     "unpaired_t_test2.html": "206a7bc6"
+  },
+  "worksheets/t_test_options.qmd": {
+    "t_test_options.html": "a366c403"
   }
 }

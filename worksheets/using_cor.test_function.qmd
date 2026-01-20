@@ -46,3 +46,12 @@ As you can see that works very similarly to our first example, except for the la
 
 -   `p.value` is our probability p value
 -   `estimate` is our correlation coefficient (R value, same as [from the cor function](using_cor_function.qmd))
+
+R value result: 0.2793509 is a weak-moderate positive correlation. 
+
+P-value result: 7.762269e-07 _which is_ 0.0000007762269. This is much smaller than 0.05, which means there is less than a 5% probability of this result if no real effect exists. 
+It is **statistically significant**
+
+::: {.callout-note title="e-07" collapse="false"}
+_“e-07” means you multiply by 10⁻⁷, which moves the decimal point 7 places to the left._ 
+:::

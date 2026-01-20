@@ -26,8 +26,17 @@ We need a column that contains the correct group - "NonDiabetic" or "Diabetic" f
 ```{webr}
 #| context: interactive
 #| autorun: true
+# Create a vector of values for each of our columns
+NonDiabetic = c(82,87,79,79,86,70,98,92,75,90,73,70,87,88,96,93) # NonDiabetic glycemia values
+Diabetic = c(112,110,94,121,85,125,80,122,117,116,99,90,99,95,84,84) # Diabetic glycemia values
+
+# Combine values into a Data Frame
 Glycemia_Data_Frame <- data.frame (
+  # Repeat "Nondiabetic" 16 times and "Diabetic 16 times", to make a column of the conditions
+  # Column title is "group"
   group = rep(c("NonDiabetic", "Diabetic"), each = 16),
+  # Add the NonDiabetic and Diabetic values to a new column 
+  # Column title is "gylcemia"
   glycemia = c(NonDiabetic,  Diabetic)
 )
 print(Glycemia_Data_Frame)
@@ -40,10 +49,15 @@ We can now create a boxplot in the same way we did in Tutorial 1. We can also ad
 ```{webr}
 #| context: interactive
 #| autorun: true
+#| warning: false
+# Load packages
 library(ggplot2)
 library(ggpubr)
+
+# Make boxplot with ggplot 
 ggplot(Glycemia_Data_Frame, aes(x=group, y=glycemia, fill=group)) +
   geom_boxplot() + 
+  # Run and annotate t.test result
   stat_compare_means(method = "t.test")
 ```
 
@@ -56,6 +70,7 @@ If you want to extract the values for a particular group, we can use the followi
 ```{webr}
 #| context: interactive
 #| autorun: true
+#| warning: false
 DiabeticExtracted <- Glycemia_Data_Frame$glycemia[Glycemia_Data_Frame$group=="Diabetic"]
 DiabeticExtracted
 ```

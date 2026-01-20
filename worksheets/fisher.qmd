@@ -4,7 +4,7 @@ engine: knitr
 lightbox: true
 webr:
   resources:
-    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/student-mat.csv
   packages:
     - ggplot2
     - dplyr
@@ -13,6 +13,17 @@ webr:
 {{< include /_extensions/r-wasm/live/_knitr.qmd >}}
 
 # Fisher test
+
+This is our data from the previous page: 
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Read the csv file and store in a dataframe 
+maths_students=read.csv("student-mat.csv", header=TRUE)
+# Create a contingency table of sex verses activities 
+activities_by_sex <- table(maths_students$sex, maths_students$activities)
+```
 
 We can also do a fisher test if we're looking at categories with a smaller value.
 

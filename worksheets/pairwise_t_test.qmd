@@ -16,6 +16,20 @@ webr:
 
 Our ANOVA was significant - but now we need to know which pairs are significantly different.
 
+Here is our data from the previous page: 
+```{webr}
+#| context: interactive
+#| autorun: true
+Economics <- c(42, 53, 49, 53, 43, 44, 45, 52, 54)
+Medicine <- c(69, 54, 58, 64, 64, 55, 56)
+History <- c(35, 40, 53, 42, 50, 39, 55, 39, 40)
+
+Degrees_DataFrame <- data.frame(
+  group = rep(c("Economics", "Medicine", "History"), c(9,7,9)),
+  salary = c(Economics, Medicine, History)
+)
+```
+
 We can use `pairwise.t.test()` to do a t-test for all pairs of groups in our dataset.
 
 ```{webr}
@@ -28,7 +42,7 @@ pairwise_t_test_result
 We use the options:
 
 -   `pool.sd = FALSE` so that variance is calculated independantly for each group
--   `p.adjust.method = "none"` as this function by default uses a [Holm-Bonferroni correction](https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method) to minimize false positives which is beyond the scope of this course.
+-   `p.adjust.method = "none"` as this function by default uses a [Holm-Bonferroni correction](https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method) to minimize false positives. _This is beyond the scope of this course._
 
 ## Visualise the results
 
@@ -39,7 +53,15 @@ To do this, first we can create a list containing all the pairs we want to plot 
 ```{webr}
 #| context: interactive
 #| autorun: true
+#| warning: false
+# Load packages
+library(ggplot2)
+library(ggpubr)
+
+# Make a list of comparisons - you could choose to use only one or all three
 my_comparisons <- list( c("Economics", "History"), c("History", "Medicine"), c("Medicine", "Economics") )
+
+# Use ggplot to make a boxplot, and compare means based on our defined comparisons
 ggplot(Degrees_DataFrame, aes(x=group, y=salary, fill=group)) +
   geom_boxplot() + 
   stat_compare_means(method = "t.test", comparisons = my_comparisons)

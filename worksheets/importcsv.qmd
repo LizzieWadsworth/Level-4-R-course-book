@@ -8,7 +8,9 @@ lightbox: true
 
 # Download CSV file 
 
-We have a file of data from an experiment on locusts. Download the file below, and move this to the same folder you have your R code. A csv file is like a plain excel table, but missing all the Microsoft formatting. This makes it easier for us to use.
+We have a file of data from an experiment on locusts. Download the file below, and **move this to the same folder you have your R code**. 
+
+A csv file is like a plain excel table, but missing all the Microsoft formatting. This makes it easier for us to use.
 
 ```{=html}
 <a href="../Datasets/LocustSerotonin.csv" 

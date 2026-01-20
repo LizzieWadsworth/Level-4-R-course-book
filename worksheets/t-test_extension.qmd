@@ -12,9 +12,9 @@ webr:
 
 {{< include /_extensions/r-wasm/live/_knitr.qmd >}}
 
-# Extension
+# Penguins Extension
 
-If you finish the tutorial, go back to the Worksheet 1 with the Penguins dataset.
+If you finish the tutorial, go back to the [Penguins dataset](penguin_introduction.qmd) from R introduction.
 
 Is there anything in this dataset that would suit a t-test? Which tests would you use?
 

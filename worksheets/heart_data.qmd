@@ -16,6 +16,10 @@ webr:
 
 The dataset we are going to use is `heart.csv`. 
 
+Download the file below, and **move this to the same folder you have your R code**. 
+
+A csv file is like a plain excel table, but missing all the Microsoft formatting. This makes it easier for us to use.
+
 ```{=html}
 <a href="../Datasets/heart.csv" 
    class="btn btn-lg text-white rounded-pill px-4 py-2" 
@@ -29,7 +33,7 @@ The dataset we are going to use is `heart.csv`.
 
 This dataset uses various metrics relating to heart health.
 
-| column       | data                          |
+| Column       | Data                          |
 |--------------|-------------------------------|
 | age          | age of patient in years       |
 | sex          | Gender of the patient (F/M)   |

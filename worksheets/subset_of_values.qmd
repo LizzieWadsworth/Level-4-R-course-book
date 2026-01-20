@@ -4,7 +4,7 @@ engine: knitr
 lightbox: true
 webr:
   resources:
-    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/LocustSerotonin.csv
+    - https://raw.githubusercontent.com/LizzieWadsworth/Level-4-R-course-book/refs/heads/main/Datasets/student-mat.csv
   packages:
     - ggplot2
     - dplyr
@@ -13,6 +13,17 @@ webr:
 {{< include /_extensions/r-wasm/live/_knitr.qmd >}}
 
 # Testing a subset of the values
+
+This is our data from the previous page: 
+
+```{webr}
+#| context: interactive
+#| autorun: true
+# Read the csv file and store in a dataframe 
+maths_students=read.csv("student-mat.csv", header=TRUE)
+# Create a contingency table of sex verses activities 
+activities_by_sex <- table(maths_students$sex, maths_students$activities)
+```
 
 The strongest contributions appear to be in the "reputation" and "other" categories.
 
@@ -25,8 +36,8 @@ To see if these are statistically significant, we can create a new database with
 maths_students_ReputationOrOther <- maths_students[maths_students$reason %in% c('other', 'reputation'),]
 
 # Create a contingency table
-school_by_reason_2 <- table(maths_students_ReputationOrOther$school, maths_students_ReputationOrOther$reason)
-school_by_reason_2
+school_by_reason <- table(maths_students_ReputationOrOther$school, maths_students_ReputationOrOther$reason)
+school_by_reason
 ```
 
 Once we have our contigency table, we can then run our chi-squared test:
